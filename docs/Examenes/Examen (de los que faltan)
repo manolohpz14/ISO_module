@@ -1,0 +1,102 @@
+# EXAMEN TEMA 3 ISO. ADMINISTRACIÓN DE USUARIOS GRUPOS Y PERMISOS DE FORMA LOCAL EN LINUX
+
+## Ejercicio 1 (4,5pts)
+
+Todo este ejercicio se deberá hacer con un umask 002.
+
+#### Apartado a) (0,45pts)
+
+1-Se pide que crees los siguiente grupos:
+
+```text
+policia, bomberos, profesor
+```
+
+#### Apartado b) (0,6pts)
+
+1-Acto seguido, crea los siguientes usuarios: 
+
+`roberto`, `horacio`, `alfonso`, `santiago`de forma que, todos tendrán la terminal /bin/bash excepto santiago, que no tendrá acceso a terminal. Los grupos principales de cada usuario serán:
+
+`roberto:roberto`, `horacio:horacio`, `alfonso:alfonso`, `santiago:bombero`
+
+y cada grupo tendrá los siguiente usuarios:
+
+`policia: horacio, roberto` , `bomberos: horacio, alfonso`, `profesor: santiago`
+
+2-Ponle a todos los usuarios la misma contraseña (lo mas sencilla posible).
+
+3-Importante, añade también al usuario horacio al grupo sudo. Esto le permitirá ejecutar comandos con sudo.
+
+#### Apartado c) (0,75pts)
+
+1-Usando getent, muestra que los grupos creados tienen a dichos usuarios dentro de cada grupo. 
+
+2-Usa también getent para comprobar que alfonso  tiene acceso a terminal.
+
+#### Apartado d) (0,6pts)
+
+1-Ejecutad un comando para ver la política de expiracion de contraseñas de horacio
+
+2-Después, ejecutad un comando para que manolo solo pueda cambiar la contraseña una vez por semana, y que solo pueda usarse una contraseña cada año, además, el usuario deberá ser avisado con tres semanas de antelación antes de que caduque. 
+
+3-Una vez hecho todo lo anterior, comprueba que efectivamente, se ha cambiado viendo nuevamente la política de contraseñas de manolo. <u>Después con sudo</u>, cambia la fecha de expiracion de la cuenta a dentro de dos años
+
+#### **Apartado e)** (0,6pts)
+
+-1.Cambia al usuario `horacio` yendo a su home directamente
+
+-2.Crea, en el home de `horacio` la carpeta `rutas`, ¿cuál es el propetario y grupo principal de la carpeta creada (justificalo con comando)?, ¿qué permisos tiene por defecto la carpeta creada? (justificalo con comando) 
+
+-3.Una vez has creado la carpeta anterior, muévete al directorio raiz del sistema con `horacio`. Si cambias de usuario a `alfonso`, ¿podrá acceder alfonso `/home/horacio/clases`? En caso de que no pueda, deberás editar los permisos octales de los directorios necesarios para que alfonso pueda acceder a `home/horacio/cumplimiento`.
+
+## Ejercicio 2 (4pts)
+
+#### Apartado a) (1pts)
+
+Cambia al usuario `horacio`
+
+-Crea la carpeta /rutas (no en su home)
+
+-Crea dentro de la carpeta `/rutas`  los siguientes archivos:
+
+- zontes.txt-> Para crear este archivo, usarás `cat` y escribirás dentro "Tareas de septiembre"
+- honda.txt-> Para crear este archivo, usarás `echo` con redirecciones y escribirás dentro "Tareas de octubre"
+
+#### Apartado b)  (1pts)
+
+1- Mediante el usuario root y con chown, cambia el grupo propietario de los  archivos anteriores a `bomberos` (deja el propietario igual)
+
+2- ¿horacio podría cambiar el grupo propietario a `policia` sin necesidad de cambiar a root o de usar sudo?
+
+#### Apartado c) (1pts)
+
+1-Da los siguientes permisos a cada uno de los archivos, siempre usando la forma octal de los permisos:
+
+- zontes.txt: u=rwx g=w o=rw
+- honda.txt: u=- g=rwx o=w
+
+2-Cambia al usuario `horacio`, ¿puede leer el archivo `honda.txt`?, ¿y puede alfonso leer el archivo `zontes.txt`? Justifica tu respuesta
+
+#### Apartado d) (1pts)
+
+1-Con el usuario `horacio`, da el comando que liste todos los archivos de `/rutas` 
+
+2-Con el usuario `horacio`, da el comando que liste todos los de `/clases` que empiecen por ho y terminen en .txt.
+
+## Ejercicio 3 (1,5pts)
+
+En primer lugar, revisa que en `/etc/skel` no tiene nada más que los archivos ocultos por defecto y no hay nada residual de las prácticas en clase.
+
+#### Apartado a) (0,75pts)
+
+1-Con root y de forma relativa, crea una carpeta en `/etc/skel` llamada `rutas`.
+
+2- Crea el usuario `rigoberto` con la opción necesaria para que se cree su home por defecto. Al crearlo, comprueba que la carpeta `rutas` se ha creado en su home.
+
+#### Apartado e) (0,75pts)
+
+En este apartado crearás el comando `alubias` que deberá ser disponible para todos los usuarios del sistema. Cada vez que alguien escriba `alubias` en terminal se deberá crear la carpeta alubias en donde estés y debe aparecer el mensaje:
+`Las alubias son buenas!"` 
+
+Describe los pasos necesarios para que esto funcione.

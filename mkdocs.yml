@@ -1,0 +1,41 @@
+site_name: Módulo ISO
+theme:
+  name: material
+
+nav:
+  - Inicio: index.md
+  - Tema 1. Introducción a los Sistemas Operativos y Hardware:
+      - 1er Archivo Teoría (Markdown): /TEMA1/Teoria/1. Teoria de Markdown SIMPLE.md
+      - 2do Archivo Teoría(Sistemas Numéricos): /TEMA1/Teoria/2. Teoría de Sistemas Numéricos en Informática.md
+      - 3er Archivo Teoría(Almacenamiento de datos): /TEMA1/Teoria/3. Teoria de Almacenamiento de datos.md
+      - 4to Archivo Teoría(Hardware y Software): /TEMA1/Teoria/4. Teoria — Hardware y Software básico de un ordenador.md
+      - 5to Archivo Teoría(Sistemas Operativos y Virtualizacion): /TEMA1/Teoria/5. Teoría Sistemas Operativos.md
+      - 1ª Practica: /TEMA1/Practicas/1ªPractica.md
+      - 2ª Practica: /TEMA1/Practicas/2. Práctica — Observar la diferencia en notación decimal vs binaria. Rellena la siguiente tabla.md
+      - 3ª Practica: /TEMA1/Practicas/3. Práctica — Observar la diferencia en notación decimal vs binaria. Probamos la CLI de Ubuntu.md
+      - 4ª Practica: /TEMA1/Practicas/4. Práctica — Curiosidades y importancia de los sistemas de enumeración binario y hexadecimal en la informatica.md
+      - 4ª Practica (versión 2): /TEMA1/Practicas/4.2. Práctica — Comparación GUI vs CLI en Ubuntu e instalación de KDE (copy).md
+      - 5ª Practica: /TEMA1/Practicas/5. PrácticaTrabajoCooperativo.md
+      
+  - Tema 2. Virtualización e instalaciones de sistemas operativos: 
+      - 1er Archivo Teoría (QEMU-KVM): /TEMA2/Teoria/1ª Teoria virtualizacion.md
+      - 2do Archivo Teoría (Instalaciones y Particiones): /TEMA2/Teoria/2 Teoría de las instalaciones.md
+      - 1ª Practica (Opcional. Virtualizacion Anidada): /TEMA2/Practicas/1ª Práctica virtualizacion.md
+      - 2ª Practica : /TEMA2/Practicas/2 Práctica Instalación de Ubuntu sin LUKS (sin LVM).md
+      - 2ª Practica: /TEMA2/Practicas/3 Práctica Instalación Dual de ubuntu + Windows.md
+      - 4ª Practica: /TEMA2/Practicas/4ª Práctica Migración de un disco de 120 GB (Más grande) a otro de 100 GB (Más chico) usando GParted y el comando dd.md
+      
+    - Tema 3. Sistema operativo Linux-Debian: 
+      - 1ª Practica Guiada (Administación de permisos en directorios): /TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md
+      - 2ª Practica Guiada (Administación de permisos en binarios): /TEMA3/Practicas/2ª Practica Permisos AOT.md
+      - 3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS): /TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md
+      - 4ª Practica Guiada (Uso de APT avanzado para instalación de paquetes): /TEMA3/Practicas/4ª Practica APT.md
+      
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde

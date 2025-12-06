@@ -1,0 +1,169 @@
+# EXAMEN TEMA 3 ISO. ADMINISTRACIÓN DE USUARIOS GRUPOS Y PERMISOS DE FORMA LOCAL EN LINUX
+
+## Ejercicio 1 (3,5pts)
+
+Todo este ejercicio se deberá hacer con un umask 002.
+
+#### Apartado a) (0,4pts)
+
+1-Se pide que crees los siguiente grupos:
+
+```text
+ana, cumplimiento, calidad
+```
+
+#### Apartado b) (0,6pts)
+
+1-Acto seguido, crea los siguientes usuarios: 
+
+`manolo`, `isai`, `bea`, `celia`, `alvaro`, `enric`, de forma que, todos tendrán la terminal /bin/bash excepto isai, que no tendrá acceso a terminal. Los grupos principales de cada usuario serán:
+
+`manolo:manolo`, `isai:cumplimiento`, `bea:bea`, `celia:celia`, `alvaro:alvaro`, `enric:enric`
+
+y cada grupo tendrá los siguiente usuarios:
+
+`analitica: celia, alvaro,enric, manolo` , `cumplimiento: bea, manolo, isai`, `calidad: enric`
+
+2-Ponle a todos los usuarios la misma contraseña (lo mas sencilla posible).
+
+3-Importante, añade también al usuario manolo al grupo sudo. Esto le permitirá ejecutar comandos con sudo.
+
+#### Apartado c) (0,3pts)
+
+1-Usando getent, muestra que los grupos creados tienen a dichos usuarios dentro de cada grupo. 
+
+2-Usa también getent para comprobar que isai no tiene acceso a terminal.
+
+#### Apartado d) (0,6pts)
+
+1-Ejecutad un comando para ver la política de expiracion de contraseñas de manolo
+
+2-Después, ejecutad un comando para que manolo solo pueda cambiar la contraseña una vez por semana, y que solo pueda usarse una contraseña cada 6 meses, además, el usuario deberá ser avisado con dos semanas de antelación antes de que caduque. El usuario deberá cambiar la contraseña en 15 días depues de que caduque o su cuenta expirará
+
+3-Una vez hecho todo lo anterior, comprueba que efectivamente, se ha cambiado viendo nuevamente la política de contraseñas de manolo. Después con sudo, cambia la fecha de cambio de la ultima contraseña a el martes pasado y comprueba como cambia todo de nuevo
+
+#### **Apartado e)** (0,6pts)
+
+-1.Cambia al usuario `bea` yendo a su home directamente
+
+-2.Crea, en el home de `bea` la carpeta `cumplimiento`, ¿cuál es el propetario y grupo principal de la carpeta creada (justificalo con comando)?, ¿qué permisos tiene por defecto la carpeta creada? (justificalo con comando) 
+
+-3.Una vez has creado la carpeta anterior, muévete al directorio raiz del sistema con `bea`. Si cambias de usuario a `manolo`, ¿podrá acceder manolo `/home/bea/cumplimiento`? En caso de que no pueda, deberás editar los permisos octales de los directorios necesarios para que manolo pueda acceder a `home/bea/cumplimiento`.
+
+#### **Apartado f)** (1 pts)
+
+-1.Viendo que la carpeta de `/home/bea/cumpliento` no funcionó como bea quería, `manolo` creará en `/srv` la carpeta `/srv/santander/cumplimiento`, ¿podrá manolo crear esa carpeta o necesitará de `sudo`? Justifica tu respuesta y crea esa carpeta con un solo comando `mkdir`y no con dos.
+
+-2.Haciendo uso de la forma octal de los permisos, da a la carpeta `/srv/santander` permisos de lectura escritura y ejecución para todos, además, haz que el usuario y grupo propietario de esta carpeta sea `root`. 
+
+3-Ahora, con `chmod`y sin hacer uso de `sudo`, `manolo` cambia el grupo propietario de `/srv/santander/cumplimiento` a: `cumplimiento` y dale los permisos por defecto `776`.  
+
+-4.Cambia a bea y comprueba (justificando siempre la respuesta) si:
+
+- Puede acceder a la carpeta `/srv/santander/cumplimiento`
+- Puede crear la carpeta `/srv/santander/cumplimiento/bea`
+- puede hacer `ls` sobre `/srv/santander/cumplimiento`
+
+-5.Prueba todo lo anterior con enric, justificando correctamente si puede acceder a  `/srv/santander/cumplimiento`, crear  sobre `/srv/santander/cumplimiento` (en este caso la carpeta  `/srv/santander/cumplimiento/enric`) o listar en  `/srv/santander/cumplimiento`. ¿Cuál sería el comando que el usuario `bea` debe ejecutar para que enric pueda hacer todo lo anterior? **(IMPORTANTE: no lo ejecutes, sólo escríbelo y si lo has ejecutado, deja los permisos como estuvieran)**
+
+## Ejercicio 2 (4pts)
+
+#### Apartado a) (0,5pts)
+
+Cambia al usuario `alvaro` y crea dentro de `/srv/santander` los siguientes archivos:
+
+- bau_sep.txt-> Para crear este archivo, usarás `nano` y escribirás dentro "Tareas de septiembre"
+- bau_oct.txt-> Para crear este archivo, usarás `cat` sin redirecciones y escribirás dentro "Tareas de octubre"
+- bau_nov.txt-> Para crear este archivo, usarás `echo` y `>` y escribirás dentro "Tareas de noviembre"
+- work_dic.txt-> Para crear este archivo, usarás `cat` y `>` y escribirás dentro "Tareas de diciembre"
+
+#### Apartado b)  (0,5pts)
+
+1- Mediante el usuario root y con chown, cambia el grupo propietario de los siguientes archivos a `cumplimiento` (deja el propietario igual)
+
+- bau_sep
+- bau_nov
+
+2- ¿Álvaro podría cambiar el grupo propietario a `cumplimiento` sin necesidad de cambiar a root?
+
+#### Apartado c) (1pts)
+
+1-Da los siguientes permisos a cada uno de los archivos, siempre usando la forma octal de los permisos:
+
+- bau_sep.txt: u=rwx g=rw o=rw
+- bau_oct.txt: u=rwx g=- o=-
+- bau_nov.txt: u=rwx g=- o=r
+- work_dic.txt: u=- g=rw o=w
+
+2-Cambia al usuario `manolo`, ¿puede leer el archivo `bau_sep.txt`?, ¿y el archivo `bau_nov.txt`? Justifica tu respuesta
+
+3-Cambia al usuario `celia`, ¿puede bea leer `bau_nov.txt`? , ¿puede bea añadir contenido al archivo `work_dic.txt`? Justifica tu respuesta.
+
+4-Cambia al usuario `alvaro`, ¿puede alvaro leer `work_dic.txt`?
+
+#### Apartado d) (0,5pts)
+
+1-Con el usuario `alvaro`, da el comando que liste todos los achivos de `/srv/santander` que empiecen por b y terminen en txt.
+
+2-Con el usuario `alvaro`, da el comando que liste todos loar achivos de `/srv/santander` que empiecen por b o w y tengan exactamente 6 caracteres antes de txt.
+
+#### Apartado e) (1,5pts)
+
+1-Cambia al usuario manolo y usa el comando `newgrp` para que el grupo principal de manolo durante esta sesión sea `analitica`. Crea la carpeta `/srv/santander/cumplimiento/analitica`, ¿quién es el propietario de la carpeta y el grupo propietario de la carpeta? 
+
+2- Da a esta carpeta  `/srv/santander/cumplimiento/analitica` los permisos `755`, ¿era necesario realmente dárselos o ya estaban por defecto? Justifica tu respuesta.
+
+3-Ahora haz que el grupo `analitica` tenga una contraseña y que el administrador único sea `alvaro`. Cambia al usuario `alvaro` y añade a `bea` al grupo analítica.
+
+4- Usa el comando `getent` para mostrar información completa del grupo `analitica`, como usuarios y administradores
+
+5-Con `manolo` haz un `newgrp` a `cumplimiento` y, crea el `txt`: `/srv/santander/cumplimiento/analitica/examen.txt` que contenga: `Examen del 18 de noviembre` y dale los permisos de lectura y escritura a usuario y grupo propietario así como nada a otros.
+
+6-Posiciónate en la carpeta `/srv/santander` con y acto seguido, cambia al usuario `enric`. Escribe el comando que debe usar enric para leer el txt, ¿tiene permisos para leerlo? Justifica si puede o no y el porqué. 
+
+7-Posiciónate en la carpeta `/srv/santander` con y acto seguido, cambia al usuario `bea`. Escribe el comando que debe usar bea para leer el txt, ¿tiene permisos para leerlo? Justifica si puede o no y el porqué. 
+
+8-Si cambio los permisos de `srv/santander/cumplimiento/analitica/examen.txt` a: `777`, ¿podrá enric leer y editar ahora este txt? Justifica tu respuesta.
+
+## Ejercicio 3 (2,5pts)
+
+En primer lugar, revisa que en `/etc/skel` no tiene nada más que los archivos ocultos por defecto y no hay nada residual de las prácticas en clase.
+
+#### Apartado a) (0,5pts)
+
+1-Con root y de forma relativa, crea una carpeta en `/etc/skel` llamada `Otros`.
+
+2- Crea el usuario `roberto` con la opción necesaria para que se cree su home por defecto. Al crearlo, comprueba que la carpeta `Otros` se ha creado en su home.
+
+#### Apartado b) (0,5pts)
+
+1- Con el usuario `manolo`, en `/manolo/home/.bashrc` añade `umask 025`.
+
+2- Recarga el `.bashrc`
+
+3- Crea en `/home/manolo`:
+
+- La carpeta Examen
+- Dentro de la carpeta examen, crearás el txt: `notas.txt`
+
+Especifica los permisos por defecto anteriores ¿Cuadran con el `umask` definido?
+
+#### Apartado c) (0,5pts)
+
+1-En `/home/manolo/.bashrc` y usando `nano`, define un alias que haga lo siguiente: 
+
+Un alias llamado sudoadd: Este alias debe añadir correctamente a un usuario al grupo sudo.
+
+2- Prueba el alias sobre el usuario `celia` y comprueba que efectivamente se ha añadido al grupo `sudo`
+
+#### Apartado d) (0,5pts)
+
+¿Qué debes hacer para que todo el mundo posea este alias? Especifícalo y ejecuta los comandos necesarios.
+
+#### Apartado e) (0,5pts)
+
+En este apartado crearás el comando `adios` que deberá ser disponible para todos los usuarios del sistema. Cada vez que alguien escriba `adios` deberá aparecer el siguiente mensaje por pantalla:
+
+`Hasta luego!` 
+
+Describe los pasos necesarios para que esto funcione.
