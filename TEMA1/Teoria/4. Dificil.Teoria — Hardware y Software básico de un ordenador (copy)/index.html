@@ -1474,9 +1474,14 @@ Dirección 20102h: 12h
 <p>Combinarlo con <code>DS</code> para formar una dirección física, que se calcula como: </p>
 </li>
 </ul>
-<p>$$
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \text{Dirección física} = (\text{Segmento} \times 16) + \text{Offset}
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+\text{Dirección física} = (\text{Segmento} \times 16) + \text{Offset}
+</script>
+</div>
 <ul>
 <li>Leer el valor de esa posición de memoria calculada en los dos pasos anteriores y copiaa ese valor en <code>AX</code>.</li>
 </ul>
@@ -1610,9 +1615,14 @@ Es por eso que la memoria máxima física del 8086 es de 1 MB (1.048.576 bytes).
 <li>Offset (16 bits): valor en registros como IP, SP, BP, SI, DI o inmediato.</li>
 <li>Dirección física:</li>
 </ul>
-<p>$$
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \text{Dirección física} = (\text{Segmento} \times 16) + \text{Offset}
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+\text{Dirección física} = (\text{Segmento} \times 16) + \text{Offset}
+</script>
+</div>
 <p>El ×16 = desplazar 4 bits a la izquierda : hace que los segmentos empiecen en múltiplos de 16. El offset puede variar hasta 64 KB. cada segmento cubre un bloque de 64 KB.</p>
 <table>
 <thead>
@@ -1975,6 +1985,8 @@ CX = 5678h
     
     
       <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
