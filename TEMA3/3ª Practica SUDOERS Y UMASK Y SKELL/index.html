@@ -1,0 +1,2165 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Práctica 3: Administración de permisos . - Módulo ISO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-3-administracion-de-permisos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Módulo ISO" class="md-header__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Módulo ISO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Práctica 3: Administración de permisos .
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Módulo ISO" class="md-nav__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Módulo ISO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Teoria/1.%20Teoria%20de%20Markdown%20SIMPLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (Markdown)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Teoria/2.%20Teor%C3%ADa%20de%20Sistemas%20Num%C3%A9ricos%20en%20Inform%C3%A1tica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Sistemas Numéricos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Teoria/3.%20Teoria%20de%20Almacenamiento%20de%20datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3er Archivo Teoría (Almacenamiento de datos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Teoria/4.%20Teoria%20%E2%80%94%20Hardware%20y%20Software%20b%C3%A1sico%20de%20un%20ordenador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4to Archivo Teoría (Hardware y Software)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Teoria/5.%20Teor%C3%ADa%20Sistemas%20Operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5to Archivo Teoría (Sistemas Operativos y Virtualización)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/1ªPractica.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/2.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Rellena%20la%20siguiente%20tabla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/3.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Probamos%20la%20CLI%20de%20Ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/4.%20Pr%C3%A1ctica%20%E2%80%94%20Curiosidades%20y%20importancia%20de%20los%20sistemas%20de%20enumeraci%C3%B3n%20binario%20y%20hexadecimal%20en%20la%20informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/4.2.%20Pr%C3%A1ctica%20%E2%80%94%20Comparaci%C3%B3n%20GUI%20vs%20CLI%20en%20Ubuntu%20e%20instalaci%C3%B3n%20de%20KDE%20%28copy%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (versión 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/5.%20Pr%C3%A1cticaTrabajoCooperativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Teoria/1%C2%AA%20Teoria%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (QEMU-KVM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Teoria/2%20Teor%C3%ADa%20de%20las%20instalaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Instalaciones y Particiones)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Practicas/1%C2%AA%20Pr%C3%A1ctica%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica (Opcional. Virtualizacion Anidada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Practicas/2%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20de%20Ubuntu%20sin%20LUKS%20%28sin%20LVM%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Practicas/3%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20Dual%20de%20ubuntu%20%2B%20Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Practicas/4%C2%AA%20Pr%C3%A1ctica%20Migraci%C3%B3n%20de%20un%20disco%20de%20120%20GB%20%28M%C3%A1s%20grande%29%20a%20otro%20de%20100%20GB%20%28M%C3%A1s%20chico%29%20usando%20GParted%20y%20el%20comando%20dd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica Guiada (Administración de permisos en directorios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica Guiada (Administración de permisos en binarios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practicas/4ª Practica APT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica Guiada (Uso de APT avanzado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índice
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Índice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1uso-de-etcskel-y-umask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.Uso de /etc/skel/ y umask
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.Uso de /etc/skel/ y umask">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#permisos-base-777" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos base (777)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#umask-023" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Umask (023)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negamos-la-umask-umask" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negamos la umask (~umask)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permisos-base-666" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Permisos base (666)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#umask-023_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Umask (023)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negamos-la-umask-umask_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negamos la umask (~umask)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2restringir-el-uso-de-ciertos-comandos-a-usuarios-a-grupos-y-crear-tus-propios-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.Restringir el uso de ciertos comandos a usuarios a grupos y crear tus propios comandos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Restringir el uso de ciertos comandos a usuarios a grupos y crear tus propios comandos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ejemplo-hacer-que-no-cualquiera-pueda-ejecutar-getent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Ejemplo Hacer que no cualquiera pueda ejecutar getent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-sobre-comandos-que-no-son-binarios-los-builtins-del-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Sobre comandos que NO son binarios: los builtins del shell
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Sobre comandos que NO son binarios: los builtins del shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#por-que-es-importante-esto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Por qué es importante esto?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-scripts-y-ejecucion-de-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Scripts y ejecución de scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Scripts y ejecución de scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-crear-un-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: Crear un script
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-anadir-scripts-como-comandos-al-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Añadir scripts como comandos al path
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Añadir scripts como comandos al path">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resumen-de-como-crear-tu-propio-comando-a-partir-de-un-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumen de como crear tu propio comando a partir de un script
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#-3-uso-de-los-archivos-etcsudoers-y-el-directorio-etcsudoersd-para-anadir-reglas-sobre-el-uso-de-sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        -3. Uso de los archivos /etc/sudoers y el directorio /etc/sudoers.d/ para añadir reglas sobre el uso de sudo.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="-3. Uso de los archivos /etc/sudoers y el directorio /etc/sudoers.d/ para añadir reglas sobre el uso de sudo.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-archivo-sudoers-etcsudoers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Archivo sudoers (/etc/sudoers):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-permitir-a-un-usuario-ejecutare-sudo-con-permisos-de-root" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Permitir a un usuario ejecutare sudo con permisos de root
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-creacion-de-reglas-propias-en-sudoersd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Creación de reglas propias (en sudoers.d)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practica-3-administracion-de-permisos">Práctica 3: Administración de permisos .</h1>
+<p><strong>Duración aprox:</strong> 3 clases (semana 10/11/2025)</p>
+<p>Entregable: Un documento de google o pdf con los comandos necesarios para la resolución de los ejercicios propuestos insertados.</p>
+<h2 id="indice">Índice</h2>
+<ol>
+<li>Uso de <code>/etc/skel/</code> y <code>umask</code></li>
+</ol>
+<p>1.1 ¿Qué archivos puedo poner en <code>/etc/skel/</code>? <strong>(Solo teoría)</strong></p>
+<p>1.2 ¿Por qué no se crean Documentos, Escritorio, Descargas... en home? <strong>(Realizar ejercicio)</strong></p>
+<p>1.3 .bashrc <strong>(Realizar ejercicio)</strong></p>
+<p>1.4 .profile <strong>(Solo toería)</strong></p>
+<p>1.5 umask <strong>(Realizar ejercicio)</strong></p>
+<ol>
+<li>Restringir el uso de ciertos comandos a usuarios a grupos y crear tus propios comandos</li>
+</ol>
+<p>2.1. Ejemplo Hacer que no <em>cualquiera</em> pueda ejecutar <code>getent</code> <strong>(Realizar ejercicio)</strong></p>
+<p>2.2. Sobre comandos que NO son binarios: los <em>builtins</em> del shell <strong>(Solo teoría)</strong></p>
+<p>2.3.  Scripts y ejecución de scrpts <strong>(Realizar ejercicio)</strong></p>
+<p>2.4.  Añadir scripts como comandos al path <strong>(Realizar ejercicio)</strong></p>
+<ol>
+<li>Uso de los archivos <code>/etc/sudoers</code> y el directorio <code>/etc/sudoers.d/</code> para añadir reglas sobre el uso de sudo.</li>
+</ol>
+<p>3.1 Archivo <code>sudoers</code> (<code>/etc/sudoers</code>):</p>
+<p>3.2 Permitir a un usuario ejecutare sudo con permisos de root <strong>(Realizar ejercicio)</strong></p>
+<p>3.3 Creación de reglas propias (en sudoers.d) <strong>(Realizar ejercicio)</strong></p>
+<hr />
+<h3 id="1uso-de-etcskel-y-umask">1.Uso de <code>/etc/skel/</code> y <code>umask</code></h3>
+<p><code>/etc/skel/</code> :  es una carpeta del sistema que funciona como plantilla para nuevos usuarios.  Cuando se crea un usuario con:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>nombre_usuario
+</code></pre></div>
+<p>El sistema copia todo lo que haya dentro de <code>/etc/skel/</code> al nuevo directorio <code>/home/nombre_usuario/</code>. Por defecto suele contener:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>.bashrc
+<span class="w">  </span>.profile
+<span class="w">  </span>.bash_logout
+</code></pre></div>
+<p>Si tú añades archivos o carpetas en <code>/etc/skel/</code>, todos los nuevos usuarios los recibirán automáticamente al ser creados.</p>
+<hr />
+<p>#### 1.1 ¿Qué archivos puedo poner en <code>/etc/skel/</code>?</p>
+<p>lo más sencillo es añadir una carpeta por defecto:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/skel/Scripts
+</code></pre></div>
+<p>Luego, al crear el usuario:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>pepe
+</code></pre></div>
+<p>Su <code>/home/pepe/</code> tendrá automáticamente:</p>
+<div class="highlight"><pre><span></span><code>/home/pepe/Scripts
+</code></pre></div>
+<hr />
+<p>#### 1.2 ¿Por qué no se crean Documentos, Escritorio, Descargas, etc.?</p>
+<p>Si te fijas en lo anterior, al crear Pepe y hacer:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ls<span class="w"> </span>/home/Pepe
+</code></pre></div>
+<p>Solo aparecen las siguientes carpetas:</p>
+<div class="highlight"><pre><span></span><code><span class="sb">`</span>.bashrc<span class="sb">`</span>,<span class="w"> </span><span class="sb">`</span>.profile<span class="sb">`</span>,<span class="w"> </span><span class="sb">`</span>.bash_aliases<span class="sb">`</span>,<span class="w"> </span>Scripts
+</code></pre></div>
+<p>Pero por ningún lado aparecen las carpetas:</p>
+<div class="highlight"><pre><span></span><code>Escritorio<span class="w"> </span>Documentos<span class="w"> </span>Descargas<span class="w"> </span>Imágenes<span class="w"> </span>Música<span class="w"> </span>Vídeos<span class="w"> </span>Plantillas<span class="w"> </span>Público
+</code></pre></div>
+<p>Esas carpetas NO provienen de <code>/etc/skel/</code>, sino del entorno gráfico (GNOME, XFCE, KDE) y de la herramienta <code>xdg-user-dirs</code>.</p>
+<p>Estas carpetas solo se crean si:</p>
+<ul>
+<li>El usuario inicia sesión en el escritorio gráfico, no solo en terminal.</li>
+<li>Está instalado <code>xdg-user-dirs</code>.  </li>
+<li>Es la primera vez que el usuario entra al entorno gráfico.</li>
+</ul>
+<p>Por eso si haces:</p>
+<div class="highlight"><pre><span></span><code>su<span class="w"> </span>pepe
+</code></pre></div>
+<p>Y luego:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>/home/pepe
+</code></pre></div>
+<p>Solo verás lo que había en <code>/etc/skel/</code> y no todas esas carpetas típicas de lo usuarios. Pero si Pepe inicia sesión desde pantalla gráfica, se crearán automáticamente:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>Escritorio
+<span class="w">  </span>Documentos
+<span class="w">  </span>Descargas
+<span class="w">  </span>Imágenes
+<span class="w">  </span>Música
+<span class="w">  </span>Vídeos
+<span class="w">  </span>Plantillas
+<span class="w">  </span>Público
+</code></pre></div>
+<p>También se pueden crear esas carpetas de forma firecta sin iniciar sesión e un entorno gráfico:</p>
+<ol>
+<li>Ejecutando el comando como el usuario (pequeño sopiler de lo que veremos en el punto 3, donde ejecutaremos comandos como usuarios):</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>pepe<span class="w"> </span>xdg-user-dirs-update
+</code></pre></div>
+<p>En este caso, eso es equivalente a:</p>
+<div class="highlight"><pre><span></span><code>su<span class="w"> </span>pepe
+xdg-user-dirs-update
+</code></pre></div>
+<ol>
+<li>Creándolas directamente en <code>/etc/skel/</code> para futuros usuarios:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/skel/<span class="o">{</span>Escritorio,Documentos,Descargas,Imágenes,Vídeos<span class="o">}</span>
+</code></pre></div>
+<p>De esa forma, las carpetas se crearán aunque no haya iniciado sesión en el entorno gráfico el usuario.</p>
+<p><strong><u>Ejercicio</u></strong></p>
+<p>Crea en /etc/skell la carpeta Archivos_secretos con mkdir y dentro de la carpeta Archivos secretos crea un txt (con nano) que contenga: "Este archivo es de un usuario".</p>
+<p>Después crea un nuevo usuario y comprueba con ls que tanto la carpeta como el archivo dentro de la carpeta se han creado. ¿Con qué permisos se crean por defecto?</p>
+<hr />
+<p>#### 1.3. <code>.bashrc</code></p>
+<p>Archivo que se ejecuta automáticamente cada vez que abres una terminal interactiva en Bash con un usuario (o al cambiar de sesión en terminal con <code>su</code>). Aquí se pueden definir <u>alias, variables</u> o funciones personalizadas. Como todavía no sabemos que es una función, solo veremos las dos primeras cosas.</p>
+<p>Un <em>alias</em> es como crear un “atajo” para un comando largo. Estos se pueden definir en .bashrc agregando una línea. Por ejemplo, si hacemos:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/home/manolo/.bashrc
+</code></pre></div>
+<p>Podemos añadir al final del archivo los siguientes "alias"</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Mostrar todos los archivos, incluso ocultos (los que empiezan por .)</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">la</span><span class="o">=</span><span class="s1">&#39;ls -a&#39;</span>
+
+<span class="c1"># Actualizar el sistema rápido (en Debian/Ubuntu)</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">actualizar</span><span class="o">=</span><span class="s1">&#39;sudo apt update &amp;&amp; sudo apt upgrade -y&#39;</span>
+
+<span class="c1"># Limpiar la terminal</span>
+<span class="nb">alias</span><span class="w"> </span><span class="nv">cls</span><span class="o">=</span><span class="s1">&#39;clear&#39;</span>
+</code></pre></div>
+<p>y después, recargar:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</code></pre></div>
+<p>De esta forma, cuando el usuario <code>manolo</code> escriba en terminal</p>
+<div class="highlight"><pre><span></span><code>actualizar
+</code></pre></div>
+<p>será equivalente a escribir</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+</code></pre></div>
+<p>Por otro lado, sobre .bashrc podemos definir variables de entorno. Una variable de entorno es un valor (texto) que el sistema o el usuario guarda temporalmente y que puede ser usado por programas, scripts o la terminal. Puedes ver todas las variables ejecutando:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span>printenv
+</code></pre></div>
+<p>algunas de las más importante son las siguientes (dependerán del usuario con quien las ejecutes)</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>¿Qué contiene?</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>$USER</code></td>
+<td>Nombre del usuario actual</td>
+<td><code>manolo</code></td>
+</tr>
+<tr>
+<td><code>$HOME</code></td>
+<td>Carpeta personal del usuario</td>
+<td><code>/home/manolo</code></td>
+</tr>
+<tr>
+<td><code>$PATH</code></td>
+<td>Rutas donde el sistema busca los comandos</td>
+<td><code>/usr/local/bin:/usr/bin:/bin</code></td>
+</tr>
+<tr>
+<td><code>$SHELL</code></td>
+<td>Qué intérprete de comandos estás usando</td>
+<td><code>/bin/bash</code></td>
+</tr>
+<tr>
+<td><code>$PWD</code></td>
+<td>Directorio en el que estás ahora</td>
+<td><code>/home/manolo/scripts</code></td>
+</tr>
+<tr>
+<td><code>$LANG</code></td>
+<td>Idioma y codificación del sistema</td>
+<td><code>es_ES.UTF-8</code></td>
+</tr>
+</tbody>
+</table>
+<p>Para ver el valor de una variable de entorno de las anteriores basta hacer:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$HOME</span>
+</code></pre></div>
+<p>Puedes definir variables de entorno específicas para el usuario en .bashrc</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">EDITOR</span><span class="o">=</span>nano<span class="w">  </span>
+<span class="c1"># Nombre del usuario como mensaje</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">MI_NOMBRE</span><span class="o">=</span><span class="s2">&quot;Manolo&quot;</span>
+</code></pre></div>
+<p>de esta forma,  al hacer (con el usuario manolo) en terminal:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$MI_NOMBRE</span>
+</code></pre></div>
+<p>la salida será: <code>manolo</code></p>
+<p>De hecho, podemos incluso añadir más información a variables del sistema ya predefinidas. Si añadimos la siguiente linea en .bashrc</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ruta personalizada para guardar scripts propios</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/scripts:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</code></pre></div>
+<p>estamos haciendo que <code>$PATH</code> pase de valer:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">/usr/local/sbin</span><span class="o">:</span>/<span class="n">usr</span>/<span class="n">local</span>/<span class="n">bin</span>:/<span class="n">usr</span>/<span class="n">sbin</span>:/<span class="n">usr</span>/<span class="n">bin</span>:/<span class="n">sbin</span>:/<span class="n">bin</span>
+</code></pre></div>
+<p>a valer:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">/home/tu_usuario/scripts</span><span class="o">:</span>/<span class="n">usr</span>/<span class="n">local</span>/<span class="n">sbin</span>:/<span class="n">usr</span>/<span class="n">local</span>/<span class="n">bin</span>:/<span class="n">usr</span>/<span class="n">sbin</span>:/<span class="n">usr</span>/<span class="n">bin</span>:/<span class="n">sbin</span>:/<span class="n">bin</span>
+</code></pre></div>
+<p><strong><u>Ejercicio</u></strong></p>
+<p>-En /etc/skell no vas a añadir nada más (a diferencia del apartado anterior). Lo que vas a hacer es:</p>
+<p>-Con el editor <code>nano</code> vas a editar <code>.bashrc</code> en el perfil en <code>manolo</code>y vas a añadir un alias llamado "crear" que será crea un usuario con las opciones: <code>-m</code>, <code>-s /bin/bash</code>. para que hagan efecto, deberás recargar este archivo:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nb">source</span><span class="w"> </span>~/.bashrc
+</code></pre></div>
+<p>-Después haz lo mismo y añade este alias en <code>.bashrc</code> pero en el de <code>/etc/skell</code>, ¿cuál es la diferencia a hacerlo sobre manolo?</p>
+<p>-Con el editor <code>nano</code> vas a editar <code>.bashrc</code> en el perfil en <code>manolo</code>y vas a añadir una variable llamada "dia" que se referirá al día. Para añadirla, deberás añadir lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nb">export</span><span class="w"> </span><span class="nv">date</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span><span class="s1">&#39;+%Y-%m-%d %H:%M:%S&#39;</span><span class="k">)</span>
+</code></pre></div>
+<p>-Después haz lo mismo y añade este alias en <code>.bashrc</code> pero en el de <code>/etc/skell</code>, ¿cuál es la diferencia a hacerlo sobre manolo?</p>
+<p>-Por último, crea un usuario nuevo y comprueba que este usuario nuevo que has creado va a poder usar el <code>alias</code>: "crear" y puede utilizar la <code>variable de entorno</code> <code>$date</code> en su terminal.</p>
+<hr />
+<p>#### <strong>1.4. <code>.profile</code></strong></p>
+<p>Se ejecuta al entrar en el sistema. No se ejecuta cada vez que abres una terminal nueva como <code>.bashrc</code>. Se usa para configurar el entorno del usuario, especialmente variables de entorno globales.</p>
+<p>Lo que os tiene que quedar claro es que aquí definiremos variable de entorno que siempre deben de existir, no sólo cuando abramos la terminal. No tiene mucho sentido entrar en detalle en .profile pero lo dejo como concepto teórico.</p>
+<hr />
+<p>#### <strong>1.5. <code>.umask</code></strong></p>
+<p><code>umask</code> significa User Mask o máscara de permisos del usuario. Define qué permisos se desactivan por defecto cuando un usuario crea un archivo o un directorio. Se suele decir que, <code>umask</code> resta permisos de los valores por defecto del sistema bajo la siguiente fórmula:</p>
+<div class="highlight"><pre><span></span><code>permisos<span class="w"> </span><span class="nv">finales</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>permisos<span class="w"> </span>base<span class="w"> </span>-<span class="w"> </span><span class="nb">umask</span>
+</code></pre></div>
+<p>Pero esta fórmula sólo funcionará en casos concretos, ya que en el caso de los binario, los permisos base son: 666 mientras que en el caso de las carpetas los permisos base son 777. Vamos a ver como aplicar la fórmula con un umask de 023.</p>
+<p><u>Carpetas:</u></p>
+<h5 id="permisos-base-777">Permisos base (777)</h5>
+<p>Cada dígito octal → 3 bits binarios:</p>
+<ul>
+<li>7 → 111</li>
+<li>7 → 111</li>
+<li>7 → 111</li>
+</ul>
+<h5 id="umask-023">Umask (023)</h5>
+<ul>
+<li>0 → 000</li>
+<li>2 → 010</li>
+<li>3 → 011</li>
+</ul>
+<h5 id="negamos-la-umask-umask">Negamos la umask (~umask)</h5>
+<p>umask: 111 101 100</p>
+<p><strong>Finalizamos haciendo un AND digito a digito</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nf">permisos_base</span><span class="o">:</span><span class="w"> </span>111 111 111 
+
+<span class="nf">umask</span><span class="o">:</span><span class="w">         </span>111 101 100 
+
+<span class="err">--------------------------</span>
+
+<span class="nf">AND resultado</span><span class="o">:</span><span class="w"> </span>111 101 100
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nf">Estamos haciendo una operación AND dígito a dígito, recordar que</span><span class="o">:</span>
+
+<span class="err">1</span><span class="w"> </span><span class="err">AND</span><span class="w"> </span><span class="nv">1</span><span class="o">=</span><span class="m">0</span>
+
+<span class="err">1</span><span class="w"> </span><span class="err">AND</span><span class="w"> </span><span class="nv">0</span><span class="o">=</span><span class="m">0</span>
+
+<span class="err">0</span><span class="w"> </span><span class="err">AND</span><span class="w"> </span><span class="nv">1</span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="err">0</span><span class="w"> </span><span class="err">AND</span><span class="w"> </span><span class="nv">0</span><span class="w"> </span><span class="o">=</span><span class="m">0</span>
+
+<span class="nf">luego obtenemos = 111 101 100 que nos da el número 754=777-023</span><span class="o">:</span><span class="w"> </span><span class="n">en</span> <span class="n">este</span> <span class="n">caso</span> <span class="n">funciona</span> <span class="n">la</span> <span class="n">f</span>ó<span class="n">rmula</span>!
+</code></pre></div>
+<p><u>Binarios</u></p>
+<h5 id="permisos-base-666">Permisos base (666)</h5>
+<p>Cada dígito octal → 3 bits binarios:</p>
+<ul>
+<li>6 → 110</li>
+<li>6 → 110</li>
+<li>6 → 110</li>
+</ul>
+<h5 id="umask-023_1">Umask (023)</h5>
+<ul>
+<li>0 → 000</li>
+<li>2 → 010</li>
+<li>3 → 011</li>
+</ul>
+<h5 id="negamos-la-umask-umask_1">Negamos la umask (~umask)</h5>
+<p>umask: 111 101 100</p>
+<p><strong>Finalizamos haciendo un AND digito a digito</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nf">permisos_base</span><span class="o">:</span><span class="w"> </span>110 110 110 
+
+<span class="nf">umask</span><span class="o">:</span><span class="w">         </span>111 101 100
+
+<span class="err">---------------------------</span>
+
+<span class="nf">AND resultado</span><span class="o">:</span><span class="w"> </span>111 100 100
+</code></pre></div>
+<p>cuyo resultado es 644, que no es 666-023=643 luego en este caso, la fórmula no funciona.</p>
+<p>Visto lo anterior, ya sabemos los permisos finales que vamos a obtener, es decir, si creo un archivo los permisos serán 644 y si creo un directorio, 754. La pregunta es, ¿cómo miro que máscara tiene mi equipo y cómo la cambio? Vamos a ver primero como cambiarla:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">umask</span><span class="w"> </span><span class="m">023</span><span class="w"> </span><span class="c1">#la cambio</span>
+nano<span class="w"> </span>archivo1<span class="w"> </span><span class="c1">#creo un archivo</span>
+mkdir<span class="w"> </span>carpeta1<span class="w"> </span><span class="c1">#creo una carpeta</span>
+ls<span class="w"> </span>-ld<span class="w"> </span>archivo1<span class="w"> </span>carpeta1<span class="w"> </span><span class="c1">#visualizo los permisos</span>
+</code></pre></div>
+<p>Salida esperada:</p>
+<div class="highlight"><pre><span></span><code><span class="err">-rw-r--r--</span><span class="w"> </span><span class="err">archivo1</span><span class="w"> </span><span class="c">#644</span>
+<span class="err">drwxr-xr-x</span><span class="w"> </span><span class="err">carpeta1</span><span class="w"> </span><span class="c">#754</span>
+</code></pre></div>
+<p>Justo lo esperado. </p>
+<p>En lo anterior, umask 023 sólo servirá para la sesión actual. Si quieres que un usuario específico tengo un umask (específico del usuario) para siempre sin tener que cambiarlo cada vez que me meto en terminal , lo lógico es meter este umask dentro de <code>.bashrc</code>. Es decir, si root quiere que manolo siempre tenga 027 como <code>umask</code> deberá ejecutar lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;umask 027&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/home/manolo/.bashrc
+</code></pre></div>
+<p>si quiere que paco tenga el <code>umask 022</code> deberá hacer lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;umask 027&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/home/paco/.bashrc
+</code></pre></div>
+<p>Ojo, lo anterior también se podría meter en <code>.profile</code>.</p>
+<p>Si quieres que todos los usuarios tengan siempre el umask <code>027</code> por defecto lo que habría que hacer es meter este <code>umask</code> en el <code>.bashrc</code> o <code>.profile</code> de <code>/etc/skell</code> para que cada vez que creee un usuario herenden ese <code>umask</code>. </p>
+<p>También se puede editar <code>/etc/profile</code> ( archivo de configuración global  para todos los usuarios del shell Bash y otros shells de login, se ejecuta cada vez que un usuario inicia sesión en el sistema). Si se añade ahí un nuevo umask,  se cambiará para todos los usuarios al que pongamos en este archivo.</p>
+<p><strong><u>Ejercicio</u></strong></p>
+<ul>
+<li>
+<p>Inicia sesión con el usuario que creaste al iniciar la máquina virtual.</p>
+</li>
+<li>
+<p>Comprueba con</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">umask</span>
+</code></pre></div>
+<p>el umask por defecto.</p>
+<ul>
+<li>Después, ejecuta:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nb">umask</span><span class="w"> </span>-S
+</code></pre></div>
+<p>¿Que observas?</p>
+<ul>
+<li>
+<p>Desde ese mismo usuario, vas a editar con <code>nano</code> su propio <code>.bashrc</code> de forma que su umask va a ser 022. Una vez edites <code>.bashrc</code> no olvides recargarlo. Crear un archivo y un directorio y comprueba que efectivamente tienen los permisos que por defecto dicta <code>umask</code>.</p>
+</li>
+<li>
+<p>Desde ese mismo usuario, vas a editar con <code>nano</code> al <code>.bashrc</code> de <code>/etc/skel</code> de forma que su umask va a ser 025. Crea un usuario nuevo y crea un archivo y un directorio con ese nuevo usuario. Comprueba sobre el archivo y el directorio recien creados que sus permisos de creación son los definidos en el umask de <code>/etc/skell/.bashrc</code></p>
+</li>
+</ul>
+<hr />
+<h2 id="2restringir-el-uso-de-ciertos-comandos-a-usuarios-a-grupos-y-crear-tus-propios-comandos">2.Restringir el uso de ciertos comandos a usuarios a grupos y crear tus propios comandos</h2>
+<p>Aunque no lo parezca, cuando ejecutamos comandos como los vistos hasta ahora (<code>ls</code>, <code>cat</code>, <code>useradd</code>, <code>groupadd</code>, <code>getent</code>, <code>chown</code>, <code>chmod</code>, <code>nano</code>, <code>mkdir</code>, <code>chage</code>...), todos se ejecutan a partir de un archivo binario ejecutable (o de un script ejecutable). Como buen archivo, tienen permisos y una ubicación en el sistema de ficheros.</p>
+<p>Los ejecutables del sistema se organizan en varios directorios estándar:</p>
+<ul>
+<li>
+<p><code>/bin</code> y <code>/usr/bin</code>comandos esenciales para todos los usuarios (p. ej. <code>ls</code>, <code>cat</code>, <code>mkdir</code>, <code>chmod</code>). Contiene los <em>comandos esenciales</em> del sistema que pueden ser usados por cualquier usuario, no solo por root.</p>
+</li>
+<li>
+<p><code>/sbin</code> y <code>/usr/sbin</code> comandos para administración del sistema (p. ej. <code>useradd</code>, <code>groupadd</code>, <code>fdisk</code>). Suelen ser para el administrador (root). Contiene comandos esenciales para la administración del sistema, generalmente destinados a root o administradores. No están pensados para usuarios normales.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nf">En sistemas modernos como Ubuntu o Debian actuales, muchos de estos directorios se han unificado, es decir, se han juntado en uno solo de la siguiente forma</span><span class="o">:</span>
+
+<span class="w">  </span>-<span class="w"> </span><span class="sb">`</span>/bin<span class="w"> </span>con<span class="w"> </span>/usr/bin<span class="sb">`</span>
+<span class="w">  </span>-<span class="w"> </span><span class="sb">`</span>/sbin<span class="w"> </span>con<span class="w"> </span>/usr/sbin<span class="sb">`</span>
+</code></pre></div>
+<p>Esto se puede ver en la siguiente captura</p>
+<p><img alt="image-20251105230550907" src="/home/manolo/.config/Typora/typora-user-images/image-20251105230550907.png" /></p>
+<ul>
+<li><code>/usr/local/bin</code>, <code>/usr/local/sbin</code> programas instalados localmente por el administrador (no gestionados por el gestor de paquetes del sistema). Veremos mas tarde como usar esto.</li>
+</ul>
+<p>Aquí os dejo a modo de resumen las rutas donde se encuentras los comandos utilizados hasta ahora en las práctica 1 y 2.</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Ruta típica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ls</td>
+<td>/bin/ls</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>/bin/cat</td>
+</tr>
+<tr>
+<td>useradd</td>
+<td>/usr/sbin/useradd</td>
+</tr>
+<tr>
+<td>usermod</td>
+<td>/usr/sbin/usermod</td>
+</tr>
+<tr>
+<td>passwd</td>
+<td>/usr/bin/passwd</td>
+</tr>
+<tr>
+<td>groupadd</td>
+<td>/usr/sbin/groupadd</td>
+</tr>
+<tr>
+<td>groupdel</td>
+<td>/usr/sbin/groupdel</td>
+</tr>
+<tr>
+<td>chown</td>
+<td>/bin/chown (o /usr/bin/chown)</td>
+</tr>
+<tr>
+<td>chmod</td>
+<td>/bin/chmod</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>/bin/mkdir</td>
+</tr>
+<tr>
+<td>chage</td>
+<td>/usr/bin/chage</td>
+</tr>
+<tr>
+<td>getent</td>
+<td>/usr/bin/getent</td>
+</tr>
+<tr>
+<td>su</td>
+<td>/bin/su</td>
+</tr>
+<tr>
+<td>userdel</td>
+<td>/usr/sbin/userdel</td>
+</tr>
+<tr>
+<td>nano</td>
+<td>/usr/bin/nano</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>/usr/bin/groups</td>
+</tr>
+<tr>
+<td>gpasswd</td>
+<td>/usr/bin/gpasswd</td>
+</tr>
+<tr>
+<td>newgrp</td>
+<td>/usr/bin/newgrp</td>
+</tr>
+<tr>
+<td>pkill</td>
+<td>/usr/bin/pkill</td>
+</tr>
+<tr>
+<td>sudo</td>
+<td>/usr/bin/sudo</td>
+</tr>
+<tr>
+<td>visudo</td>
+<td>/usr/sbin/visudo</td>
+</tr>
+<tr>
+<td>echo</td>
+<td>builtin (shell) — /usr/bin/echo</td>
+</tr>
+<tr>
+<td>chmod (ejemplos)</td>
+<td>/bin/chmod</td>
+</tr>
+</tbody>
+</table>
+<h4 id="21-ejemplo-hacer-que-no-cualquiera-pueda-ejecutar-getent">2.1. Ejemplo Hacer que no <em>cualquiera</em> pueda ejecutar <code>getent</code></h4>
+<p>(Nunca editar los permisos de los comandos del sistema, esto puede corromper vuestro equipo, de hecho, si hacéis que no cualquiera pueda ejecutar getent, programas como firefox o chrome VAN a dejar de funcionar directamente)</p>
+<p>Normalmente <code>getent</code> ya es ejecutable por todos. Para comprobarlo:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-l<span class="w"> </span><span class="k">$(</span>which<span class="w"> </span>getent<span class="k">)</span><span class="w"> </span><span class="c1">#es equivalente a ls -ld /usr/bin/getent</span>
+
+<span class="c1"># salida típica: -rwxr-xr-x 1 root root 123456 jul  1 12:34 /usr/bin/getent</span>
+</code></pre></div>
+<p>Si por alguna razón no fuera ejecutable por otros, puede hacerlo con:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chmod<span class="w"> </span>o-rx<span class="w"> </span>/usr/bin/getent
+<span class="c1"># o, explícito con los permisos octales:</span>
+<span class="c1"># sudo chmod 755 /usr/bin/getent</span>
+</code></pre></div>
+<p>Comprobación:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># como usuario normal distinto de root</span>
+getent<span class="w"> </span>passwd<span class="w"> </span>yourusername
+<span class="c1">#debería dar error</span>
+</code></pre></div>
+<p>Si prefieres que sólo miembros de un grupo puedan ejecutar <code>getent</code> (p. ej. <code>useradmins</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># crear grupo si no existe</span>
+sudo<span class="w"> </span>groupadd<span class="w"> </span>useradmins
+<span class="c1"># cambiar grupo del ejecutable</span>
+sudo<span class="w"> </span>chown<span class="w"> </span>root:useradmins<span class="w"> </span>/usr/bin/getent
+<span class="c1"># quitar permisos para otros y poner permisos de grupo ejecutables</span>
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">750</span><span class="w"> </span>/usr/bin/getent<span class="w">   </span><span class="c1"># rwx r-x ---</span>
+<span class="c1"># añadir un usuario al grupo (por ejemplo, manolo)</span>
+sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>useradmins<span class="w"> </span>manolo
+</code></pre></div>
+<p>Ahora sólo root y los miembros del grupo <code>useradmins</code> podrán ejecutar <code>getent</code>.</p>
+<p><strong><u>Ejercicio entregable</u></strong></p>
+<p>Crear el usuario "useradmin". Deberás hacer que él sea el unico usuario del sistema que pueda gestionar los usuarios, es decir, nadie excepto el podrá ejecutar:</p>
+<p><code>usermod</code>, <code>useradd</code>, <code>getent</code>, <code>userdel</code>, <code>groupadd</code>, <code>groupdel</code>, <code>passwd</code>, <code>gpasswd</code>.</p>
+<p>Después, crea el grupo "groupadmins" y añade a un usuario al grupo (para que no te pete el SO). Todas las personas de este grupo podrán ejecutar:</p>
+<p><code>groupadd</code>, <code>groupdel</code>, <code>passwd</code>, <code>gpasswd</code>.</p>
+<p>pero no podrán leer esto archivos.</p>
+<p><u><strong>Una vez terminado esto, deshaz los cambios hechos.</strong></u></p>
+<hr />
+<h4 id="22-sobre-comandos-que-no-son-binarios-los-builtins-del-shell">2.2 Sobre comandos que NO son binarios: los <em>builtins</em> del shell</h4>
+<p>Algunos comandos como <code>echo</code>, <code>cd</code>, <code>pwd</code>, <code>exit</code>, <code>history</code>, <code>umask</code>, <code>read</code>, entre otros, no existen como archivos ejecutables en /bin o /usr/bin, sino que están integrados dentro del propio shell (bash, zsh, dash…). A estos comandos se les llama builtins.</p>
+<h5 id="por-que-es-importante-esto">¿Por qué es importante esto?</h5>
+<p>Porque no podemos cambiar sus permisos con <code>chmod</code> ni restringirlos desde el sistema de archivos, ya que no son archivos, sino código interno del intérprete de comandos. Puedes comprobar si un comando es builtin así:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="w"> </span>comando
+</code></pre></div>
+<p>Ejemplos:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">type</span><span class="w"> </span><span class="nb">echo</span><span class="w">   </span><span class="c1"># echo is a shell builtin</span>
+<span class="nb">type</span><span class="w"> </span><span class="nb">cd</span><span class="w">     </span><span class="c1"># cd is a shell builtin</span>
+<span class="nb">type</span><span class="w"> </span><span class="nb">pwd</span><span class="w">    </span><span class="c1"># pwd is a shell builtin</span>
+</code></pre></div>
+<h4 id="23-scripts-y-ejecucion-de-scripts">2.3 Scripts y ejecución de scripts</h4>
+<p>Un <strong>script</strong> es un archivo de texto que contiene comandos escritos para el sistema operativo para ejecutarse del tirón.  Se ejecuta línea por línea como si los escribieras manualmente en la terminal.</p>
+<p>Características básicas:</p>
+<ul>
+<li>Es un archivo de texto plano que se puede crear con nano</li>
+<li>Comienza con una línea llamada <strong>shebang</strong>, que indica qué intérprete debe ejecutarlo (<code>bash</code>, <code>sh</code>, etc.). En el siguiente ejemplo decimos que el script se ejecute con /bin/sh</li>
+<li>Necesita permisos de ejecución para poder ejecutarse como programa.</li>
+</ul>
+<p>Ejemplo de script (<code>hola.sh</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hola, mundo&quot;</span>
+</code></pre></div>
+<h5 id="ejemplo-crear-un-script"><u>Ejemplo: Crear un script</u></h5>
+<p>Hacemos nano y en nombre del script.</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>hola.sh
+</code></pre></div>
+<p>Contenido:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/sh</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hola, mundo&quot;</span>
+</code></pre></div>
+<p>Luego guardas el archivo (<code>Ctrl + O</code>, <code>Enter</code>, <code>Ctrl + X</code>). En este caso este script lo único que hará sera escribir en pantalla "hola mundo". La pregunta es, ¿cómo ejecutamos un script? Basta convertirlo a ejecutable</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>+x<span class="w"> </span>hola.sh<span class="w"> </span><span class="c1">#damos permisos de ejecucion a todos.</span>
+</code></pre></div>
+<p>Para ejecutarlo solo hace falta poner <u>la ruta absoluta del script</u>, que se puede hacer de dos formas:</p>
+<ul>
+<li>se escribe un <code>.</code>(carpeta actual) + <code>ruta relativa del script</code>, es decir, si la ruta absoluta del script es:</li>
+</ul>
+<p><code>/home/manolo/scripts/hola.sh</code> podemos ejecutar el script así:</p>
+<div class="highlight"><pre><span></span><code>manolo@manolo:~/hola$<span class="w"> </span>./hola.sh
+</code></pre></div>
+<ul>
+<li>o si quieras directamente la ruta absoluta</li>
+</ul>
+<div class="highlight"><pre><span></span><code>manolo@mi_lapto:~$<span class="w"> </span>/home/manolo/scripts/hola.sh
+</code></pre></div>
+<p>Si quitáis los permisos de ejecución, no os habría dejado ejecutar.</p>
+<p>Un apunte importante es que también se puede ejecutar como:</p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>hola.sh
+</code></pre></div>
+<p>y en este caso, solo haría falta permisos de lectura y no de ejecución.</p>
+<p>Quedan muchíiiiiiiiiiisimas cosas sobre scripts, que iremos viendo conforme avanzamos.</p>
+<p><strong><u>Ejercicio entregable</u></strong></p>
+<p>Crear el script "creación_hola_ls.sh". El script deberá crear una carpeta llamada "hola" de forma relativa a donde lo ejecutes. Hazto seguido, deberá de mirar los permisos de la carpeta hola creada. Después, da permisos de ejecución al script creado y por último, ejecútalo y comprueba que se obtiene lo esperado.</p>
+<h4 id="24-anadir-scripts-como-comandos-al-path">2.4 Añadir scripts como comandos al path</h4>
+<p><code>PATH</code> le dice al sistema dónde buscar los comandos que escribes en la terminal. Puedes ver su valor con:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="nv">$PATH</span>
+</code></pre></div>
+<p>Ejemplo de salida típica:</p>
+<div class="highlight"><pre><span></span><code>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+</code></pre></div>
+<p>Esto significa: Cuando escribes un comando, por ejemplo <code>ls</code>, el sistema busca en cada carpeta del PATH (en ese orden) hasta encontrarlo, es decir, cuando haces:</p>
+<div class="highlight"><pre><span></span><code>ls
+</code></pre></div>
+<p>En realidad estás ejecutando el script <code>/bin/ls</code> (de esto ya hemos hablando en el punto 1). Por tanto, es equivalente a esto:</p>
+<div class="highlight"><pre><span></span><code>manolo@manolo:$<span class="w"> </span>./bin/ls
+</code></pre></div>
+<p>Ahora vamos a añadir al path el script creado en el punto anterior, primero, lo movemos a una carpeta que esté en el path (la que quieras)</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mv<span class="w"> </span>/home/manolo/scripts/hola.sh<span class="w"> </span>/usr/local/bin/hola
+</code></pre></div>
+<p>ojo, en este caso no estamos sólo moviendo, si no que estamos renombrando quitando la extensión sh al archivo. Eliminar <code>.sh</code> hace que parezca un comando real del sistema y es lo normal. Si no quisieramos renombrarlo y hacer que mantenga el <code>.sh</code> después de hola, en el destino pondríamos lo siguiente:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mv<span class="w"> </span>/home/manolo/scripts/hola.sh<span class="w"> </span>/usr/local/bin/
+</code></pre></div>
+<p>de esta forma mantendríamos el nombre original.  Después de moverlo, damos los permisos a nuestro script.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chown<span class="w"> </span>root:root<span class="w"> </span>/usr/local/bin/hola
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/usr/local/bin/hola
+</code></pre></div>
+<p>ya estamos en condiciones de usar nuestro comando propio. Como le hemos dado el nombre "hola", basta hacer:</p>
+<div class="highlight"><pre><span></span><code>hola
+<span class="c1"># Salida: Hola, mundo</span>
+</code></pre></div>
+<p>Y... ¡Tu script ahora es un comando del sistema! Los haremos más difíciles, no os precupéis ;)</p>
+<h5 id="resumen-de-como-crear-tu-propio-comando-a-partir-de-un-script">Resumen de como crear tu propio comando a partir de un script</h5>
+<table>
+<thead>
+<tr>
+<th>Paso</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Crear <code>hola.sh</code> con nano y añade qué quieres que haga el comando</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>chmod +x hola.sh</code> (dale permisos de ejecución para todos y prueba que funciona)</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>sudo mv hola.sh /usr/local/bin/hola</code> (muevelo a una carpeta del paz y quita el .sh)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>sudo chmod 755 /usr/local/bin/hola</code> (dale permisos de ejecución que tu quieras al comando)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Ejecutar simplemente con <code>hola</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong><u>Ejercicio entregable</u></strong></p>
+<p>Crea el comando "mkdir_ls" a partir del script creado en la práctica anterior.</p>
+<hr />
+<h2 id="-3-uso-de-los-archivos-etcsudoers-y-el-directorio-etcsudoersd-para-anadir-reglas-sobre-el-uso-de-sudo">-3. Uso de los archivos <code>/etc/sudoers</code> y el directorio <code>/etc/sudoers.d/</code> para añadir reglas sobre el uso de sudo.</h2>
+<p><strong><code>su</code> vs <code>sudo</code>:</strong></p>
+<ul>
+<li>Ya hemos visto <code>su</code> en la práctica 1 y 2 sirve para cambiar de usuario a otro (por ejemplo <code>su - root</code> o sólo <code>su</code> cambia al usuario <code>root</code>) y requiere la contraseña del otro usuario. </li>
+<li><code>sudo</code> va por otro lado, en vez de tener que cambiar a otro usuario, permite ejecutar comandos específicos con privilegios de otro usuario (es decir, con sudo puedo ejecutar un comando con los permisos de otro usuario sin necesidad de saberme su contraseña)</li>
+</ul>
+<p>Supongamos que un comando (por ejemplo <code>gpasswd</code>) tienen permisos asociados para que solo levi o root los pueda ejecuta.  Si manolo ejecuta:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>levi<span class="w"> </span>gpasswd<span class="w"> </span>exploradores<span class="w"> </span>
+</code></pre></div>
+<p>en realidad está diciendo: "la persona que ejecuta <code>gpasswd exploradores</code> no es <code>manolo</code> si no que es <code>levi</code>. básicamente sería equivalente a:</p>
+<div class="highlight"><pre><span></span><code>manolo@mi_lapto:~$<span class="w"> </span>su<span class="w"> </span>levi
+levi@mi_lapto:~$<span class="w"> </span>gpasswd<span class="w"> </span>exploradores<span class="w"> </span>
+</code></pre></div>
+<p>pero con la ventaja de no tener que cambiar de usuario ya que puede ser que no nos conozcamos la contraseña de <code>levi</code>. </p>
+<p>Otro ejemplo es el siguiente:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>gpasswd<span class="w"> </span>exploradores<span class="w"> </span>
+</code></pre></div>
+<p>en realidad está diciendo: "la persona que ejecuta <code>gpasswd exploradores</code> no es <code>manolo</code> si no que es <code>root</code>. básicamente sería equivalente a:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>gpasswd<span class="w"> </span>exploradores<span class="w"> </span>
+</code></pre></div>
+<p>y esto a su vez sería equivalente a_</p>
+<div class="highlight"><pre><span></span><code>manolo@mi_lapto:~$<span class="w"> </span>su<span class="w"> </span>root
+root@mi_lapto:~$<span class="w"> </span>gpasswd<span class="w"> </span>exploradores
+</code></pre></div>
+<p>la ventaja es que con sudo no tenemos que sabernos la contraseña de root.</p>
+<p>Ojo, en lo anterior, si <code>levi</code> no es administrador de exploradores, dará fallo igualmente, pero eso no es lo que configuramos en <code>/etc/sudoers</code> lo que configuramos en este archivo llamado <code>sudoers</code> es que <code>manolo</code> tendrá permisos para ejecutar <code>gpasswd</code> como si fuera levi, si el comando falla después porque <code>levi</code> en realidad no era administrador de un grupo no es competencias de <code>sudoers</code>.</p>
+<hr />
+<h4 id="31-archivo-sudoers-etcsudoers"><strong>3.1 Archivo <code>sudoers</code> (<code>/etc/sudoers</code>):</strong></h4>
+<p>El archivo <code>sudoers</code> determina tres cosas fundamentales:</p>
+<ol>
+<li><strong>Quién puede usar <code>sudo</code></strong>
+    (usuarios o grupos autorizados)</li>
+<li><strong>Sobre qué comandos puede usar <code>sudo</code></strong>
+    (todos los comandos o solo algunos específicos)</li>
+<li><strong>Con los privilegios de qué usuario o grupo se ejecutarán esos comandos</strong>. Por ejemplo, como el usuario <code>levi</code> (ver ejemplos de arriba), como el usuario <code>root</code> (sin poner -u en sudo), como el grupo <code>exploradores</code> (poniendo la opción -g en sudo), etc.</li>
+</ol>
+<p>El archivo que indica los permisos con los que puede usar sudo es: <code>/etc/sudoers</code> (nunca editar directamente con un editor normal, usar <code>visudo</code>).  Realmente la buenas práctica: añadir reglas en archivos dentro de <code>/etc/sudoers.d/</code> en vez de editar <code>/etc/sudoers</code> directamente.</p>
+<p>Para arbir el archivo <code>sudoers</code>, se hace así:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>visudo<span class="w"> </span>/etc/sudoers
+<span class="c1">#o solamente</span>
+sudo<span class="w"> </span>visudo
+</code></pre></div>
+<p>Esto lo abre de forma segura para que no puedas editarlo. Vemos al final del archivo lo siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="c"># User privilege specification</span>
+<span class="nf">root    ALL=(ALL</span><span class="o">:</span><span class="n">ALL</span>) <span class="n">ALL</span>
+
+<span class="c"># Members of the admin group may gain root privileges</span>
+<span class="err">%admin</span><span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span><span class="w"> </span>ALL
+
+<span class="c"># Allow members of group sudo to execute any command</span>
+<span class="nf">%sudo   ALL=(ALL</span><span class="o">:</span><span class="n">ALL</span>) <span class="n">ALL</span>
+</code></pre></div>
+<p>Estas líneas siguen los siguientes pratrones:</p>
+<div class="highlight"><pre><span></span><code>usuario<span class="w"> </span><span class="nv">HOST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>USUARIOS:GRUPOS<span class="o">)</span><span class="w"> </span>COMANDOS
+%grupo<span class="w"> </span><span class="nv">HOST</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>USUARIOS:GRUPOS<span class="o">)</span><span class="w"> </span>COMANDOS
+</code></pre></div>
+<p>Vamos a ver que significa cada una de las tres lineas que vemos con visudo:</p>
+<hr />
+<div class="highlight"><pre><span></span><code>root<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span><span class="w"> </span>ALL
+</code></pre></div>
+<p>Entonces, en este caso:</p>
+<ul>
+<li><code>ALL</code> antes del <code>=</code> → desde cualquier host (ordenador).</li>
+<li><code>(ALL:ALL)</code> → puede ejecutar comandos como cualquier usuario y como cualquier grupo.</li>
+<li>Después, <code>ALL</code> → puede ejecutar cualquier comando</li>
+</ul>
+<p><strong>Ejemplo práctico</strong></p>
+<p>Supongamos que estás conectado como <code>root</code>, podrías ejecutar:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>manolo<span class="w"> </span>whoami
+</code></pre></div>
+<p>Que devolvería manolo. De hecho en lugar de -u manolo, peudes poner el usuario que quieres y en donde hemos puesto el comando <code>whoami</code> podrías poner el comando que quieras. En conclusión: root puede ejecutar cualquier comando (en este caso <code>whoami</code>) como cualquier usuario (en este caso <code>manolo</code>)</p>
+<hr />
+<div class="highlight"><pre><span></span><code>%admin<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span><span class="w"> </span>ALL
+</code></pre></div>
+<p>Entonces, en este caso:</p>
+<ul>
+<li>
+<p><code>admin</code> nombre del grupo</p>
+</li>
+<li>
+<p><code>ALL</code> antes del <code>=</code> → desde cualquier host (ordenador).</p>
+</li>
+<li>
+<p><code>(ALL:ALL)</code> → puede ejecutar comandos como cualquier usuario</p>
+</li>
+<li>
+<p>Después, <code>ALL</code> → puede ejecutar cualquier comando</p>
+</li>
+</ul>
+<p><strong>Ejemplo práctico</strong></p>
+<p>Supongamos que estás conectado como <code>rigobertoñ</code>, usuario que está dentro del grupo <code>admin</code>. Podrías ejecutar:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>whoami
+</code></pre></div>
+<p>Que devolvería root. De hecho podrías poner -u <code>levi</code>, o incluso puedes poner el usuario que quieres y en donde hemos puesto el comando <code>whoami</code> podrías poner el comando que quieras. En conclusión: root puede ejecutar cualquier comando (en este caso <code>whoami</code>) como cualquier usuario (en este caso <code>root</code>)</p>
+<hr />
+<div class="highlight"><pre><span></span><code>%sudo<span class="w">   </span><span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span><span class="w"> </span>ALL
+</code></pre></div>
+<ul>
+<li>
+<p><code>sudo</code> nombre del grupo</p>
+</li>
+<li>
+<p><code>ALL</code> antes del <code>=</code> → desde cualquier host (ordenador).</p>
+</li>
+<li>
+<p><code>(ALL:ALL)</code> →  puede ejecutar comandos como cualquier usuario y como cualquier grupo.</p>
+</li>
+<li>
+<p>Después, <code>ALL</code> → puede ejecutar cualquier comando</p>
+</li>
+</ul>
+<p><strong>Ejemplo práctico</strong></p>
+<p>Vale exactamente el mismo ejemplo que en el caso anterior. El grupo sudo es el más comúnmente usado, así que si quieres que un usuario pueda hacer <code>sudo</code> con permisos de root, gracias a esta regla es más que suficiente.</p>
+<div class="highlight"><pre><span></span><code>paco<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>root<span class="o">)</span><span class="w"> </span>/usr/bin/passwd
+</code></pre></div>
+<ul>
+<li>
+<p><code>paco</code> nombre del usuario</p>
+</li>
+<li>
+<p><code>ALL</code> antes del <code>=</code> → desde cualquier host (ordenador).</p>
+</li>
+<li>
+<p><code>(root)</code> →  puede ejecutar comandos como usuario root</p>
+</li>
+<li>
+<p>Después, <code>passwd</code> →solo puede ejecutar este comando como root</p>
+</li>
+</ul>
+<p><strong>Ejemplo práctico</strong></p>
+<p>Desde paco podemos ejecutar solo passwd con permisos de root y cambair la contraseña a cualquier otro usuario.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>passwd<span class="w"> </span>manolo
+</code></pre></div>
+<p>Después pedirá la contraseña de root para hacer esto.</p>
+<hr />
+<div class="highlight"><pre><span></span><code>armin<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>ALL
+</code></pre></div>
+<ul>
+<li><code>amin</code> nombre del usuario</li>
+<li><code>ALL</code> antes del <code>=</code> → desde cualquier host (ordenador).</li>
+<li><code>(ALL:ALL)</code> →  puede ejecutar comandos como cualquier usuario y como cualquier grupo.</li>
+<li>Después, <code>ALL</code> → puede ejecutar cualquier comando, en este caso, sin necesidar de tener que poner la contraseña del usuario con el que va a ejecutar el sudo</li>
+</ul>
+<p><strong>Ejemplo práctico</strong></p>
+<p>Desde paco podemos ejecutar solo passwd con permisos de root y cambair la contraseña a cualquier otro usuario.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>passwd<span class="w"> </span>manolo
+</code></pre></div>
+<p>Sin embargo con NOPASSWD no pedirá la contraseña.</p>
+<hr />
+<div class="highlight"><pre><span></span><code>eren<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>root<span class="o">)</span><span class="w"> </span>/sbin/shutdown,<span class="w"> </span>/sbin/reboot
+</code></pre></div>
+<ul>
+<li><code>eren</code> nombre del usuario</li>
+<li><code>ALL</code> antes del <code>=</code> → desde cualquier host (ordenador).</li>
+<li><code>(root)</code> →  puede ejecutar comandos como root</li>
+<li>Después, <code>/sbin/shutdown, /sbin/reboot</code> → puede ejecutar estos comandos</li>
+</ul>
+<p><strong>Ejemplo práctico</strong></p>
+<p>El usuario <strong>eren</strong> puede ejecutar <strong>solo</strong> los comandos <code>/sbin/shutdown</code> y <code>/sbin/reboot</code> con privilegios de <code>root</code>, y <strong>ningún otro</strong> comando mediante <code>sudo</code> (a menos que haya otra regla que se lo permita).</p>
+<hr />
+<div class="highlight"><pre><span></span><code>%develop<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>root<span class="o">)</span><span class="w"> </span>NOPASSWD:<span class="w"> </span>/usr/bin/apt<span class="w"> </span>update,<span class="w"> </span>/usr/bin/apt<span class="w"> </span>upgrade
+</code></pre></div>
+<ul>
+<li><code>%develop</code> nombre del usuario</li>
+<li><code>ALL</code> antes del <code>=</code> → desde cualquier host (ordenador).</li>
+<li><code>(root)</code> →  puede ejecutar comandos como root</li>
+<li>Después, <code>/usr/bin/apt update, /usr/bin/apt upgrade</code> : puede ejecutar estos comandos</li>
+</ul>
+<p><strong>Ejemplo práctico</strong></p>
+<p>cualquiera en el grupo develop puede ejecutar solo los comandos usr/bin/apt update, /usr/bin/apt upgrade con privilegios de <code>root</code>, y ningún otro comando mediante <code>sudo</code> (a menos que haya otra regla que se lo permita), es decir, pueden hacer:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<p>sin problemas.</p>
+<hr />
+<h4 id="32-permitir-a-un-usuario-ejecutare-sudo-con-permisos-de-root"><strong>3.2 Permitir a un usuario ejecutare sudo con permisos de root</strong></h4>
+<p>Con las reglas de antes, si añadimos a alguien al grupo sudo, bastará</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>sudo<span class="w"> </span>nombre_usuario
+</code></pre></div>
+<p>Con esto, el usuario podrá ejecutar cualquiero comando con sudo, ya que vimos que <code>/etc/sudoers</code>sudo tenía la siguiente regla:</p>
+<div class="highlight"><pre><span></span><code>%sudo<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span><span class="w"> </span>ALL
+</code></pre></div>
+<p>la cualquier permite <code>sudo</code> ejecutar a todos los usuarios del grupo desde:</p>
+<ul>
+<li>cualquier usuario, cualquier grupo, cualquier comando</li>
+</ul>
+<p><strong><u>Ejercicio</u></strong></p>
+<p>Añade a un usuario de tu sistema al grupo sudo y comprueba que podrá usar los siguiente comandos con permisos de root o permisos de otros usuarios (devuelve la salida de los mismo):</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>whoami
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>manolo<span class="w"> </span>whoami
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>passwd<span class="w"> </span>root
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>/ejemplo_practica_3
+</code></pre></div>
+<hr />
+<h4 id="33-creacion-de-reglas-propias-en-sudoersd">3.3 Creación de reglas propias (en sudoers.d)</h4>
+<p>También podemos crear reglas sobre como los usuarios específicos que no estén en sudo tendrán permisos específicos al ejecutar el comando sudo. Esto no se hace directamente sobre <code>etc/sudoers</code> ya que para eso se usa el archivo: <code>/etc/sudoers.d/</code>.</p>
+<p>Para crear reglas en <code>/etc/sudoers.d</code> usaremos el editor <code>visudo</code> de nuevo. Imaginamos que queremos crear una nueva regla para eren:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>visudo<span class="w"> </span>-f<span class="w"> </span>/etc/sudoers.d/eren
+</code></pre></div>
+<p>y al final del editor, añadimos:</p>
+<div class="highlight"><pre><span></span><code>eren ALL=(root) /sbin/shutdown, /sbin/reboot
+</code></pre></div>
+<p>Con esto, ya tendríamos lo que buscabamos , que es que eren pueda apagar y reiniciar como root (sobre el resto de comandos que necesiten de root no decimos nada aunque puede que haya otras reglas que le permita ejecutarlos)</p>
+<p><strong><u>Ejercicio</u></strong></p>
+<ol>
+<li>
+<p>Abrir con <code>visudo</code> (seguro) y edita al usuario armin. En una linea haz que armin pueda ejecutar el comando mkdir, chown y chmod con permisos de root, pero solo esos. Haz en otro linea que armin pueda ejecutar ls con permisos de eren, pero solo ese usuario.</p>
+</li>
+<li>
+<p>Muevete al usuario eren (metelo en el grupo sudo) y en la raiz "/" crea una carpeta llamada "solo_eren" con permisos 771 y cambiale el propietario a eren. Después crea un fichero en esa carpeta llamado "ejemplo.txt" y añade lo que quieras dentro. Comprueba que eren puede hacer un ls sobre /solo_eren y que <code>armin</code> no puede.
+   Después, con armin ejecuta: </p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="w">   </span>sudo<span class="w"> </span>-u<span class="w"> </span>eren<span class="w"> </span>ls<span class="w"> </span>/solo_eren
+</code></pre></div>
+<p>¿qué linea de la que añadiste en el punto 1 te ha permitido hacer esto y por qué?</p>
+<p>Después comprueba que armin no puede crear nada sobre <code>solo_eren</code> pero ejecutando:</p>
+<div class="highlight"><pre><span></span><code><span class="w">   </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>/solo_eren/armin_tambien_puede
+</code></pre></div>
+<p>comprueba que si puedes, ¿qué linea de la que añadiste en el punto 1 te ha permitido hacer esto y por qué?</p>
+<p>Por último, y utilizando sudo, armin decide apropiarse de la carpeta de eren y darle permisos para que sólo el puede utilizarla. Explica como lo harías.</p>
+<ol>
+<li>Abrir con <code>visudo</code> (seguro) y edita al usuario armin, en este caso, armin podrá ejecutar todos los comandos con permisos del grupo exploradores (Si no tienes este grupo debes crearlo y solo meter a eren). En este caso, eren creará en /solo_eren la carpeta /exploradores y le dará el grupo propietario exploradores y le asignará permisos 771.  Sobre esta carpeta eren creará el txt llamado (asuntos_secretos.txt)</li>
+<li>
+<p>Con armin, intenta borrar este .txt sin sudo ¿influyen los permisos del txt o los permisos de la carpeta que lo contiene? ¿Puedes? Si no puedes, ejecuta el comando apropiado con sudo para borrar este txt.</p>
+</li>
+<li>
+<p>Armin tiene una pelea con eren y trata sobre lo siguiente. Armin dice que si tuviese privilegios para ejecutar con el grupo sudo  cualquier comando (es decir, esta regla)</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>armin<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>armin:sudo<span class="o">)</span><span class="w"> </span>ALL
+</code></pre></div>
+<p>Podría ejecutar cualquier comando así:</p>
+<div class="highlight"><pre><span></span><code>armin@asir:~$<span class="w"> </span>sudo<span class="w"> </span>-g<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/solo_eren
+</code></pre></div>
+<p>Sin embargo eren le dice que si puede, pero que el comando lo está escribiendo mal y que todavía no entiende como usar sudo correctamente.</p>
+<p>¿Qué opinas? ¿Quien tiene razón?</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

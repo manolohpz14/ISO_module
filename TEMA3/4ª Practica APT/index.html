@@ -1,0 +1,2232 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>4ª Practica APT - Módulo ISO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#indice" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Módulo ISO" class="md-header__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Módulo ISO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4ª Practica APT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Módulo ISO" class="md-nav__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Módulo ISO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Teoria/1.%20Teoria%20de%20Markdown%20SIMPLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (Markdown)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Teoria/2.%20Teor%C3%ADa%20de%20Sistemas%20Num%C3%A9ricos%20en%20Inform%C3%A1tica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Sistemas Numéricos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Teoria/3.%20Teoria%20de%20Almacenamiento%20de%20datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3er Archivo Teoría (Almacenamiento de datos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Teoria/4.%20Teoria%20%E2%80%94%20Hardware%20y%20Software%20b%C3%A1sico%20de%20un%20ordenador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4to Archivo Teoría (Hardware y Software)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Teoria/5.%20Teor%C3%ADa%20Sistemas%20Operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5to Archivo Teoría (Sistemas Operativos y Virtualización)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/1ªPractica.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/2.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Rellena%20la%20siguiente%20tabla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/3.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Probamos%20la%20CLI%20de%20Ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/4.%20Pr%C3%A1ctica%20%E2%80%94%20Curiosidades%20y%20importancia%20de%20los%20sistemas%20de%20enumeraci%C3%B3n%20binario%20y%20hexadecimal%20en%20la%20informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/4.2.%20Pr%C3%A1ctica%20%E2%80%94%20Comparaci%C3%B3n%20GUI%20vs%20CLI%20en%20Ubuntu%20e%20instalaci%C3%B3n%20de%20KDE%20%28copy%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (versión 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA1/Practicas/5.%20Pr%C3%A1cticaTrabajoCooperativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Teoria/1%C2%AA%20Teoria%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (QEMU-KVM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Teoria/2%20Teor%C3%ADa%20de%20las%20instalaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Instalaciones y Particiones)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Practicas/1%C2%AA%20Pr%C3%A1ctica%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica (Opcional. Virtualizacion Anidada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Practicas/2%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20de%20Ubuntu%20sin%20LUKS%20%28sin%20LVM%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Practicas/3%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20Dual%20de%20ubuntu%20%2B%20Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA2/Practicas/4%C2%AA%20Pr%C3%A1ctica%20Migraci%C3%B3n%20de%20un%20disco%20de%20120%20GB%20%28M%C3%A1s%20grande%29%20a%20otro%20de%20100%20GB%20%28M%C3%A1s%20chico%29%20usando%20GParted%20y%20el%20comando%20dd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica Guiada (Administración de permisos en directorios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica Guiada (Administración de permisos en binarios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Practicas/4ª Practica APT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica Guiada (Uso de APT avanzado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        INDICE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="INDICE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-que-es-un-paquete-en-linux-explicacion-sencilla" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ¿Qué es un paquete en Linux? (explicación sencilla)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. ¿Qué es un paquete en Linux? (explicación sencilla)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-ejemplos-concretos-de-paquetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Ejemplos concretos de paquetes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 Ejemplos concretos de paquetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-un-programa-completo-instalando-un-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) Un programa completo instalando un programa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-una-biblioteca-que-otros-programas-necesitan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Una biblioteca que otros programas necesitan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-el-controlador-de-tu-grafica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) El controlador de tu grafica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-de-donde-vienen-los-paquetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 ¿De dónde vienen los paquetes?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 ¿De dónde vienen los paquetes?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-uris" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) URIs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Suite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Components
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-indices-de-un-repo-instalando-curl-en-ubuntu-2404-noble" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4 Índices de un repo: Instalando curl en Ubuntu 24.04 (Noble)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-ver-info-de-los-posibles-candidatos-a-la-hora-de-instalar-un-paquete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5 Ver info de los posibles candidatos a la hora de instalar un paquete:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 Ver info de los posibles candidatos a la hora de instalar un paquete:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-instalados-850-2ubuntu106" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) Instalados: 8.5.0-2ubuntu10.6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bcandidato-850-2ubuntu106" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b)Candidato: 8.5.0-2ubuntu10.6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ctabla-de-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c)Tabla de versión:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-linea-marcada-con" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Línea marcada con ***
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-100-varlibdpkgstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) 100 /var/lib/dpkg/status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-version-anterior-850-2ubuntu10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Versión anterior: 8.5.0-2ubuntu10
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-que-paquete-de-los-candidatos-anteriores-instalamos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.6 ¿Qué paquete de los candidatos anteriores instalamos?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-uso-de-la-herramienta-apt-y-dpkg-para-paquetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Uso de la herramienta APT y DPKG para paquetes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Uso de la herramienta APT y DPKG para paquetes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-instalar-paquetes-con-apt-y-soluciones-paquetes-medio-instalados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Instalar paquetes con APT y soluciones paquetes medio instalados
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-instalar-paquetes-con-dpkg-y-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Instalar paquetes con DPKG y curl.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-ver-paquetes-instalados-o-desistalados-asi-como-las-dependencias-de-paquetes-instalados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Ver paquetes instalados o desistalados así como las dependencias de paquetes instalados.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-eliminar-paquetes-instalados-y-toda-su-informacion-residual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Eliminar paquetes instalados y toda su información residual.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-un-ejemplo-de-casi-todo-lo-anterior-con-el-paquete-cowsay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Un ejemplo de casi todo lo anterior con el paquete cowsay
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Un ejemplo de casi todo lo anterior con el paquete cowsay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-buscar-el-paquete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) Buscar el paquete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-ver-detalles-del-paquete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Ver detalles del paquete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-actualizar-la-lista-de-paquetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Actualizar la lista de paquetes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-instalar-el-paquete-sus-dependencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        d) Instalar el paquete + sus dependencias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-ejecutar-el-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        e) Ejecutar el programa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f-eliminar-el-paquete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        f) Eliminar el paquete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g-limpiar-dependencias-huerfanas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        g) Limpiar dependencias huérfanas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3-Práctica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-anadir-nuevos-repositorios-a-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 Añadir nuevos repositorios a Ubuntu
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Añadir nuevos repositorios a Ubuntu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-here-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Here document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-el-comando-tee-y-el-uso-de-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 El comando tee y el uso de pipes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-anadir-la-clave-del-repositorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Añadir la clave del repositorio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5-Práctica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6-Práctica
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-aislar-programas-para-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7- Aislar programas para usuarios
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7- Aislar programas para usuarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-editando-el-binario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1- Editando el binario
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-creando-grupos-de-aislamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2- Creando grupos de aislamiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>4ª Practica APT</h1>
+
+<h2 id="indice">INDICE</h2>
+<p>A lo largo de esta práctica guiada, los puntos 1,2,4,y 7 serán los teóricos, de ellos, no hay que entregar nada. Solo se entregarán los puntos 3,5 y 6, en su totalidad y con capturas de pantalla. A continuación, se muestra el índice:</p>
+<p><strong>1. ¿Qué es un paquete en Linux?</strong></p>
+<p>1.1 Ejemplos concretos de paquetes</p>
+<p>1.2 ¿De dónde vienen los paquetes? (Repositorios)</p>
+<p>1.3 Tags de los repositorios en Ubuntu (Types, URIs, Suites, Components, Signed-By)</p>
+<p>1.4 Índices de un repositorio: cómo busca APT los paquetes</p>
+<p>1.5 Ver paquetes candidatos a instalar con <code>apt-cache policy</code></p>
+<p>1.6 ¿Qué paquete instala APT? Orden de prioridades</p>
+<p><strong>2. Uso de las herramientas APT y DPKG</strong></p>
+<p>2.1 Instalar paquetes con APT y DPKG (<code>dpkg -i'</code>) y resolver paquetes incompletos (<code>apt -f install</code>)</p>
+<p>2.2 Instalar paquetes manualmente con DPKG y curl</p>
+<p>2.3 Ver paquetes instalados y dependencias (<code>apt list</code>, <code>dpkg -l</code>, <code>apt-cache depends</code>)</p>
+<p>2.4 Eliminar paquetes y archivos residuales (<code>remove</code>, <code>purge</code>, <code>autoremove</code>)</p>
+<p>2.5 Ejemplo práctico completo con el paquete <code>cowsay</code></p>
+<p><strong>3. Práctica con APT y DPKG</strong></p>
+<p>Parte 1: ejercicio completo con el paquete <code>neofetch</code></p>
+<p>Parte 2: ejercicio completo con el paquete <code>python3</code></p>
+<p>Parte 3: instalación manual de Docker descargando paquetes <code>.deb</code> y eliminación posterior</p>
+<p><strong>4. Añadir nuevos repositorios a Ubuntu</strong></p>
+<p>4.1 Here documents</p>
+<p>4.2 El comando <code>tee</code> y el uso de pipes</p>
+<p>4.3 Añadir la clave GPG de un repositorio y explicación del proceso</p>
+<p>4.4 Añadir un repositorio externo (ejemplo: Docker)</p>
+<p><strong>5. Práctica: repositorios externos</strong></p>
+<p>a) Añade y muestra información del repositorio Docker (Punto anterior)</p>
+<p>b) Descargar y añadir clave GPG de Microsoft</p>
+<p>c) Crear el archivo <code>vscode.sources</code> con <code>tee</code> y here-document</p>
+<p>d) Actualizar índices (<code>apt update</code>)</p>
+<p>e) Buscar e instalar el paquete <code>code</code></p>
+<p><strong>6. Práctica: desinstalación completa de Typora</strong></p>
+<p>a) Eliminar paquete + configuración + dependencias</p>
+<p>b) Eliminar ficheros de repositorios de Typora</p>
+<p>c) Eliminar claves GPG de Typora</p>
+<p>d) Explicar línea por línea la instalación de Typora y reproducirla con here-document</p>
+<p>e) Identificar URI, Suites y Components en el repositorio de Typora</p>
+<p><strong>7. Aislar programas por usuario</strong></p>
+<p>7.1 Editar permisos del binario</p>
+<p>7.2 Crear grupos para restringir acceso</p>
+<hr />
+<p>Visto el índice, empezamos a desarrollar cada uno de los puntos:</p>
+<h3 id="1-que-es-un-paquete-en-linux-explicacion-sencilla"><strong>1. ¿Qué es un paquete en Linux? (explicación sencilla)</strong></h3>
+<p>Un paquete de linuz es un archivo que contiene cualesquiera de las siguientes características: un programa, una biblioteca de comandos, configuraciones o incluso documentación.</p>
+<p>Todo este "paquete" está comprimido de forma ordenada, para que el sistema lo pueda instalar, actualizar o eliminar fácilmente mediante una serie de comandos que veremos a lo largo de la práctica. De hecho, para entender mejor el concepto de "paquete" en linux, es conveiniente pensar que es parecido a una “caja”, que contendrá todo lo necesario para que un programa funcione.</p>
+<p>En Ubuntu y Debian, los paquetes siempre tienen extensión: <code>.deb</code></p>
+<h4 id="11-ejemplos-concretos-de-paquetes">1.1 Ejemplos concretos de paquetes</h4>
+<h5 id="a-un-programa-completo-instalando-un-programa">a) Un programa completo instalando un programa</h5>
+<p>Ejemplo de programa: <strong>Firefox</strong>. Para instalar el programar firefox en ubuntu debemos de hacer uso de un paquete llamado: firefox. Cuando lo instalas, recibes todo lo necesario para que firefox funciones, como por ejemplo:</p>
+<ul>
+<li>el navegador</li>
+<li>sus archivos internos</li>
+<li>iconos</li>
+<li>dependencias necesarias</li>
+</ul>
+<p>Para instalar firefox en tu ubuntu, simplemente escribe:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>firefox
+</code></pre></div>
+<h5 id="b-una-biblioteca-que-otros-programas-necesitan">b) Una biblioteca que otros programas necesitan</h5>
+<p>Los paquetes no tienen porqué ser programas como el ejemplo anterior, pueden ser librerías que otros programas necesiten, como por ejemplo el paquete llamado "curl":</p>
+<div class="highlight"><pre><span></span><code><span class="err">curl</span>
+</code></pre></div>
+<p>Con este parquete dispondrás de una herramienta muy práctica para realizar solicitudes HTTP y HTTPS desde la terminal, como por ejemplo, el siguiente</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-v<span class="w"> </span>https://www.google.com
+</code></pre></div>
+<h5 id="c-el-controlador-de-tu-grafica">c) El controlador de tu grafica</h5>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ubuntu-drivers-common
+</code></pre></div>
+<p>Es un paquete que instala el driver automáticamente de tu tarjeta gráfica haciendo</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ubuntu-drivers<span class="w"> </span>autoinstall
+</code></pre></div>
+<p>Otro ejemplo es el siguiente:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nvidia-driver-535
+</code></pre></div>
+<p>Es un paquete que instala el driver automáticamente de una gráfica que tu indiques. Si quieres saber un poquito más, tu gráfica puedes verla con el siguiente comando:</p>
+<div class="highlight"><pre><span></span><code>lspci<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;VGA|3D&quot;</span>
+</code></pre></div>
+<p>que te da el nombre de tu grafica:</p>
+<p><img alt="image-20251130130112127" src="/home/manolo/.config/Typora/typora-user-images/image-20251130130112127.png" /></p>
+<p>Si quieres saber cómo encontrar el driver que debes instalar para tu gráfica, debes ejecutar:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>ubuntu-drivers<span class="w"> </span>list
+</code></pre></div>
+<p>Que te da como salida automáticamente todos los drivers compatibles con tu grafica. De hecho, el comando me dirá el recommended. Los drivers de NVIDIA en Ubuntu no vienen del repositorio de NVIDIA, sino de repositorios oficiales de Ubuntu mantenidos por Canonical. Esto lo entenderás en puntos posteriores.</p>
+<p>Doc oficial: https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/?utm_source=chatgpt.com</p>
+<h4 id="12-de-donde-vienen-los-paquetes"><strong>1.2 ¿De dónde vienen los paquetes?</strong></h4>
+<p>Cuando haces:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>firefox
+</code></pre></div>
+<p>se instala un paquete que se llama firefox, pero os dejo las siguientes dos preguntas:</p>
+<ul>
+<li>¿Cómo sabes que el paquete se llama firefox y no firefox_linux?</li>
+<li>¿De donde se está descargando realmente ese paquete?</li>
+</ul>
+<p>Contestemos primero a la segunda pregunta. Los paquetes se descargan de lugares llamados repositorios, que son “tiendas” donde se guardan miles de paquetes listos para instalar. El comando APT se encarga de: descargar, instalar, actualizar, y borrar los paquetes de dicho respositorios (que debremos de configurar a mano, a menos que sea el oficial que trae el sistema).</p>
+<p>En este línea, debéis saber Ubuntu trae varios repositorios oficiales  y cada repositorio contiene miles de paquetes listos para instalar (entre ellos, los paquetes firefox y curl instalados en el punto anterior). El comando para mirar todos los repositorios de vuestro sistema es.</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>/etc/apt/sources.list.d/
+</code></pre></div>
+<p><img alt="image-20251130131240077" src="/home/manolo/.config/Typora/typora-user-images/image-20251130131240077.png" /></p>
+<p>Esta carpeta contiene todos los repositorios añadido en vuestro sistema, que como hemos dicho, son los lugares en donde se buscan los paquetes "deb" cuando hacemos "apt install". Ahora bien, en la captura anterior hay dos repositorios que trae ubuntu por defecto al instalarse, y son:</p>
+<div class="highlight"><pre><span></span><code><span class="err">ubuntu.sources</span>
+<span class="err">ubuntu.sources.curtin.orig</span>
+</code></pre></div>
+<p>El resto de respositorios son repos que YO he añadido a mano y por tanto, no tendréis vosotros.</p>
+<p><strong>1.3 TAGS de los repositorios en ubuntu</strong></p>
+<p>De hecho, vamos a hacer un poco de "spoiler" y vamos a adentrarnos en el repo oficial de ubuntu (ubuntu.sources) haciendo un cat a dicho archivo:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>cat<span class="w"> </span>/etc/apt/sources.list.d/ubuntu.sources
+<span class="c1">#------------------SALIDA DEL CAT-----------------------</span>
+Types:<span class="w"> </span>deb
+URIs:<span class="w"> </span>http://archive.ubuntu.com/ubuntu/
+Suites:<span class="w"> </span>noble<span class="w"> </span>noble-updates<span class="w"> </span>noble-backports
+Components:<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
+Signed-By:<span class="w"> </span>/usr/share/keyrings/ubuntu-archive-keyring.gpg
+Architecture:<span class="w"> </span>amd64
+
+Types:<span class="w"> </span>deb
+URIs:<span class="w"> </span>http://security.ubuntu.com/ubuntu/
+Suites:<span class="w"> </span>noble-security
+Components:<span class="w"> </span>main<span class="w"> </span>restricted<span class="w"> </span>universe<span class="w"> </span>multiverse
+Signed-By:<span class="w"> </span>/usr/share/keyrings/ubuntu-archive-keyring
+Architecture:<span class="w"> </span>amd64
+</code></pre></div>
+<p>Aquí, se indica que el sistema descargará los paquetes de tipo <strong><u>"DEB"</u></strong> desde dos lugares principales: <code>archive.ubuntu.com</code>, que es el repositorio general, y <code>security.ubuntu.com</code>, que es el repositorio específico para actualizaciones de seguridad.  Vamos a entender un poquito más qué significa cada cosa.</p>
+<p>Además, se especifican varias etiquetas como: suites, URIS, Componentes  y Signed By.  La siguiente imagen resumen un poco lo que vamos a ver paso a paso:
+<img alt="image-20251130160223535" src="/home/manolo/.config/Typora/typora-user-images/image-20251130160223535.png" /></p>
+<p>Es decir, dentro de un mismo repositorio, clasificamos a los paquetes de la siguiente forma:</p>
+<h5 id="a-uris">a) URIs</h5>
+<p>Este es la URL del servidor o repositorio desde donde Ubuntu descarga los paquetes, se puede entender como el repositorio en sí mismo.</p>
+<h5 id="b-suite">b) Suite</h5>
+<p>La suite es una “estantería” del repositorio (de la URL) donde viven versiones específicas de los paquetes. </p>
+<ul>
+<li>
+<p><code>noble</code>, es la base de tu versión de Ubuntu. Contiene los paquetes tal y como fueron publicados en la versión inicial del sistema, justo el día del lanzamiento. Son los paquetes "congelados" en su versión inicial y que garantizan estabilidad.</p>
+</li>
+<li>
+<p><code>noble-updates</code>, aquí se incluyen actualizaciones estables que se liberan después del lanzamiento de Ubuntu. Correcciones de errores, mejoras menores y pequeñas actualizaciones que han sido probadas en los paquetes para garantizar que no rompan el sistema.</p>
+</li>
+<li><code>noble-backports</code>, esta suite sirve para ofrecer versiones más nuevas de ciertos paquetes que no forman parte de la versión oficial inicial ni de las actualizaciones típicas. No es obligatoria y suele usarse para introducir versiones más recientes que pueden llegar a ser inestables-</li>
+<li><code>noble-security</code>, contiene todas las actualizaciones y parches de seguridad que Ubuntu publica de forma prioritaria. Aquí es donde se suben las correcciones de vulnerabilidades del kernel, OpenSSL, navegadores o librerías importantes. Posteriormente se suelen copiar en noble updates.</li>
+</ul>
+<h5 id="c-components">c) Components</h5>
+<p>Las son distintas secciones dentro de un repositorio que dividen alos paquetes entre categorías:</p>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>main</strong></td>
+<td>Software oficial apoyado por Ubuntu</td>
+</tr>
+<tr>
+<td><strong>restricted</strong></td>
+<td>Drivers propietarios (como NVIDIA)</td>
+</tr>
+<tr>
+<td><strong>universe</strong></td>
+<td>Software mantenido por la comunidad</td>
+</tr>
+<tr>
+<td><strong>multiverse</strong></td>
+<td>Software con licencias restrictivas</td>
+</tr>
+</tbody>
+</table>
+<h4 id="14-indices-de-un-repo-instalando-curl-en-ubuntu-2404-noble">1.4  Índices de un repo: Instalando <code>curl</code> en Ubuntu 24.04 (Noble)</h4>
+<p>Imagina que ejecutas:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>curl
+</code></pre></div>
+<p>Primero apt mira en los índices que se descargaron con <code>apt update</code>.  APT no descarga todos los .deb directamente. En su lugar descarga archivos llamados índices. Estos índices son listados completos de todos los paquetes de un repositorio y se encuentran en:</p>
+<div class="highlight"><pre><span></span><code>/var/lib/apt/lists/
+</code></pre></div>
+<p>Sin embargo, por cada repo puede existir más de un índice. Cada repo aporta a <code>/var/lib/apt/lists/</code> tantos índices como combinaciones de: suite, componente y arquitectura. Por ejemplo, si tengo el repo:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">URIs</span><span class="o">:</span><span class="w"> </span><span class="n">http</span>://<span class="n">archive</span>.<span class="n">ubuntu</span>.<span class="n">com</span>/<span class="n">ubuntu</span>
+<span class="nf">Suites</span><span class="o">:</span><span class="w"> </span><span class="n">noble</span> <span class="n">noble</span>-<span class="n">updates</span> <span class="n">noble</span>-<span class="n">security</span>
+<span class="nf">Components</span><span class="o">:</span><span class="w"> </span><span class="n">main</span> <span class="n">universe</span>
+<span class="nf">Arquitectura</span><span class="o">:</span><span class="w"> </span><span class="n">amd</span>64
+</code></pre></div>
+<p>APT tendrá que descargar: 3 suites × 2 componentes × 1 arquitectura = <strong>6 índices diferentes</strong>, que aparecerán al hacer un ls a <code>/var/lib/apt/lists/</code></p>
+<div class="highlight"><pre><span></span><code>archive.ubuntu.com_ubuntu_dists_noble_main_binary-amd64_Packages
+archive.ubuntu.com_ubuntu_dists_noble_universe_binary-amd64_Packages
+archive.ubuntu.com_ubuntu_dists_noble-updates_main_binary-amd64_Packages
+archive.ubuntu.com_ubuntu_dists_noble-updates_universe_binary-amd64_Packages
+archive.ubuntu.com_ubuntu_dists_noble-security_main_binary-amd64_Packages
+archive.ubuntu.com_ubuntu_dists_noble-security_universe_binary-amd64_Packages
+</code></pre></div>
+<p>Lo anterior pasa en cualquier repositorio añadido, no solo con los oficiales. </p>
+<p>Ahora bien, Cuando haces <code>apt install "paquete"</code>, APT mira en todos los índices de  <code>/var/lib/apt/lists/</code> y busca en cada uno de ellos una entrada llamada “Package: curl”. De todos los paquetes curl, APT elige qué paquete instalar según un orden predefinido, que explicamos en el siguiente punto. </p>
+<h4 id="15-ver-info-de-los-posibles-candidatos-a-la-hora-de-instalar-un-paquete">1.5 Ver info de los posibles candidatos a la hora de instalar un paquete:</h4>
+<p>En el punto anterior nos quedamos en qué paquete de todos los posibles se va a instalar en el sistema, la pregunta es, ¿Puedes ver todos los posibles candidatos? Esto se puede ejecutando:</p>
+<div class="highlight"><pre><span></span><code>apt-cache policy curl
+</code></pre></div>
+<p>que te podría devolver algo así;</p>
+<p><img alt="image-20251130133901845" src="/home/manolo/.config/Typora/typora-user-images/image-20251130133901845.png" /></p>
+<p>Explicamos las líneas anteriores, ya que son importantísimas ya que todas contienen el capo "prioridad":</p>
+<h5 id="a-instalados-850-2ubuntu106"><strong>a) Instalados: 8.5.0-2ubuntu10.6</strong></h5>
+<p>Esto significa que esa es la versión que ya tienes instalada en tu sistema.</p>
+<h5 id="bcandidato-850-2ubuntu106">b)<strong>Candidato: 8.5.0-2ubuntu10.6</strong></h5>
+<p>Es la versión que APT instalaría si ejecutarás un upgrade. Aquí coincide con la instalada luegono hay una versión más nueva.</p>
+<h5 id="ctabla-de-version">c)<strong>Tabla de versión:</strong></h5>
+<p>Aquí APT lista todas las versiones disponibles en tus repositorios y de dónde provienen. Vamos línea por línea.</p>
+<h5 id="d-linea-marcada-con"><strong>d) Línea marcada con </strong>***</h5>
+<div class="highlight"><pre><span></span><code><span class="err">La</span><span class="w"> </span><span class="err">linea</span><span class="w"> </span><span class="err">que</span><span class="w"> </span><span class="err">tiene</span><span class="w"> </span><span class="err">esto</span>
+<span class="err">***</span><span class="w"> </span><span class="err">8.5.0-2ubuntu10.6</span><span class="w"> </span><span class="err">500</span>
+</code></pre></div>
+<p>marca la versión instalada actualmente. El número 500 es la prioridad de paquete en cuestión (la 500 es alta y es normal en repos oficiales). Esta versión aparece dos veces debajo:</p>
+<div class="highlight"><pre><span></span><code>500 http://archive.ubuntu.com/ubuntu noble-updates/main
+500 http://security.ubuntu.com/ubuntu noble-security/main
+</code></pre></div>
+<p>Que significa: que esa misma versión está publicada tanto en <code>noble-updates</code> como en <code>noble-security</code>. Ya avanzamos en el punto <strong>1.3</strong> que es totalmente normal cuando ubuntu lanza un parche de seguridad y luego lo copia también en el repo updates.</p>
+<h5 id="e-100-varlibdpkgstatus"><strong>e) 100 /var/lib/dpkg/status</strong></h5>
+<div class="highlight"><pre><span></span><code><span class="err">100</span><span class="w"> </span><span class="err">/var/lib/dpkg/status</span>
+</code></pre></div>
+<p>Ese 100 es la prioridad interna que APT asigna a las versiones que ya están instaladas en el sistema.<code>/var/lib/dpkg/status</code> es el fichero donde dpkg guarda el registro local de todos los paquetes instalados en tu sistema: Este archivo contiene, para cada paquete instalado toda la info necesaria.</p>
+<h5 id="f-version-anterior-850-2ubuntu10"><strong>f) Versión anterior: 8.5.0-2ubuntu10</strong></h5>
+<div class="highlight"><pre><span></span><code><span class="err">8.5.0-2ubuntu10</span><span class="w"> </span><span class="err">500</span>
+<span class="w">        </span><span class="nf">500 http</span><span class="o">:</span>//<span class="n">archive</span>.<span class="n">ubuntu</span>.<span class="n">com</span>/<span class="n">ubuntu</span> <span class="n">noble</span>/<span class="n">main</span>
+</code></pre></div>
+<p>Esto muestra la versión original que venía en la instalación base de Ubuntu (<code>noble/main</code>). Evidentemente tiene un número más bajo: 2ubuntu10 vs 2ubuntu10.6. APT no la usa porque ya existe una versión más nueva en updates/security.</p>
+<h4 id="16-que-paquete-de-los-candidatos-anteriores-instalamos">1.6 ¿Qué paquete de los candidatos anteriores instalamos?</h4>
+<p>APT nos dice directamente con el comando anterior quién es el primer candidato a instalar, aún así, debéis saber que la jerarquía para elegir que paquete instalar es la siguiente:</p>
+<div class="highlight"><pre><span></span><code><span class="err">1.</span><span class="w"> </span><span class="err">Prioridad</span><span class="w"> </span><span class="err">numérica</span>
+<span class="err">2.</span><span class="w"> </span><span class="err">Suite</span><span class="w"> </span><span class="err">(security</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="err">updates</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="err">release</span><span class="w"> </span><span class="err">base)</span>
+<span class="err">3.</span><span class="w"> </span><span class="err">Componente</span><span class="w"> </span><span class="err">(main</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="err">universe</span><span class="w"> </span><span class="err">&gt;</span><span class="w"> </span><span class="err">multiverse…)</span>
+<span class="err">4.</span><span class="w"> </span><span class="err">Versión</span>
+</code></pre></div>
+<p>O dicho de otra forma:</p>
+<ol>
+<li><strong>Primero la prioridad numérica</strong> (dos posibles resultados)
+   Ej.: 500 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages</li>
+</ol>
+<p>Ej.: 500 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages</p>
+<ol>
+<li>
+<p><strong>Este repositorio puede tener varias Suite</strong>. Si hay varios candidatos con la misma prioridad en el punto anterior, se prioriza en el siguiente orden (security &gt; updates &gt; release base &gt; backports). En el ejemplo anterior, ganaría la versión del repo "security" aunque tengan igual prioridad ambas</p>
+</li>
+<li>
+<p><strong>Cada Suite tiene distintos componentes</strong>. Si a este paso llegaramos con varios candidatos, filtraríamos en el siguiente orden  (main &gt; universe &gt; multiverse…)</p>
+</li>
+<li>
+<p><strong>Version</strong>: Si en este último paso, tuvieramos todavía más de un candidato, nos quedaríamos con el de la versión mas reciente</p>
+</li>
+</ol>
+<hr />
+<h3 id="2-uso-de-la-herramienta-apt-y-dpkg-para-paquetes">2 Uso de la herramienta APT y DPKG  para paquetes</h3>
+<p>Veremos ahora los comandos de APT y DPKG más comunes para instalar y eliminar paquetes de forma correcta.</p>
+<h4 id="21-instalar-paquetes-con-apt-y-soluciones-paquetes-medio-instalados">2.1 Instalar paquetes con APT y soluciones paquetes medio instalados</h4>
+<p>Como regla general. importantísimo actualizar los índices con:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<p>antes de instalar cualquier paquete. Después, podemos hacer una pequeña búsqueda para ver si el paquete está disponible. Por ejemplo, si hacemos:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>search<span class="w"> </span>cowsay
+</code></pre></div>
+<p><img alt="image-20251201001011153" src="/home/manolo/.config/Typora/typora-user-images/image-20251201001011153.png" /></p>
+<p>Me sale que puedo instalar 4 posibles paquetes y uno que tengo uno ya instalado. Dicho esto, con APT podemos: Instalar (según el orden visto en el punto 1):</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>nombre
+</code></pre></div>
+<p>De esta forma se instalarán todas las dependencias automáticas de dicho paquete. A la hora de instalar u paquete también es común encontrarse directamente el paquete ".deb", descargarlo e instalarlo a mano, pero esto trae algunas desventajas. Imagina que tras hacer:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>search<span class="w"> </span>cowsay
+</code></pre></div>
+<p>te ha molado un paquete que es cowsay-off, y lo quieres instalar a mano, ya que apt no te lo ha instalado por defecto  (aunque esto sería raro). Para instalar ese paquete en específico debes buscar primero donde está ese .deb, por ejemplo, haciendo:</p>
+<div class="highlight"><pre><span></span><code>apt-get<span class="w"> </span>download<span class="w"> </span>--print-uris<span class="w"> </span>cowsay-off<span class="o">=</span><span class="m">3</span>.03+dfsg2-8
+</code></pre></div>
+<p>que devuelve algo como:</p>
+<p><img alt="image-20251201001828470" src="/home/manolo/.config/Typora/typora-user-images/image-20251201001828470.png" /></p>
+<p>que nos otorga la url para descargar el paquete .deb. una vez descargado el paquete .deb se instala haciendo uso de:</p>
+<div class="highlight"><pre><span></span><code>dpkg<span class="w"> </span>-i<span class="w"> </span>archivo.deb
+</code></pre></div>
+<p>En el siguiente punto lo vemos más en detalle. ¿Qué hace DPKG cuando isntalas un paquete a mano sin APT como en lo anterior?: instala el paquete, crea su entrada en <code>/var/lib/dpkg/status</code></p>
+<p>marca el paquete como instalado manualmente</p>
+<ul>
+<li>NO resuelve dependencias y NO registra dependencias automáticas</li>
+</ul>
+<p>Es decir, si el paquete va por si solo guay, pero si tiene dependencias para poder funcionar, quizás no funcione. De hecho, si instalas un <code>.deb</code> con dependencias, el paquete puede quedar: en estado <code>half-installed</code> (en el punto 2.3 verás como ver si un paquete está half installed). Para arreglarlo, se ejecuta:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>-f<span class="w"> </span>install
+</code></pre></div>
+<p>Este comando hace que APT inspeccione los paquetes que han quedado a medio instalar y descargue e instale las dependencias que falten desde los repositorios configurados. En general, siempre que instales paquetes manualmente con <code>dpkg -i</code>, es recomendable ejecutarlo después:</p>
+<h4 id="22-instalar-paquetes-con-dpkg-y-curl">2.2 Instalar paquetes con DPKG y curl.</h4>
+<p>Hay veces que sabemos solo la url donde descargar el paquete.</p>
+<p>Vamos a utilizar primero un comando que nos descargue, directamente de una URL de internet, un paquete, para posteriormente instalarlo a mano con dpkg, es decir, bajo ningún concepto estamos utilzando repositorios de uibuntu (y por tanto estamos haciendo una mala práctica).</p>
+<p>En primer lugar, descargamos un paquete .deb, al que con la opcion <code>-o</code> pondremos el nombre: vscode.deb</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span>vscode.deb<span class="w"> </span>https://update.code.visualstudio.com/latest/linux-deb-x64/stable
+</code></pre></div>
+<p>la opción -L es para que siga reedirecciones y es muy importante dejarla puesta cada vez que se a descargar un paquete en internet.</p>
+<p>De hecho, lo anterior es equivalente a utilizar un <code>wget</code> (os sonará de la primer aclase cuando descargamos la iso de ubuntu):</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>vscode.deb<span class="w"> </span>https://update.code.visualstudio.com/latest/linux-deb-x64/stable
+</code></pre></div>
+<p>Posteriormente, se instala el paquete con la herramienta dpkg:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>vscode.deb
+</code></pre></div>
+<p>Al ejecutarlo os sladrá esto:
+<img alt="image-20251201000156713" src="/home/manolo/.config/Typora/typora-user-images/image-20251201000156713.png" />
+Y, por último, tal y como avancé en el apartado anterior, se resuelven dependencias:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>-f<span class="w"> </span>install
+</code></pre></div>
+<p>De esta forma, habéis instalado un paquete de forma manual.</p>
+<h4 id="23-ver-paquetes-instalados-o-desistalados-asi-como-las-dependencias-de-paquetes-instalados">2.3 Ver paquetes instalados o desistalados así como las dependencias de paquetes instalados.</h4>
+<p>Para ver si un paquete está instalado:</p>
+<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>list<span class="w"> </span>--installed<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>nombre-del-paquete
+</code></pre></div>
+<p>que busca entre todos los paquetes instalados aquellos que contengan la palabra "curl" dentro de ellos. La salida del comando anterior es la siguiente:</p>
+<p><img alt="image-20251130231025243" src="/home/manolo/.config/Typora/typora-user-images/image-20251130231025243.png" /></p>
+<p>Los que pone " [instalado, automático]" son aquellos paquetes que se instalaron automáticamente como dependencias del primero de los paquetes. En general, para ver las dependencias de un paquete específico, se usa:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-cache<span class="w"> </span>depends<span class="w"> </span>nombre-del-paquete
+</code></pre></div>
+<p>Con curl, tendríamos:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-cache<span class="w"> </span>depends<span class="w"> </span>curl
+</code></pre></div>
+<p>que nos devuelve:</p>
+<p><img alt="image-20251130233202689" src="/home/manolo/.config/Typora/typora-user-images/image-20251130233202689.png" /></p>
+<p>Con dpkg se puede hacer lo mismo, sin embargo, debes de poner <strong>el nombre exacto del paquete</strong>, cosa que con apt no era necesaria. Para ver si un paquete está instalado con dpkg, ejecuta:</p>
+<div class="highlight"><pre><span></span><code>dpkg<span class="w"> </span>-l<span class="w"> </span>nombre-del-paquete
+</code></pre></div>
+<p>Por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>dpkg<span class="w"> </span>-l<span class="w"> </span>curl
+</code></pre></div>
+<p>devuelve:</p>
+<div class="highlight"><pre><span></span><code><span class="err">ii</span><span class="w">  </span><span class="err">curl</span><span class="w">   </span><span class="err">8.5.0-2ubuntu10.6</span><span class="w">   </span><span class="err">amd64</span><span class="w">   </span><span class="err">command</span><span class="w"> </span><span class="err">line</span><span class="w"> </span><span class="err">tool...</span>
+</code></pre></div>
+<p>La clave primera puede ser:</p>
+<p><strong>Primera letra (Desired state):</strong></p>
+<ul>
+<li><strong>i</strong> = Install</li>
+<li><strong>r</strong> = Remove (el usuario pidió eliminarlo, pero sin borrar configuraciones)</li>
+<li><strong>p</strong> = Purge (el usuario pidió borrarlo todo: paquete y configs)</li>
+<li><strong>u</strong> = uninstalled (el paquete se requiere desinstalado)</li>
+</ul>
+<p><strong>Segunda letra (Current state):</strong></p>
+<ul>
+<li><strong>i</strong> = Installed</li>
+<li><strong>c</strong> = Config-files (solo quedan archivos de configuración)</li>
+<li><strong>n</strong> = Not-installed</li>
+<li><strong>u</strong> = Unpacked</li>
+<li><strong>f</strong> = Half-configured</li>
+</ul>
+<p>Ojo, en ningún caso nos dirá si sus dependencias se han desinstalado o no. En caso de no aparecer nada es que el paquete se ha desinstalado correctamente.</p>
+<p>Si no quieres que se tenga que poner el nombre exacto del paquete recomiendo usar:</p>
+<div class="highlight"><pre><span></span><code>dpkg<span class="w"> </span>-l<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;nombre del paquete&#39;</span>
+</code></pre></div>
+<p>Que sería parecido a:</p>
+<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>list<span class="w"> </span>--installed<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>nombre-del-paquete
+</code></pre></div>
+<p>del principio.</p>
+<h4 id="24-eliminar-paquetes-instalados-y-toda-su-informacion-residual">2.4  Eliminar paquetes instalados y toda su información residual.</h4>
+<p>Para eliminar un paquete instalado, usa:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>remove<span class="w"> </span>curl
+</code></pre></div>
+<p>Esto:</p>
+<ul>
+<li>elimina los archivos binarios del paquete</li>
+<li>mantiene sus archivos de configuración en <code>/etc</code></li>
+<li>NO elimina dependencias automáticas, incluso si ya no se usan</li>
+<li>el sistema conserva su configuración si lo reinstalas</li>
+</ul>
+<p>De hecho, si ejecutas <code>apt remove</code> (no purge), el sistema deja el paquete en estado: "rc" al mirarlo con:</p>
+<div class="highlight"><pre><span></span><code>dpkg -l curl
+</code></pre></div>
+<p>tal y como haciamos en el punto anterior. Si también quieres eliminar las configuraciones del paquete usa:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>purge<span class="w"> </span>nombre-del-paquete
+</code></pre></div>
+<p>Esto borra: binarios, configuraciones en <code>/etc</code> y ficheros de estado internos del paquete</p>
+<p>Sin embargo, lo anterior no elimina las dependencias del paquete y para ello, hay que hacer:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>autoremove<span class="w"> </span>
+</code></pre></div>
+<p>Este comando elimina: todas las dependencias marcadas como <code>Auto-Installed: 1</code> y siempre que ningún otro paquete dependa de ellas.</p>
+<h4 id="25-un-ejemplo-de-casi-todo-lo-anterior-con-el-paquete-cowsay">2.5 Un ejemplo de casi todo lo anterior con el paquete cowsay</h4>
+<p>Vemos un poco de todo lo anterior a través del siguiente ejemplo;</p>
+<h5 id="a-buscar-el-paquete">a) Buscar el paquete</h5>
+<p>Imaginamos que quiero instalar un paquete llamado "cowsay", pero no sé si está disponible en mi sistema para ser instalado, así que hago:</p>
+<div class="highlight"><pre><span></span><code>apt<span class="w"> </span>search<span class="w"> </span>cowsay
+</code></pre></div>
+<p>y observo que sí está! Luego al estar en mis repositrorio oficial de ubuntu, lo puedo descargar si problema. </p>
+<h5 id="b-ver-detalles-del-paquete">b) Ver detalles del paquete</h5>
+<p>Después vamos a ver la info de cowsay:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>show<span class="w"> </span>cowsay
+</code></pre></div>
+<p>Nos devuelve algo como:</p>
+<div class="highlight"><pre><span></span><code>Package: cowsay
+Version: 3.03+dfsg2-8
+Priority: optional
+Section: universe/games
+Origin: Ubuntu
+Maintainer: Ubuntu Developers &lt;ubuntu-devel-discuss@lists.ubuntu.com&gt;
+Original-Maintainer: James McDonald &lt;james@jamesmcdonald.com&gt;
+Bugs: https://bugs.launchpad.net/ubuntu/+filebug
+Installed-Size: 93,2 kB
+Depends: libtext-charwidth-perl, perl:any
+...
+</code></pre></div>
+<p>Aquí vemos la parte importante: <strong>Dependencias:</strong></p>
+<ul>
+<li><code>perl</code> (si no lo tienes ya instalado, APT lo añadirá)</li>
+</ul>
+<h5 id="c-actualizar-la-lista-de-paquetes">c) Actualizar la lista de paquetes</h5>
+<p>Siempre antes de instalar un paquete nuevo</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<h5 id="d-instalar-el-paquete-sus-dependencias">d)  Instalar el paquete + sus dependencias</h5>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>cowsay
+</code></pre></div>
+<p>Salida típica:</p>
+<div class="highlight"><pre><span></span><code>Se instalarán los siguientes paquetes NUEVOS:
+  cowsay perl
+</code></pre></div>
+<h5 id="e-ejecutar-el-programa">e) Ejecutar el programa</h5>
+<p>En bash, escribe:</p>
+<div class="highlight"><pre><span></span><code>cowsay Hola soy manolo
+</code></pre></div>
+<h5 id="f-eliminar-el-paquete">f) Eliminar el paquete</h5>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>remove<span class="w"> </span>cowsay
+</code></pre></div>
+<p>Esto quita el programa, pero NO elimina las dependencias huérfanas.</p>
+<h5 id="g-limpiar-dependencias-huerfanas">g) Limpiar dependencias huérfanas</h5>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>autoremove
+</code></pre></div>
+<p>Esto elimina dependencias sobrantes, en eeste caso, PEARL</p>
+<hr />
+<h3 id="3-practica">3-Práctica</h3>
+<p>Ahora tú vas a hacer lo mismo, pero con otro paquete: neofetch (Aportando capturas de pantalla)</p>
+<p><strong>Parte 1:</strong> Realiza estos pasos en tu Ubuntu:</p>
+<p>1) Buscar el nombre exacto del paquete para ver si coincide con el que te doy. Usa el comando de apt correspondiente para ver la prioridad del o de los que te salgan (usar apt-cache policy).
+2)  Ver detalles del paquete (usar apt show).
+3) Mirar las dependencias del paquete (apt-cache dependencies).
+4) Antes de instalar, actualiza la lista de paquetes.
+5) Instala el paquete anterior con el comando de apt correspondiente y con la opción -y para que las dependencias se instalen de forma automática.
+6) Ejecuta la utilidad neofetch, para comprobar que todo ha funcionado correctamente
+7) Con dpkg -l, comprueba el estado del paquete.
+8) Después, eliminalo con el comando remove.
+9) Con dpkg -l, comprueba el estado del paquete, ¿Qué conclusión sacas? ¿haría falta un apt purge del paquete anterior?
+10) Por último, y como buena práctica, ¿qué deberíamos hacer para eliminar todas las dependencias huérfanas del sistema?</p>
+<p><strong>Parte 2:</strong> Ahora del paquete python3, responde a las siguiente preguntas:</p>
+<ol>
+<li>
+<p>Con el comando de apt correspondiente, comprueba si ya tienes algun paquete con algún nombre parecido instalado. Si quiero ver exactamente si ese paquete está instalado, ¿qué comando debo usar?</p>
+</li>
+<li>
+<p>¿Cuanto paquetes distintos te salen al hacer un apt search? ¿Porqué tantos? </p>
+</li>
+<li>
+<p>Con apt cache, determina cual es el siguiente paquete candidato a ser instalado y determina el porqué, mirando tanto la prioridad como la suite.</p>
+</li>
+<li>
+<p>Mirar las dependencias del paquete si usar el apt show.</p>
+</li>
+<li>
+<p>Antes de instalar, actualiza la lista de paquetes.</p>
+</li>
+<li>
+<p>Si no lo tienes instalado (o aunque lo tengas) pon y ejecuta el comando que Instala el paquete anterior con el comando de apt correspondiente y con la opción -y para que las dependencias se instalen de forma automática.</p>
+</li>
+<li>
+<p>Escribe en la terminal python3, para comprobar que todo ha funcionado correctamente. después escribe:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span> <span class="s2">&quot;hola mundo&quot;</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Con dpkg -l, comprueba el estado del paquete.</p>
+</li>
+<li>
+<p>Después, elíminalo con el comando remove, ¿te deja?, ¿Qué crees que pasa en este caso?</p>
+</li>
+</ol>
+<p><strong>Parte 3:</strong> A continuación, instala los siguientes paquetes a mano haciendo un curl de cada uno de ellos:</p>
+<div class="highlight"><pre><span></span><code>https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/containerd.io_1.7.27-1_amd64.deb
+
+https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-ce-cli_28.4.0-1~ubuntu.24.04~noble_amd64.deb
+
+https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-ce_28.4.0-1~ubuntu.24.04~noble_amd64.deb
+
+https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-buildx-plugin_0.28.0-0~ubuntu.24.04~noble_amd64.deb
+
+https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-compose-plugin_2.39.4-0~ubuntu.24.04~noble_amd64.deb
+</code></pre></div>
+<p>-¿Qué comando de apt debes ejecutar después como buenas práctica por si faltan dependencias de los paquetes anteriores?</p>
+<p>-Comprueba los nombres de los paquetes instalados usando algún comando de apt o dpkg:</p>
+<p>-Elimina cada uno de los paquetes anteriores con la opcion -r en vez de -i de dpkg. ¿Que diferencia hay con los nombres de los archivos al poner -r en vez de -i? </p>
+<ul>
+<li>Con dpkg, comprueba el estado del paquete después de eliminarlo.</li>
+<li>Si hubo problemas, intenta eliminarlos con apt remove</li>
+<li>Si haz necesitado del paso anterior, con dpkg, comprueba el estado del paquete después de eliminarlo.</li>
+<li>
+<p>¿Qué comando debes usar para eliminar archivos de config residuales? ¿Los hay en este caso?</p>
+</li>
+<li>
+<p>¿Qué comando debes usar para eliminar dependencias huérfanas despues de eliminar a mano los paquetes anteriores? </p>
+</li>
+<li>Comprueba que no queden residuos de los paquetes desinstalados.</li>
+</ul>
+<hr />
+<h3 id="4-anadir-nuevos-repositorios-a-ubuntu">4 Añadir nuevos repositorios a Ubuntu</h3>
+<p>Pienso que lo siguiente se entiende mejor con un ejemplo. En el punto 1.2 vimos todos los remos que yo tenían en mis sitema, haciendo:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>/etc/apt/sources.list.d/
+</code></pre></div>
+<p>Ahora bien ¿Para que quiero añadir un repositorio? Es posible que el repo oficial de ubuntu no distribuya software específico (como docker). Sin embargo, es posible que docker tenga un repositorio oficial a través del cual podré instalar su paquetes con el comando <code>apt</code>. Sin embargo, tengo primero que añadirlo y certificar de alguna forma que este repo es oficial.</p>
+<p>Para esto, no hay una guía específica, pero si es cierto que se suelen seguir una serie de pasos predefinidos, cuyos comandos pueden cambiar. Para entender el punto 4.2, necesitaremos un concepto previo de comandos en el 4.1</p>
+<h4 id="41-here-document">4.1 Here document</h4>
+<p>En primer lugar, os invito a escribir "cat " en la terminal y posteriormente, escribir algo y pulsar enter. Lo que pasa es que "cat", imprime de vuelta lo que hayas escrito.</p>
+<p><img alt="image-20251202004923402" src="/home/manolo/.config/Typora/typora-user-images/image-20251202004923402.png" /></p>
+<p>En este ejemplo, yo escribí hola y me respondió lo mismo, como era de esperar. Ahora bien, cuando en el examen anterior creábamos archivos con cat lo que hacíamos realmente era redirigir la salida de nuestro cat a un archivo de texto. Es decir,  al hacer "cat hola" hemos visto que nos devolvía hola por pantalla. Al juntar cat con "&gt;&gt;" ya nos devuelve lo mismo que escribimos por pantalla sino que eso que escribimos se redirije al archivo ejemplo.txt, tal y como pasa en el siguiente ejemplo.</p>
+<p><img alt="image-20251202005116526" src="/home/manolo/.config/Typora/typora-user-images/image-20251202005116526.png" /></p>
+<p>En lo anterior, no hay nada nuevo que no sepas. Lo nuevo viene ahora. Un "here document" es una construcción de la consola que permite suministrar un bloque de texto completo como entrada estándar a un comando. Por ejemplo, al escribir cat en la consola hemos visto que se queda esperando a que le pasemos texto, por tanto, esa es la "entrada estándar" del cat. Siguiendo con la explicación de un here document, podemos suministar un bloque de texto a cat sin necesidad de escribir ese texto manualmente o de guardarlo en un archivo temporal. Esto se hace con la sintásis;</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span><span class="s">&lt;&lt;EOF Usuario: $USER Fecha: $(date) EOF</span>
+</code></pre></div>
+<p>En la práctica el comando anterior funciona como si estuvieras escribiendo a mano ese texto. ya que, si haces <code>cat &lt;&lt;EOF</code>, la shell entiende que todo lo que escribas hasta volver a ver la palabra <code>EOF</code> debe enviarlo a cat. </p>
+<h4 id="42-el-comando-tee-y-el-uso-de-pipes">4.2 El comando tee y el uso de pipes</h4>
+<p>Primero tenemos que entender el comando tee. Si en terminal yo escribo:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tee<span class="w"> </span>hola.txt
+</code></pre></div>
+<p>y justo después de pulsar enter escribo <code>"hola"</code> en la terminal y cierro con Cntrl+C, lo anterior es equivalente al comando:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hola&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>hola.txt
+</code></pre></div>
+<p>pero el primer comando evita problemas de permisos que podríamos tener en el archivo hola.txt si llegara a ser de root. Ahora bien,  el uso del primer comando + escribir "hola" en terminal justo después, es quivalente a esto:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hola&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>hola.txt
+</code></pre></div>
+<p>Que nos devuelve "hola" en pantalla y mete "hola" en hola.txt. De hecho, podemos reescribir el  comando anterior así:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hola&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/root/archivo<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+</code></pre></div>
+<p>Y así evitamos que nos devuelva "hola" por pantalla y sólo lo meta en el txt. En el comando anterior aparece por primera vez el símbolo <code>|</code> también denominado como <code>pipe</code> o <code>tubería</code>. Lo único que hace es pasar la salida de <code>echo "hola"</code> a <code>sudo tee /root/archivo</code> y así no tenemos que escribir a mano "hola" en la terminal después de escribir: <code>sudo tee hola.txt</code>. Por último, el último comando (el de la tubería), es equivalente a:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>tee<span class="w"> </span>/root/archivo<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">hola</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<h4 id="43-anadir-la-clave-del-repositorio">4.3 Añadir la clave del repositorio</h4>
+<p>APT solo confía en un repositorio si puede verificar que la información que recibe está firmada con una clave GPG oficial del proveedor. Con la firma GPG, APT puede comprobar que la lista de paquetes procede realmente del proveedor legítimo y no ha sido alterada en el camino. Sin esta clave, APT directamente se negaría a usar ese repo. En el caso de Docker y otros muchos,  la mayoría de creadores de software, publican su clave <strong>oficial</strong> en su página de repositorios:</p>
+<p>https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository</p>
+<p><img alt="image-20251201235802265" src="/home/manolo/.config/Typora/typora-user-images/image-20251201235802265.png" /></p>
+<p>De hecho, el propio Docker nos otorga estas instrucciones</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add Docker&#39;s official GPG key:</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ca-certificates<span class="w"> </span>curl
+sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/apt/keyrings
+sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">755</span><span class="w"> </span>/etc/apt/keyrings
+sudo<span class="w"> </span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://download.docker.com/linux/ubuntu/gpg<span class="w"> </span>-o<span class="w"> </span>/etc/apt/keyrings/docker.asc
+sudo<span class="w"> </span>chmod<span class="w"> </span>+r<span class="w"> </span>/etc/apt/keyrings/docker.asc
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add the repository to Apt sources:</span>
+sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.sources<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">Types: deb</span>
+<span class="s">URIs: https://download.docker.com/linux/ubuntu</span>
+<span class="s">Suites: $(. /etc/os-release &amp;&amp; echo &quot;${UBUNTU_CODENAME:-$VERSION_CODENAME}&quot;)</span>
+<span class="s">Components: stable</span>
+<span class="s">Signed-By: /etc/apt/keyrings/docker.asc</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>docker-ce<span class="w"> </span>docker-ce-cli<span class="w"> </span>containerd.io<span class="w"> </span>docker-buildx-plugin<span class="w"> </span>docker-compose-plugin
+</code></pre></div>
+<p>Vamos paso a paso para entender lo que pasa aquí:</p>
+<p>-<code>sudo apt install ca-certificates curl</code>: Ambos paquetes (curl y el otro) son esenciales si vas a añadir repositorios externos, descargar claves GPG o consumir APIs desde línea de comandos.</p>
+<p>-<code>sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc</code>: curl usa aquí las opciones <code>fsSL</code>. Con la opción -f, nos aseguramos que no se guardará basuara en caso de fallar, con la opción S muestra errores, y con la L, sigue redirecciones. La opción s minúscula no tiene porqué ponerse. La opción -o indica donde guardar el archivo.</p>
+<p>-<code>sudo tee /etc/apt/sources.list.d/docker.sources &gt; ...</code>  </p>
+<p>Por el punto anterior vimos que este comando es quivalente a:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Types: deb</span>
+<span class="s2">URIs: https://download.docker.com/linux/ubuntu</span>
+<span class="s2">Suites: </span><span class="k">$(</span>.<span class="w"> </span>/etc/os-release<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">UBUNTU_CODENAME</span><span class="k">:-</span><span class="nv">$VERSION_CODENAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
+<span class="s2">Components: stable</span>
+<span class="s2">Signed-By: /etc/apt/keyrings/docker.asc&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/docker.sources<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+</code></pre></div>
+<p>que no es más que meter toda esa info dentro del archivo "/etc/apt/sources.list.d/docker.sources".</p>
+<hr />
+<h3 id="5-practica">5-Práctica</h3>
+<p>a) Sobre el ejemplo anterior, añade y muestra en pantalla la información del repositorio de docker.</p>
+<p>b) Descarga la clave de https://packages.microsoft.com/keys/microsoft.asc gpg y añadela /etc/apt/keyrings/microsoft.asc dandole permisos de lectura a este archivo.</p>
+<p>c) Utilizando el comando tee y un "here document", añade a este repositorio a la carpeta adecuada, llamado: vscode.sources.
+<div class="highlight"><pre><span></span><code><span class="nf">Types</span><span class="o">:</span><span class="w"> </span><span class="n">deb</span>
+<span class="nf">URIs</span><span class="o">:</span><span class="w"> </span><span class="n">https</span>://<span class="n">packages</span>.<span class="n">microsoft</span>.<span class="n">com</span>/<span class="n">repos</span>/<span class="n">code</span>
+<span class="nf">Suites</span><span class="o">:</span><span class="w"> </span><span class="n">stable</span>
+<span class="nf">Components</span><span class="o">:</span><span class="w"> </span><span class="n">main</span>
+<span class="nf">Signed-By</span><span class="o">:</span><span class="w"> </span>/<span class="n">etc</span>/<span class="n">apt</span>/<span class="n">keyrings</span>/<span class="n">microsoft</span>.<span class="n">asc</span>
+</code></pre></div></p>
+<p>d) Realiza un update del sistema para ver si está todo correcto,</p>
+<p>e) Busca con apt que el paquete code está disponible. Posteriormente, instálalo.</p>
+<hr />
+<h3 id="6-practica">6-Práctica</h3>
+<p>a) Desinstala el paquete de typora quitando toda la configuracion o dependencias y comprobando que, efectivamente, no dejas nada.</p>
+<p>b) Después, vamos a ir un poco mas allá y vas a eliminar tambiém el repositorio de typora que añadiste a principio de curso (búscalo en <code>/etc/apt/sources.list.d/typor...</code> ) con un <code>ls</code> para localizar los posibles repositorios de typora.  Una vez y una vez localizados los repositorios de typora en tu sistema, por favor, hazle un cat a los repositorios para quedarte con las direcciones de las claves <code>gpg</code> de dichos repositorios y así poder borrarlas después. Para borrarlos, usa el comando <code>rm</code> que sirve para borrar un archivo. En este caso, borrarás una carpeta así que pin la opción <code>rm -r</code>.</p>
+<p>c) Desupués, de igual forma, borra la clave de typora (conseguidas en el apartado anterior), buscándolas también en: <code>/etc/apt/keyrings/typor...</code> y en <code>/etc/apt/trusted.gpg.d/typo</code></p>
+<p>d) Cuando el primer día de clase instalamos typora, aparecía esto:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/etc/apt/keyrings
+
+curl<span class="w"> </span>-fsSL<span class="w"> </span>https://downloads.typora.io/typora.gpg<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/keyrings/typora.gpg<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+
+<span class="c1"># add Typora&#39;s repository securely</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [signed-by=/etc/apt/keyrings/typora.gpg] https://downloads.typora.io/linux ./&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/typora.list
+
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+
+<span class="c1"># install typora</span>
+
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>typora
+</code></pre></div>
+<p>Explica paso a paso que se está haciendo aquí ¿Cómo lo podrías hacer la parte del <code>tee</code> con un <code>Here document</code>? ¿Quien es la <code>URI</code> del repo anterior? ¿Y las <code>suite</code>? ¿Y las <code>componentes</code>?</p>
+<hr />
+<h3 id="7-aislar-programas-para-usuarios">7- Aislar programas para usuarios</h3>
+<h4 id="71-editando-el-binario">7.1- Editando el binario</h4>
+<p>En los sistemas basados en Debian/Ubuntu APT no ofrece un mecanismo para instalar un paquete del sistema solo para un usuario concreto. APT instala siempre a nivel de sistema: en <code>/usr/bin</code>, <code>/usr/lib</code>, <code>/etc</code>, etc., y por tanto el software queda accesible para todos los usuarios. Hay únicamente tres estrategias válidas para conseguir un efecto equivalente: control de permisos o instalaciones locales por usuario.</p>
+<p>Identificar el binario, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>which typora
+</code></pre></div>
+<p>Cambiar el propietario a un usuario específico:</p>
+<div class="highlight"><pre><span></span><code>sudo chown usuario_permitido:usuario_permitido /usr/bin/typora
+</code></pre></div>
+<p>Restringir permisos:</p>
+<div class="highlight"><pre><span></span><code>sudo chmod 700 /usr/bin/typora
+</code></pre></div>
+<p>Solo <code>usuario_permitido</code> puede ejecutar el binario.</p>
+<h4 id="72-creando-grupos-de-aislamiento">7.2- Creando grupos de aislamiento</h4>
+<p>Vuelve a instalar docker, en este caso mediante su repositorio, Después, el objetivo es que no todo el mundo tenga acceso a Docker. Para ello, no tienes que editar el binario como en el caso anterior. De hecho, Docker funciona a través de los siguientres tres ficheros:</p>
+<ul>
+<li><code>/usr/bin/docker</code>  Es un binario que traduce los comando de docker (como docker ps) a preticiones con el comando curl. Por ejemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>ps
+<span class="c1">#Es equivalente a</span>
+curl<span class="w"> </span>--unix-socket<span class="w"> </span>/var/run/docker.sock<span class="w"> </span>http://localhost/containers/json
+</code></pre></div>
+<p>Como puedes observar lo unico que hace es traducir un comando a una petición a <code>/var/run/docker.sock</code>, quien es quien realmente sabe qué hacer.</p>
+<ul>
+<li><code>/var/run/docker.sock</code> se expone ahí lo que se conoce como una API REST. Cualquier proceso, como un usuario mediante terminal, o un sistema, le enviará peticiones a ese socket (como en el ejemplo anterior) que lo que hace es ejecutar por debajo el demonio dockerd.</li>
+<li><code>/usr/bin/dockerd</code> Es un programa que <code>var/run/docker.sock</code> ejecuta en segundo plano (es un demonio). Este binario es el verdaderamente importante, ya que crea contenedores, los para, monta volúmenes. Eso sí, necesita de <code>/var/run/docker.sock</code> para saber qué haer.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>manolo@manolo:~$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>/usr/bin/docker
+-rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">43976685</span><span class="w"> </span>nov<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">12</span>:33<span class="w"> </span>/usr/bin/docker
+manolo@manolo:~$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>/var/run/docker.sock
+srw-rw----<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>docker<span class="w"> </span><span class="m">0</span><span class="w"> </span>dic<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">11</span>:12<span class="w"> </span>/var/run/docker.sock
+manolo@manolo:~$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>/usr/bin/dockerd
+-rwxr-xr-x<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">94454968</span><span class="w"> </span>nov<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">12</span>:33<span class="w"> </span>/usr/bin/dockerd
+</code></pre></div>
+<p>Si yo intento hacer: </p>
+<div class="highlight"><pre><span></span><code>manolo@manolo:~$<span class="w"> </span>docker<span class="w"> </span>ps
+permission<span class="w"> </span>denied<span class="w"> </span><span class="k">while</span><span class="w"> </span>trying<span class="w"> </span>to<span class="w"> </span>connect<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>docker<span class="w"> </span>API<span class="w"> </span>at<span class="w"> </span>unix:///var/run/docker.sock
+</code></pre></div>
+<p>Me da error de permisos. Pero si hago:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/var/run/docker.sock
+</code></pre></div>
+<p>o añadimos a manolo al grupo  que aparece aquí:</p>
+<div class="highlight"><pre><span></span><code>manolo@manolo:~$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>/var/run/docker.sock
+srw-rw----<span class="w"> </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>docker<span class="w"> </span><span class="m">0</span><span class="w"> </span>dic<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">11</span>:12<span class="w"> </span>/var/run/docker.sock
+</code></pre></div>
+<p>es decir,</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>gpasswd<span class="w"> </span>-a<span class="w">  </span>manolo<span class="w"> </span>docker
+</code></pre></div>
+<p>Manolo podrá hacer:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>ps
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

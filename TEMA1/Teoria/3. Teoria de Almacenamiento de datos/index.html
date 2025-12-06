@@ -1,0 +1,1737 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2.%20Teor%C3%ADa%20de%20Sistemas%20Num%C3%A9ricos%20en%20Inform%C3%A1tica/">
+      
+      
+        <link rel="next" href="../4.%20Teoria%20%E2%80%94%20Hardware%20y%20Software%20b%C3%A1sico%20de%20un%20ordenador/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>3er Archivo Teoría (Almacenamiento de datos) - Módulo ISO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-teoria-de-almacenamiento-de-datos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Módulo ISO" class="md-header__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Módulo ISO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3er Archivo Teoría (Almacenamiento de datos)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Módulo ISO" class="md-nav__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Módulo ISO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20Teoria%20de%20Markdown%20SIMPLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (Markdown)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20Teor%C3%ADa%20de%20Sistemas%20Num%C3%A9ricos%20en%20Inform%C3%A1tica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Sistemas Numéricos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3er Archivo Teoría (Almacenamiento de datos)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3er Archivo Teoría (Almacenamiento de datos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-unidades-de-medida-de-la-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Unidades de medida de la información
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ejemplos-de-conversiones-decimales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ejemplos de conversiones decimales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Ejemplos de conversiones decimales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-de-kilobytes-a-megabytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - De kilobytes a megabytes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-de-gigabytes-a-terabytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - De gigabytes a terabytes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ejemplos-de-conversiones-binarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ejemplos de conversiones binarias
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Ejemplos de conversiones binarias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-de-kibibytes-a-mebibytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - De Kibibytes a Mebibytes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-de-gibibytes-a-tebibytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - De Gibibytes a Tebibytes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ejemplos-de-conversiones-cruzadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ejemplos de conversiones cruzadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Ejemplos de conversiones cruzadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-de-gibibytes-iec-a-gigabytes-si" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - De Gibibytes (IEC) a Gigabytes (SI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-formas-de-guardar-la-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Formas de guardar la información
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-consola-linea-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Consola. Linea de comandos.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ejemplos-en-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Ejemplos en ubuntu:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Ejemplos en ubuntu:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-1-ls-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo 1: ls simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-2-ls-con-parametro-otro-directorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo 2: ls con parámetro (otro directorio)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-3-ls-con-flag-parametro-especial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo 3: ls con flag (parámetro especial)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-4-ls-con-operador-de-redireccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo 4: ls con operador de redirección
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%20Teoria%20%E2%80%94%20Hardware%20y%20Software%20b%C3%A1sico%20de%20un%20ordenador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4to Archivo Teoría (Hardware y Software)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%20Teor%C3%ADa%20Sistemas%20Operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5to Archivo Teoría (Sistemas Operativos y Virtualización)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/1ªPractica.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/2.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Rellena%20la%20siguiente%20tabla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/3.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Probamos%20la%20CLI%20de%20Ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/4.%20Pr%C3%A1ctica%20%E2%80%94%20Curiosidades%20y%20importancia%20de%20los%20sistemas%20de%20enumeraci%C3%B3n%20binario%20y%20hexadecimal%20en%20la%20informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/4.2.%20Pr%C3%A1ctica%20%E2%80%94%20Comparaci%C3%B3n%20GUI%20vs%20CLI%20en%20Ubuntu%20e%20instalaci%C3%B3n%20de%20KDE%20%28copy%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (versión 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/5.%20Pr%C3%A1cticaTrabajoCooperativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/1%C2%AA%20Teoria%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (QEMU-KVM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/2%20Teor%C3%ADa%20de%20las%20instalaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Instalaciones y Particiones)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/1%C2%AA%20Pr%C3%A1ctica%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica (Opcional. Virtualizacion Anidada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/2%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20de%20Ubuntu%20sin%20LUKS%20%28sin%20LVM%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/3%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20Dual%20de%20ubuntu%20%2B%20Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/4%C2%AA%20Pr%C3%A1ctica%20Migraci%C3%B3n%20de%20un%20disco%20de%20120%20GB%20%28M%C3%A1s%20grande%29%20a%20otro%20de%20100%20GB%20%28M%C3%A1s%20chico%29%20usando%20GParted%20y%20el%20comando%20dd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica Guiada (Administración de permisos en directorios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica Guiada (Administración de permisos en binarios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/4ª Practica APT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica Guiada (Uso de APT avanzado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-unidades-de-medida-de-la-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Unidades de medida de la información
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ejemplos-de-conversiones-decimales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ejemplos de conversiones decimales
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Ejemplos de conversiones decimales">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-de-kilobytes-a-megabytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - De kilobytes a megabytes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-de-gigabytes-a-terabytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - De gigabytes a terabytes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ejemplos-de-conversiones-binarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ejemplos de conversiones binarias
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Ejemplos de conversiones binarias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-de-kibibytes-a-mebibytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - De Kibibytes a Mebibytes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-de-gibibytes-a-tebibytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - De Gibibytes a Tebibytes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ejemplos-de-conversiones-cruzadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ejemplos de conversiones cruzadas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Ejemplos de conversiones cruzadas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-de-gibibytes-iec-a-gigabytes-si" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        - De Gibibytes (IEC) a Gigabytes (SI)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-formas-de-guardar-la-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Formas de guardar la información
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-consola-linea-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Consola. Linea de comandos.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ejemplos-en-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7 Ejemplos en ubuntu:
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7 Ejemplos en ubuntu:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-1-ls-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo 1: ls simple
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-2-ls-con-parametro-otro-directorio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo 2: ls con parámetro (otro directorio)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-3-ls-con-flag-parametro-especial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo 3: ls con flag (parámetro especial)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-4-ls-con-operador-de-redireccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo 4: ls con operador de redirección
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3-teoria-de-almacenamiento-de-datos">3. Teoria de Almacenamiento de datos</h1>
+<p>Veamos la teoría de este punto 3.</p>
+<h2 id="1-unidades-de-medida-de-la-informacion">1. Unidades de medida de la información</h2>
+<p>En informática, la información se mide en bits y sus múltiplos. Las unidades de medida permiten cuantificar la capacidad de almacenamiento o el tamaño de datos.</p>
+<ol>
+<li>Bit</li>
+</ol>
+<p>Símbolo: b, es la unidad mínima de información con valores posibles 0 o 1. Representa un estado lógico, verdadero/falso, encendido/apagado.</p>
+<ol>
+<li>Byte</li>
+</ol>
+<p>Símbolo: B, representa un conjunto de 8 bits con rango de valores: 0 a 255 (2⁸ posibles combinaciones). Puede representar un carácter de texto, un valor numérico pequeño o un color de 8 bits.</p>
+<ol>
+<li>Resto de medidas</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Unidad decimal (SI)</th>
+<th>Símbolo</th>
+<th>Equivalencia decimal (base 10)</th>
+<th>Unidad binaria (IEC)</th>
+<th>Símbolo</th>
+<th>Equivalencia binaria (base 2)</th>
+<th>Uso típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kilobyte</td>
+<td>kB</td>
+<td>10³ bytes = 1.000 B</td>
+<td>Kibibyte</td>
+<td>KiB</td>
+<td>2¹⁰ bytes = 1.024 B</td>
+<td>Pequeños archivos de texto</td>
+</tr>
+<tr>
+<td>Megabyte</td>
+<td>MB</td>
+<td>10⁶ bytes = 1.000.000 B</td>
+<td>Mebibyte</td>
+<td>MiB</td>
+<td>2²⁰ bytes = 1.048.576 B</td>
+<td>Archivos de música, imágenes</td>
+</tr>
+<tr>
+<td>Gigabyte</td>
+<td>GB</td>
+<td>10⁹ bytes = 1.000.000.000 B</td>
+<td>Gibibyte</td>
+<td>GiB</td>
+<td>2³⁰ bytes = 1.073.741.824 B</td>
+<td>Memoria RAM, discos duros</td>
+</tr>
+<tr>
+<td>Terabyte</td>
+<td>TB</td>
+<td>10¹² bytes = 1.000.000.000.000 B</td>
+<td>Tebibyte</td>
+<td>TiB</td>
+<td>2⁴⁰ bytes ≈ 1.099.511.627.776 B</td>
+<td>Almacenamiento masivo, servidores</td>
+</tr>
+<tr>
+<td>Petabyte</td>
+<td>PB</td>
+<td>10¹⁵ bytes</td>
+<td>Pebibyte</td>
+<td>PiB</td>
+<td>2⁵⁰ bytes ≈ 1.125.899.906.842.624 B</td>
+<td>Centros de datos muy grandes</td>
+</tr>
+<tr>
+<td>Exabyte</td>
+<td>EB</td>
+<td>10¹⁸ bytes</td>
+<td>Exbibyte</td>
+<td>EiB</td>
+<td>2⁶⁰ bytes ≈ 1.152.921.504.606.846.976 B</td>
+<td>Internet global (estimaciones)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-ejemplos-de-conversiones-decimales">2. Ejemplos de conversiones decimales</h2>
+<h4 id="-de-kilobytes-a-megabytes">- De <strong>kilobytes a megabytes</strong></h4>
+<p>$$
+1 \, \text{MB} = 10^6 \, \text{B}, \quad 1 \, \text{kB} = 10^3 \, \text{B}
+$$</p>
+<hr />
+<h4 id="-de-gigabytes-a-terabytes">- De <strong>gigabytes a terabytes</strong></h4>
+<p>$$
+1 \, \text{GB} = 10^9 \, \text{B}, \quad 1 \, \text{TB} = 10^{12} \, \text{B}
+$$</p>
+<hr />
+<h2 id="3-ejemplos-de-conversiones-binarias">3. Ejemplos de conversiones binarias</h2>
+<h4 id="-de-kibibytes-a-mebibytes">- De <strong>Kibibytes a Mebibytes</strong></h4>
+<p>$$
+1 \, \text{KiB} = 2^{10} \, \text{B}, \quad 1 \, \text{MiB} = 2^{20} \, \text{B}
+$$</p>
+<hr />
+<h4 id="-de-gibibytes-a-tebibytes">- De <strong>Gibibytes a Tebibytes</strong></h4>
+<p>$$
+1 \, \text{GiB} = 2^{30} \, \text{B}, \quad 1 \, \text{TiB} = 2^{40} \, \text{B}
+$$</p>
+<hr />
+<h2 id="4-ejemplos-de-conversiones-cruzadas">4. Ejemplos de conversiones cruzadas</h2>
+<h4 id="-de-gibibytes-iec-a-gigabytes-si">- De <strong>Gibibytes (IEC) a Gigabytes (SI)</strong></h4>
+<p>$$
+1 \, \text{GiB} = 2^{30} \, \text{B}, \quad 1 \, \text{GB} = 10^9 \, \text{B}
+$$</p>
+<p>$$
+10 \, \text{MB} = \frac{10 \times 10<sup>6}{2</sup>{20}} \approx 9,54 \, \text{MiB}$
+$$</p>
+<h2 id="5-formas-de-guardar-la-informacion">5. Formas de guardar la información</h2>
+<ul>
+<li>
+<p>Cuando hablamos de cómo se guarda la información en un ordenador, siempre debemos volver a lo esencial: todo se reduce a bits, ceros y unos. Estos valores, que representan estados eléctricos o magnéticos, necesitan un soporte físico en el que almacenarse para que el sistema pueda conservarlos incluso cuando se apaga la máquina.</p>
+</li>
+<li>
+<p>Durante décadas, ese soporte ha sido el disco duro mecánico o HDD. Un HDD funciona con platos recubiertos de material magnético que giran a gran velocidad. Un cabezal de lectura y escritura se desplaza sobre esos platos, cambiando la orientación de pequeñísimas zonas magnéticas para representar un 0 o un 1. La información no se almacena de forma caótica, sino organizada en sectores (unidades mínimas de almacenamiento, normalmente de 512 bytes o 4 KB), que a su vez forman pistas. Esta organización permite que el sistema operativo localice y lea los datos de manera ordenada.</p>
+</li>
+</ul>
+<p><img alt="imagen disco hdd" src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Disk-structure2.svg" /></p>
+<ul>
+<li>
+<p>Más recientemente aparecieron los SSD o discos de estado sólido, que funcionan de una manera completamente diferente. En lugar de partes mecánicas y magnéticas, los SSD utilizan memoria flash NAND. Cada bit de información queda guardado como una carga eléctrica dentro de transistores microscópicos. La ventaja fundamental es que no hay partes móviles: la lectura y escritura es casi instantánea y mucho más fiable a largo plazo frente a golpes o vibraciones. La información se organiza en páginas (que suelen ser de 4 a 16 KB). Esas páginas no están sueltas: se agrupan en bloques, normalmente de 1 MB (varias páginas juntas), pero el principio sigue siendo el mismo: representar ceros y unos que luego el sistema operativo agrupa en archivos y carpetas. El borrado siempre se hace a nivel de bloque completo, es decir, la unidad mínima de borrado es 1MB.</p>
+</li>
+<li>
+<p>Y aquí entra en juego una herramienta clásica de Linux: el comando dd. Este programa trabaja copiando datos a bajo nivel, en bloques cuyo tamaño puede configurarse con el parámetro bs (block size). Si usas dd con un tamaño de bloque alineado con las páginas o bloques físicos del SSD (por ejemplo, 4K o 1M), el rendimiento será mucho mejor. Si eliges tamaños muy pequeños (1K, 512 bytes), el SSD tiene que hacer más operaciones internas.</p>
+</li>
+<li>
+<p>En un SSD, la unidad mínima física de escritura es la página (4 KB – 16 KB).</p>
+</li>
+<li>
+<p>Si usas dd con un tamaño de bloque (bs) que coincide con la página física (por ejemplo, 4K), la escritura se alinea bien y es eficiente. Supongamos que quiero llenar un SSD con datos de prueba:</p>
+<ul>
+<li>
+<p>if = input file (/dev/urandom, datos aleatorios).</p>
+</li>
+<li>
+<p>of = output file (prueba.img).</p>
+</li>
+<li>
+<p>bs=1M → escribo en bloques de 1 MB.</p>
+</li>
+<li>
+<p>Esto coincide bastante con el tamaño de un bloque interno del SSD (≈128 páginas de 8K = 1 MB).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Veamos un ejemplo, como decíamos, el comando dd se usa en Linux/Unix para copiar datos a bajo nivel, por ejemplo, grabar una ISO de Ubuntu en una memoria USB. Vamos a ver un ejemplo de cómo hacerlo:</p>
+<p><div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>~/Descargas/ubuntu.iso<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/sdX<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>4M<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">conv</span><span class="o">=</span>fsync
+</code></pre></div>
+donde /dev/sdX es nuestro pendrive, buscado gracias a lsblk.</p>
+<h2 id="6-consola-linea-de-comandos">6. Consola. Linea de comandos.</h2>
+<p>La interfaz de línea de comandos, en inglés Command Line Interface o CLI, es el conjunto de elementos visuales que permiten, sobre un dispositivo de salida, indicar órdenes o comandos utilizando un dispositivo de entrada. Concretamente se utiliza el teclado para invocar comandos configurados para realizar una serie de acciones y el resultado de la ejecución de estas acciones se mostrará por pantalla.</p>
+<p>En cualquier CLI se pueden encontrar los siguientes elementos, que se estudian con el caso concreto de un terminal Linux (figura 1.13):</p>
+<ul>
+<li>
+<p>Prompt de usuario: indica el nombre del usuario (fer), el nombre de la máquina (fer-pc), el directorio en el que se encuentra actualmente (~/Documentos) y si el usuario tiene permisos de administrador (#) o es un usuario corriente ($).</p>
+</li>
+<li>
+<p>Comando: programa que va a ejecutar el usuario (echo).</p>
+</li>
+<li>
+<p>Parámetros: valores de configuración que se dan al programa (“Hola ISO”). Un tipo de parámetros especiales son los flags (también llamado opción o switch) es un parámetro que se añade a un comando para modificar su comportamiento.</p>
+</li>
+<li>
+<p>Operadores: elementos para enlazar la salida de un programa con la entrada de otro o con la escritura de datos en ficheros.</p>
+</li>
+<li>
+<p>Salida: datos o información que ofrece el programa como resultado de su procesamiento.</p>
+</li>
+</ul>
+<h2 id="7-ejemplos-en-ubuntu">7 Ejemplos en ubuntu:</h2>
+<p>Uno de los comandos más comunes que veremos cuando listemos la estructura de un directorio en linux (siguiente tema), será el comando ls. En los siguientes ejemplos se muestran casos sencillos de uso dividiendo en la terminología usada anteriormente. La estructura de directorio de un debion también se verá en el siguiente tema y no debe ser objeto de preocupación del alumnado.</p>
+<h3 id="ejemplo-1-ls-simple">Ejemplo 1: ls simple</h3>
+<div class="highlight"><pre><span></span><code>fer@pc:~/Documentos$<span class="w"> </span>ls
+</code></pre></div>
+<p>Prompt de usuario: fer@pc:~/Documentos$</p>
+<p>Comando: ls</p>
+<p>Parámetro: (ninguno en este caso)</p>
+<p>Operadores: (ninguno)</p>
+<p>Salida: lista de archivos del directorio actual, ej.:
+- informe.txt
+- tareas.pdf
+- notas.csv</p>
+<h3 id="ejemplo-2-ls-con-parametro-otro-directorio">Ejemplo 2: ls con parámetro (otro directorio)</h3>
+<div class="highlight"><pre><span></span><code>fer@pc:~$<span class="w"> </span>ls<span class="w"> </span>/etc
+</code></pre></div>
+<p>Prompt de usuario: fer@pc:~$</p>
+<p>Comando: ls</p>
+<p>Parámetro: /etc (indico el directorio que quiero listar)</p>
+<p>Operadores: (ninguno)</p>
+<p>Salida:
+-hosts
+-passwd
+-shadow
+-ssh</p>
+<h3 id="ejemplo-3-ls-con-flag-parametro-especial">Ejemplo 3: ls con flag (parámetro especial)</h3>
+<div class="highlight"><pre><span></span><code>fer@pc:~/Descargas$<span class="w"> </span>ls<span class="w"> </span>-l
+</code></pre></div>
+<p>Prompt de usuario: fer@pc:~/Descargas$</p>
+<p>Comando: ls</p>
+<p>Parámetro (flag): -l (listado largo)</p>
+<p>Operadores: (ninguno)</p>
+<p>Salida:
+<div class="highlight"><pre><span></span><code>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>fer<span class="w"> </span>fer<span class="w">  </span><span class="m">1024</span><span class="w"> </span>sep<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">10</span>:00<span class="w"> </span>informe.txt
+drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>fer<span class="w"> </span>fer<span class="w">  </span><span class="m">4096</span><span class="w"> </span>sep<span class="w">  </span><span class="m">2</span><span class="w"> </span><span class="m">11</span>:30<span class="w"> </span>proyectos
+</code></pre></div></p>
+<h3 id="ejemplo-4-ls-con-operador-de-redireccion">Ejemplo 4: ls con operador de redirección</h3>
+<div class="highlight"><pre><span></span><code>fer@pc:~$<span class="w"> </span>ls<span class="w"> </span>/bin<span class="w"> </span>&gt;<span class="w"> </span>lista.txt
+</code></pre></div>
+<p>Prompt de usuario: fer@pc:~$</p>
+<p>Comando: ls</p>
+<p>Parámetro (flag): /bin</p>
+<p>Operadores: &gt; (redirige la salida a un archivo)</p>
+<p>Salida: no se muestra nada en pantalla; se guarda en lista.txt.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

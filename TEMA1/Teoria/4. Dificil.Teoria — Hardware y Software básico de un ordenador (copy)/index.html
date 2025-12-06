@@ -1,0 +1,1981 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>4. Teoría — Hardware y Software básico de un ordenador. - Módulo ISO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-teoria-hardware-y-software-basico-de-un-ordenador" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Módulo ISO" class="md-header__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Módulo ISO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. Teoría — Hardware y Software básico de un ordenador.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Módulo ISO" class="md-nav__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Módulo ISO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1.%20Teoria%20de%20Markdown%20SIMPLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (Markdown)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20Teor%C3%ADa%20de%20Sistemas%20Num%C3%A9ricos%20en%20Inform%C3%A1tica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Sistemas Numéricos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Teoria%20de%20Almacenamiento%20de%20datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3er Archivo Teoría (Almacenamiento de datos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%20Teoria%20%E2%80%94%20Hardware%20y%20Software%20b%C3%A1sico%20de%20un%20ordenador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4to Archivo Teoría (Hardware y Software)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%20Teor%C3%ADa%20Sistemas%20Operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5to Archivo Teoría (Sistemas Operativos y Virtualización)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/1ªPractica.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/2.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Rellena%20la%20siguiente%20tabla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/3.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Probamos%20la%20CLI%20de%20Ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/4.%20Pr%C3%A1ctica%20%E2%80%94%20Curiosidades%20y%20importancia%20de%20los%20sistemas%20de%20enumeraci%C3%B3n%20binario%20y%20hexadecimal%20en%20la%20informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/4.2.%20Pr%C3%A1ctica%20%E2%80%94%20Comparaci%C3%B3n%20GUI%20vs%20CLI%20en%20Ubuntu%20e%20instalaci%C3%B3n%20de%20KDE%20%28copy%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (versión 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/5.%20Pr%C3%A1cticaTrabajoCooperativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/1%C2%AA%20Teoria%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (QEMU-KVM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/2%20Teor%C3%ADa%20de%20las%20instalaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Instalaciones y Particiones)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/1%C2%AA%20Pr%C3%A1ctica%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica (Opcional. Virtualizacion Anidada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/2%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20de%20Ubuntu%20sin%20LUKS%20%28sin%20LVM%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/3%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20Dual%20de%20ubuntu%20%2B%20Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/4%C2%AA%20Pr%C3%A1ctica%20Migraci%C3%B3n%20de%20un%20disco%20de%20120%20GB%20%28M%C3%A1s%20grande%29%20a%20otro%20de%20100%20GB%20%28M%C3%A1s%20chico%29%20usando%20GParted%20y%20el%20comando%20dd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica Guiada (Administración de permisos en directorios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica Guiada (Administración de permisos en binarios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/4ª Practica APT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica Guiada (Uso de APT avanzado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-es-la-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ¿Qué es la CPU?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. ¿Qué es la CPU?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-ejemplo-de-codigo-ya-cargado-en-memoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Ejemplo de código ya cargado en memoria.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-2-que-hace-la-unidad-de-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 2. ¿Qué hace la Unidad de Control?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 2. ¿Qué hace la Unidad de Control?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fetch-traer-la-instruccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fetch (traer la instrucción)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-decode-decodificar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Decode (decodificar)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-execute-ejecutar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Execute (ejecutar)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cuando-participa-realmente-la-alu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 ¿Cuando participa realmente la ALU?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 ¿Cuando participa realmente la ALU?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-fetch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) Fetch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-decode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) Decode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-execute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) Execute
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-es-la-ram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ¿Qué es la RAM?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-la-arquitectura-de-von-neumann-en-el-diseno-de-un-ordenador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. La arquitectura de von Neumann en el diseño de un ordenador
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. La arquitectura de von Neumann en el diseño de un ordenador">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-basicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Componentes básicos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ciclo-basico-ciclo-de-instruccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ciclo básico (ciclo de instrucción)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-arquitectura-8086-de-16-bits-2-bytes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Arquitectura 8086 de 16 bits (2 bytes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Arquitectura 8086 de 16 bits (2 bytes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-la-solucion-de-intel-segmentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 La solución de Intel: segmentación
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-como-se-carga-y-ejecuta-un-programa-en-un-8086" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Cómo se carga y ejecuta un programa en un 8086
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Cómo se carga y ejecuta un programa en un 8086">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-ejecucion-de-instrucciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Ejecución de instrucciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-la-pila-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 La pila de ejecución
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-ejemplo-de-estructura-lifo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 Ejemplo de estructura LIFO
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Ejemplo de estructura LIFO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-estado-inicial-vacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Estado inicial (vacío)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-hacemos-dos-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Hacemos dos PUSH
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-miramos-como-se-guarda-la-informacion-en-cada-direccion-de-memoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Miramos como se guarda la informacion en cada dirección de memoria:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-hacemos-un-pop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Hacemos un POP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-nucleos-y-threads-hilos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Núcleos y threads (hilos)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Núcleos y threads (hilos)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. CPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-flujo-de-ejecucion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Flujo de ejecución
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-thread-hilo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Thread. Hilo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-core" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Core
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-hyperthreading-smt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. HyperThreading / SMT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-que-hace-el-programa-firefox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. ¿Qué hace el programa Firefox?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-simulando-concurrencia-y-paralelismo-en-un-lenuaje-de-programacion-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Simulando concurrencia y paralelismo en un lenuaje de programación. Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="4-teoria-hardware-y-software-basico-de-un-ordenador">4. Teoría — Hardware y Software básico de un ordenador.</h1>
+<h2 id="1-que-es-la-cpu">1. ¿Qué es la CPU?</h2>
+<p>La CPU (Unidad Central de Procesamiento) es el cerebro del ordenador. Se encarga de ejecutar instrucciones de los programas y procesa datos que se encuentran en la memoria o que recibe de dispositivos de entrada. Está formada por varias subunidades internas, como la unidad aritmético-lógica (ALU) y la unidad de control.</p>
+<p>Los registros son pequeñas áreas de memoria dentro de la CPU que almacenan temporalmente datos o direcciones. Son mucho más rápidos que la RAM y cada registro puede almacenar una cantidad fija de bits, según la arquitectura (8, 16, 32 o 64 bits). </p>
+<p>La unidad aritmético-lógica (ALU) es la parte de la CPU que se encarga de realizar todas las operaciones matemáticas y lógicas. Por ejemplo, suma, resta, multiplicación, división, así como operaciones lógicas como AND, OR, XOR o comparaciones entre números. Cada vez que ejecutamos una instrucción como ADD AX, BX, la ALU calcula el resultado de la operación.</p>
+<p>Por otro lado, la unidad de control (CU) coordina todo el funcionamiento de la CPU. Su función principal es decodificar las instrucciones, decidir qué señales enviar a la ALU, a los registros y a los buses de memoria, y controlar el flujo de datos dentro de la CPU.  Gracias a la unidad de control, la CPU sabe qué operación ejecutar, qué registros usar y cuándo leer o escribir datos en la memoria. La arquitectura que pondremos de ejempo es esta</p>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Función</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Registros</strong></td>
+<td>Pequeñas memorias internas, muy rápidas, que guardan datos temporales (16, 32 o 64 bits según la arquitectura).</td>
+<td><code>MOV AX, 5</code> → guarda el valor 5 en AX</td>
+</tr>
+<tr>
+<td><strong>ALU (Unidad Aritmético-Lógica)</strong></td>
+<td>Realiza operaciones matemáticas y lógicas.</td>
+<td><code>ADD AX, BX</code> suma AX + BX</td>
+</tr>
+<tr>
+<td><strong>CU (Unidad de Control)</strong></td>
+<td>Decide qué debe hacer la CPU en cada ciclo de reloj: <br/>- Busca la instrucción en memoria (CS:IP) <br/>- La decodifica <br/>- Genera señales de control para la ALU, registros y buses <br/>- Coordina lectura/escritura en memoria <br/>- Cambia el flujo del programa (saltos, interrupciones)</td>
+<td><code>MOV AX, [1234h]</code> → la CU ordena leer de memoria y guardar en AX</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="11-ejemplo-de-codigo-ya-cargado-en-memoria">1.1 Ejemplo de código ya cargado en memoria.</h3>
+<p>En la RAM no se guarda la instrucción como texto, sino en <strong>binario (código máquina)</strong>. Este código máquina se ha cargado gracias a algun programa (como ensamblador), que ha traducido previamente, al compilar, las intrucciones del lenguaje</p>
+<ul>
+<li>El compilador o ensamblador traduce  la instrucción del codigo por ejemplo:<code>MOV AX, [1234h]</code> a bytes, por ejemplo:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>A1 34 12
+</code></pre></div>
+<ul>
+<li><code>A1h</code> = código de operación (opcode) para <code>MOV AX, [imm16]</code>.</li>
+<li><code>34 12h</code> = el desplazamiento (offset = 1234h).</li>
+</ul>
+<p>Así que en la memoria RAM, en la posición de código encontramos esos bytes: encontramos esos bytes (las direcciones donde se encontrará el código está inventadas ahora mismo, pero después lo entenderemos mejor):</p>
+<div class="highlight"><pre><span></span><code>Dirección 20100h: A1h
+Dirección 20101h: 34h
+Dirección 20102h: 12h
+</code></pre></div>
+<h3 id="1-2-que-hace-la-unidad-de-control">1. 2. ¿Qué hace la Unidad de Control?</h3>
+<p>La <strong>CU</strong> entra en acción en el <strong>ciclo de instrucción (fetch-decode-execute)</strong>:</p>
+<h4 id="fetch-traer-la-instruccion">Fetch (traer la instrucción)</h4>
+<p>La CU forma la dirección física  en donde e encontrará el código. Va a la RAM y lee el primer byte (<code>A1h</code>).</p>
+<ol>
+<li>Sabe que este es el opcode, así que consulta su “tabla interna de microcódigo” para ver qué significa.</li>
+<li>Ve que debe leer dos bytes más (el offset).</li>
+<li>Incrementa <code>IP</code> (un registro ya nombrado, más tarde entenderemos qué significa) para seguir leyendo → trae <code>34h 12h</code>.</li>
+</ol>
+<p>Ahora la CU tiene la instrucción completa en un registro interno llamado Instruction Register (IR).</p>
+<h4 id="b-decode-decodificar">b) Decode (decodificar)</h4>
+<p>Recordemos que la instrucción era: <code>MOV AX, [1234h].</code> La CU analiza <code>A1h</code> → corresponde a <code>MOV AX, [imm16]</code> e interpreta que debe:</p>
+<ul>
+<li>
+<p>Usar el valor inmediato <code>1234h</code> como offset.</p>
+</li>
+<li>
+<p>Combinarlo con <code>DS</code> para formar una dirección física, que se calcula como: </p>
+</li>
+</ul>
+<p>$$
+\text{Dirección física} = (\text{Segmento} \times 16) + \text{Offset}
+$$</p>
+<ul>
+<li>Leer el valor de esa posición de memoria calculada en los dos pasos anteriores y copiaa ese valor en <code>AX</code>.</li>
+</ul>
+<p>Por tanto; La CU convierte la instrucción en <strong>señales de control</strong> para los demás bloques de la CPU.</p>
+<h4 id="c-execute-ejecutar">c) Execute (ejecutar)</h4>
+<ol>
+<li>La CU envía la orden a la Unidad de Dirección:</li>
+<li>Calcula la dirección física = <code>DS × 16 + 1234h</code>.</li>
+<li>Accede a la RAM.</li>
+<li>La CU da la orden al bus de datos:</li>
+<li>Traer 16 bits (dos bytes) de esa dirección de memoria.</li>
+<li>Esos 16 bits se almacenan temporalmente en un buffer interno (a veces un latch en el bus).</li>
+<li>La CU activa la señal para que esos 16 bits se carguen en el registro <code>AX</code>.</li>
+</ol>
+<h3 id="13-cuando-participa-realmente-la-alu">1.3 ¿Cuando participa realmente la ALU?</h3>
+<p>En el ejemplo anteriores, la ALU no participa en ninguna de las fases. porque lo único que ocurre es mover datos de memoria a un registro. Eso lo resuelven la CU, los buses y la unidad de direccionamiento. Pero cuando la instrucción implica una operación aritmética o lógica, entonces sí la CU tiene que “invocar” a la ALU.</p>
+<div class="highlight"><pre><span></span><code>ADD AX, BX
+</code></pre></div>
+<h4 id="a-fetch">a) Fetch</h4>
+<p>La CU trae de memoria el opcode correspondiente a <code>ADD</code>. Lo guarda en el registro Instruction Register (IR).</p>
+<h4 id="b-decode">b) Decode</h4>
+<p>La CU reconoce que es <code>ADD AX, BX</code> y Ttaduce esto en microórdenes:</p>
+<ol>
+<li>Cargar el contenido de <code>AX</code> en una entrada de la ALU.</li>
+<li>Cargar el contenido de <code>BX</code> en la otra entrada de la ALU.</li>
+<li>Configurar la ALU en modo “suma”.</li>
+</ol>
+<h4 id="c-execute">c) Execute</h4>
+<p>La ALU realiza la suma <code>AX + BX</code>. El resultado se coloca en <code>AX</code> y la ALU actualiza las banderas (<code>ZF</code>, <code>CF</code>, <code>OF</code>, etc.) según el resultado. Estan banderas no son más que registros que obtienen valores según el resultado de la operación realizada, por ejemplo:</p>
+<ol>
+<li>
+<p>Se activa (<code>ZF=1</code>) cuando el resultado de una operación es cero.</p>
+</li>
+<li>
+<p>Si el resultado no es cero → <code>ZF=0</code>.</p>
+</li>
+</ol>
+<p>Aquí la CU no hace la operación matemática, solo envía las señales: “ALU, suma estos dos valores y guarda el resultado en AX”.</p>
+<hr />
+<h2 id="2-que-es-la-ram">2. ¿Qué es la RAM?</h2>
+<p>La RAM es la memoria principal del sistema. Se organiza en direcciones lineales, <u>cada dirección contiene 1 byte</u>. La CPU puede <u>leer o escribir</u> en la RAM mediante el bus de direcciones (dice dónde) y el bus de datos (dice qué valor).</p>
+<p>Ejemplo: </p>
+<div class="highlight"><pre><span></span><code>MOV<span class="w"> </span>AX,<span class="w"> </span><span class="o">[</span>1234h<span class="o">]</span>
+</code></pre></div>
+<p>La CPU coloca 1234h en el bus de direcciones. Activa una lectura de memoria. El valor que hay en RAM en esa dirección entra por el bus de datos y se guarda en AX.  Si quisieramos escribir en la RAM la instrucción se podría ejecutar al contrario:</p>
+<div class="highlight"><pre><span></span><code>MOV [1234h], AX
+</code></pre></div>
+<hr />
+<h2 id="3-la-arquitectura-de-von-neumann-en-el-diseno-de-un-ordenador">3. La arquitectura de von Neumann en el diseño de un ordenador</h2>
+<p>La arquitectura de von Neumann fue propuesta en 1945 por el matemático John von Neumann (junto con otros como Mauchly y Eckert, quienes trabajaron en la ENIAC). Su idea básica fue unificar memoria y programa.</p>
+<p>En máquinas anteriores (como ENIAC), los programas se cableaban físicamente. Von Neumann propuso almacenar instrucciones y datos en la misma memoria, de forma que el computador pudiera modificarse simplemente cargando otro programa.</p>
+<h3 id="componentes-basicos">Componentes básicos</h3>
+<ol>
+<li>La arquitectura clásica se compone de 5 bloques fundamentales:</li>
+<li><strong>Unidad de procesamiento central (CPU)</strong><ul>
+<li>Unidad de control (CU): interpreta las instrucciones y genera señales para coordinar todo el hardware.</li>
+<li>ALU (Arithmetic Logic Unit): ejecuta operaciones aritméticas (suma, resta, AND, OR, desplazamientos…).</li>
+<li>Registros: pequeñas memorias internas muy rápidas que almacenan datos temporales, direcciones, contadores.</li>
+<li>Contador de programa (PC o IP): apunta siempre a la próxima instrucción.</li>
+</ul>
+</li>
+<li><strong>Memoria principal (RAM)</strong><ul>
+<li>Contiene instrucciones y datos en la misma estructura lineal de direcciones.</li>
+<li>Cada dirección apunta a una celda de memoria (generalmente un byte).</li>
+<li>El programa y los datos están mezclados, diferenciados solo por cómo los usa la CPU.</li>
+</ul>
+</li>
+<li><strong>Dispositivos de entrada</strong><ul>
+<li>Permiten cargar datos en la computadora (teclado, lector de tarjetas perforadas en esa época).</li>
+</ul>
+</li>
+<li><strong>Dispositivos de salida</strong><ul>
+<li>Permiten ver los resultados (impresora, pantalla, etc.).</li>
+</ul>
+</li>
+<li><strong>Buses de comunicación</strong><ul>
+<li>Bus de direcciones: la CPU indica en qué celda de memoria quiere leer/escribir.</li>
+<li>Bus de datos: transporta la información leída o escrita.</li>
+<li>Bus de control: señales de sincronización (lectura/escritura, interrupciones, etc.).</li>
+</ul>
+</li>
+</ol>
+<h3 id="ciclo-basico-ciclo-de-instruccion">Ciclo básico (ciclo de instrucción)</h3>
+<ol>
+<li>
+<p>El “latido” de un computador von Neumann es el <strong>ciclo fetch–decode–execute</strong> (os debe sonar de lo explicado en el punto anterior):</p>
+</li>
+<li>
+<p><strong>Fetch (captura):</strong></p>
+<ul>
+<li>El PC (Instruction Pointer en x86) da la dirección de la próxima instrucción.</li>
+<li>La CPU la solicita a memoria a través del bus de direcciones. El contenido de esa dirección (un código máquina) llega por el bus de datos a la CPU.</li>
+</ul>
+</li>
+<li><strong>Decode (decodificación):</strong><ul>
+<li>La unidad de control interpreta ese código binario y decide qué operación ejecutar y qué recursos activar (ALU, registros, acceso a memoria).</li>
+</ul>
+</li>
+<li><strong>Execute (ejecución):</strong><ul>
+<li>Se realiza la operación: suma, movimiento de datos, salto, etc. Si el resultado debe almacenarse en memoria o un registro, se hace ahora.</li>
+</ul>
+</li>
+<li><strong>Update (actualización):</strong><ul>
+<li>Se incrementa el PC (IP en x86) para apuntar a la siguiente instrucción. El ciclo vuelve al paso 1.</li>
+</ul>
+</li>
+</ol>
+<p>Este proceso ocurre miles de veces por segundo en un 8086 y millones/miles de millones en procesadores modernos.</p>
+<hr />
+<h2 id="4-arquitectura-8086-de-16-bits-2-bytes">4. Arquitectura 8086 de 16 bits (2 bytes)</h2>
+<p>Todo lo anterior eran ejemplos de este tipo de arquitectura. El 8086 es un procesador de 16 bits donde todos sus registros  son de 16 bits. Con 16 bits se pueden representar:
+$$
+2^{16}  \text{ bytes distintos} = 65.536 \text{ direcciones en la ram } = 65.536 , bytes= 64 \text{ KB}
+$$
+Eso significa: cada dirección de memoria en la ram señala un byte, no un bit.</p>
+<p>Ejemplo:</p>
+<ul>
+<li>Dirección <code>00000h</code> → primer byte de RAM.</li>
+<li>Dirección <code>00001h</code> → segundo byte de RAM.</li>
+<li>Dirección <code>00002h</code> → tercer byte de RAM.</li>
+</ul>
+<p>Es decir, en teoría, la RAM no debería tener más de 64KB, porque no puedo acceder a registros de más de 2 bytes. Sin embargo, en el 8086 el bus tiene 20 líneas físicas de dirección (A0…A19). Con 20 líneas se pueden generar:
+$$
+2^{20} = 1.048.576  \text{direcciones distintas} = 1 \text{ MB}
+$$
+Es por eso que la memoria máxima física del 8086 es de 1 MB (1.048.576 bytes). Para direccionarla se necesitan 20 bits. Ahora bien, ¿cómo puedo acceder a direcciones de memoria mayores de 64kb en memoria si sólo puedo guardar en registros de la CPU hasta 16 bits?</p>
+<h3 id="41-la-solucion-de-intel-segmentacion">4.1 La solución de Intel: segmentación</h3>
+<p>Como los registros son de 16 bits, no alcanzan para 20 bits. Intel inventó el sistema de segmento:offset.</p>
+<ul>
+<li>Segmento (16 bits): contenido en CS, DS, SS o ES.</li>
+<li>Offset (16 bits): valor en registros como IP, SP, BP, SI, DI o inmediato.</li>
+<li>Dirección física:</li>
+</ul>
+<p>$$
+\text{Dirección física} = (\text{Segmento} \times 16) + \text{Offset}
+$$</p>
+<p>El ×16 = desplazar 4 bits a la izquierda : hace que los segmentos empiecen en múltiplos de 16. El offset puede variar hasta 64 KB. cada segmento cubre un bloque de 64 KB.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de registro en 8086 de 16 bits</th>
+<th>Ejemplos</th>
+<th>Uso principal</th>
+<th>Ejemplo práctico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Propósito general</strong></td>
+<td>AX, BX, CX, DX</td>
+<td>Guardar datos temporales y resultados de la ALU</td>
+<td><code>MOV AX, 5</code>   <code>ADD AX, BX</code></td>
+</tr>
+<tr>
+<td><strong>Segmento</strong></td>
+<td>CS, DS, SS, ES</td>
+<td>Seleccionar la base de un segmento de memoria (cada uno de 64 KB).</td>
+<td><code>MOV AX, [DS:1234h]</code> → Dirección física = <code>DS×16 + 1234h</code></td>
+</tr>
+<tr>
+<td><strong>Puntero de instrucción</strong></td>
+<td>IP</td>
+<td>Indica el offset de la próxima instrucción dentro de CS. Lo vemos con mas detalle en el punto 5.1</td>
+<td>Si <code>CS=2000h</code> e <code>IP=0100h</code> → Dirección física = <code>2000h×16 + 0100h = 20100h</code></td>
+</tr>
+<tr>
+<td><strong>Registros de pila</strong></td>
+<td>SS, SP, BP</td>
+<td>Controlar la pila (stack). <br/>• <code>SS</code> = segmento de pila <br/>• <code>SP</code> = tope de la pila (crece hacia abajo) <br/>• <code>BP</code> = base pointer, usado en marcos de funciones</td>
+<td><code>PUSH AX</code> guarda AX en <code>[SS:SP]</code> <br/><code>POP BX</code> saca de <code>[SS:SP]</code> <br/><code>MOV AX, [SS:BP-4]</code> accede a una variable local</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-como-se-carga-y-ejecuta-un-programa-en-un-8086">5. Cómo se carga y ejecuta un programa en un 8086</h2>
+<p>Cuando ejecutas un programa en un 8086, lo primero que hace el sistema operativo (en MS-DOS, por ejemplo) es copiar el ejecutable desde el disco a la RAM. Ese ejecutable tiene un tamaño concreto, definido cuando lo compilaste: puede ser de 20 KB, 100 KB o 200 KB, pero nunca “infinito”. El sistema reserva exactamente la memoria necesaria para tu código, tus datos y la pila.</p>
+<p>Veamoslo con un ejemplo. Supongamos que tu programa mide 200 KB. El 8086 no puede acceder directamente a todo el MB de memoria con un registro de 16 bits. Para resolver esto usamos lo visto anteriormente:</p>
+<p>$$
+\text{Dirección física} = \text{Segmento} \times 16 + \text{Offset}
+$$
+Como el Offset es te 16 bits, nos permite acceder a 64kb más de memoria desde el segmento base. De esta manera, la memoria del programa se organiza en “capítulos” de 64 KB que pueden solaparse. Veamos el siguiente ejemplo SIN SOLAPAMIENTOS.</p>
+<ul>
+<li>
+<table>
+<thead>
+<tr>
+<th>Segmento</th>
+<th>Dirección base</th>
+<th>Tamaño real</th>
+<th>Explicación clara</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Código (CS1)</strong></td>
+<td><code>2000h (se puede guardar en el registro porque 2000 tiene 16 bits)</code></td>
+<td>64 KB</td>
+<td>Aquí empieza la primera parte del programa. <strong>¿Por qué no empieza en <code>1000h</code>?</strong>  Porque normalmente los programas no arrancan “donde caiga”: el cargador del sistema operativo los ubica en direcciones alineadas y libres, y <code>2000h</code> es una buena frontera. Además, <code>1000h</code> podría estar ocupado por BIOS, vectores de interrupción o datos del sistema.</td>
+</tr>
+<tr>
+<td><strong>Código (CS2)</strong></td>
+<td><code>3000h</code></td>
+<td>56 KB (de los 64 disponibles)</td>
+<td>El código era más grande que 64 KB (el límite de un segmento), así que se partió en <strong>otro bloque</strong>. Se reserva todo el segmento, pero solo se usan 56 KB. El resto queda vacío o sin usar.</td>
+</tr>
+<tr>
+<td><strong>Datos (DS)</strong></td>
+<td><code>4000h</code></td>
+<td>64 KB</td>
+<td>Aquí van variables globales y datos estáticos. Usamos un segmento completo porque los programas suelen necesitar bastante espacio para datos, y así es más fácil direccionarlos con <code>DS</code>.</td>
+</tr>
+<tr>
+<td><strong>Pila (SS)</strong></td>
+<td><code>5000h</code></td>
+<td>16 KB</td>
+<td>El segmento de pila podría ser de hasta 64 KB, porque <code>SP</code> (stack pointer) puede contar de <code>0000h</code> a <code>FFFFh</code>. Pero no siempre hace falta. En este programa se reservaron 16 KB, suficiente para guardar direcciones de retorno (2 bytes por llamada), registros salvados y variables locales. Reservar 64 KB sería un desperdicio de memoria, sobre todo en PCs de 256 KB o 640 KB de RAM.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h3 id="51-ejecucion-de-instrucciones">5.1 Ejecución de instrucciones</h3>
+<p>El flujo de tu programa comienza en <code>CS:IP</code>:</p>
+<ul>
+<li><code>CS</code> marca el bloque de código.</li>
+<li><code>IP</code> señala la primera instrucción dentro de ese bloque.</li>
+</ul>
+<p>La CPU lee la instrucción, la ejecuta y después incrementa <code>IP</code> en tantos bytes como mida esa instrucción. Por ejemplo, si <code>IP=0100h</code> y la instrucción ocupa 3 bytes, al acabar <code>IP=0103h</code>, es decir, básicamente suma 3 bytes para pasar a la siguiente instrucción.</p>
+<h3 id="52-la-pila-de-ejecucion">5.2 La pila de ejecución</h3>
+<p>El stack o pila es otra parte reservada en RAM. Está controlada por <code>SS:SP</code>.<code>SS</code> señala el segmento de pila y <code>SP</code> es el puntero que va subiendo y bajando.</p>
+<p>La pila funciona como una estructura LIFO:</p>
+<ul>
+<li>Cada <code>PUSH</code> reduce <code>SP</code> y guarda un valor en memoria.</li>
+<li>Cada <code>POP</code> aumenta <code>SP</code> y recupera el valor.</li>
+</ul>
+<p>Esto se usa para guardar direcciones de retorno en las llamadas a funciones (<code>CALL</code> / <code>RET</code>) y también para variables locales o registros temporales.</p>
+<hr />
+<h2 id="6-ejemplo-de-estructura-lifo">6 Ejemplo de estructura LIFO</h2>
+<ul>
+<li><strong>SS = 5000h</strong>
+   “mi pila vive en el segmento de memoria 5000h”. (¿Por qué se llamaba segmento?)</li>
+<li><strong>Tamaño que reservo para la pila = 16 KB</strong>
+   16 KB = <code>4000h</code> bytes dentro de ese segmento.</li>
+<li><strong>SP inicial = 4000h</strong>
+    significa “la pila está vacía y lista para empezar a llenarse hacia abajo”.</li>
+</ul>
+<blockquote>
+<p>Nota: <code>SP</code> no “tiene” que ser 4000h; lo pongo así <strong>porque he reservado 16 KB</strong>.</p>
+</blockquote>
+<h3 id="61-estado-inicial-vacio">6.1. Estado inicial (vacío)</h3>
+<div class="highlight"><pre><span></span><code>SP = 4000h   ← pila vacía (16 KB reservados)
+</code></pre></div>
+<h3 id="62-hacemos-dos-push">6.2. Hacemos dos PUSH</h3>
+<div class="highlight"><pre><span></span><code>MOV AX, 1234h
+PUSH AX      ; guarda 1234h
+
+MOV BX, 5678h
+PUSH BX      ; guarda 5678h
+</code></pre></div>
+<h3 id="63-miramos-como-se-guarda-la-informacion-en-cada-direccion-de-memoria">6.3. Miramos como se guarda la informacion en cada dirección de memoria:</h3>
+<div class="highlight"><pre><span></span><code>Dirección   Contenido
+5000:3FFC   78h   ← byte bajo de BX
+5000:3FFD   56h   ← byte alto de BX
+5000:3FFE   34h   ← byte bajo de AX
+5000:3FFF   12h   ← byte alto de AX
+SP = 3FFCh
+</code></pre></div>
+<p>👉Observa 3 cosas importantes:</p>
+<ol>
+<li><strong>BX (5678h)</strong> quedó más arriba en la pila porque fue el último en entrar.</li>
+<li><strong>AX (1234h)</strong> quedó más abajo, porque entró primero.</li>
+<li><code>SP = 3FFCh</code> → apunta al inicio del último valor guardado (BX).</li>
+</ol>
+<p>Esto refleja la regla LIFO (<strong>Last In, First Out</strong>): el último en entrar será el primero en salir.</p>
+<h3 id="64-hacemos-un-pop">6.4. Hacemos un POP</h3>
+<p>Ejecutamos:</p>
+<div class="highlight"><pre><span></span><code>POP CX
+</code></pre></div>
+<p>Es la instrucción que:</p>
+<ol>
+<li>Toma el valor que está arriba de la pila (16 bits = 2 bytes).</li>
+<li>Lo coloca en el registro CX.</li>
+<li>
+<p>Ajusta <code>SP</code> subiendo 2 posiciones, dejando la pila un poco más “vacía”.</p>
+</li>
+<li>
+<p>La CPU lee los 2 bytes en <code>3FFCh</code> y <code>3FFDh</code>: <code>78h</code> (bajo), <code>56h</code> (alto) → <code>CX = 5678h</code>. <code>SP</code> sube en 2 → <code>SP = 3FFEh</code>.</p>
+</li>
+</ol>
+<p>Estado de la pila ahora:</p>
+<div class="highlight"><pre><span></span><code>Dirección   Contenido
+5000:3FFE   34h   ← byte bajo de AX
+5000:3FFF   12h   ← byte alto de AX
+SP = 3FFEh
+CX = 5678h
+</code></pre></div>
+<h2 id="3-nucleos-y-threads-hilos">3. Núcleos y threads (hilos)</h2>
+<h3 id="1-cpu">1. CPU</h3>
+<p>Una CPU lo único que sabe hacer es ejecutar instrucciones: sumar, restar, mover datos, saltar a otra parte del programa…, un programa normal está compuesto por miles o millones de estas instrucciones que se ejecutan una tras otra. </p>
+<ol>
+<li>Un programa es un conjunto finito y ordenado de instrucciones codificadas, escritas en un lenguaje de programación y almacenadas en un archivo ejecutable o script.</li>
+</ol>
+<p>Ese archivo define qué hacer, pero no lo está haciendo hasta que se carga en memoria. Contiene:</p>
+<ul>
+<li>Código: secuencia de instrucciones máquina.</li>
+<li>Datos estáticos: constantes, literales, recursos.</li>
+<li>Estructuras de estado inicial: tablas de símbolos, direcciones de memoria preasignadas, etc.</li>
+</ul>
+<p>​    Cuando lo cargas y el sistema operativo lo arranca, se convierte en un proceso.</p>
+<ol>
+<li>
+<p>Un proceso es una instancia en ejecución de un programa, gestionada por el sistema operativo.</p>
+</li>
+<li>
+<p>Se le asignan recursos: espacio de direcciones en memoria, descriptores de archivos, registros de CPU, hilos de ejecución. Mantiene un contexto de ejecución:</p>
+</li>
+<li>
+<p>Contador de programa (PC) IInstruction pointer visto antes)</p>
+</li>
+<li>Registros de CPU</li>
+<li>Pila (stack)</li>
+<li>Información de planificación (prioridad, estado de bloqueo/ejecución).</li>
+</ol>
+<p>Aquí ya adquiere un contexto de ejecución (memoria asignada, hilos, registros  inicializados…). </p>
+<ol>
+<li>Un demonio es un tipo especial de proceso en sistemas tipo Unix/Linux que: </li>
+</ol>
+<p>Se ejecuta en segundo plano y no está asociado a un terminal ni a la interacción directa del usuario. Normalmente se inicia al arrancar el sistema y permanece activo para proporcionar servicios al sistema o a otros procesos. Uno de los más comunes que utilizaremos será cron. cron = “reloj despertador” que ejecuta tareas a horas programadas.</p>
+<h3 id="2-flujo-de-ejecucion">2. Flujo de ejecución</h3>
+<p>Un flujo de ejecución es simplemente esa secuencia de instrucciones que se ejecutan una detrás de otra. Si tuvieras una CPU muy simple, solo podrías ejecutar un flujo de ejecución a la vez: empieza en la instrucción 1, luego la 2, la 3… y así hasta terminar. </p>
+<h3 id="3-thread-hilo">3. Thread. Hilo</h3>
+<p>Un hilo es un flujo de ejecución con su propio contexto:</p>
+<ul>
+<li>
+<p>Tiene su propio contador de programa (sabe en qué instrucción va).  Registro especial de la CPU que contiene la dirección de memoria de la siguiente instrucción que se debe ejecutar, además, tiene su propio conjunto de registros  (los registros físicos están en el núcleo del procesador)</p>
+</li>
+<li>
+<p>También, puede avanzar de manera independiente respecto a otros hilos.</p>
+</li>
+<li>
+<p>Es importante recalcar que los hilos viven dentro de un proceso. Comparten la misma memoria y recursos del proceso padre, como: variables globales, archivos abiertos, etc.</p>
+</li>
+</ul>
+<p>Como ya hemos dicho, cada hilo tiene su propio contador de programa y pila, así que pueden ejecutar partes diferentes del código al mismo tiempo. Como comparten memoria, deben usar mecanismos de sincronización (locks, semáforos, colas seguras, lo vemos en el ejemplo de python) </p>
+<p><u>Eso significa que dentro de un mismo programa puedes tener varios hilos que hacen cosas distintas en paralelo.</u></p>
+<h3 id="4-core">4. Core</h3>
+<p>Un núcleo de CPU es una unidad de procesamiento completa dentro de un chip.
+ Lo puedes imaginar como un procesador independiente que forma parte de un procesador más grande (multi-core).</p>
+<p>Cada núcleo puede ejecutar su propio flujo de instrucciones (hilo) de manera independiente, porque tiene sus propios componentes internos</p>
+<ul>
+<li>Tiene su propia ALU (suma/resta), FPU (coma flotante), CU (Control Unit) pila de ejecución.</li>
+<li>Si tienes 1 núcleo, solo puede ejecutar un hilo a la vez. Si tienes 4 núcleos, puede ejecutar 4 hilos a la vez de verdad, porque son 4 bloques físicos de ejecución.</li>
+</ul>
+<p>Cada núcleo de CPU no solo tiene sus unidades de cálculo, también cuenta con memoria caché** para reducir la latencia al acceder a datos e instrucciones y no tener que pasar por la ram:</p>
+<ul>
+<li><strong>Caché L1</strong>:</li>
+</ul>
+<p>La más pequeña (32–64 KB normalmente) y la más rápida. Se divide en dos: <em>L1 Data Cache</em> (para datos) y <em>L1 Instruction Cache</em> (para instrucciones). Está dentro del núcleo.
+- <strong>Caché L2</strong>:</p>
+<p>Más grande (256 KB – 1 MB por núcleo) y un poco más lenta que L1. También suele ser privada de cada núcleo.
+- <strong>Caché L3</strong>:</p>
+<p>Mucho más grande (varios MB). Es compartida entre todos los núcleos de un mismo procesador. Sirve de “almacén común” para coordinar la información entre núcleos.</p>
+<h3 id="5-hyperthreading-smt">5. HyperThreading / SMT</h3>
+<p>Los ingenieros se dieron cuenta de que un núcleo muchas veces está ocioso esperando datos de la RAM o de un disco. Para no perder tiempo, diseñaron un mecanismo donde un núcleo puede mantener dos contextos de hilos (dos contadores de programa, dos juegos de registros) y alternar instrucciones de ambos.</p>
+<ul>
+<li>Así, un único núcleo “finge” ser dos hilos lógicos y para el sistema operativo, parece que hay 2 procesadores.</li>
+<li>En realidad, los dos comparten el mismo hardware y compiten por recurso</li>
+</ul>
+<p>Distinguimos pues, dos tipos de núcleos:</p>
+<ul>
+<li><strong>Núcleo físico</strong>: lo que acabamos de describir. Es hardware real, con todos esos componentes.</li>
+<li>Núcleo lógico (SMT / HyperThreading): un núcleo físico que mantiene dos contextos de registros y PC. Permite ejecutar <em>dos hilos de software</em> como si fueran dos CPUs, compartiendo las mismas ALU/FPU.</li>
+</ul>
+<p>Un núcleo lógico no duplica la ALU, solo aprovecha mejor los tiempos muertos del núcleo físico.</p>
+<h3 id="6-que-hace-el-programa-firefox">6. ¿Qué hace el programa Firefox?</h3>
+<p>Cuando ejecutas un programa como Firefox, no se lanza un único proceso simple, sino varios procesos diferentes. Hay un proceso principal (PPID), que controla la interfaz y coordina el resto (PID), y después otros procesos auxiliares: cada pestaña suele tener su propio proceso de contenido, existe un proceso para la GPU, otro para plugins, y algunos más para aislamiento y seguridad.</p>
+<p>Dentro de cada uno de esos procesos, además, no corre un único hilo: se crean múltiples hilos internos que se encargan de tareas concretas. Por ejemplo, unos hilos gestionan la red, otros se ocupan de renderizar páginas, otros manejan la ejecución de JavaScript, y otros procesan audio o vídeo. Todo esto ocurre de forma automática, aunque el usuario no lo vea.</p>
+<h3 id="7-simulando-concurrencia-y-paralelismo-en-un-lenuaje-de-programacion-python">7. Simulando concurrencia y paralelismo en un lenuaje de programación. Python</h3>
+<p>En Python hay dos librerías principales para trabajar con concurrencia:</p>
+<ul>
+<li><code>threading</code>: crea hilos de software gestionados por el intérprete. </li>
+<li><code>multiprocessing</code>: crea procesos independientes, cada uno con su propio intérprete Python.</li>
+</ul>
+<hr />
+<h1 id="ejemplo-tecnico-en-python">Ejemplo técnico en Python</h1>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">multiprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pool</span><span class="p">,</span> <span class="n">cpu_count</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">tarea</span><span class="p">(</span><span class="nb">id</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tarea </span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2"> ejecutándose en PID </span><span class="si">{</span><span class="n">os</span><span class="o">.</span><span class="n">getpid</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># Simulación de trabajo pesado (CPU-bound)</span>
+    <span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">7</span><span class="p">):</span>
+        <span class="n">suma</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Tarea </span><span class="si">{</span><span class="nb">id</span><span class="si">}</span><span class="s2"> terminó con suma=</span><span class="si">{</span><span class="n">suma</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Detectamos nº de CPUs lógicas (núcleos × hilos por núcleo con SMT/HT)</span>
+    <span class="n">hilos_logicos</span> <span class="o">=</span> <span class="n">cpu_count</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Procesadores lógicos detectados: </span><span class="si">{</span><span class="n">hilos_logicos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Creamos un pool de procesos igual a los hilos lógicos de 8 procesos</span>
+    <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="n">hilos_logicos</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="n">resultados</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">tarea</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">resultados</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</code></pre></div>
+<p><strong><code>cpu_count()</code></strong></p>
+<p>Pregunta al sistema operativo cuántos <em>procesadores lógicos</em> hay disponibles. Si tienes 4 núcleos con HyperThreading, devuelve 8.</p>
+<p><strong><code>Pool(processes=hilos_logicos)</code></strong></p>
+<ul>
+<li>Crea un conjunto de procesos hijo, tendran PPID del proceso padre.</li>
+<li>Cada proceso es independiente, con su propio intérprete Python y su propio espacio de memoria.</li>
+<li>El sistema operativo los distribuye entre los núcleos físicos y los hilos de hardware.</li>
+</ul>
+<p><strong><code>pool.map(tarea, range(8))</code></strong></p>
+<p>Lanza 8 tareas que se ejecutan concurrentemente. Si tienes 8 procesadores lógicos, todas corren a la vez. Si tienes menos , el sistema operativo hace <em>scheduling</em> y las alterna.</p>
+<p>Como son procesos independientes, aquí sí se aprovechan los varios núcleos de la CPU. Si tu CPU soporta SMT, entonces algunos procesos pueden compartir un núcleo físico mediante HyperThreading. Vemos el siguiente ejemplo</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">threading</span><span class="o">,</span><span class="w"> </span><span class="nn">queue</span><span class="o">,</span><span class="w"> </span><span class="nn">time</span><span class="o">,</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">buffer</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">Queue</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">productor</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;item-</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">buffer</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>  <span class="c1"># se bloquea si está llena</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">threading</span><span class="o">.</span><span class="n">get_native_id</span><span class="p">()</span><span class="si">}</span><span class="s2">] Produjo: </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2"> (buffer=</span><span class="si">{</span><span class="n">buffer</span><span class="o">.</span><span class="n">qsize</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># produce muy rápido</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">consumidor</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="n">buffer</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>  <span class="c1"># se bloquea si está vacía</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">threading</span><span class="o">.</span><span class="n">get_native_id</span><span class="p">()</span><span class="si">}</span><span class="s2">] Consumió: </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2"> (buffer=</span><span class="si">{</span><span class="n">buffer</span><span class="o">.</span><span class="n">qsize</span><span class="p">()</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>  <span class="c1"># consume más lento</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">productor</span><span class="p">)</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">consumidor</span><span class="p">)</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">t2</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="n">t2</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+</code></pre></div>
+<p>El ejemplo anterior (<code>multiprocessing.Pool</code>) usaba procesos, cada uno con su propio espacio de memoria. Este ejemplo usa hilos, comparten memoria, y por eso necesitan sincronización.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

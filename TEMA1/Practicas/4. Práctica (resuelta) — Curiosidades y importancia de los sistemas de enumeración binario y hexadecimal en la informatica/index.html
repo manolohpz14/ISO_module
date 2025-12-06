@@ -1,0 +1,1423 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>4. Práctica — Curiosidades y importancia de los sistemas de enumeración binario y hexadecimal en la informatica. - Módulo ISO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-practica-curiosidades-y-importancia-de-los-sistemas-de-enumeracion-binario-y-hexadecimal-en-la-informatica" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Módulo ISO" class="md-header__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Módulo ISO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. Práctica — Curiosidades y importancia de los sistemas de enumeración binario y hexadecimal en la informatica.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Módulo ISO" class="md-nav__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Módulo ISO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Teoria/1.%20Teoria%20de%20Markdown%20SIMPLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (Markdown)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Teoria/2.%20Teor%C3%ADa%20de%20Sistemas%20Num%C3%A9ricos%20en%20Inform%C3%A1tica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Sistemas Numéricos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Teoria/3.%20Teoria%20de%20Almacenamiento%20de%20datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3er Archivo Teoría (Almacenamiento de datos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Teoria/4.%20Teoria%20%E2%80%94%20Hardware%20y%20Software%20b%C3%A1sico%20de%20un%20ordenador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4to Archivo Teoría (Hardware y Software)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Teoria/5.%20Teor%C3%ADa%20Sistemas%20Operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5to Archivo Teoría (Sistemas Operativos y Virtualización)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1ªPractica.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Rellena%20la%20siguiente%20tabla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Probamos%20la%20CLI%20de%20Ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.%20Pr%C3%A1ctica%20%E2%80%94%20Curiosidades%20y%20importancia%20de%20los%20sistemas%20de%20enumeraci%C3%B3n%20binario%20y%20hexadecimal%20en%20la%20informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.2.%20Pr%C3%A1ctica%20%E2%80%94%20Comparaci%C3%B3n%20GUI%20vs%20CLI%20en%20Ubuntu%20e%20instalaci%C3%B3n%20de%20KDE%20%28copy%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (versión 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.%20Pr%C3%A1cticaTrabajoCooperativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/1%C2%AA%20Teoria%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (QEMU-KVM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/2%20Teor%C3%ADa%20de%20las%20instalaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Instalaciones y Particiones)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/1%C2%AA%20Pr%C3%A1ctica%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica (Opcional. Virtualizacion Anidada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/2%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20de%20Ubuntu%20sin%20LUKS%20%28sin%20LVM%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/3%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20Dual%20de%20ubuntu%20%2B%20Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/4%C2%AA%20Pr%C3%A1ctica%20Migraci%C3%B3n%20de%20un%20disco%20de%20120%20GB%20%28M%C3%A1s%20grande%29%20a%20otro%20de%20100%20GB%20%28M%C3%A1s%20chico%29%20usando%20GParted%20y%20el%20comando%20dd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica Guiada (Administración de permisos en directorios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica Guiada (Administración de permisos en binarios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/4ª Practica APT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica Guiada (Uso de APT avanzado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-traduciendo-a-esamblador-da-la-instruccion-de-forma-correcta-en-hexadecimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Traduciendo a esamblador, da la instrucción de forma correcta en hexadecimal.
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-parte-practica-arquitectura-de-von-neumaan-resuelta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Parte práctica Arquitectura de Von Neumaan resuelta.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Parte práctica Arquitectura de Von Neumaan resuelta.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#43-parte-practica-arquitectura-de-von-newman-sin-resolver-ejercicio-opcional-para-subida-nota" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Parte práctica Arquitectura de Von-Newman sin resolver (Ejercicio opcional para subida nota)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-codificaciones-de-textos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Codificaciones de textos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-limite-ram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Límite RAM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-explorando-el-hardware-del-ordenador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6 Explorando el hardware del ordenador
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="4-practica-curiosidades-y-importancia-de-los-sistemas-de-enumeracion-binario-y-hexadecimal-en-la-informatica">4. Práctica — Curiosidades y importancia de los sistemas de enumeración binario y hexadecimal en la informatica.</h1>
+<p>Entrega en formato PDF los puntos; 4.2 y 4.3</p>
+<h2 id="41-traduciendo-a-esamblador-da-la-instruccion-de-forma-correcta-en-hexadecimal">4.1 Traduciendo a esamblador, da la instrucción de forma correcta en hexadecimal.</h2>
+<p><u>Solución</u></p>
+<p>Lo único que se pedía era el paso a hexadecimal, nada más...
+Ahora bien, este ejercicio requería una mínima explicación de lo que hacéis, y así se valorará.</p>
+<table>
+<thead>
+<tr>
+<th>Nº</th>
+<th>Instrucción a realizar</th>
+<th>Registro/Dato</th>
+<th>Dirección en decimal</th>
+<th>Dirección en hexadecimal</th>
+<th>Instrucción en ensamblador</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Mover un valor a un registro</td>
+<td>AX</td>
+<td>4660</td>
+<td>1234h</td>
+<td>MOV AX, 1234h</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Mover un valor desde memoria a un registro</td>
+<td>BX</td>
+<td>12345</td>
+<td>3039h</td>
+<td>MOV BX, [3039h]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sumar un valor de memoria a un registro</td>
+<td>DX + [Memory]</td>
+<td>54321</td>
+<td>D431h</td>
+<td>ADD DX, [D431h]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="42-parte-practica-arquitectura-de-von-neumaan-resuelta">4.2 Parte práctica Arquitectura de Von Neumaan resuelta.</h2>
+<p>Este ejercicio ya estaba resuelto, lo dejo tal y como estaba ya que era un ejemplo.</p>
+<h3 id="43-parte-practica-arquitectura-de-von-newman-sin-resolver-ejercicio-opcional-para-subida-nota">4.3 Parte práctica Arquitectura de Von-Newman sin resolver (Ejercicio opcional para subida nota)</h3>
+<p>Supongamos:</p>
+<ul>
+<li><code>SS = 6000h</code></li>
+<li><code>SP = 2000h</code></li>
+</ul>
+<p>Ejecuta paso a paso y dibuja cómo queda la pila (memoria, SP y registros) después de cada instrucción:</p>
+<p><div class="highlight"><pre><span></span><code>MOV AX, 1234h
+PUSH AX
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>MOV BX, 5678h
+PUSH BX
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>POP CX
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>POP DX
+</code></pre></div>
+<p>Vamos con la solución, paso a paso de lo que hay que hacer, ¡RECUERDO QUE ESTE EJERCICIO ERA OPCIONAL!</p>
+<hr />
+<p>Primer paso, ejercución del PUSH y retroceso de SP</p>
+<div class="highlight"><pre><span></span><code><span class="nf">6000</span><span class="o">:</span>1<span class="n">FFE</span>  34     <span class="n">AX</span> <span class="n">low</span>
+<span class="nf">6000</span><span class="o">:</span>1<span class="n">FFF</span>  12     <span class="n">AX</span> <span class="n">high</span>
+<span class="nv">SP</span><span class="o">=</span>1FFEh
+</code></pre></div>
+<p>Segundo paso, segundo PUSH (las cosas se apilan como una PILA, por eso se llama así)</p>
+<div class="highlight"><pre><span></span><code><span class="nf">6000</span><span class="o">:</span>1<span class="n">FFC</span>  78   <span class="n">BX</span> <span class="n">low</span>
+<span class="nf">6000</span><span class="o">:</span>1<span class="n">FFD</span>  56   <span class="n">BX</span> <span class="n">high</span>
+<span class="nf">6000</span><span class="o">:</span>1<span class="n">FFE</span>  34   <span class="n">AX</span> <span class="n">low</span>
+<span class="nf">6000</span><span class="o">:</span>1<span class="n">FFF</span>  12   <span class="n">AX</span> <span class="n">high</span>
+<span class="nv">SP</span><span class="o">=</span>1FFCh
+</code></pre></div>
+<p>Tercer paso, primer POP</p>
+<div class="highlight"><pre><span></span><code><span class="err">Saca</span><span class="w"> </span><span class="err">2</span><span class="w"> </span><span class="err">bytes</span><span class="w"> </span><span class="err">(16</span><span class="w"> </span><span class="err">bits</span><span class="w"> </span><span class="err">al</span><span class="w"> </span><span class="err">registro</span><span class="w"> </span><span class="err">CX)</span><span class="w"> </span>
+
+<span class="nf">Luego saca dos registros de memoria de arriba a abajo [SS</span><span class="o">:</span>1<span class="n">FFC</span><span class="p">,</span>1<span class="n">FFD</span>] 
+<span class="err">eso</span><span class="w"> </span><span class="err">va</span><span class="w"> </span><span class="err">al</span><span class="w"> </span><span class="err">registro</span><span class="w"> </span><span class="nv">CX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>5678h
+
+<span class="nf">Estado de los registros</span><span class="o">:</span><span class="w"> </span><span class="n">CX</span>=5678<span class="n">h</span><span class="p">,</span> <span class="n">SP</span>=1<span class="n">FFEh</span>
+</code></pre></div>
+<p>Cuarto paso, segundo POP</p>
+<div class="highlight"><pre><span></span><code><span class="err">Saca</span><span class="w"> </span><span class="err">2</span><span class="w"> </span><span class="err">bytes</span><span class="w"> </span><span class="err">(16</span><span class="w"> </span><span class="err">bits</span><span class="w"> </span><span class="err">al</span><span class="w"> </span><span class="err">registro</span><span class="w"> </span><span class="err">DX)</span><span class="w"> </span>
+
+<span class="nf">Luego saca dos registros de memoria de arriba a abajo [SS</span><span class="o">:</span>1<span class="n">FFE</span><span class="p">,</span>1<span class="n">FFF</span>] 
+<span class="err">eso</span><span class="w"> </span><span class="err">va</span><span class="w"> </span><span class="err">al</span><span class="w"> </span><span class="err">registro</span><span class="w"> </span><span class="nv">DX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>1234h
+
+<span class="nf">Estado de los registros</span><span class="o">:</span><span class="w"> </span><span class="n">CX</span>=5678<span class="n">h</span><span class="p">,</span> <span class="n">SP</span>=1<span class="n">FFEh</span><span class="p">,</span> <span class="n">DX</span>=1234<span class="n">h</span>
+<span class="nf">Estado final</span><span class="o">:</span><span class="w"> </span><span class="n">AX</span>=1234<span class="n">h</span><span class="p">,</span> <span class="n">BX</span>=5678<span class="n">h</span> (<span class="n">no</span> <span class="n">cambian</span>)<span class="p">,</span> <span class="n">CX</span>=5678<span class="n">h</span><span class="p">,</span> <span class="n">DX</span>=1234<span class="n">h</span><span class="p">,</span> <span class="n">SP</span>=2000<span class="n">h</span><span class="p">,</span> <span class="n">SS</span>=6000<span class="n">h</span>
+</code></pre></div>
+<p>Por último, la traza:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">Traza de SP</span><span class="o">:</span><span class="w"> </span>2000<span class="n">h</span> → 1<span class="n">FFEh</span> → 1<span class="n">FFCh</span> → 1<span class="n">FFEh</span> → 2000<span class="n">h</span>
+</code></pre></div>
+<p>¿Qué ocurre si haces más <code>PUSH</code> de los que caben en el segmento de pila reservado (por ejemplo, si reservas 16 KB y empujas 20 KB)?</p>
+<p>Stack-Overflow :)</p>
+<p>Con esto, bastaba.</p>
+<p>¿Qué problema real se genera? ¿Por qué la pila crece hacia direcciones menores en memoria en lugar de hacia arriba?</p>
+<p>El programa intenta guardar más datos de los que caben/se pueden en ella, provocando distintos tipos de errores dependiendo del contexto.</p>
+<p>Convención: La pila crece hacia abajo por una convención de diseño tomada, nada más. </p>
+<p>Por ejemplo, la pila crece desde las direcciones altas hacia abajo, el heap (otra zona, buscadla si no sabéis cual es, donde se guardan datos temporales) crece en dirección contraria.</p>
+<h2 id="44-codificaciones-de-textos">4.4 Codificaciones de textos</h2>
+<p>El texto que ves en tu pantalla no es más que una codificación del lenguaje binario. Todo lo que se muestra en la pantalla, ya sean letras, números o símbolos, se traduce finalmente a ceros y unos, que la computadora puede interpretar.
+A lo largo de la historia de la informática, se han desarrollado distintas codificaciones de caracteres para representar texto en binario: EBCDIC, ASCII,Extended ASCII y Unicode,</p>
+<p>Establece una linea temporal de las distintas codificaciones, dando ejemplos y el número de bits que utliza cada una así como el número total de caracteres posibles. Si un tipo de codificación admitía hasta 7 bits: ¿cuál es la cantidad de carácteres admitidos en total?</p>
+<p><u>Solución tabla</u>
+Este ejercico con la tabla tenía bastante truco, pero la idea era que como sois adultos e independientes, buscaseis información al respecto.Se divide en dos casos distintos la solución:</p>
+<p>En el caso en que el número binario sea de 8bits, es decir 1 byte, (o en caso de que el número en hexadecimal tenga dos ceros delante,) sólo tenéis que transforma a Binario o al revés.
+Por ejemplo:</p>
+<p>En el caso de la A, yo os daba: 01000001. Para pasarlo a UNICODE, sólo teneis que pasarlo a decimal:</p>
+<div class="highlight"><pre><span></span><code>01000001=0100|0001= U+0041
+</code></pre></div>
+<hr />
+<p>En el caso de que que el número tenga dos bytes (o que en hexadecimal tiene el siguiente rango de valores: U+0080 – U+07FF), tenéis que tener en cuenta el siguiente patrón que siguen en binario. </p>
+<div class="highlight"><pre><span></span><code>110xxxxx 10xxxxxx (por tanttenga do hay 11 caracteres variables, que son las &quot;x&quot;)
+</code></pre></div>
+<p>Lo que quiere decir que, en el caso de la ñ, yo os daba 11000011 10110001, que son solo 8 y no 11.</p>
+<div class="highlight"><pre><span></span><code>11000011 10110001-&gt; Nos quedamos &quot;solo con las x&quot;: 110|00011 10|110001= 00011110001 (quitos los 0&#39;s a la izquierda) = 11110001
+</code></pre></div>
+<p>Pasando este número a hexadecimal, me queda F1</p>
+<hr />
+<p>En el caso de que que el número tenga tres bytes (o que en hexadecimal tiene el siguiente rango de valores: U+0800 – U+FFFF), tenéis que tener en cuenta el siguiente patrón que siguen en binario. </p>
+<div class="highlight"><pre><span></span><code>1110xxxx 10xxxxxx 10xxxxxx (por tanto hay 16 caracteres variables, que son las &quot;x&quot;)
+</code></pre></div>
+<p>En el caso de U+20AC está en este rango, (también podemos pensar que al pasarlo a binario son 16 bits, luego por el patrón de las "X" solo puede ser un número de tres bytes en utf-8) luego sabemos que tiene 3 bytes. Pasamos 20AC a binario</p>
+<div class="highlight"><pre><span></span><code>20AC = 0010|0000|1010|1100=0010000010101100 
+</code></pre></div>
+<p>Metiendo este número en las "X" de antes (de izq a derecha), nos queda:
+<div class="highlight"><pre><span></span><code>11100010 10000010 10101100
+</code></pre></div></p>
+<hr />
+<p>En el caso de que que el número tenga cuatro bytes (o que en hexadecimal tiene el siguiente rango de valores: U+10000 – U+10FFFF), tenéis que tener en cuenta el siguiente patrón que siguen en binario. </p>
+<div class="highlight"><pre><span></span><code>11110xxx 10xxxxxx 10xxxxxx 10xxxxxx (por tanttenga do hay 21 caracteres variables, que son las &quot;x&quot;)
+</code></pre></div>
+<p>Lo que quiere decir que, en el caso del emoji, yo os daba U+1F602,. Si passamos este número a binario nos quedan 20 bits, pero con 1 cero a la izq llegamos a 21, por tanto no queda otra que ser un número de 4bytes en UTF-8.</p>
+<div class="highlight"><pre><span></span><code>U+1F602= 0001|1111|0110|0000|0010. Si añadimos un 0 a la izq nos queda :  0|0001|1111|0110|0000|0010.
+</code></pre></div>
+<p>Si metemos el número final en las X, nos queda como resultado:
+<div class="highlight"><pre><span></span><code>11110000 10011111 10011000 10000010
+</code></pre></div></p>
+<hr />
+<p>El caso de 中= 11100100 10111000 10101101 es simplemente pasar a hexadecimal.</p>
+<p>Al final, la tabla rellena es la siguiente</p>
+<table>
+<thead>
+<tr>
+<th>Carácter</th>
+<th>UTF-8 (binario)</th>
+<th>Unicode (hexadecimal)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>01000001</td>
+<td>U+0041</td>
+</tr>
+<tr>
+<td>ñ</td>
+<td>11000011 10110001</td>
+<td>U+00F1</td>
+</tr>
+<tr>
+<td>€</td>
+<td>11100010 10000010 10101100</td>
+<td>U+20AC</td>
+</tr>
+<tr>
+<td>😂</td>
+<td>11110000 10011111 10011000 10000010</td>
+<td>U+1F602</td>
+</tr>
+<tr>
+<td>中</td>
+<td>11100100 10111000 10101101</td>
+<td>U+4E2D</td>
+</tr>
+</tbody>
+</table>
+<p><u>Solución</u> (de las preguntas)</p>
+<p>Básicamente lo que pedía en clase, es hacer una línea cronológica y saber el número de bits (y en consecuencia el número de caractéres totales) que tebía cada codificación incluido UTF-8 UTF-16 y UTF-32 dentro de UNICODE, aunque primero una introduccón:</p>
+<p>A lo largo de la historia de la informática, las codificaciones de caracteres han evolucionado para adaptarse a las necesidades de comunicación entre humanos y computadoras. Cada sistema de codificación ha buscado una manera eficiente de representar letras, números y símbolos mediante combinaciones de bits, permitiendo que los equipos electrónicos comprendan y transmitan información textual.</p>
+<p>Y ahora, empezamos con un pequeño desarrollo cronológico y los detalles más importante, para cada una:</p>
+<ul>
+<li>
+<p>En la década de 1950, IBM desarrolló la codificación <u>EBCDIC (Extended Binary Coded Decimal Interchange Code),</u> la cual utilizaba <u>8 bits</u> por carácter, permitiendo representar <u>256 caracteres posibles</u>. Fue ampliamente usada por IBM (buscadala si no sabéis que empresa es), aunque resultó incompatible con ASCII, el estandar que veremos justo a continucación. Por curiosidad, un ejemplo es la letra “A”, que se codificaba como 11000001.</p>
+</li>
+<li>
+<p>Posteriormente, en 1963, surgió <u>ASCII (American Standard Code for Information Interchange)</u>, una codificación <u>de 7 bits</u> que permitía representar <u>128 caracteres diferentes</u>. Este estándar se convirtió en la base de la comunicación digital, incluyendo letras del alfabeto inglés, números, signos de puntuación y algunos caracteres de control. Por ejemplo, la letra “A” se representa en ASCII como 01000001 (como podéis ver, distinto a la codificación EBDIC).</p>
+</li>
+<li>
+<p>Durante los años 80, para incluir caracteres que permitiesen tildes y símbolos propios de los idiomas europeos (como en español la ñ), se creó el <u>Extended ASCII</u> o ISO 8859-1 (denominado Latin-1). En este punto, como podéis ver entra en juego la terminología "ISO" (International Organization for Standardization), es decir, la Organización Internacional de Normalización. Fundada en 1947 y con sede en Ginebra y se encarga de establecer normas internacionales que faciliten la interoperabilidad entre tecnologías y países. En el ámbito informático, ISO definió la serie de normas <u>ISO/IEC 8859, que especifican distintos conjuntos de caracteres de 8 bits</u>, adaptados a los símbolos de diversas regiones del mundo. Aquí os dejo un pequeño resumen, que no tenéis por qué saber pero sí es muy interesante que os suene.</p>
+</li>
+<li><strong>ISO 8859-1 (Latin-1):</strong> Europa Occidental : incluye “ñ”, “á”, “é”, “ö” y otras más</li>
+<li><strong>ISO 8859-5:</strong> Alfabetos cirílicos.</li>
+<li><strong>ISO 8859-6:</strong> Árabe.</li>
+<li>
+<p><strong>ISO 8859-7:</strong> Griego.</p>
+</li>
+<li>
+<p>Finalmente, en 1991, el último de todos, <u>Unicode</u>, una codificación universal que <u>buscaba representar todos los caracteres de todos los idiomas</u> (es decir, la "unificación de todo lo anterior"), además de la posibilidad de añadir y escribir símbolos matemáticos o incluso emojis. </p>
+</li>
+<li>
+<p>Unicode <u>utiliza un número variable de bits (entre 8 y 32 bits</u>) según el formato empleado (UTF-8, UTF-16 o UTF-32 que  tratan de diferentes métodos de codificación binaria que veremos un poquito a continuación), y admite más de 1,100,000 caracteres posibles pero sólo se llegan a usar 150 mil porque no necesita tantos. </p>
+</li>
+<li>
+<p>El formato UTF-8 <u>usado especialmente en Internet</u> (saber esto), y <u>compatible con ASCI</u>I. Su tamaño es variable, pues puede <u>usar entre 1 y 4 bytes</u> por carácter (lo hemos visto al resolver el ejercicio): un solo byte para los caracteres latinos básicos (como las letras e incluso números no flotantes) y hasta cuatro bytes para símbolos más específicos, como emojis.</p>
+</li>
+<li>
+<p>UTF-16 también tiene un tamaño variable, <u>utilizando 2 bytes para la mayoría de los caracteres comunes y 4 bytes</u> de nuevo para aquellos más complejos, como los emojis (igual que antes). Este formato se emplea frecuentemente en sistemas Windows y en algunos entornos de programación. En este caso, la letra “A” se codifica como 00000000 01000001, es decir, dos bytes a diferencia de UTF-8.</p>
+</li>
+<li>
+<p>Finalmente, UTF-32 es un formato de longitud fija, en el que cada carácter ocupa <u>e</u><u>xactamente 4 bytes (32 bits)</u>. Esto simplifica la lectura y el procesamiento de los datos, ya que <u>cada carácter tiene el mismo tamaño en memoria</u>, pero también implica un mayor consumo de espacio</p>
+</li>
+<li>
+<p>Unicode se convirtió oficialmente en la norma ISO/IEC 10646 <u>que son las normas vigentes y actualmente utilizadas en todo el mundo para la codificación universal de caracteres</u>,  en donde IEC significa International Electrotechnical Commission, o en español, Comisión Electrotécnica Internacional que  se encarga de elaborar y publicar normas internacionales relacionadas con la electricidad, la electrónica y las tecnologías asociadas.</p>
+</li>
+</ul>
+<h2 id="45-limite-ram">4.5 Límite RAM</h2>
+<p>En la arquitectura x86 de 32 bits, los ordenadores tenían un límite teórico de 4GB de ram, ¿por qué?, ¿de qué operación sale ese número?, ¿cuál es el límite teórico a día de hoy que otorga los procesadores de 64 bits y por qué? ¿Y los ordenadores de 16 bits? Basta seguir la siguiente fórmula (razonada en la pizarra en clase por mi, pero podéis aprenderosla de memoria):</p>
+<p>$$
+\text{Memoria direccionable} = 2^{\text{número de bits de dirección}}
+$$
+Donde en el caso de n=32 tenemos::</p>
+<ul>
+<li>n = 32:  2³² = 4,294,967,296 bytes = 4 GB</li>
+</ul>
+<p>Ahora bien, en el caso de n=16 tendríamos algo así:</p>
+<ul>
+<li>n = 16 : 2¹⁶ = 65,536 bytes = 64 KB</li>
+</ul>
+<p>Ahora bien, en el caso de n=64 tendríamos algo así:</p>
+<ul>
+<li>n = 64 : 2⁶⁴ = 16,777,216 TB = 16 exabytes</li>
+</ul>
+<h2 id="46-explorando-el-hardware-del-ordenador">4.6 Explorando el hardware del ordenador</h2>
+<p>1- Ejecuta </p>
+<div class="highlight"><pre><span></span><code>lscpu
+</code></pre></div>
+<ul>
+<li>
+<p>¿Cuántos núcleos físicos </p>
+</li>
+<li>
+<p>¿Cuántos procesadores lógicos aparecen? ¿Coinciden con los núcleos físicos o hay HyperThreading/SMT activado?</p>
+</li>
+</ul>
+<p><u>Solución</u>:</p>
+<p><img alt="image-20251011172740916" src="/home/manolo/.config/Typora/typora-user-images/image-20251011172740916.png" /></p>
+<p>En mi caso, 6 núcleos físicos, 2 hilos por nucleo (por el hyperthrading) luego 12 núcleos lógicos en total.</p>
+<p>En la mayotía de vosotros, asignasteis "2 CPU'S" en la MV, por tanto, lo que os aparecerá es "2 núcelos fisicos", "1 hilo por núcleo". En realidad, vosotros le dais a la máquina 2 núcleos lógicos, no físicos, pero ella los interpreta siempre como físicos.</p>
+<p>2- Con el comando:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/proc/cpuinfo<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;model name&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>uniq
+</code></pre></div>
+<ul>
+<li>¿Qué modelo de CPU tienes?</li>
+</ul>
+<p>Poner el modelo de CPU que os salga, en mi caso:</p>
+<p><img alt="image-20251011171842253" src="/home/manolo/.config/Typora/typora-user-images/image-20251011171842253.png" /></p>
+<ul>
+<li>¿A cuántos GHz está configurada la frecuencia base? </li>
+</ul>
+<p>Buscarlo en internet, yo comprobaré que lo hagais bien.</p>
+<p>3- Ejecuta:</p>
+<div class="highlight"><pre><span></span><code>free<span class="w"> </span>-h
+</code></pre></div>
+<ul>
+<li>¿Cuánta memoria RAM total reconoce tu sistema?</li>
+</ul>
+<p><img alt="image-20251011171927682" src="/home/manolo/.config/Typora/typora-user-images/image-20251011171927682.png" /></p>
+<ul>
+<li>¿Cuánta está en uso y cuánta libre?</li>
+</ul>
+<p>Lo que se ve en la captura</p>
+<ul>
+<li>¿Qué es la memoria Swap y como la podemos ver? Ejecuta para ello:<code>grep Swap /proc/meminfo</code></li>
+</ul>
+<p>La memoria Swap es una parte del disco duro que el sistema usa como memoria RAM adicional cuando esta se llena.</p>
+<p><img alt="image-20251011172031696" src="/home/manolo/.config/Typora/typora-user-images/image-20251011172031696.png" /></p>
+<p>En mi caso, tengo la memoria Swap desactivada, mas que nada porque tengo procesos que impiden que esté activa. Ya veremos cuando llegue el momento bajo que casuísticas se debe desactivar.</p>
+<ul>
+<li>Comprueba si el valor de RAM coincide con el reportado en la terminal.</li>
+</ul>
+<p>No coincide: El primer valor indica la memoria física total instalada en el equipo (en mi caso incluso aumenté la ram de mi ordenador), mientras que la captura que aquí pongo da la cantidad de memoria utilizada por el sistema. Una parte de la RAM se reserva para el hardware o la BIOS por eso no me aparece lo mismo con el comando de terminal. Si me adjuntais caputura de que no coinciden, os lo pondré bien.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

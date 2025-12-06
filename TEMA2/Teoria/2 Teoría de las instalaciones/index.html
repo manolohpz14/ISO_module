@@ -1,0 +1,1168 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1%C2%AA%20Teoria%20virtualizacion/">
+      
+      
+        <link rel="next" href="../../Practicas/1%C2%AA%20Pr%C3%A1ctica%20virtualizacion/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>2do Archivo Teoría (Instalaciones y Particiones) - Módulo ISO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-teoria-de-las-instalaciones" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Módulo ISO" class="md-header__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Módulo ISO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2do Archivo Teoría (Instalaciones y Particiones)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Módulo ISO" class="md-nav__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Módulo ISO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/1.%20Teoria%20de%20Markdown%20SIMPLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (Markdown)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/2.%20Teor%C3%ADa%20de%20Sistemas%20Num%C3%A9ricos%20en%20Inform%C3%A1tica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Sistemas Numéricos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/3.%20Teoria%20de%20Almacenamiento%20de%20datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3er Archivo Teoría (Almacenamiento de datos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/4.%20Teoria%20%E2%80%94%20Hardware%20y%20Software%20b%C3%A1sico%20de%20un%20ordenador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4to Archivo Teoría (Hardware y Software)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/5.%20Teor%C3%ADa%20Sistemas%20Operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5to Archivo Teoría (Sistemas Operativos y Virtualización)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/1ªPractica.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/2.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Rellena%20la%20siguiente%20tabla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/3.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Probamos%20la%20CLI%20de%20Ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/4.%20Pr%C3%A1ctica%20%E2%80%94%20Curiosidades%20y%20importancia%20de%20los%20sistemas%20de%20enumeraci%C3%B3n%20binario%20y%20hexadecimal%20en%20la%20informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/4.2.%20Pr%C3%A1ctica%20%E2%80%94%20Comparaci%C3%B3n%20GUI%20vs%20CLI%20en%20Ubuntu%20e%20instalaci%C3%B3n%20de%20KDE%20%28copy%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (versión 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/5.%20Pr%C3%A1cticaTrabajoCooperativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%C2%AA%20Teoria%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (QEMU-KVM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Instalaciones y Particiones)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/1%C2%AA%20Pr%C3%A1ctica%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica (Opcional. Virtualizacion Anidada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/2%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20de%20Ubuntu%20sin%20LUKS%20%28sin%20LVM%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/3%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20Dual%20de%20ubuntu%20%2B%20Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/4%C2%AA%20Pr%C3%A1ctica%20Migraci%C3%B3n%20de%20un%20disco%20de%20120%20GB%20%28M%C3%A1s%20grande%29%20a%20otro%20de%20100%20GB%20%28M%C3%A1s%20chico%29%20usando%20GParted%20y%20el%20comando%20dd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica Guiada (Administración de permisos en directorios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica Guiada (Administración de permisos en binarios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/4ª Practica APT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica Guiada (Uso de APT avanzado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-teoria-de-las-instalaciones">2 Teoría de las instalaciones</h1>
+<p>Punto 2 de Teoría del Tema 2.</p>
+<h1 id="1-tipos-de-formatos-de-datos-particiones-y-volumenes">1.  Tipos de formatos de datos. Particiones y Volúmenes</h1>
+<h2 id="11-formatos-mas-comunes-en-windows">1.1 Formatos más comunes en Windows</h2>
+<ul>
+<li><strong>FAT16 (File Allocation Table 16 bits)</strong></li>
+</ul>
+<p>El FAT16 fue uno de los primeros sistemas de archivos ampliamente usados en computadoras personales. Se utilizó principalmente en disquetes y en las primeras versiones de Windows y MS-DOS. Estaba pensado para discos de pequeña capacidad y, por limitaciones de diseño, solo podía manejar particiones de hasta 2 GB. Si bien en su momento fue fundamental para la gestión de datos en sistemas antiguos, hoy en día se considera completamente obsoleto y ha sido reemplazado por formatos más eficientes y compatibles con discos modernos.
+- <strong>FAT32</strong></p>
+<p>El FAT32 surgió como una evolución del FAT16, con mejoras en eficiencia y en la capacidad de manejar discos más grandes. Gracias a su simplicidad y a la amplia compatibilidad, se convirtió en el formato estándar para memorias USB, cámaras digitales, consolas y otros dispositivos portátiles. Una de sus principales ventajas es que prácticamente cualquier sistema operativo puede leerlo y escribir en él. Sin embargo, tiene una limitación importante: no permite almacenar archivos individuales de más de 4 GB, lo cual lo hace poco práctico para videos de alta definición, copias de seguridad completas o imágenes de disco grandes.
+- <strong>exFAT (Extended FAT)</strong></p>
+<p>El exFAT (Extended FAT) fue diseñado posteriormente para superar esa restricción. Mantiene la compatibilidad con múltiples plataformas y dispositivos, pero elimina la limitación de tamaño de archivo, permitiendo manejar archivos muy grandes y particiones de varios terabytes. Por eso, es el formato más utilizado en memorias USB y discos externos modernos, especialmente cuando se necesita transferir información entre Windows, macOS y otros sistemas.
+- <strong>NTFS (New Technology File System)</strong></p>
+<p>El NTFS (New Technology File System) se convirtió en el formato estándar de Windows a partir de Windows XP y sigue siéndolo en las versiones actuales. Está diseñado para manejar archivos de gran tamaño y discos duros de varios terabytes, lo que lo hace muy eficiente en equipos modernos. A diferencia de FAT32 y exFAT, NTFS incorpora funciones avanzadas de seguridad, como permisos de acceso detallados, cifrado de datos y compresión de archivos, además de soportar journaling para reducir el riesgo de corrupción en caso de fallos. Su principal desventaja radica en la compatibilidad: aunque macOS puede leer particiones NTFS de forma nativa, no permite escribir en ellas sin software adicional, y en sistemas Linux se necesita soporte específico para trabajar con él.</p>
+<h2 id="12-formatos-en-macos-no-los-usaremos-pero-saber-que-existen">1.2. Formatos en macOS (No los usaremos pero saber que existen)</h2>
+<ul>
+<li><strong>HFS+ (Hierarchical File System Plus)</strong></li>
+</ul>
+<p>El HFS+ (Hierarchical File System Plus) fue durante muchos años el sistema de archivos principal en macOS, desde finales de los noventa hasta la llegada de APFS en 2017. Permitía manejar archivos de gran tamaño e incluía funciones avanzadas para su época, como el journaling, que ayudaba a proteger la integridad de los datos en caso de apagados inesperados. Aunque fue un formato muy estable y ampliamente usado en discos duros mecánicos, hoy en día se encuentra en desuso y ha sido reemplazado casi por completo por APFS, especialmente en equipos con unidades de estado sólido (SSD).
+- <strong>APFS (Apple File System)</strong></p>
+<p>El APFS (Apple File System) es el sistema de archivos actual de macOS, introducido en 2017 para reemplazar a HFS+. Fue diseñado específicamente para aprovechar al máximo la velocidad y características de los discos de estado sólido (SSD), aunque también funciona en discos duros tradicionales. Destaca por su gran rapidez y por incluir funciones modernas como la clonación instantánea de archivos y carpetas, la creación de snapshots para restaurar el sistema en un estado anterior y un cifrado avanzado que mejora la seguridad de los datos. Su principal limitación es la compatibilidad: aunque es ideal dentro del ecosistema de Apple, no puede ser utilizado de forma nativa en Windows, lo que lo hace menos práctico en entornos donde se intercambian datos entre distintos sistemas operativos.</p>
+<h2 id="13-formatos-en-linux">1.3. Formatos en Linux</h2>
+<ul>
+<li><strong>ext2, ext3, ext4 (Extended File System)</strong></li>
+</ul>
+<p>El ext4 (Fourth Extended File System) es actualmente el sistema de archivos más utilizado en Linux y se considera el estándar en la mayoría de distribuciones. Está diseñado para manejar discos y archivos de gran tamaño, lo que lo hace adecuado tanto para equipos personales como para entornos de servidores. Destaca por su estabilidad, eficiencia y capacidad de recuperación frente a fallos, gracias al uso de journaling, que protege la integridad de los datos. Su rendimiento está optimizado para cargas de trabajo intensivas y, aunque es muy confiable en Linux, presenta una limitación importante en términos de compatibilidad: Windows no puede reconocer particiones ext4 de forma nativa, siendo necesario instalar software adicional para acceder a ellas.
+- <strong>Btrfs (B-tree File System)</strong></p>
+<p>El Btrfs (B-tree File System) es un sistema de archivos moderno para Linux, desarrollado con el objetivo de ofrecer características avanzadas que van más allá de lo que proporciona ext4. Entre sus funciones más destacadas se encuentran la posibilidad de crear <strong>snapshots</strong> (copias instantáneas del estado del sistema). Sin embargo, aunque es potente y sigue en desarrollo, todavía se considera menos estable que ext4 en ciertas aplicaciones críticas, por lo que suele recomendarse principalmente para pruebas
+- <strong>XFS y ZFS</strong></p>
+<p>XFS y ZFS son sistemas de archivos orientados principalmente a entornos de servidores y a la gestión de grandes volúmenes de datos.
+   El XFS, desarrollado originalmente por Silicon Graphics, es reconocido por su alto rendimiento en el manejo de archivos de gran tamaño y su capacidad para trabajar eficientemente en sistemas con cargas intensivas de entrada y salida. Es muy utilizado en centros de datos y aplicaciones donde la velocidad y la escalabilidad son esenciales. Por otro lado, el ZFS (Zettabyte File System) destaca por su enfoque en la confiabilidad y la integridad de los datos. Incorpora un sistema de verificación mediante sumas de comprobación (checksums)</p>
+<hr />
+<h1 id="2que-es-una-particion">2.¿Qué es una partición?</h1>
+<p>Una partición es una división lógica dentro de un disco duro, SSD o memoria externa, que permite organizar y utilizar el espacio de almacenamiento de manera independiente. Para entenderlo mejor, se puede imaginar el disco como un terreno vacío, y las particiones como parcelas delimitadas dentro de ese terreno. Cada partición funciona de forma autónoma y puede destinarse a diferentes propósitos: desde instalar un sistema operativo hasta almacenar archivos o incluso servir como espacio reservado para recuperación.</p>
+<p>Por ejemplo, en una computadora es común encontrar varias particiones en un mismo disco: la unidad C, donde está instalado Windows; otra partición, como la unidad D, destinada a documentos, programas o juegos; y, en muchos casos, una partición oculta, utilizada por el fabricante para guardar herramientas de recuperación del sistema.</p>
+<p><img alt="image-20251007083243287" src="/home/manolo/.config/Typora/typora-user-images/image-20251007083243287.png" /></p>
+<p>¿Cuantas particiones hay en la foto anterior?</p>
+<h2 id="21-tipos-de-particiones">2.1 Tipos de particiones</h2>
+<p>Recordarmos que: Un sector es la unidad mínima de almacenamiento físico en un disco. Tradicionalmente, un sector equivale a 512 bytes, aunque en los discos modernos se utilizan sectores de 4 KB (Advanced Format) para aprovechar mejor la capacidad.</p>
+<ol>
+<li>
+<p>En los discos que utilizan el esquema <u>MBR (Master Boot Record), las particiones primarias</u> son las más básicas. El MBR (Master Boot Record) fue creado en 1983 junto con la llegada del IBM PC AT y los primeros discos duros de apenas 10 MB. </p>
+</li>
+<li>
+<p>En este esquema, <strong>la tabla de particiones se almacena en el primer sector del disco (sector 0), junto con un pequeño código de arranque, y permite definir hasta cuatro particiones primarias capaces de albergar directamente sistemas operativos o datos</strong>. En sus inicios esta limitación no representaba un problema, pero con el crecimiento de la capacidad de los discos se volvió insuficiente. Aunque aún es posible encontrar MBR en discos antiguos o en algunos dispositivos de almacenamiento extraíbles, en los sistemas modernos ha quedado prácticamente en desuso y ha sido reemplazado por GPT. Para superar esa restricción de solo cuatro particiones, en MBR se creó la partición extendida. A diferencia de las primarias, esta no almacena datos directamente, sino que actúa como un contenedor dentro del cual se pueden crear múltiples particiones adicionales llamadas lógicas. De este modo, el usuario podía tener más de cuatro áreas de almacenamiento en un mismo disco. Este recurso fue útil durante muchos años, pero con la llegada de GPT perdió relevancia y actualmente también está en desuso.</p>
+</li>
+<li>
+<p>Con el tiempo, la capacidad de los discos creció de forma exponencial: A finales de los 90 y principios de los 2000 aparecieron discos de cientos de GB y luego de varios terabytes. MBR se volvió insuficiente porque: Solo soporta discos de hasta 2 TB, solo permite 4 particiones primarias y se basa en un único sector, lo que lo hace muy vulnerable. Para superar esas limitaciones, Intel desarrolló el estándar EFI (Extensible Firmware Interface), que luego evolucionó en UEFI. Este nuevo firmware requería un esquema de particionado moderno y flexible: así nació el GPT (GUID Partition Table). GPT distribuye la información de forma <strong>redundante y flexible</strong>:</p>
+</li>
+</ol>
+<p>Con UEFI, el firmware ya no depende de ese único sector:</p>
+<ul>
+<li>
+<p>Utiliza una <strong>partición especial llamada ESP (EFI System Partition) con formato FAT32</strong> (para ser universalmente reconocido por UEFI).</p>
+</li>
+<li>
+<p>Esa partición EFI es independiente del sistema operativo y contiene pequeños programas llamados bootloaders que permiten arrancar distintos sistemas (Windows, Linux, etc.).</p>
+</li>
+<li>
+<p>De esta forma, <strong>con GPT no existe la distinción entre primarias, extendidas y lógicas: todas las particiones se gestionan como primarias y el límite ya no es de cuatro, sino de hasta 128 particiones por defecto</strong>, con la posibilidad de ampliarlo. Esta simplicidad hace que GPT sea hoy el estándar en sistemas modernos, reemplazando por completo al esquema MBR.</p>
+</li>
+<li>
+<p>Ojo, UEFI incorpora un "modo de compatibilidad con BIOS". Este modo permite arrancar sistemas operativos antiguos que todavía dependen de MBR. Esto sucede ya que en el Sector 0 se sigue guardando un <strong>MBR de protección</strong>. Esto existe solo para que software antiguo no crea que el disco está vacío. En resumen, GPT tiene <u>los siguientes sectores específicos</u>, que denominaremos "LBA's"</p>
+<ul>
+<li>
+<p><strong>LBA 0</strong> → “MBR protector” comentado ya.</p>
+</li>
+<li>
+<p><strong>LBA 1</strong> → Cabecera GPT primaria (metadatos: GUID del disco, ubicación de tabla de particiones, etc.).</p>
+</li>
+<li>
+<p><strong>LBA 2 → 33</strong> → Describe las particiones  GPT (cada descripcion de la particion ocupa 128 bytes luego podemos tener hasta 4 particiones descritas en un solo sector (ya que un solo sector ocupara 512Bytes y 512Bytes/128Bytes=4). </p>
+</li>
+<li>
+<p>Como el espacio reservado para descripcion de particiones es de 16KB en total, podemos tener tantos LBA como 16KB/512Bytes=32 LBA's para partciones, donde cada LBA representa 4 particiones y por tanto podemos tener hasta 128 particiones.</p>
+</li>
+<li>
+<p><em>LBA 34 → ...</em>* → Aquí empiezan las particiones reales (ESP, /boot, /, Windows, etc.), que es lo que ves en Gparted cuando hacéis las prácticas.</p>
+</li>
+</ul>
+<p><strong>Los sectores reservados para GPT (LBA0, LBA1, LBA2–33, cabecera de backup al final)</strong> son <strong>metadatos internos del disco</strong>, no particiones. Nunca los veras en la tabla de particiones. Cuando enciendes el ordenador, lo primero que se ejecuta es el firmware UEFI. Este firmware sabe leer discos con particionado GPT, así que consulta los primeros sectores (los LBAs iniciales), donde encuentra la tabla GPT. Esa tabla es simplemente un mapa que le dice dónde empieza y acaba cada partición. Gracias a esa información, <u>UEFI localiza la partición especial llamada ESP, que siempre está en formato FAT32.</u> UEFI entra en la ESP y busca un bootloader, que es un archivo <code>.efi</code>. Según la configuración de arranque (BootOrder), puede elegir el de Ubuntu (<code>Ubuntu64.efi</code>) o el de Windows (<code>bootmgfw.efi</code>). Si ejecuta Ubuntu es posible que se ejecute GRUB, entonces el control pasa a GRUB. GRUB ya sabe leer las demás particiones del disco (por ejemplo, la partición <code>/boot</code> en ext4 o incluso la de Windows) por lo que el proceso de arranque terminar correctamente</p>
+</li>
+</ul>
+<h2 id="22-relacion-de-las-particiones-con-los-formatos-de-datos-un-pequeno-resumen">2.2 Relación de las particiones con los <strong>formatos de datos</strong>. Un pequeño resumen</h2>
+<p>Aquí entra en juego el <strong>sistema de archivos</strong> (FAT32, NTFS, ext4,  etc.):</p>
+<ol>
+<li><strong>Una partición sin formato no puede usarse.</strong></li>
+</ol>
+<p>Cuando se adquiere un disco nuevo, este llega completamente “en bruto”, es decir, sin ningún tipo de organización interna. Para poder utilizarlo y almacenar información, es necesario formatearlo con un sistema de archivos.
+2. <strong>El formato define cómo se almacenan y organizan los datos en esa partición.</strong></p>
+<p>Por ejemplo, si una partición se formatea en NTFS, será posible aprovechar funciones avanzadas como la gestión de permisos de usuario y el soporte para archivos de gran tamaño. En cambio, si esa misma partición se formatea en FAT32, ganará en compatibilidad con una amplia variedad de dispositivos y sistemas operativos, aunque tendrá la limitación de no poder almacenar archivos que superen los 4 GB<strong>.
+3. </strong>Cada partición puede tener un formato distinto.**</p>
+<p>En un mismo disco es posible combinar diferentes sistemas de archivos según las necesidades. Por ejemplo, se puede crear una partición en NTFS para ejecutar Windows, otra en ext4 destinada a Linux y una tercera en exFAT, pensada para facilitar el intercambio de archivos entre ambos sistemas operativos gracias a su amplia compatibilidad.
+4. <strong>El formato no cambia el tamaño de la partición, solo cómo se usan los datos dentro.</strong></p>
+<p>La partición puede entenderse como el recipiente que delimita un espacio dentro del disco, mientras que el formato actúa como la regla de organización que determina cómo se almacenan y gestionan los datos dentro de ese espacio.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
