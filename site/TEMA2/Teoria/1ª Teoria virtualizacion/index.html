@@ -1,0 +1,1876 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../TEMA1/Practicas/5.%20Pr%C3%A1cticaTrabajoCooperativo/">
+      
+      
+        <link rel="next" href="../2%20Teor%C3%ADa%20de%20las%20instalaciones/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>1er Archivo Teoría (QEMU-KVM) - Módulo ISO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sistemas-de-virtualizacion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Módulo ISO" class="md-header__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Módulo ISO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1er Archivo Teoría (QEMU-KVM)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Módulo ISO" class="md-nav__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Módulo ISO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/1.%20Teoria%20de%20Markdown%20SIMPLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (Markdown)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/2.%20Teor%C3%ADa%20de%20Sistemas%20Num%C3%A9ricos%20en%20Inform%C3%A1tica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Sistemas Numéricos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/3.%20Teoria%20de%20Almacenamiento%20de%20datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3er Archivo Teoría (Almacenamiento de datos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/4.%20Teoria%20%E2%80%94%20Hardware%20y%20Software%20b%C3%A1sico%20de%20un%20ordenador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4to Archivo Teoría (Hardware y Software)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/5.%20Teor%C3%ADa%20Sistemas%20Operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5to Archivo Teoría (Sistemas Operativos y Virtualización)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/1ªPractica.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/2.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Rellena%20la%20siguiente%20tabla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/3.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Probamos%20la%20CLI%20de%20Ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/4.%20Pr%C3%A1ctica%20%E2%80%94%20Curiosidades%20y%20importancia%20de%20los%20sistemas%20de%20enumeraci%C3%B3n%20binario%20y%20hexadecimal%20en%20la%20informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/4.2.%20Pr%C3%A1ctica%20%E2%80%94%20Comparaci%C3%B3n%20GUI%20vs%20CLI%20en%20Ubuntu%20e%20instalaci%C3%B3n%20de%20KDE%20%28copy%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (versión 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/5.%20Pr%C3%A1cticaTrabajoCooperativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (QEMU-KVM)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (QEMU-KVM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-es-un-sistema-de-virtualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ¿Qué es un Sistema de Virtualización?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-guest-y-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Guest y Host
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ventajas-de-la-virtualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ventajas de la Virtualización
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-desventajas-de-la-virtualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Desventajas de la Virtualización
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tipos-de-virtualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tipos de Virtualización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Tipos de Virtualización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-hipervisor-tipo-1-bare-metal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Hipervisor tipo 1 (bare metal)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-hipervisor-tipo-2-hosted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Hipervisor tipo 2 (HOSTED)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-tecnicas-de-virtualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Técnicas de virtualización
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6emulacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.Emulación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-qemu-kvm-explicacion-instalacion-en-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. QEMU + KVM (Explicación + Instalación en Ubuntu)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-virtualizacion-anidada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Virtualización Anidada
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-emulacion-con-qemu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Emulación con QEMU
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-gestion-de-maquinas-virtuales-a-traves-de-comandos-no-estudiar-comandos-ni-ejecutar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Gestión de Máquinas virtuales a través de comandos (NO ESTUDIAR COMANDOS NI EJECUTAR)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Gestión de Máquinas virtuales a través de comandos (NO ESTUDIAR COMANDOS NI EJECUTAR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-ver-maquinas-virtuales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1. Ver máquinas virtuales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-encender-apagar-reiniciar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2. Encender / apagar / reiniciar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-redes-y-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Redes y almacenamiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-pools-de-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Pools de almacenamiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105-gestion-de-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5. Gestión de snapshots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#106-clonacion-de-maquinas-virtuales-y-redimensionar-una-maquina-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6. Clonación de Maquinas Virtuales y redimensionar una máquina virtual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#107-compartir-carpetas-con-windows-y-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7 Compartir carpetas con Windows y Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20Teor%C3%ADa%20de%20las%20instalaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Instalaciones y Particiones)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/1%C2%AA%20Pr%C3%A1ctica%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica (Opcional. Virtualizacion Anidada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/2%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20de%20Ubuntu%20sin%20LUKS%20%28sin%20LVM%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/3%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20Dual%20de%20ubuntu%20%2B%20Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Practicas/4%C2%AA%20Pr%C3%A1ctica%20Migraci%C3%B3n%20de%20un%20disco%20de%20120%20GB%20%28M%C3%A1s%20grande%29%20a%20otro%20de%20100%20GB%20%28M%C3%A1s%20chico%29%20usando%20GParted%20y%20el%20comando%20dd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica Guiada (Administración de permisos en directorios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica Guiada (Administración de permisos en binarios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/4ª Practica APT.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica Guiada (Uso de APT avanzado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-que-es-un-sistema-de-virtualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ¿Qué es un Sistema de Virtualización?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-guest-y-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Guest y Host
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ventajas-de-la-virtualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ventajas de la Virtualización
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-desventajas-de-la-virtualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Desventajas de la Virtualización
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tipos-de-virtualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tipos de Virtualización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Tipos de Virtualización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-hipervisor-tipo-1-bare-metal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Hipervisor tipo 1 (bare metal)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-hipervisor-tipo-2-hosted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Hipervisor tipo 2 (HOSTED)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-tecnicas-de-virtualizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Técnicas de virtualización
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6emulacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.Emulación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-qemu-kvm-explicacion-instalacion-en-ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. QEMU + KVM (Explicación + Instalación en Ubuntu)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-virtualizacion-anidada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Virtualización Anidada
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-emulacion-con-qemu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Emulación con QEMU
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-gestion-de-maquinas-virtuales-a-traves-de-comandos-no-estudiar-comandos-ni-ejecutar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Gestión de Máquinas virtuales a través de comandos (NO ESTUDIAR COMANDOS NI EJECUTAR)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Gestión de Máquinas virtuales a través de comandos (NO ESTUDIAR COMANDOS NI EJECUTAR)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-ver-maquinas-virtuales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1. Ver máquinas virtuales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-encender-apagar-reiniciar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2. Encender / apagar / reiniciar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-redes-y-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Redes y almacenamiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-pools-de-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Pools de almacenamiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#105-gestion-de-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.5. Gestión de snapshots
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#106-clonacion-de-maquinas-virtuales-y-redimensionar-una-maquina-virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.6. Clonación de Maquinas Virtuales y redimensionar una máquina virtual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#107-compartir-carpetas-con-windows-y-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.7 Compartir carpetas con Windows y Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sistemas-de-virtualizacion">Sistemas de Virtualización</h1>
+<h2 id="1-que-es-un-sistema-de-virtualizacion">1. ¿Qué es un Sistema de Virtualización?</h2>
+<p>En informática un sistema de virtualización se refiere a la creación a través de <em>Software</em> de un recurso tecnológico, este puede ser un ordenador físico completo, u otros recursos de <em>Hardware</em>.</p>
+<p>Nos ofrece una <em>abstracción</em> de los recursos <em>hardware</em> de un ordenador a través de lo que llamaremos <em>Hypervisor</em>.</p>
+<p>Los sistemas virtualizados han sido un gran avance en las tecnologías de la información, las ventajas de estos sistemas en cuanto a aprovechamiento de recursos han hecho que sean una opción cada vez más usada en los sistemas de información incluidos los servidores.</p>
+<p>Ahora es posible hacer prácticas que antes eran inviables de llevar a cabo en una clase ordinaria por la insuficiencia de recursos hardware, o por los problemas derivados de realizarlas.</p>
+<p>Por poner algún ejemplo, cuando se estudia la interconexión de ordenadores en red, antes era necesaria la coordinación de un mínimo de dos ordenadores con sus respectivos alumnos para hacer las pruebas, mientras que ahora se pueden hacer usando una sola máquina anfitriona y otra virtualizada. Otro claro ejemplo, es la instalación de varios sistemas operativos en la misma máquina sin peligro de que un mal paso modifique el arranque, o altere accidentalmente particiones de alguno de los sistemas que se pretendía hacer “convivir” en el mismo sistema. Las ventajas de este sistema frente a otros para realizar las pruebas este modelo no modifica en ningún momento el sistema sobre el que se instala. En este modelo existe un administrador de los recursos hardware llamado Hypervisor, o monitor de máquina virtual que será el encargado de hacer las peticiones a la CPU y administrar los privilegios en dichas peticiones. En nuestro caso <em>Virt-manager</em> será este Hypervisor</p>
+<p>Una máquina virtual es un contenedor de software perfectamente aislado que puede ejecutar sus propios sistemas operativos y aplicaciones como si fuera un ordenador físico. La máquina virtual se comporta exactamente igual que un ordenador físico y contiene su propia CPU virtual, memoria, disco duro, tarjeta de interfaz de red... A todos los efectos una máquina virtual se considera como una máquina con su sistema operativo propio incluso los otros ordenadores de la red así lo <em>verán</em>. </p>
+<hr />
+<h2 id="2-guest-y-host">2. Guest y Host</h2>
+<p>A medida que vayamos leyendo documentación veremos muchas maneras de referirse a las máquinas virtualizadas y a los <strong>hypervisores</strong>. Una de las nomenclaturas que más puede aparecer son las palabras <em>Guest y Host</em> :</p>
+<ul>
+<li><strong>Guest</strong> (invitado) es la máquina virtualizada, la que vive <em>"dentro"</em> de la máquina real.</li>
+<li><strong>Host</strong> (anfitrión) es la máquina real, la que dispone de hardware real y virtualiza las otras.</li>
+</ul>
+<hr />
+<h2 id="3-ventajas-de-la-virtualizacion">3. Ventajas de la Virtualización</h2>
+<p>La principal ventaja de la virtualización es poder tener varios sistemas dentro de un solo hardware físico como si de varias máquinas con sus respectivos componentes hardware se tratase, siendo independientes los unos de los otros.</p>
+<p>Otras de las ventajas son:</p>
+<ul>
+<li>Los usuarios verán los recursos que usan como si fueran dedicados.</li>
+<li>Una administración centralizada. Facilita hacer recursos más homogéneos llegando a estandarizarlos.</li>
+<li>Soporta trasladar sistemas y configuraciones de un sistema a otro, incluso en “caliente”.</li>
+<li>Mejora la tolerancia a fallos, si cae un sistema los otros siguen inalterados. Facilita las copias de seguridad.</li>
+</ul>
+<hr />
+<h2 id="4-desventajas-de-la-virtualizacion">4. Desventajas de la Virtualización</h2>
+<p>La principal desventaja de la virtualización, es que lógicamente el sistema principal que soportara las máquinas virtuales, debe disponer de una mayor cantidad y potencia de recursos a mayor número de sistemas queramos tener virtualizados en él. Los componentes principales que determinarán el número de máquinas virtuales que se podrán soportar sobre un hardware y el rendimiento de cada una de ellas son: la cantidad y velocidad de memoria RAM, la potencia del procesador y la velocidad de lectura, acceso y transferencia del disco duro, aunque hay más factores que determinarán el rendimiento final del sistema.</p>
+<hr />
+<h2 id="5-tipos-de-virtualizacion">5. Tipos de Virtualización</h2>
+<p>Cuando hablamos de virtualización es importante distinguir dos cosas:</p>
+<ol>
+<li><strong>Dónde se ejecuta el hipervisor</strong> (clasificación en tipo 1 o tipo 2).</li>
+<li><strong>Qué técnica de virtualización se utiliza</strong> (virtualización completa, paravirtualización o emulación).</li>
+</ol>
+<hr />
+<h4 id="51-hipervisor-tipo-1-bare-metal">5.1. Hipervisor tipo 1 (bare metal)</h4>
+<p>El hipervisor tipo 1, también llamado nativo o bare metal, es aquel que se ejecuta directamente sobre el hardware físico, sin que haya un sistema operativo anfitrión por debajo, es decir, in hipervisor tipo 1 (bare metal) no necesita que antes instales un sistema operativo como Windows o Linux. El propio hipervisor se instala directamente en el hardware, igual que si fuera un sistema operativo. De este modo, el propio hipervisor se encarga de gestionar la CPU, la memoria, el almacenamiento y los dispositivos de red, y reparte esos recursos entre las máquinas virtuales. El siguiente ejemplo es bastante descriptivo:</p>
+<p>Cuando instalas VMware ESXi en un servidor:</p>
+<ul>
+<li>Descargas la ISO de ESXi.</li>
+<li>La grabas en un USB o CD.</li>
+<li>Arrancas el servidor y lo instalas en el disco duro.</li>
+</ul>
+<p>Al terminar, no tendrás “Windows” ni “Linux” de fondo: lo único que hay es el hipervisor. Desde él gestionas las máquinas virtuales.</p>
+<p>Al ejecutarse directamente sobre el hardware, este tipo de hipervisor ofrece un mayor rendimiento y estabilidad, por lo que es el modelo preferido en servidores y entornos de producción..</p>
+<p><img alt="Virtualizadores Bare Metal" src="https://gitlab.com/aberlanas/ASIR-ISO/-/raw/master/UD02_Virtualizacion/SistemasDeVirtualizacion/Hipervisor_PrimerNivel.svg.png" /></p>
+<p>Ejemplos de esta tecnologia:</p>
+<ul>
+<li>VMware ESXi (free y de pago)</li>
+<li>Xen (libre)</li>
+<li>Microsoft Hyper-V Server (gratis)</li>
+<li>Proxmox VE (gratis/de pago, basado en KVM)</li>
+</ul>
+<p>Un pequeño apunte sobre lo anterior es que hay veces que el hipervisor puede ser considerado de tipo 1 aunque corra sobre un sistema operativo, pero son casos muy especiales. Por ejemplo:</p>
+<p>Proxmox VE se basa en Debian Linux. En este caso sí hay un sistema operativo, pero está tan integrado con el hipervisor (KVM + LXC) que, a efectos prácticos, se considera tipo 1, porque el control de hardware y la gestión de VMs la hace directamente el kernel de Linux.</p>
+<hr />
+<h4 id="52-hipervisor-tipo-2-hosted">5.2. Hipervisor tipo 2 (HOSTED)</h4>
+<p>El hipervisor tipo 2, también llamado <strong>hosted</strong>, funciona como una aplicación que se instala dentro de un sistema operativo anfitrión (Windows, Linux o macOS). En este modelo, es el sistema operativo host el que controla directamente el hardware, mientras que el hipervisor se limita a pedirle recursos para repartirlos entre las máquinas virtuales.</p>
+<p>Este enfoque introduce una capa adicional, lo que implica algo menos de rendimiento que en el caso del tipo 1. Sin embargo, ofrece la gran ventaja de la simplicidad: basta con instalarlo como un programa más y en pocos minutos se pueden crear y ejecutar máquinas virtuales. Por eso se usa sobre todo en entornos de escritorio, pruebas de software, formación o desarrollo.</p>
+<p><img alt="Virtualizadores Completos" src="https://gitlab.com/aberlanas/ASIR-ISO/-/raw/master/UD02_Virtualizacion/SistemasDeVirtualizacion/Hipervisor_SegundoNivel.svg.png" /></p>
+<p>Ejemplos :</p>
+<ul>
+<li>VirtualBox (gratis)</li>
+<li>VMware Server (gratis)</li>
+<li>QEMU (libre, sin KVM, qunque veremos que también funciona como emulador)</li>
+</ul>
+<hr />
+<h4 id="53-tecnicas-de-virtualizacion">5.3 Técnicas de virtualización</h4>
+<p>Independientemente de que un hipervisor sea tipo 1 o tipo 2, puede utilizar diferentes <strong>técnicas</strong> para hacer funcionar a los sistemas invitados:</p>
+<ul>
+<li><strong>Virtualización completa</strong>: se refiere principalmente a la ejecución del procesador invitado. </li>
+</ul>
+<p>Puede implementarse tanto en un hipervisor tipo 1 como en uno de tipo 2. La diferencia entre tipo 1 y 2 es la capa sobre la que corre el hipervisor.</p>
+<p>En este modelo, el sistema invitado funciona como si estuviera en un hardware físico real y no necesita modificaciones especiales. </p>
+<p>Si la CPU no soporta estas instrucciones especiales: El hipervisor no puede ejecutar directamente las instrucciones del guest en la CPU física. Para que la VM funcione, se recurre a técnicas de emulación o “traducción binaria”, donde el hipervisor intercepta y traduce las instrucciones que el guest intenta ejecutar. Esto implica una sobrecarga enorme y un rendimiento mucho más bajo</p>
+<ul>
+<li><strong>Paravirtualización</strong>: se aplica sobre todo a los dispositivos de entrada/salida (E/S), como discos, tarjetas de red o memoria. Aunque la CPU pueda ejecutarse directamente gracias a la virtualización completa, los periféricos virtuales aún deben presentarse al sistema invitado. Esto puede hacerse de dos formas:</li>
+</ul>
+<p>En lugar de emular hardware real (como en el caso de la virtualización completa), el hipervisor ofrece dispositivos virtuales diseñados específicamente para entornos virtuales. Aquí entra en juego virtio, un estándar que define cómo se comunican estos dispositivos con el hipervisor de manera más eficiente. No son copias de hardware físico, sino interfaces simplificadas y optimizadas que reducen la sobrecarga y aumentan el rendimiento.</p>
+<p>Ejemplos de dispositivos virtio son:</p>
+<ul>
+<li>virtio-blk: discos paravirtualizados más rápidos que los IDE o SATA emulados.</li>
+<li>virtio-scsi: discos con interfaz SCSI optimizada.</li>
+<li>virtio-net: tarjetas de red más rápidas y ligeras que las emuladas.</li>
+</ul>
+<p>La ventaja de virtio es clara: mayor rendimiento en disco, red y memoria, junto con un menor uso de CPU en el host frente a la emulación tradicional.</p>
+<p>En cuanto a los controladores, los sistemas Linux ya incluyen drivers virtio en su kernel, por lo que funcionan de inmediato. En cambio, Windows no los incorpora por defecto, y es necesario instalarlos manualmente desde el proyecto oficial: VirtIO drivers (Fedora Project).</p>
+<hr />
+<h2 id="6emulacion">6.Emulación</h2>
+<p>La emulación es cuando un software simula por completo un hardware diferente al real.</p>
+<ul>
+<li>El host (tu máquina física) tiene una arquitectura de CPU concreta, por ejemplo x86_64 (Intel/AMD).</li>
+<li>Con emulación puedes ejecutar un sistema operativo invitado de otra arquitectura, por ejemplo ARMv7, MIPS o PowerPC.</li>
+<li>El emulador traduce cada instrucción que espera esa CPU “falsa” a instrucciones que entienda la CPU real.</li>
+</ul>
+<p>Esto permite una compatibilidad total (puedes correr casi cualquier sistema en casi cualquier host), pero el rendimiento es bajo porque cada instrucción debe traducirse.</p>
+<hr />
+<h2 id="7-qemu-kvm-explicacion-instalacion-en-ubuntu">7. QEMU + KVM (Explicación + Instalación en Ubuntu)</h2>
+<p>QEMU/KVM es la combinación de dos piezas de software que, al trabajar juntas, convierten a Linux en un potente entorno de virtualización. Sin embargo, hay que distinguir cuál es su funcionamiento cuando van juntos y cuando van separados.</p>
+<p>Por un lado está QEMU, que nació como un emulador capaz de reproducir distintas arquitecturas de CPU y de crear máquinas virtuales completas con sus discos, redes y dispositivos. Por sí solo, QEMU puede funcionar tanto como <em>emulador</em> (ejecutando arquitecturas distintas, aunque con menor rendimiento) como <u><em>hipervisor tipo 2</em></u> (cuando ejecuta la misma arquitectura que el host, pero sin aceleración por hardware).</p>
+<p>La segunda pieza es <u>KVM (Kernel-based Virtual Machine),</u> un módulo del kernel de Linux que aprovecha las extensiones de virtualización de las CPUs modernas (Intel VT-x, AMD-V, ARM-VT) y transforma al propio kernel en un <u>hipervisor tipo 1</u>. Esto significa que, gracias a KVM, Linux ya no solo actúa como un sistema operativo, sino también como el gestor que reparte el hardware físico entre las máquinas virtuales.</p>
+<p>Cuando se combinan, QEMU y KVM se reparten el trabajo: KVM se encarga de la ejecución directa de la CPU invitada sobre el hardware, logrando un rendimiento prácticamente nativo, mientras que QEMU proporciona la infraestructura alrededor de esa CPU, es decir, los dispositivos virtuales (discos, red, gráficos, memoria, snapshots, etc.). Así, el resultado práctico es un sistema que ofrece la potencia de un hipervisor tipo 1, con la flexibilidad de un hipervisor tipo 2, porque puedes gestionarlo desde el espacio de usuario como si fuera una aplicación más.</p>
+<p>Aquí es donde entran en juego las técnicas de virtualización:</p>
+<ul>
+<li>Para la CPU, QEMU + KVM utiliza virtualización completa. Gracias a las extensiones de hardware, las instrucciones del sistema invitado se ejecutan directamente en el procesador físico, sin necesidad de modificaciones y con un rendimiento casi igual al nativo.</li>
+<li>Para los dispositivos de entrada/salida, QEMU ofrece dos posibilidades: emulación de hardware real conocido (compatible, pero lenta) o paravirtualización mediante virtio, un estándar que define dispositivos optimizados para entornos virtuales. Con virtio, discos, tarjetas de red o controladores de memoria funcionan de forma mucho más rápida y eficiente, reduciendo la carga de CPU en el host.</li>
+</ul>
+<p>En cuanto a dónde puede ejecutarse, QEMU/KVM corre en hosts que utilicen Linux como sistema operativo y que dispongan de CPU con soporte de virtualización por hardware. Es habitual usarlo en servidores con distribuciones como Ubuntu, Debian, CentOS, Fedora o Proxmox (que, de hecho, se apoya en QEMU/KVM). También funciona en ordenadores de escritorio con Linux, lo que lo convierte en una solución tanto para entornos de producción como para desarrollo y pruebas.</p>
+<p>Su funcionalidad principal es crear y ejecutar máquinas virtuales de alto rendimiento. Con QEMU/KVM puedes levantar sistemas invitados Windows, Linux, BSD o incluso macOS (con algunas limitaciones), asignándoles recursos de tu host como CPU, memoria, disco y red. Además, gracias a virtio y otros controladores paravirtualizados, esas máquinas alcanzan velocidades de disco y red muy cercanas al hardware real.La instalación en Ubuntu es bastante directa. Primero se actualizan los paquetes:</p>
+<p><code>sudo apt update &amp;&amp; sudo apt upgrade</code></p>
+<p>Después se instalan QEMU, KVM y las utilidades necesarias para gestionar máquinas virtuales:</p>
+<p><code>sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager</code></p>
+<p>Las explicamos a continuación:</p>
+<p><strong><code>qemu-kvm</code></strong></p>
+<p>Es el paquete que instala QEMU con soporte para KVM. Aquí tienes la base del sistema de virtualización: QEMU para emular y gestionar las máquinas virtuales, y la integración con KVM para que la CPU invitada use directamente el hardware del host con rendimiento casi nativo.</p>
+<p><strong><code>libvirt-daemon-system</code></strong></p>
+<p>Libvirt es una capa de gestión que se comunica con KVM y QEMU. Permite administrar máquinas virtuales de forma uniforme, tanto desde la línea de comandos como desde interfaces gráficas. Este paquete instala el <strong>demonio de libvirt</strong>, que se ejecuta en segundo plano y actúa como “intermediario” entre tus comandos y el hipervisor.</p>
+<p><strong><code>libvirt-clients</code></strong></p>
+<p>Son las <strong>herramientas de cliente</strong>  mencionadas de libvirt, como <code>virsh</code>. Con ellas puedes crear, arrancar, apagar, pausar y configurar máquinas virtuales desde la terminal. Ejemplo:</p>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>list<span class="w"> </span>--all
+</code></pre></div>
+<p><strong><code>bridge-utils</code></strong></p>
+<p>Herramientas para crear y administrar <strong>puentes de red (bridges)</strong> en Linux. Esto sirve para que tus máquinas virtuales puedan conectarse a la red como si fueran equipos físicos más, con su propia dirección IP. Sin esto, solo tendrías NAT básico, y las VMs no serían accesibles directamente desde la red local.</p>
+<p><strong><code>virt-manager</code></strong></p>
+<p>Es la interfaz gráfica oficial para gestionar máquinas virtuales con QEMU/KVM y libvirt. Muy útil si no quieres hacerlo todo desde la línea de comandos. Te permite crear nuevas VMs, asignar CPU, RAM, discos y redes, además de ver la consola gráfica de los invitados.</p>
+<p>Finalmente, se añade al usuario al grupo <code>libvirt</code> para gestionar las VMs sin permisos de root:</p>
+<p><code>sudo usermod -aG libvirt $USER</code></p>
+<p>E inicia el demonio y comprueba el estado</p>
+<p><code>sudo systemctl enable --now libvirtd</code>
+<code>sudo systemctl status libvirtd</code></p>
+<p>Después, reinicia el sistema</p>
+<hr />
+<h2 id="8-virtualizacion-anidada">8. Virtualización Anidada</h2>
+<p>QEMU es solo un software de emulación/virtualización en espacio de usuario. Siempre puedes instalarlo en cualquier Linux, incluso dentro de una VM, y ejecutar máquinas virtuales en modo emulación (por ejemplo, un ARM sobre un host x86).</p>
+<p>Para poder usar KVM dentro de una máquina virtual necesitas lo que se conoce como virtualización anidada. KVM, a diferencia de QEMU puro, requiere acceso directo a las extensiones de virtualización de la CPU (Intel VT-x o AMD-V). Si la máquina virtual que actúa como “host dentro del host” no recibe esas extensiones, entonces dentro de ella solo podrás usar QEMU en modo emulación, lo que es mucho más lento.</p>
+<p>Que esto funcione o no depende del hipervisor en el que esté corriendo tu primera máquina virtual. Por ejemplo, en VirtualBox puedes instalar QEMU sin problemas, pero no tendrás KVM porque VirtualBox no expone VT-x al invitado, de modo que estarás limitado a la emulación. En  QEMU/KVM  o en ESXi sí es posible habilitar la virtualización anidada desde la configuración de la máquina virtual, lo que permite que KVM funcione dentro de ella, allí puedes activar la opción <code>nested=1</code> en el módulo KVM del kernel para que los invitados puedan aprovechar estas extensiones de hardware.</p>
+<p>Para comprobar si KVM está disponible dentro de tu máquina virtual basta con ejecutar:</p>
+<div class="highlight"><pre><span></span><code>egrep -c &#39;(vmx|svm)&#39; /proc/cpuinfo
+</code></pre></div>
+<p>Si el resultado es 0, significa que tu hipervisor no está exponiendo las extensiones de virtualización y solo podrás usar QEMU en modo emulación. En cambio, si el resultado es mayor que 0, tu invitado sí tiene acceso a VT-x o AMD-V y por tanto podrás usar KVM, siempre que la virtualización anidada esté activada en el host principal.</p>
+<p><strong><u>En caso de no poder, sigue los siguientes pasos:</u></strong></p>
+<p>Edita la configuración de KVM para permitir “nested virtualization”:</p>
+<div class="highlight"><pre><span></span><code>sudo nano /etc/modprobe.d/kvm.conf
+</code></pre></div>
+<p>Añade una de estas líneas según tu CPU:</p>
+<ul>
+<li>Para Intel:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>options kvm-intel nested=1
+</code></pre></div>
+<ul>
+<li>Para AMD:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>options kvm-amd nested=1
+</code></pre></div>
+<p>Recarga el módulo KVM:</p>
+<div class="highlight"><pre><span></span><code>sudo modprobe -r kvm_intel
+sudo modprobe kvm_intel
+</code></pre></div>
+<p>Comprueba si está activo:</p>
+<div class="highlight"><pre><span></span><code>cat /sys/module/kvm_intel/parameters/nested
+</code></pre></div>
+<p>debe mostrar <code>Y</code> (yes).</p>
+<hr />
+<h2 id="9-emulacion-con-qemu">9. Emulación con QEMU</h2>
+<p>QEMU permite no solo virtualizar sistemas de la misma arquitectura que el host, sino también emular arquitecturas diferentes. Esto es útil, por ejemplo, para ejecutar un sistema operativo compilado para ARM en un ordenador con CPU x86.</p>
+<p>En este caso, se puede crear una máquina virtual que emule un sistema ARM y arrancar en ella una distribución Debian ARM. Para lograrlo, primero hay que tener algunas arquitecturas previas instaladas para QEMU</p>
+<hr />
+<h2 id="10-gestion-de-maquinas-virtuales-a-traves-de-comandos-no-estudiar-comandos-ni-ejecutar">10. Gestión de Máquinas virtuales a través de comandos (NO ESTUDIAR COMANDOS NI EJECUTAR)</h2>
+<p>En esta sección veremos conceptos muy sencillos de nuestra máquina virtual. Aunque aquí deje comandos, lo más importante es que sepáis hacerlo desde la GUI (desde la propia aplicación). Repito, no teneis que saber los comandos, teneis que saber hacer esto desde la interfaz gráfica.</p>
+<hr />
+<h4 id="101-ver-maquinas-virtuales">10.1. Ver máquinas virtuales</h4>
+<p>Listar las máquinas que están <strong>encendidas</strong>:</p>
+<div class="highlight"><pre><span></span><code>virsh list
+</code></pre></div>
+<p>Listar <strong>todas</strong> (incluidas apagadas):</p>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>list<span class="w"> </span>--all
+</code></pre></div>
+<p><u>Evidentemente, ¿cómo es testo desde la interfaz gráfica?</u> Dejo captura:</p>
+<p><img alt="image-20251004123214024" src="/home/manolo/.config/Typora/typora-user-images/image-20251004123214024.png" /></p>
+<hr />
+<h4 id="102-encender-apagar-reiniciar">10.2. Encender / apagar / reiniciar</h4>
+<p><strong>Encender</strong> una VM:</p>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>start<span class="w"> </span>NOMBRE_VM
+</code></pre></div>
+<p>Apagar de forma normal (como pulsar el botón de apagado):</p>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>shutdown<span class="w"> </span>NOMBRE_VM
+</code></pre></div>
+<p><strong>Forzar apagado</strong> (como quitar el cable de corriente):</p>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>destroy<span class="w"> </span>NOMBRE_VM
+</code></pre></div>
+<p><strong>Reiniciar</strong>:</p>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>reboot<span class="w"> </span>NOMBRE_VM
+</code></pre></div>
+<p><u>Evidentemente, ¿cómo es esto desde la interfaz gráfica?</u> </p>
+<p>Es tan sencillo como encenderlas y apagarlas desde la aplicación. No adjunto captura porque es evidente.</p>
+<hr />
+<h4 id="103-redes-y-almacenamiento">10.3 Redes y almacenamiento</h4>
+<p>Cuando gestionas máquinas virtuales con <strong>QEMU/KVM</strong> y <strong>libvirt</strong>, no solo controlas el encendido o apagado de las VMs, sino también dos recursos fundamentales: <strong>la red</strong> y <strong>el almacenamiento</strong>. Estos son los que permiten que las máquinas virtuales puedan comunicarse y guardar sus datos de forma persistente.</p>
+<p>Por defecto, al instalarlo, aparece una red llamada <strong><code>default</code></strong>, que funciona en modo <strong>NAT</strong>. Esto significa que tus máquinas virtuales tienen acceso a Internet usando la IP del host como “puerta de enlace”, pero desde la red local no se puede acceder directamente a ellas. Además del modo NAT, libvirt permite crear otros tipos de redes:</p>
+<ul>
+<li><strong>Puente (bridge)</strong>: la VM se conecta directamente a la misma red que el host, con su propia IP visible en el router.</li>
+</ul>
+<p>En la práctica, puedes <strong>listar las redes</strong> que existen con:</p>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>net-list<span class="w"> </span>--all
+</code></pre></div>
+<p>Arrancar una red:</p>
+<div class="highlight"><pre><span></span><code>virsh<span class="w"> </span>net-start<span class="w"> </span>default
+</code></pre></div>
+<p>Ojo, se pueden instalar más tipos de redes, como las isolated. Investigad al respecto.</p>
+<p>En cuanto al almacenamiento, libvirt organiza los discos virtuales dentro de lo que llama <strong>pools de almacenamiento</strong>. Un <em>pool</em> es como un “contenedor” donde se guardan los discos de las máquinas virtuales (imágenes <code>.qcow2</code>, <code>.raw</code>, etc.). </p>
+<p>Es fundamental aclarar <strong>qué tipos de discos virtuales existen</strong> en KVM/QEMU/libvirt, porque de eso depende el rendimiento, la flexibilidad y hasta el tamaño que ocuparán en tu sistema. Cuando hablamos de discos virtuales nos referimos a las unidades de memoria paravirtualizadas donde se instalará el sistema operativo (usaremos ISO's para instalar el sistema operativo en los discos paravirtualizados).</p>
+<ul>
+<li>
+<p>El más básico es el <strong>formato raw</strong> (no lo usaremos, pero saber que existe es importante), que no es más que un archivo plano que ocupa en el disco exactamente el tamaño que le hayas asignado. Por ejemplo, si decides crear un disco de 20 GB en formato raw, ese archivo pesará 20 GB desde el primer momento, aunque dentro de la máquina virtual solo hayas guardado unos pocos archivos. La ventaja de este formato es que ofrece el mejor rendimiento posible, ya que no hay ninguna capa de gestión adicional, y además es muy compatible con otros sistemas de virtualización. Su desventaja es que consume espacio de forma innecesaria si no se llena todo el disco.</p>
+</li>
+<li>
+<p>Por otro lado, el formato más popular en entornos de QEMU/KVM es <strong>qcow2</strong> (es el que usaremos). A diferencia de raw, este formato es dinámico: el archivo crece a medida que la máquina virtual va escribiendo datos, de manera que si le asignas 20 GB pero solo usas 2 GB, en el host ese archivo ocupará aproximadamente esos 2 GB. Además, qcow2 incorpora funciones avanzadas muy útiles como la posibilidad de hacer <strong>snapshots</strong> (puntos de restauración de la máquina), compresión para ahorrar espacio e incluso cifrado. El precio a pagar es un pequeño descenso en el rendimiento respecto a raw, ya que necesita gestionar esta capa extra de funcionalidad. Crear un disco qcow2 es lo más común en virt-manager. lo podemos crear de forma dinámica cuando instalamos, o podemos crear un disco virtual vacío donde instalaremos un sistema operativo.</p>
+</li>
+</ul>
+<p>En el siguiente vídeo se detalla conceptos básicos que necesitais saber de los discos qcow2 en vuestras maquinas virtuales, como redimensionarlos:</p>
+<p>https://drive.google.com/file/d/1CcsgfeX-QKxMTJq-pRBTaAmoTakn_z_t/view?usp=sharing</p>
+<ul>
+<li>
+<p>Existen también otros formatos pensados principalmente para la compatibilidad entre plataformas. Uno de ellos es el <strong>vmdk</strong> (no lo veremos), que es el formato nativo de VMware. Usarlo en KVM puede ser útil si planeas mover máquinas virtuales entre entornos de VMware y QEMU/KVM. Otro formato similar es <strong>vdi</strong>, que es el que utiliza VirtualBox. De la misma forma, resulta práctico cuando quieres migrar máquinas desde VirtualBox hacia KVM o al revés.</p>
+</li>
+<li>
+<p>La siguiente captura muestra cómo he creado un disco virtual vacío, que servirá posteriormente para instalar un sistema operativo (es decir, para crear una máquina virtual). Para ello, accedí al menú de creación y pulsé el botón “+” situado junto a la sección Volúmenes. Allí generé el disco virtual vacío, que quedó almacenado en la carpeta /home/manolo/Escritorio/Mis maqunas virtuales”. Esta carpeta la he creado yo y está montada como un directorio en el que puedo guardar máquinas virtuales, tanto vacías como con sistemas ya instalados. Las carpetas en las que se almacenan las máquinas virtuales (archivos .qcow2 o las imágenes ISO ) se denominan “pools de almacenamiento”. En el apartado 10.4 explicamos este concepto con más detalle. Por ahora, lo importante es quedarse con la idea de que hay que crear una máquina virtual vacía o un disco virtual vacío (los términos pueden usarse indistintamente). En este punto, he salido del asistente de creación de la máquina virtual tras generar el disco. la siguiente captura muestra cómo cree el disco virtual vacío.</p>
+</li>
+</ul>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004130105191.png" alt="image-20251004130105191" style="zoom:50%;" /></p>
+<ul>
+<li>Una vez he creado el disco virtual vacío, vamos a proceder a instalar una sistema operativo en él (es decir, una máquina virtual). para ello, elegimos iniciar una máquina virtual a través de una iso.</li>
+</ul>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004125757231.png" alt="image-20251004125757231" style="zoom:50%;" /></p>
+<ul>
+<li>Cuando ya hemos elegido la ISO y hemos asignado memoria y CPU lógicas, podemos escoger entre dos opciones: Un disco vacío existente:</li>
+</ul>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004125901711.png" alt="image-20251004125901711" style="zoom:50%;" /></p>
+<ul>
+<li>O elegir crear uno nuevo de forma dinámica (por defecto se guardará en /var/lib/libvirt/images)</li>
+</ul>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004125914920.png" alt="image-20251004125914920" style="zoom: 50%;" /></p>
+<hr />
+<h4 id="104-pools-de-almacenamiento">10.4 Pools de almacenamiento</h4>
+<p>Un pool de almacenamiento en libvirt/Virt-Manager es básicamente un contenedor lógico que define dónde se guardan los discos virtuales (donde hemos instalado el sistema operativo en el punto anterior) y las ISOs que usarán tus máquinas virtuales.</p>
+<ul>
+<li><strong>dir: Directorio del Sistema de Archivos</strong>**</li>
+</ul>
+<p>El más común y sencillo.Es simplemente una carpeta en tu host (ej. <code>/var/lib/libvirt/images/</code> o <code>/home/usuario/isos</code>).Dentro de ella guardas archivos <code>.qcow2</code>, <code>.raw</code> o <code>.iso</code>.</p>
+<p>Para crearlo, vasta ir adarle el boton de crear una máquina virtual a través de una ISO o un medio de almacenamiento existente (spoiler, no crearemos una máquina virtual) y cuando nos pregunte que disco virtual quiero elegir para iniciarla, le damos al botón "+" de abajo a la izquierda:</p>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004130553392.png" alt="image-20251004130553392" style="zoom:50%;" /></p>
+<p>Una vez le damos, nos da la opción de creaar un pool (un lugar donde guardar nuestros discos virtuales)</p>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004130836907.png" alt="image-20251004130836907" style="zoom:50%;" /></p>
+<p>En este caso, al pool le he puesto el nombre "Mis_volumenes", y le he asignado la carpeta /home/manolo/Escritorio/Mis  maquinas virtuales. Ahí es donde guardaré tanto mis discos qcow2 (vacíos como con Sistemas operativos) cómo mis ISOS. De hecho, aquí guardé el disco virtual del punto anterior.</p>
+<p>El siguiente video muestra como crear un pool de almacenamientos en virt manager:</p>
+<p>https://drive.google.com/file/d/1B0IeVjZ5RCvOnhJReWRR3JhB2r_bWwAB/view?usp=sharing</p>
+<ul>
+<li><strong>disk: Dispositivo de Disco Físico</strong>**</li>
+</ul>
+<p>Usa un disco entero (<code>/dev/sdb</code>, <code>/dev/sdc</code>, etc.) como pool. El USB debe estar <strong>sin particionar o con todo el disco libre</strong>. Cuando lo declares como pool tipo <em>disk</em> (<code>/dev/sdb</code>, <code>/dev/sdc</code>, etc.), libvirt lo formateará y lo dedicará exclusivamente a guardar volúmenes. No podrás usar el USB desde el explorador de archivos del host porque no tendrá un sistema de ficheros tradicional (será gestionado directamente por libvirt)</p>
+<ul>
+<li><strong>fs: Dispositivo de Bloque Preformateado</strong></li>
+</ul>
+<p>Sirve para guardar dentro de una partición del USB. El usb deberñá tener esquema de particiones GPT y una particion con formato de datos ext4. En el video siguiente explico esto. Más concretamente, en el minuto:</p>
+<p>https://drive.google.com/file/d/1TanUWvXigGdC3ImH65bwfNMAaGITSrAl/view?usp=sharing</p>
+<p>Cuando vas a crear una máquina virtual, puedes crear tu propio pool de almacenamiento según te convenga. Hay más opciones, pero con estas tres, por ahora es más que suficiente. La primera de las opciones es la mas comoda y te permitirá compartir tus MV's facilmentes una vez comprimidas. Los USB también es buena idea. El problema será el almacenamiento del que disponfra el sub. En el siguiente video os dejo como podeis instalar vuestras maquinas virtuales en un usb para poder llevaroslas a casa.</p>
+<hr />
+<h4 id="105-gestion-de-snapshots">10.5. Gestión de snapshots</h4>
+<p>Un snapshot es como una “foto” de tu máquina virtual en un momento dado. Incluye: El estado del disco (qué datos tenía en ese instante). Opcionalmente, el estado de la memoria RAM y la CPU (es decir, la VM en pausa, lista para reanudar).</p>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142127661.png" alt="image-20251004142127661" style="zoom:50%;" /></p>
+<p>Para crear una instantanea le dariamos a +</p>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142213832.png" alt="image-20251004142213832" style="zoom:50%;" /></p>
+<p>y le damos una descripcion</p>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142337433.png" alt="image-20251004142337433" style="zoom:50%;" /></p>
+<p>Para recuperar el estado de la maquina antes del snapshot, basta con seleccionar el snapshot:</p>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142549043.png" alt="image-20251004142549043" style="zoom:50%;" /></p>
+<p>Y darle a start abajo a la derecha</p>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142615845.png" alt="image-20251004142615845" style="zoom:50%;" /></p>
+<p>En el siguiente video os dejo la gestión de snapshots en vuestras máquinas virtuales:
+https://drive.google.com/file/d/1jHOEC1C7SAE8vjoMVcKHFLnPulCEODGe/view?usp=drive_link</p>
+<hr />
+<h4 id="106-clonacion-de-maquinas-virtuales-y-redimensionar-una-maquina-virtual">10.6. Clonación de Maquinas Virtuales y redimensionar una máquina virtual</h4>
+<p>Desde la interfaz gráfica, click derecho + clonar. Importante crear un disco virtual nuevo al clonar (se hace por defecto) y hacerlo con la maquina apagada.</p>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142657697.png" alt="image-20251004142657697" style="zoom:50%;" /></p>
+<p>En esencia es clonar el disco (copiar y pegar el disco donde esta instalado la maquina que queremos clonar)</p>
+<p><img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142801149.png" alt="image-20251004142801149" style="zoom:50%;" /></p>
+<p>En este caso le doy un nuevo nombre para diferenciarlo del anterior. De esta forma, parto desde el mismo punto de mi maquina anterior sin necesidad de hacer un snapshot, y puedo tener dos maquina virtuales con un mismo punto de partida pero que en esencia, son distintas.</p>
+<p>Para redimensionar una máquina virtual, se hacer lo siguiente: https://drive.google.com/file/d/1CcsgfeX-QKxMTJq-pRBTaAmoTakn_z_t/view?usp=sharing</p>
+<hr />
+<h4 id="107-compartir-carpetas-con-windows-y-linux">10.7 Compartir carpetas con Windows y Linux</h4>
+<p>Por brevedad en el documento, dejo el siguiente enlace. Son 5 minutos de video y debéis mirar desde el minuto 6 al 13.</p>
+<p><a href="https://www.youtube.com/watch?v=CdWjyJCBYA0">Compartir carpetas virt manger a MV Windos o Linux</a></p>
+<p>Se pedirá que lo hagáis en algunas prácticas.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
