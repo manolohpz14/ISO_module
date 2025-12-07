@@ -27,52 +27,45 @@ Para no interferir con el sistema en uso, se arranca el ordenador desde un **Liv
 
 ### 3 Pasos principales de la práctica
 
-1. Crear en Virt-Manager una nueva VM que arranque con la ISO de Ubuntu y monte los dos discos virtuales, el vacío y el de la práctica anterior.
+**1.**Crear en Virt-Manager una nueva VM que arranque con la ISO de Ubuntu y monte los dos discos virtuales, el vacío y el de la práctica anterior.
 
-3. Iniciar la VM con Ubuntu Live y redimensiona las particiones del disco de 120 GB hasta que quepan en 100 GB.
+---
 
-4. Copiar las particiones al disco de 100 GB usando el comando dd.
+**2**.Iniciar la VM con Ubuntu Live y redimensiona las particiones del disco de 120 GB hasta que quepan en 100 GB.
 
-4. Es posible que al terminar de copiar, no puedas ver el disco copiado en Gparted **(a mi no me pasa en el primer video pero es una posibilidad que os puede ocurrir, es decir).**
+---
 
-   Los siguientes pasos en la práctica se pueden seguir desde las capturas de pantalla o desde el siguiente video. Es tán fácil que desde las capturas os debería salir solo: https://drive.google.com/file/d/1cXXj6BIagIzb9j_hg1KGPxTrxv4UCEh5/view?usp=sharing
+**3.**Copiar las particiones al disco de 100 GB usando el comando dd.
 
-   Cuando vais a abrir el disco copiado desde g-parted, os sale esto:
+---
 
-   <img src="/home/manolo/.config/Typora/typora-user-images/image-20251014160751656.png" alt="image-20251014160751656" style="zoom:50%;" />
+**4.**Es posible que al terminar de copiar, no puedas ver el disco copiado en Gparted **(a mi no me pasa en el primer video pero es una posibilidad que os puede ocurrir, es decir).** Los siguientes pasos en la práctica se pueden seguir desde las capturas de pantalla o desde el siguiente video. Es tán fácil que desde las capturas os debería salir solo: https://drive.google.com/file/d/1cXXj6BIagIzb9j_hg1KGPxTrxv4UCEh5/view?usp=sharing
 
-   
+Cuando vais a abrir el disco copiado desde g-parted, os sale esto:
 
-   La idea es que GPT no ha podido copiar el "backup" que guardan las particiones GPT al final del disco (pensad por qué sucede esto). Para arreglarlo, deberéis ejecutar la siguiente secuencia de comandos:
+![image-20251130130112127](../../img/image-20251014160751656.png)
 
-   `sudo gdisk /dev/nvme0`
+La idea es que GPT no ha podido copiar el "backup" que guardan las particiones GPT al final del disco (pensad por qué sucede esto). Para arreglarlo, deberéis ejecutar la siguiente secuencia de comandos:
 
-    (aquí hareis referencia al disco en donde estais copiando la información)
+```bash
+sudo gdisk /dev/nvme0
+```
 
-   <img src="/home/manolo/.config/Typora/typora-user-images/image-20251014161056830.png" alt="image-20251014161056830" style="zoom:50%;" />
+ (aquí hareis referencia al disco en donde estais copiando la información)
 
-   Desupués pulsais la opción `e`  que consiste en:
+![image-20251130130112127](../../img/image-20251014161056830.png)
 
-   `relocate backup strctures at the end of the disk`. 
-   ¿Por qué debéis hacer esto? Contesta de forma que se entienda y sea explicativo.
+Desupués pulsais la opción `e`  que consiste en: *"relocate backup strctures at the end of the disk"*. ¿Por qué debéis hacer esto? Contesta de forma que se entienda y sea explicativo.
 
-   <img src="/home/manolo/.config/Typora/typora-user-images/image-20251014161339232.png" alt="image-20251014161339232" style="zoom:50%;" />
+![image-20251130130112127](../../img/image-20251014161339232.png)
 
-   Por último, una vez habéis reubicado el backup al final del disco, le dais a la opción
+Por último, una vez habéis reubicado el backup al final del disco, le dais a la opción `w`  y después ` Y (de Yes) `que escribirá los cambios establecidos mediante los pasos anteriores.
 
-    `w` 
+![image-20251130130112127](../../img/image-20251014161512856.png)
 
-   y después
+Si todo ha salido correctamente, podréis ver el disco en G-Parted.
 
-   ` Y (de Yes) `
+---
 
-   que escribirá los cambios establecidos mediante los pasos anteriores.
-
-   <img src="/home/manolo/.config/Typora/typora-user-images/image-20251014161512856.png" alt="image-20251014161512856" style="zoom:50%;" />
-
-   Si todo ha salido correctamente, podréis ver el disco en G-Parted.
-
-    
-
-6. Por ultimo, se pide verificar que el sistema inicia correctamente y que el espacio se ha adaptado al nuevo tamaño. Verifica con capturas como queda el disco final.
+**5.**Por ultimo, se pide verificar que el sistema inicia correctamente y que el espacio se ha adaptado al nuevo tamaño. Verifica con capturas como queda el disco final.
 

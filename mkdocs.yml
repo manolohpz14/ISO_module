@@ -12,7 +12,7 @@ nav:
       - 3er Archivo Teoría (Almacenamiento de datos): TEMA1/Teoria/3. Teoria de Almacenamiento de datos.md
       - 4to Archivo Teoría (Hardware y Software): TEMA1/Teoria/4. Teoria — Hardware y Software básico de un ordenador.md
       - 5to Archivo Teoría (Sistemas Operativos y Virtualización): TEMA1/Teoria/5. Teoría Sistemas Operativos.md
-      - 1ª Practica: TEMA1/Practicas/1ªPractica.md
+      - 1ª Practica: TEMA1/Practicas/1ª Practica.md
       - 2ª Practica: TEMA1/Practicas/2. Práctica — Observar la diferencia en notación decimal vs binaria. Rellena la siguiente tabla.md
       - 3ª Practica: TEMA1/Practicas/3. Práctica — Observar la diferencia en notación decimal vs binaria. Probamos la CLI de Ubuntu.md
       - 4ª Practica: TEMA1/Practicas/4. Práctica — Curiosidades y importancia de los sistemas de enumeración binario y hexadecimal en la informatica.md
@@ -23,14 +23,15 @@ nav:
       - 1er Archivo Teoría (QEMU-KVM): TEMA2/Teoria/1ª Teoria virtualizacion.md
       - 2do Archivo Teoría (Instalaciones y Particiones): TEMA2/Teoria/2 Teoría de las instalaciones.md
       - 1ª Practica (Opcional. Virtualizacion Anidada): TEMA2/Practicas/1ª Práctica virtualizacion.md
-      - 2ª Practica: TEMA2/Practicas/2 Práctica Instalación de Ubuntu sin LUKS (sin LVM).md
-      - 3ª Practica: TEMA2/Practicas/3 Práctica Instalación Dual de ubuntu + Windows.md
-      - 4ª Practica: TEMA2/Practicas/4ª Práctica Migración de un disco de 120 GB (Más grande) a otro de 100 GB (Más chico) usando GParted y el comando dd.md
+      - 2ª Practica (Instalación Particionada de Linux): TEMA2/Practicas/2 Práctica Instalación de Ubuntu sin LUKS (sin LVM).md
+      - 3ª Practica (Instalación Dual de Windows con grub): TEMA2/Practicas/3 Práctica Instalación Dual de ubuntu + Windows.md
+      - 4ª Practica (Copias de discos con redimensionados y comando dd): TEMA2/Practicas/4ª Práctica Migración de un disco de 120 GB (Más grande) a otro de 100 GB (Más chico) usando GParted y el comando dd.md
 
   - Tema 3. Sistema operativo Linux-Debian:
       - 1ª Practica Guiada (Administración de permisos en directorios): TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md
       - 2ª Practica Guiada (Administración de permisos en binarios): TEMA3/Practicas/2ª Practica Permisos AOT.md
       - 3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS): TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md
+      - 3ª Practica Guiada soluciones apartado 3: TEMA3/Practicas/3ª Practica SOL SUDOERS.md
       - 4ª Practica Guiada (Uso de APT avanzado): TEMA3/Practicas/4ª Practica APT.md
 
 markdown_extensions:
@@ -41,7 +42,10 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
-  - pymdownx.arithmatex   # ← NECESARIO PARA LATEX
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

@@ -1,0 +1,1324 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../3%C2%AA%20Practica%20SUDOERS%20Y%20UMASK%20Y%20SKELL/">
+      
+      
+        <link rel="next" href="../4%C2%AA%20Practica%20APT/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>3ª Practica Guiada soluciones apartado 3 - Módulo ISO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ejercicio-32" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Módulo ISO" class="md-header__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Módulo ISO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3ª Practica Guiada soluciones apartado 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Módulo ISO" class="md-nav__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Módulo ISO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/1.%20Teoria%20de%20Markdown%20SIMPLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (Markdown)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/2.%20Teor%C3%ADa%20de%20Sistemas%20Num%C3%A9ricos%20en%20Inform%C3%A1tica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Sistemas Numéricos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/3.%20Teoria%20de%20Almacenamiento%20de%20datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3er Archivo Teoría (Almacenamiento de datos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/4.%20Teoria%20%E2%80%94%20Hardware%20y%20Software%20b%C3%A1sico%20de%20un%20ordenador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4to Archivo Teoría (Hardware y Software)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/5.%20Teor%C3%ADa%20Sistemas%20Operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5to Archivo Teoría (Sistemas Operativos y Virtualización)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/1%C2%AA%20Practica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/2.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Rellena%20la%20siguiente%20tabla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/3.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Probamos%20la%20CLI%20de%20Ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/4.%20Pr%C3%A1ctica%20%E2%80%94%20Curiosidades%20y%20importancia%20de%20los%20sistemas%20de%20enumeraci%C3%B3n%20binario%20y%20hexadecimal%20en%20la%20informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/4.2.%20Pr%C3%A1ctica%20%E2%80%94%20Comparaci%C3%B3n%20GUI%20vs%20CLI%20en%20Ubuntu%20e%20instalaci%C3%B3n%20de%20KDE%20%28copy%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (versión 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/5.%20Pr%C3%A1cticaTrabajoCooperativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/1%C2%AA%20Teoria%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (QEMU-KVM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/2%20Teor%C3%ADa%20de%20las%20instalaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Instalaciones y Particiones)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/1%C2%AA%20Pr%C3%A1ctica%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica (Opcional. Virtualizacion Anidada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/2%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20de%20Ubuntu%20sin%20LUKS%20%28sin%20LVM%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica (Instalación Particionada de Linux)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/3%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20Dual%20de%20ubuntu%20%2B%20Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica (Instalación Dual de Windows con grub)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/4%C2%AA%20Pr%C3%A1ctica%20Migraci%C3%B3n%20de%20un%20disco%20de%20120%20GB%20%28M%C3%A1s%20grande%29%20a%20otro%20de%20100%20GB%20%28M%C3%A1s%20chico%29%20usando%20GParted%20y%20el%20comando%20dd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (Copias de discos con redimensionados y comando dd)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%C2%AAPractica.%20Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica Guiada (Administración de permisos en directorios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%C2%AA%20Practica%20Permisos%20AOT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica Guiada (Administración de permisos en binarios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%C2%AA%20Practica%20SUDOERS%20Y%20UMASK%20Y%20SKELL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada soluciones apartado 3
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada soluciones apartado 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 3.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 3.3
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%C2%AA%20Practica%20APT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica Guiada (Uso de APT avanzado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 3.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicio-33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 3.3
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>3ª Practica Guiada soluciones apartado 3</h1>
+
+<p>Aquí os dejo las soluciones de algunos apartados, que os pueden venir genial para el examen</p>
+<h3 id="ejercicio-32"><strong><u>Ejercicio 3.2</u></strong><a class="headerlink" href="#ejercicio-32" title="Permanent link">&para;</a></h3>
+<p>Añade a un usuario de tu sistema al grupo sudo y comprueba que podrá usar los siguiente comandos con permisos de root o permisos de otros usuarios (devuelve la salida de los mismo):</p>
+<div class="highlight"><pre><span></span><code>sudo whoami
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>manolo<span class="w"> </span>whoami
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>passwd<span class="w"> </span>root
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>/ejemplo_practica_3
+</code></pre></div>
+<p><u>Solución:</u></p>
+<p>En /etc/sudoers hay una regla que dice que cualquier usuario que esté en el grupo sudo, puede ejecutar cualquier comando con los privilegios de cualquier usuario y cualquier grupo, esto se ve aquí:</p>
+<p><img alt="image-20251128205642387" src="../../../img/image-20251128205642387.png" /></p>
+<p>Por tanto, si manolo está en el grupo sudo, podrá ejecutar el comando sudo con los privilegios que le de la gana. Vamos a meterlo a sudo:</p>
+<div class="highlight"><pre><span></span><code>manolo@manolo:/srv/ejemplo_levi$<span class="w"> </span>su<span class="w"> </span>root
+Contraseña:<span class="w"> </span>
+root@manolo:/srv/ejemplo_levi#<span class="w"> </span>groupadd<span class="w"> </span>sudo
+root@manolo:/srv/ejemplo_levi#<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>sudo<span class="w"> </span>manolo
+</code></pre></div>
+<p>Ejecuciones:</p>
+<div class="highlight"><pre><span></span><code>manolo@manolo:/srv/ejemplo_levi$<span class="w"> </span>sudo<span class="w"> </span>whoami<span class="w"> </span><span class="c1">#ejecuto whoami con privilegios de root, la salida es root.</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>manolo@manolo:/srv/ejemplo_levi$<span class="w"> </span>sudo<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>whoami<span class="w"> </span><span class="c1">#esto es lo mismo que lo anterior</span>
+root
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>manolo@manolo:/srv/ejemplo_levi$<span class="w"> </span>sudo<span class="w"> </span>-u<span class="w"> </span>manolo<span class="w"> </span>whoami
+manolo<span class="w"> </span><span class="c1">#ejecuto con privilegios de manolo (yo mismo)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>manolo@manolo:/srv/ejemplo_levi$<span class="w"> </span>sudo<span class="w"> </span>passwd<span class="w"> </span>root<span class="w"> </span><span class="c1">#ejecuto con privilegios de root</span>
+Nueva<span class="w"> </span>contraseña:<span class="w"> </span>
+CONTRASEÑA<span class="w"> </span>INCORRECTA:<span class="w"> </span>La<span class="w"> </span>contraseña<span class="w"> </span>tiene<span class="w"> </span>menos<span class="w"> </span>de<span class="w"> </span><span class="m">8</span><span class="w"> </span>caracteres
+Vuelva<span class="w"> </span>a<span class="w"> </span>escribir<span class="w"> </span>la<span class="w"> </span>nueva<span class="w"> </span>contraseña:<span class="w"> </span>
+passwd:<span class="w"> </span>contraseña<span class="w"> </span>actualizada<span class="w"> </span>correctamente
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>manolo@manolo:/srv/ejemplo_levi$<span class="w"> </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>/ejemplo_practica_3
+manolo@manolo:/srv/ejemplo_levi$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>/ejemplo_practica_3
+drwxr-xr-x<span class="w"> </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4096</span><span class="w"> </span>nov<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">21</span>:00<span class="w"> </span>/ejemplo_practica_3<span class="w"> </span><span class="c1">#como ejecuto con privlegios de root (al poner sudo) el propietario que la ha </span>
+</code></pre></div>
+<hr />
+<h3 id="ejercicio-33"><strong><u>Ejercicio 3.3</u></strong><a class="headerlink" href="#ejercicio-33" title="Permanent link">&para;</a></h3>
+<p>1-Abrir con <code>visudo</code> (seguro) y edita al usuario armin. En una linea haz que armin pueda ejecutar el comando mkdir, chown y chmod con permisos de root, pero solo esos. Haz en otro linea que armin pueda ejecutar ls con permisos de eren, pero solo ese usuario.</p>
+<p><u><strong>Solucion</strong></u></p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>visudo<span class="w"> </span>-f<span class="w"> </span>/etc/sudoers.d/eren
+armin<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>root:root<span class="o">)</span><span class="w"> </span>/usr/bin/mkdir,<span class="w"> </span>/usr/bin/chown,<span class="w"> </span>/usr/bin/chmod
+armin<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>eren:armin<span class="o">)</span><span class="w"> </span>/usr/bin/ls
+</code></pre></div>
+<hr />
+<p>2-Muevete al usuario eren (metelo en el grupo sudo) y en la raiz "/" crea una carpeta llamada "solo_eren" con permisos 771 y cambiale el propietario a eren. Después crea un fichero en esa carpeta llamado "ejemplo.txt" y añade lo que quieras dentro. Comprueba que eren puede hacer un ls sobre /solo_eren y que <code>armin</code> no puede.
+Después, con armin ejecuta: </p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-u<span class="w"> </span>eren<span class="w"> </span>ls<span class="w"> </span>/solo_eren
+</code></pre></div>
+<p>¿qué linea de la que añadiste en el punto 1 te ha permitido hacer esto y por qué?</p>
+<p>Después comprueba que armin no puede crear nada sobre <code>solo_eren</code> pero ejecutando:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>mkdir<span class="w"> </span>/solo_eren/armin_tambien_puede
+</code></pre></div>
+<p>comprueba que si puedes, ¿qué linea de la que añadiste en el punto 1 te ha permitido hacer esto y por qué?</p>
+<p>Por último, y utilizando sudo, armin decide apropiarse de la carpeta de eren y darle permisos para que sólo el puede utilizarla. Explica como lo harías.</p>
+<p><u><strong>Solucion</strong></u></p>
+<div class="highlight"><pre><span></span><code>manolo@manolo:~$<span class="w"> </span>nu<span class="w"> </span>eren
+manolo@manolo:~$<span class="w"> </span>su<span class="w"> </span>eren
+manolo@manolo:~$<span class="w"> </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>sudo<span class="w"> </span>eren
+manolo@manolo:~$<span class="w"> </span>sudo<span class="w"> </span>passwd<span class="w"> </span>eren
+manolo@manolo:~$<span class="w"> </span>su<span class="w"> </span>eren
+eren@manolo:/home/manolo$<span class="w"> </span>
+eren@manolo:/$<span class="w"> </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>solo_eren
+eren@manolo:/$<span class="w"> </span>sudo<span class="w"> </span>chown<span class="w"> </span>eren:eren<span class="w"> </span>solo_eren
+eren@manolo:/$<span class="w"> </span>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">771</span><span class="w"> </span>solo_eren
+eren@manolo:/solo_eren$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>solo_eren
+eren@manolo:/solo_eren$<span class="w"> </span>nano<span class="w"> </span>ejemplo.txt
+eren@manolo:/solo_eren$<span class="w"> </span>ls
+ejemplo.txt
+eren@manolo:/solo_eren$<span class="w"> </span>sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>armin
+useradd:<span class="w"> </span>warning:<span class="w"> </span>the<span class="w"> </span>home<span class="w"> </span>directory<span class="w"> </span>/home/armin<span class="w"> </span>already<span class="w"> </span>exists.
+useradd:<span class="w"> </span>Not<span class="w"> </span>copying<span class="w"> </span>any<span class="w"> </span>file<span class="w"> </span>from<span class="w"> </span>skel<span class="w"> </span>directory<span class="w"> </span>into<span class="w"> </span>it.
+eren@manolo:/solo_eren$<span class="w"> </span>sudo<span class="w"> </span>passwd<span class="w"> </span>armin
+Nueva<span class="w"> </span>contraseña:<span class="w"> </span>
+CONTRASEÑA<span class="w"> </span>INCORRECTA:<span class="w"> </span>La<span class="w"> </span>contraseña<span class="w"> </span>tiene<span class="w"> </span>menos<span class="w"> </span>de<span class="w"> </span><span class="m">8</span><span class="w"> </span>caracteres
+Vuelva<span class="w"> </span>a<span class="w"> </span>escribir<span class="w"> </span>la<span class="w"> </span>nueva<span class="w"> </span>contraseña:<span class="w"> </span>
+passwd:<span class="w"> </span>contraseña<span class="w"> </span>actualizada<span class="w"> </span>correctamente
+eren@manolo:/solo_eren$<span class="w"> </span>su<span class="w"> </span>armin
+armin@manolo:/solo_eren$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>.
+drwxrwx--x<span class="w"> </span><span class="m">2</span><span class="w"> </span>eren<span class="w"> </span>eren<span class="w"> </span><span class="m">4096</span><span class="w"> </span>nov<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">21</span>:34<span class="w"> </span>.
+armin@manolo:/solo_eren$<span class="w"> </span>sudo<span class="w"> </span>-u<span class="w"> </span>eren<span class="w"> </span>ls<span class="w"> </span>/solo_eren<span class="w"> </span><span class="c1">#la linea numero dos me ha dejado hacer un ls como eren</span>
+<span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>contraseña<span class="w"> </span>para<span class="w"> </span>armin:<span class="w"> </span>
+ejemplo.txt
+
+armin@manolo:/solo_eren$<span class="w"> </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>/solo_eren/armin_tambien_puede<span class="w"> </span><span class="c1">#la linea numero 1 me ha dejado hacer un sudo mkdir</span>
+armin@manolo:/solo_eren$<span class="w"> </span>sudo<span class="w"> </span>chown<span class="w"> </span>armin:armin<span class="w"> </span>.<span class="w"> </span><span class="c1">#me ha dejado por la primera linea</span>
+</code></pre></div>
+<hr />
+<p>3.Abrir con <code>visudo</code> (seguro) y edita al usuario armin, en este caso, armin podrá ejecutar todos los comandos con permisos del grupo exploradores (Si no tienes este grupo debes crearlo y solo meter a eren). En este caso, eren creará en /solo_eren la carpeta /exploradores y le dará el grupo propietario exploradores y le asignará permisos 771.  Sobre esta carpeta eren creará el txt llamado (asuntos_secretos.txt).</p>
+<p><u><strong>Solucion</strong></u></p>
+<div class="highlight"><pre><span></span><code>su<span class="w"> </span>root
+visudo<span class="w"> </span>-f<span class="w"> </span>/etc/sudoers.d/armin
+<span class="c1">#escribo lo siguiente:</span>
+armin<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL:exploradores<span class="o">)</span><span class="w"> </span>ALL
+<span class="c1">#-----------------------------------</span>
+root@manolo:/solo_eren#<span class="w"> </span>groupadd<span class="w"> </span>exploradores
+root@manolo:/solo_eren#<span class="w"> </span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>exploradores<span class="w"> </span>eren
+root@manolo:/solo_eren#<span class="w"> </span>su<span class="w"> </span>eren
+<span class="c1">#----------------------------------</span>
+eren@manolo:/solo_eren$<span class="w"> </span>sudo<span class="w"> </span>chown<span class="w"> </span>eren:eren<span class="w"> </span>.
+eren@manolo:/solo_eren$<span class="w"> </span>newgrp<span class="w"> </span>exploradores
+eren@manolo:/solo_eren$<span class="w"> </span>id<span class="w"> </span>-ng<span class="w"> </span><span class="c1">#me sale exploradores</span>
+eren@manolo:/solo_eren$<span class="w"> </span>mkdir<span class="w"> </span>exploradores
+eren@manolo:/solo_eren$<span class="w"> </span>mkdir<span class="w"> </span>exploradores
+eren@manolo:/solo_eren$<span class="w"> </span>ls
+armin_tambien_puede<span class="w">  </span>ejemplo.txt<span class="w">  </span>exploradores
+eren@manolo:/solo_eren$<span class="w"> </span>chmod<span class="w"> </span><span class="m">771</span><span class="w"> </span>exploradores
+eren@manolo:/solo_eren$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>exploradores
+eren@manolo:/solo_eren/exploradores$<span class="w"> </span>nano<span class="w"> </span>asuntos_secretos.txt
+</code></pre></div>
+<hr />
+<p>4.Con armin, intenta borrar este .txt sin sudo ¿influyen los permisos del txt o los permisos de la carpeta que lo contiene? ¿Puedes? Si no puedes, ejecuta el comando apropiado con sudo para borrar este txt.</p>
+<p><u><strong>Solucion</strong></u></p>
+<div class="highlight"><pre><span></span><code>armin@manolo:/solo_eren/exploradores$<span class="w"> </span>rm<span class="w"> </span>asuntos_secretos.txt
+rm:<span class="w"> </span>¿borrar<span class="w"> </span>el<span class="w"> </span>fichero<span class="w"> </span>regular<span class="w"> </span><span class="s1">&#39;asuntos_secretos.txt&#39;</span><span class="w">  </span>protegido<span class="w"> </span>contra<span class="w"> </span>escritura?<span class="w"> </span><span class="o">(</span>s/n<span class="o">)</span><span class="w"> </span>s
+rm:<span class="w"> </span>no<span class="w"> </span>se<span class="w"> </span>puede<span class="w"> </span>borrar<span class="w"> </span><span class="s1">&#39;asuntos_secretos.txt&#39;</span>:<span class="w"> </span>Permiso<span class="w"> </span>denegado
+armin@manolo:/solo_eren/exploradores$<span class="w"> </span>ls<span class="w"> </span>-ld<span class="w"> </span>.
+drwxrwx--x<span class="w"> </span><span class="m">2</span><span class="w"> </span>eren<span class="w"> </span>exploradores<span class="w"> </span><span class="m">4096</span><span class="w"> </span>nov<span class="w"> </span><span class="m">28</span><span class="w"> </span><span class="m">21</span>:47<span class="w"> </span>.<span class="w"> </span><span class="c1">#armin no eren ni esta en exploradores entonces armin no puede bajo ningun concepto crear ni borrar nada</span>
+
+armin@manolo:/solo_eren/exploradores$<span class="w"> </span>sudo<span class="w"> </span>-g<span class="w"> </span>exploradores<span class="w"> </span>rm<span class="w"> </span>asuntos_secretos.txt
+</code></pre></div>
+<hr />
+<p>5.Armin tiene una pelea con eren y trata sobre lo siguiente. Armin dice que si tuviese privilegios para ejecutar con el grupo sudo  cualquier comando (es decir, esta regla)</p>
+<div class="highlight"><pre><span></span><code>armin<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>armin:sudo<span class="o">)</span><span class="w"> </span>ALL
+</code></pre></div>
+<p>Podría ejecutar cualquier comando así:</p>
+<div class="highlight"><pre><span></span><code>armin@asir:~$<span class="w"> </span>sudo<span class="w"> </span>-g<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/solo_eren
+</code></pre></div>
+<p>Sin embargo eren le dice que si puede, pero que el comando lo está escribiendo mal y que todavía no entiende como usar sudo correctamente.</p>
+<p>¿Qué opinas? ¿Quien tiene razón?</p>
+<p><u><strong>Solucion</strong></u></p>
+<p>Que en parte, armin tiene razón, puede ejecutar cualquier comando con esa regla, pero no está haciendo bien la ejecución. Si el quiere ejecutar con los privilegios del grupo sudo, el comando sería el siguiente:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>-g<span class="w"> </span>sudo<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/solo_eren
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

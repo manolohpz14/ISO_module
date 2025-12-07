@@ -161,21 +161,31 @@ En cuanto a dónde puede ejecutarse, QEMU/KVM corre en hosts que utilicen Linux 
 
 Su funcionalidad principal es crear y ejecutar máquinas virtuales de alto rendimiento. Con QEMU/KVM puedes levantar sistemas invitados Windows, Linux, BSD o incluso macOS (con algunas limitaciones), asignándoles recursos de tu host como CPU, memoria, disco y red. Además, gracias a virtio y otros controladores paravirtualizados, esas máquinas alcanzan velocidades de disco y red muy cercanas al hardware real.La instalación en Ubuntu es bastante directa. Primero se actualizan los paquetes:
 
-`sudo apt update && sudo apt upgrade`
+```bash
+sudo apt update && sudo apt upgrade
+```
 
 Después se instalan QEMU, KVM y las utilidades necesarias para gestionar máquinas virtuales:
 
-``sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager``
+```bash
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager
+```
 
 Las explicamos a continuación:
+
+----
 
 **`qemu-kvm`**
 
 Es el paquete que instala QEMU con soporte para KVM. Aquí tienes la base del sistema de virtualización: QEMU para emular y gestionar las máquinas virtuales, y la integración con KVM para que la CPU invitada use directamente el hardware del host con rendimiento casi nativo.
 
+---
+
 **`libvirt-daemon-system`**
 
 Libvirt es una capa de gestión que se comunica con KVM y QEMU. Permite administrar máquinas virtuales de forma uniforme, tanto desde la línea de comandos como desde interfaces gráficas. Este paquete instala el **demonio de libvirt**, que se ejecuta en segundo plano y actúa como “intermediario” entre tus comandos y el hipervisor.
+
+---
 
 **`libvirt-clients`**
 
@@ -185,13 +195,19 @@ Son las **herramientas de cliente**  mencionadas de libvirt, como `virsh`. Con e
 virsh list --all
 ```
 
+---
+
 **`bridge-utils`**
 
 Herramientas para crear y administrar **puentes de red (bridges)** en Linux. Esto sirve para que tus máquinas virtuales puedan conectarse a la red como si fueran equipos físicos más, con su propia dirección IP. Sin esto, solo tendrías NAT básico, y las VMs no serían accesibles directamente desde la red local.
 
+---
+
 **`virt-manager`**
 
 Es la interfaz gráfica oficial para gestionar máquinas virtuales con QEMU/KVM y libvirt. Muy útil si no quieres hacerlo todo desde la línea de comandos. Te permite crear nuevas VMs, asignar CPU, RAM, discos y redes, además de ver la consola gráfica de los invitados.
+
+---
 
 Finalmente, se añade al usuario al grupo `libvirt` para gestionar las VMs sin permisos de root:
 
@@ -291,7 +307,7 @@ virsh list --all
 
 <u>Evidentemente, ¿cómo es testo desde la interfaz gráfica?</u> Dejo captura:
 
-![image-20251004123214024](/home/manolo/.config/Typora/typora-user-images/image-20251004123214024.png)
+![image-20251004123214024](../../img/image-20251004123214024.png)
 
 ---
 
@@ -366,23 +382,25 @@ Es fundamental aclarar **qué tipos de discos virtuales existen** en KVM/QEMU/li
 
 - La siguiente captura muestra cómo he creado un disco virtual vacío, que servirá posteriormente para instalar un sistema operativo (es decir, para crear una máquina virtual). Para ello, accedí al menú de creación y pulsé el botón “+” situado junto a la sección Volúmenes. Allí generé el disco virtual vacío, que quedó almacenado en la carpeta /home/manolo/Escritorio/Mis maqunas virtuales”. Esta carpeta la he creado yo y está montada como un directorio en el que puedo guardar máquinas virtuales, tanto vacías como con sistemas ya instalados. Las carpetas en las que se almacenan las máquinas virtuales (archivos .qcow2 o las imágenes ISO ) se denominan “pools de almacenamiento”. En el apartado 10.4 explicamos este concepto con más detalle. Por ahora, lo importante es quedarse con la idea de que hay que crear una máquina virtual vacía o un disco virtual vacío (los términos pueden usarse indistintamente). En este punto, he salido del asistente de creación de la máquina virtual tras generar el disco. la siguiente captura muestra cómo cree el disco virtual vacío.
 
-  
+  ![image-20251004123214024](../../img/image-20251004130105191.png)
 
-  <img src="/home/manolo/.config/Typora/typora-user-images/image-20251004130105191.png" alt="image-20251004130105191" style="zoom:50%;" />
+  
 
 - Una vez he creado el disco virtual vacío, vamos a proceder a instalar una sistema operativo en él (es decir, una máquina virtual). para ello, elegimos iniciar una máquina virtual a través de una iso.
 
-  <img src="/home/manolo/.config/Typora/typora-user-images/image-20251004125757231.png" alt="image-20251004125757231" style="zoom:50%;" />
+  ![image-20251004123214024](../../img/image-20251004125757231.png)
+
+  
 
 - Cuando ya hemos elegido la ISO y hemos asignado memoria y CPU lógicas, podemos escoger entre dos opciones: Un disco vacío existente:
 
-  <img src="/home/manolo/.config/Typora/typora-user-images/image-20251004125901711.png" alt="image-20251004125901711" style="zoom:50%;" />
+  ![image-20251004123214024](../../img/image-20251004125901711.png)
 
   
 
 - O elegir crear uno nuevo de forma dinámica (por defecto se guardará en /var/lib/libvirt/images)
 
-  <img src="/home/manolo/.config/Typora/typora-user-images/image-20251004125914920.png" alt="image-20251004125914920" style="zoom: 50%;" />
+  ![image-20251004123214024](../../img/image-20251004125914920.png)
 
   
 
@@ -398,11 +416,13 @@ Un pool de almacenamiento en libvirt/Virt-Manager es básicamente un contenedor 
 
   Para crearlo, vasta ir adarle el boton de crear una máquina virtual a través de una ISO o un medio de almacenamiento existente (spoiler, no crearemos una máquina virtual) y cuando nos pregunte que disco virtual quiero elegir para iniciarla, le damos al botón "+" de abajo a la izquierda:
 
-  <img src="/home/manolo/.config/Typora/typora-user-images/image-20251004130553392.png" alt="image-20251004130553392" style="zoom:50%;" />
+  ![image-20251004123214024](../../img/image-20251004130553392.png)
+
+  
 
   Una vez le damos, nos da la opción de creaar un pool (un lugar donde guardar nuestros discos virtuales)
 
-  <img src="/home/manolo/.config/Typora/typora-user-images/image-20251004130836907.png" alt="image-20251004130836907" style="zoom:50%;" />
+  ![image-20251004123214024](../../img/image-20251004130836907.png)
 
   En este caso, al pool le he puesto el nombre "Mis_volumenes", y le he asignado la carpeta /home/manolo/Escritorio/Mis  maquinas virtuales. Ahí es donde guardaré tanto mis discos qcow2 (vacíos como con Sistemas operativos) cómo mis ISOS. De hecho, aquí guardé el disco virtual del punto anterior.
 
@@ -429,27 +449,27 @@ Cuando vas a crear una máquina virtual, puedes crear tu propio pool de almacena
 
 Un snapshot es como una “foto” de tu máquina virtual en un momento dado. Incluye: El estado del disco (qué datos tenía en ese instante). Opcionalmente, el estado de la memoria RAM y la CPU (es decir, la VM en pausa, lista para reanudar).
 
-<img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142127661.png" alt="image-20251004142127661" style="zoom:50%;" />
+![image-20251004123214024](../../img/image-20251004142127661.png)
 
 
 
 Para crear una instantanea le dariamos a +
 
-<img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142213832.png" alt="image-20251004142213832" style="zoom:50%;" />
+![image-20251004123214024](../../img/image-20251004142213832.png)
+
+
 
 y le damos una descripcion
 
-<img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142337433.png" alt="image-20251004142337433" style="zoom:50%;" />
+![image-20251004123214024](../../img/image-20251004142337433.png)
 
 Para recuperar el estado de la maquina antes del snapshot, basta con seleccionar el snapshot:
 
-<img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142549043.png" alt="image-20251004142549043" style="zoom:50%;" />
+![image-20251004123214024](../../img/image-20251004142549043.png)
+
+
 
 Y darle a start abajo a la derecha
-
-<img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142615845.png" alt="image-20251004142615845" style="zoom:50%;" />
-
-
 
 En el siguiente video os dejo la gestión de snapshots en vuestras máquinas virtuales:
 https://drive.google.com/file/d/1jHOEC1C7SAE8vjoMVcKHFLnPulCEODGe/view?usp=drive_link
@@ -460,15 +480,19 @@ https://drive.google.com/file/d/1jHOEC1C7SAE8vjoMVcKHFLnPulCEODGe/view?usp=drive
 
 Desde la interfaz gráfica, click derecho + clonar. Importante crear un disco virtual nuevo al clonar (se hace por defecto) y hacerlo con la maquina apagada.
 
-<img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142657697.png" alt="image-20251004142657697" style="zoom:50%;" />
+![image-20251004123214024](../../img/image-20251004142657697.png)
 
 En esencia es clonar el disco (copiar y pegar el disco donde esta instalado la maquina que queremos clonar)
 
-<img src="/home/manolo/.config/Typora/typora-user-images/image-20251004142801149.png" alt="image-20251004142801149" style="zoom:50%;" />
+![image-20251004123214024](../../img/image-20251004142801149.png)
+
+
 
 En este caso le doy un nuevo nombre para diferenciarlo del anterior. De esta forma, parto desde el mismo punto de mi maquina anterior sin necesidad de hacer un snapshot, y puedo tener dos maquina virtuales con un mismo punto de partida pero que en esencia, son distintas.
 
-Para redimensionar una máquina virtual, se hacer lo siguiente: https://drive.google.com/file/d/1CcsgfeX-QKxMTJq-pRBTaAmoTakn_z_t/view?usp=sharing
+Para redimensionar una máquina virtual, se hacer lo siguiente: 
+
+https://drive.google.com/file/d/1CcsgfeX-QKxMTJq-pRBTaAmoTakn_z_t/view?usp=sharing
 
 ---
 

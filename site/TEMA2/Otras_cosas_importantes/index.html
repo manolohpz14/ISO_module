@@ -406,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TEMA1/Practicas/1ªPractica.md" class="md-nav__link">
+      <a href="../../TEMA1/Practicas/1%C2%AA%20Practica/" class="md-nav__link">
         
   
   
@@ -719,7 +719,7 @@
   <span class="md-ellipsis">
     
   
-    2ª Practica
+    2ª Practica (Instalación Particionada de Linux)
   
 
     
@@ -747,7 +747,7 @@
   <span class="md-ellipsis">
     
   
-    3ª Practica
+    3ª Practica (Instalación Dual de Windows con grub)
   
 
     
@@ -775,7 +775,7 @@
   <span class="md-ellipsis">
     
   
-    4ª Practica
+    4ª Practica (Copias de discos con redimensionados y comando dd)
   
 
     
@@ -850,7 +850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+      <a href="../../TEMA3/Practicas/1%C2%AAPractica.%20Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan/" class="md-nav__link">
         
   
   
@@ -878,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TEMA3/Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+      <a href="../../TEMA3/Practicas/2%C2%AA%20Practica%20Permisos%20AOT/" class="md-nav__link">
         
   
   
@@ -906,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+      <a href="../../TEMA3/Practicas/3%C2%AA%20Practica%20SUDOERS%20Y%20UMASK%20Y%20SKELL/" class="md-nav__link">
         
   
   
@@ -934,7 +934,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TEMA3/Practicas/4ª Practica APT.md" class="md-nav__link">
+      <a href="../../TEMA3/Practicas/3%C2%AA%20Practica%20SOL%20SUDOERS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada soluciones apartado 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA3/Practicas/4%C2%AA%20Practica%20APT/" class="md-nav__link">
         
   
   
@@ -1132,7 +1160,7 @@
 
 
 
-<h1 id="3-directorios-principales-desde-la-raiz-en-ubuntu">3 Directorios principales desde la raíz <code>/</code> en Ubuntu</h1>
+<h1 id="3-directorios-principales-desde-la-raiz-en-ubuntu">3 Directorios principales desde la raíz <code>/</code> en Ubuntu<a class="headerlink" href="#3-directorios-principales-desde-la-raiz-en-ubuntu" title="Permanent link">&para;</a></h1>
 <p>Conviene destacar las siglas FHS (Filesystem Hierarchy Standard) (FHS).</p>
 <ul>
 <li><strong><code>/</code> (raíz)</strong></li>
@@ -1314,23 +1342,23 @@
 <li><code>/var/cache</code>: contiene archivos de caché generados por aplicaciones, que permiten acelerar su funcionamiento al evitar recalcular o descargar de nuevo información. Por ejemplo, los gestores de paquetes como <code>apt</code> almacenan aquí los paquetes descargados para instalaciones o actualizaciones.</li>
 </ul>
 <p>Además, <code>/var</code> puede incluir otros subdirectorios como <code>/var/tmp</code>, usado para temporales que deben sobrevivir a reinicios, o <code>/var/lib</code>, donde se guardan datos persistentes de servicios (por ejemplo, las bases de datos de <code>dpkg</code> o <code>apt</code>).</p>
-<h2 id="24-instalacion-de-aplicaciones-en-linux">2.4 Instalación de aplicaciones en Linux</h2>
+<h2 id="24-instalacion-de-aplicaciones-en-linux">2.4 Instalación de aplicaciones en Linux<a class="headerlink" href="#24-instalacion-de-aplicaciones-en-linux" title="Permanent link">&para;</a></h2>
 <p>En Linux, los programas pueden instalarse de dos formas: a nivel de sistema o solo para un usuario concreto.</p>
 <p>Cuando se instalan con el gestor de paquetes, como <code>apt</code> en Ubuntu, los archivos se copian en directorios compartidos y quedan disponibles para todos los usuarios del sistema. Los binarios suelen ir a <strong><code>/usr/bin</code></strong> o <strong><code>/usr/sbin</code></strong>, las bibliotecas a <strong><code>/usr/lib</code></strong>, y los datos a <strong><code>/usr/share</code></strong>. Por ejemplo, si instalas Firefox con <code>sudo apt install firefox</code>, su ejecutable se encuentra en <code>/usr/bin/firefox</code>, las bibliotecas en <code>/usr/lib/firefox/</code> y los iconos o manuales en <code>/usr/share/firefox/</code>. Otro caso es el de programas propietarios como Google Chrome, que se instalan en <code>/opt/google/chrome/</code> y crean un enlace en <code>/usr/bin/</code> para que cualquier usuario pueda ejecutarlos.</p>
-<h2 id="25-buenas-practicas-para-particionado-de-linux">2.5 Buenas prácticas para particionado de Linux</h2>
-<h4 id="1-siempre-separar-la-raiz">1. Siempre separar la raíz <code>/</code></h4>
+<h2 id="25-buenas-practicas-para-particionado-de-linux">2.5 Buenas prácticas para particionado de Linux<a class="headerlink" href="#25-buenas-practicas-para-particionado-de-linux" title="Permanent link">&para;</a></h2>
+<h4 id="1-siempre-separar-la-raiz">1. Siempre separar la raíz <code>/</code><a class="headerlink" href="#1-siempre-separar-la-raiz" title="Permanent link">&para;</a></h4>
 <p>La partición <strong>raíz <code>/</code></strong> es obligatoria, ya que contiene el sistema operativo. Lo recomendable es darle un tamaño suficiente para instalar programas y librerías sin preocupaciones: Escritorio: entre 20 y 30 GB suele bastar. Servidor: 50 GB o más, dependiendo de cuántos paquetes o servicios se instalen.</p>
-<h4 id="2-separar-home-para-proteger-los-datos-de-usuario">2. Separar <code>/home</code> para proteger los datos de usuario</h4>
+<h4 id="2-separar-home-para-proteger-los-datos-de-usuario">2. Separar <code>/home</code> para proteger los datos de usuario<a class="headerlink" href="#2-separar-home-para-proteger-los-datos-de-usuario" title="Permanent link">&para;</a></h4>
 <p>Tener <code>/home</code> en una partición independiente permite que los archivos personales y configuraciones de los usuarios sobrevivan incluso si reinstalas o actualizas el sistema operativo.</p>
 <ul>
 <li>Escritorio: darle la mayor parte del espacio disponible.</li>
 <li>Servidor: menos relevante, salvo que haya muchos usuarios locales.</li>
 </ul>
-<h4 id="3-usar-una-particion-var-independiente-en-servidores">3. Usar una partición <code>/var</code> independiente en servidores</h4>
+<h4 id="3-usar-una-particion-var-independiente-en-servidores">3. Usar una partición <code>/var</code> independiente en servidores<a class="headerlink" href="#3-usar-una-particion-var-independiente-en-servidores" title="Permanent link">&para;</a></h4>
 <p>En servidores, los logs, cachés y datos variables pueden crecer rápidamente. Si <code>/var</code> se llena en la misma partición que <code>/</code>, el sistema podría dejar de funcionar. Separar <code>/var</code> garantiza que el sistema operativo siga operativo aunque los registros crezcan demasiado. Tamaño recomendado: depende de la carga; <strong>10–20 GB mínimo</strong> en servidores pequeños, más en sistemas críticos.</p>
-<h4 id="4-considerar-separar-tmp-para-mayor-seguridad">4. Considerar separar <code>/tmp</code> para mayor seguridad</h4>
+<h4 id="4-considerar-separar-tmp-para-mayor-seguridad">4. Considerar separar <code>/tmp</code> para mayor seguridad<a class="headerlink" href="#4-considerar-separar-tmp-para-mayor-seguridad" title="Permanent link">&para;</a></h4>
 <p>La carpeta temporal <code>/tmp</code> es usada por cualquier aplicación. Si un atacante o proceso malicioso llena esta carpeta, podría provocar problemas graves en el sistema. Al poner <code>/tmp</code> en una partición separada, puedes montarla con opciones de seguridad como <code>noexec</code>, <code>nosuid</code> y <code>nodev</code>, que reducen riesgos de ejecución de código malicioso. Tamaño: 2–4 GB suele ser suficiente en escritorios, más en servidores que procesen archivos grandes.</p>
-<h4 id="5-la-particion-boot-en-escenarios-especiales">5. La partición <code>/boot</code> en escenarios especiales</h4>
+<h4 id="5-la-particion-boot-en-escenarios-especiales">5. La partición <code>/boot</code> en escenarios especiales<a class="headerlink" href="#5-la-particion-boot-en-escenarios-especiales" title="Permanent link">&para;</a></h4>
 <p>Separar <code>/boot</code> no siempre es necesario, pero sí recomendable en:</p>
 <ul>
 <li>Sistemas con cifrado completo (LUKS). Ojo:</li>
@@ -1345,7 +1373,7 @@
 <li>Una vez descifrada la partición raíz, el sistema operativo continúa arrancando normalmente.</li>
 </ol>
 <p>De este modo, solo la carpeta <code>/boot</code> permanece sin cifrar, y el resto del disco (incluyendo <code>/</code>, <code>/home</code>, <code>/var</code>, etc.) queda protegido.</p>
-<h4 id="6-swap-particion-o-archivo">6. Swap: ¿partición o archivo?</h4>
+<h4 id="6-swap-particion-o-archivo">6. Swap: ¿partición o archivo?<a class="headerlink" href="#6-swap-particion-o-archivo" title="Permanent link">&para;</a></h4>
 <p>El swap actúa como memoria virtual cuando se agota la RAM. Hoy en día, muchas distribuciones (incluido Ubuntu) crean un archivo swap en lugar de una partición dedicada, lo que simplifica la gestión. Sin embargo, la partición swap aún tiene usos:</p>
 <ul>
 <li>Para hibernación, es obligatorio que el swap tenga al menos el mismo tamaño que la RAM.</li>
@@ -1356,7 +1384,7 @@
 <li>RAM &gt; 8 GB → swap = 4–8 GB suele bastar</li>
 </ul>
 <p>En un entorno más profesional o multiusuario hay que hablar sí o sí de cuotas de disco, RAID y otras estrategias de particionado avanzadas. Vamos a comentarlo.</p>
-<h2 id="26-cuotas-de-disco-limitar-el-uso-de-espacio-por-usuario-o-grupo">2.6 Cuotas de disco: limitar el uso de espacio por usuario o grupo</h2>
+<h2 id="26-cuotas-de-disco-limitar-el-uso-de-espacio-por-usuario-o-grupo">2.6 Cuotas de disco: limitar el uso de espacio por usuario o grupo<a class="headerlink" href="#26-cuotas-de-disco-limitar-el-uso-de-espacio-por-usuario-o-grupo" title="Permanent link">&para;</a></h2>
 <p>Cuando un sistema lo utilizan varios usuarios (p. ej. un servidor educativo o empresarial), es recomendable separar ciertas particiones para poder aplicar cuotas de disco. Esto evita que un único usuario llene todo el sistema y afecte a los demás.</p>
 <ul>
 <li>Lo habitual es separar <code>/home</code> en su propia partición y activar cuotas de disco allí.</li>
@@ -1364,7 +1392,7 @@
 <li>Ejemplo: si cada usuario tiene 5 GB de cuota en <code>/home</code>, aunque copie archivos enormes no afectará al resto del sistema.</li>
 </ul>
 <p>Las cuotas se configuran editando <code>/etc/fstab</code> para activar la opción <code>usrquota</code> o <code>grpquota</code> en la partición correspondiente, y luego gestionando con comandos como <code>edquota</code> o <code>repquota</code>.</p>
-<h2 id="27-raid-redundancia-y-rendimiento-lo-utilizaremos-cuando-sepamos-mas-sobre-comandos-linux-y-el-so">2.7 RAID: redundancia y rendimiento (lo utilizaremos cuando sepamos más sobre comandos linux y el S.O)</h2>
+<h2 id="27-raid-redundancia-y-rendimiento-lo-utilizaremos-cuando-sepamos-mas-sobre-comandos-linux-y-el-so">2.7 RAID: redundancia y rendimiento (lo utilizaremos cuando sepamos más sobre comandos linux y el S.O)<a class="headerlink" href="#27-raid-redundancia-y-rendimiento-lo-utilizaremos-cuando-sepamos-mas-sobre-comandos-linux-y-el-so" title="Permanent link">&para;</a></h2>
 <p>El RAID (Redundant Array of Independent/Inexpensive Disks) es esencial en servidores donde se requiere alta disponibilidad o gran velocidad. La elección del esquema RAID condiciona cómo particionar y distribuir discos:</p>
 <ul>
 <li>
@@ -1380,7 +1408,7 @@
 <p><strong>RAID 6 (doble paridad):</strong>  pero guarda dos bloques de paridad en lugar de uno, lo que permite que se puedan estropear dos discos sin perder datos. Necesita un mínimo de cuatro discos y la capacidad útil es el total menos dos. Así, con cuatro discos de 1 TB, tendrías 2 TB utilizables</p>
 </li>
 </ul>
-<h2 id="28-instalacion-desantendida">2.8 Instalacion desantendida</h2>
+<h2 id="28-instalacion-desantendida">2.8 Instalacion desantendida<a class="headerlink" href="#28-instalacion-desantendida" title="Permanent link">&para;</a></h2>
 <p>Una instalación desatendida (o <em>unattended installation</em>) es aquella en la que el sistema operativo se instala sin intervención manual del usuario. Normalmente, el instalador hace preguntas: idioma, zona horaria, particiones, usuario, contraseña…</p>
 <p>En una instalación desatendida, todas esas respuestas se definen antes en un archivo de configuración o script.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#cloud-config</span>
@@ -1517,6 +1545,8 @@ autoinstall:
     
     
       <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

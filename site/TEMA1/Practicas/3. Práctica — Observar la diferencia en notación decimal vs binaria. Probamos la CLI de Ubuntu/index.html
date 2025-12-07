@@ -412,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1ªPractica.md" class="md-nav__link">
+      <a href="../1%C2%AA%20Practica/" class="md-nav__link">
         
   
   
@@ -849,7 +849,7 @@
   <span class="md-ellipsis">
     
   
-    2ª Practica
+    2ª Practica (Instalación Particionada de Linux)
   
 
     
@@ -877,7 +877,7 @@
   <span class="md-ellipsis">
     
   
-    3ª Practica
+    3ª Practica (Instalación Dual de Windows con grub)
   
 
     
@@ -905,7 +905,7 @@
   <span class="md-ellipsis">
     
   
-    4ª Practica
+    4ª Practica (Copias de discos con redimensionados y comando dd)
   
 
     
@@ -980,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/1%C2%AAPractica.%20Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan/" class="md-nav__link">
         
   
   
@@ -1008,7 +1008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/2%C2%AA%20Practica%20Permisos%20AOT/" class="md-nav__link">
         
   
   
@@ -1036,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/3%C2%AA%20Practica%20SUDOERS%20Y%20UMASK%20Y%20SKELL/" class="md-nav__link">
         
   
   
@@ -1064,7 +1064,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/4ª Practica APT.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/3%C2%AA%20Practica%20SOL%20SUDOERS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada soluciones apartado 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/4%C2%AA%20Practica%20APT/" class="md-nav__link">
         
   
   
@@ -1212,19 +1240,21 @@
 
 
 
-<h1 id="3-practica-observar-la-diferencia-en-notacion-decimal-vs-binaria-probamos-la-cli-de-ubuntu">3. Práctica — Observar la diferencia en notación decimal vs binaria. Probamos la CLI de Ubuntu.</h1>
+<h1 id="3-practica-observar-la-diferencia-en-notacion-decimal-vs-binaria-probamos-la-cli-de-ubuntu">3. Práctica — Observar la diferencia en notación decimal vs binaria. Probamos la CLI de Ubuntu.<a class="headerlink" href="#3-practica-observar-la-diferencia-en-notacion-decimal-vs-binaria-probamos-la-cli-de-ubuntu" title="Permanent link">&para;</a></h1>
 <p>Habitualmente, cuando compramos un disco duro, lo solecmos comprar con "unidades redondas", es decir, 1tb, 500gb...
 Sin embargo, a la hora de ver el disco dentro de nuestro ordenador, nos encontramos con sorpresas. En esta práctica, usando la maquina virtual de Ubuntu que tenéis ya creada, vais a comprobar el tamaño real de vuestro disco duro y a relacionarlo con las unidades de medida de información que hemos estudiado.
 Entrega un Mardown via PDF explicando cada paso.</p>
 <hr />
-<h2 id="1-abrir-la-terminal">1. Abrir la terminal</h2>
+<h2 id="1-abrir-la-terminal">1. Abrir la terminal<a class="headerlink" href="#1-abrir-la-terminal" title="Permanent link">&para;</a></h2>
 <p>Presiona <code>Ctrl + Alt + T</code> para abrir la terminal en Ubuntu. Esto no es una pregunta a responder solo el paso inicial.</p>
-<h2 id="2-listar-los-discos-y-particiones">2. Listar los discos y particiones</h2>
+<hr />
+<h2 id="2-listar-los-discos-y-particiones">2. Listar los discos y particiones<a class="headerlink" href="#2-listar-los-discos-y-particiones" title="Permanent link">&para;</a></h2>
 <p>Escribe el siguiente comando:
 <div class="highlight"><pre><span></span><code>lsblk<span class="w"> </span>-o<span class="w"> </span>NAME,SIZE,TYPE
 </code></pre></div></p>
 <p>Haz la clasificación de este comando según lo visto en la Teoría del punto 3: Prompt de usuario, Comando, Parámetro, Operadores, Salida y observa los discos (TYPE=disk) y sus tamaños (SIZE).</p>
-<h2 id="3-obtener-el-tamano-exacto-en-bytes">3. Obtener el tamaño exacto en bytes</h2>
+<hr />
+<h2 id="3-obtener-el-tamano-exacto-en-bytes">3. Obtener el tamaño exacto en bytes<a class="headerlink" href="#3-obtener-el-tamano-exacto-en-bytes" title="Permanent link">&para;</a></h2>
 <p>Escribe:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>fdisk<span class="w"> </span>-l
 </code></pre></div>
@@ -1232,26 +1262,29 @@ Entrega un Mardown via PDF explicando cada paso.</p>
 <div class="highlight"><pre><span></span><code>Disk<span class="w"> </span>/dev/sda:<span class="w"> </span><span class="m">500107</span><span class="w"> </span>MB,<span class="w"> </span><span class="m">500107862016</span><span class="w"> </span>bytes
 </code></pre></div>
 <p>Anota el tamaño en bytes y comprueba cómo se traduce a GiB: GiB = bytes ÷ 1.073.741.824 ¿Por qué hay que dividir por este número?,¿Te coincide con el número de GiB de tu máquina virtual? Si la tienda de tu barrio te vendiese este disco, ¿cuántos GB dirían que tiene? </p>
-<h2 id="4-gib-vs-gb-en-windows">4. GiB vs GB en windows</h2>
+<hr />
+<h2 id="4-gib-vs-gb-en-windows">4. GiB vs GB en windows<a class="headerlink" href="#4-gib-vs-gb-en-windows" title="Permanent link">&para;</a></h2>
 <p>En Windows, vete al administrador de discos. Ahora, comprueba en GiB el tamaño de tu disco. ¿Cuál es el tamaño en GB que te anunciaría una tienda? Para ello, pasa primero a de GiB a bytes y después a GB</p>
-<h2 id="5-conversion-de-unidades">5. Conversión de unidades</h2>
+<hr />
+<h2 id="5-conversion-de-unidades">5. Conversión de unidades<a class="headerlink" href="#5-conversion-de-unidades" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Convierte 8192 bytes a KiB -&gt; resultado divido 2 elevado 10</li>
-<li>Convierte 5 MiB a KiB -&gt; multiplica 2 elevado a 10</li>
-<li>Convierte 2 GiB a MiB -&gt; mutiplica 2 elevado a 10</li>
-<li>Convierte 1 TiB a GiB -&gt; 2 elevado a 10</li>
-<li>Convierte 3,145,728 bytes a MiB-&gt; 2 elevado a 20</li>
-<li>Convierte  2 GiB a GB-&gt;  multiplico 2 elevado a 30 y divido 10 elevado a 9</li>
-<li>Convierte  200 MiB a GB-&gt; multiplico entre 2 elevado a 20 divido a 10 elevado 9</li>
-<li>Convierte  2 TB a MiB -&gt; multiplico por 10 elevado a 12 y divido por 2  elevado a 20</li>
-<li>Convierte  2 TiB a KB -&gt; multiplico por 2 elevado a 40 y por 10 elevado a 3.</li>
+<li>Convierte 8192 bytes a KiB </li>
+<li>Convierte 5 MiB a KiB </li>
+<li>Convierte 2 GiB a MiB </li>
+<li>Convierte 1 TiB a GiB</li>
+<li>Convierte 3,145,728 bytes a MiB</li>
+<li>Convierte  2 GiB a GB</li>
+<li>Convierte  200 MiB a GB</li>
+<li>Convierte  2 TB a MiB</li>
+<li>Convierte  2 TiB a KB </li>
 </ul>
 <p>Si tengo un procesador de 48 bits ¿cuál es la capacidad máxima que podría tener teóricamente de RAM en TB?</p>
-<p>2 elevado a 48 lo divido entre 2 elevado a 40. Por tanto me quedan 2 elevado a 8 TB, ¿cuánto es 2 elevado a 8 TB? 256 TB.</p>
-<p>¿Un procesador x86-32? 4GB de Ram</p>
+<p>¿Un procesador x86-32? </p>
 <p>¿Y si fuese de 16 bits?</p>
-<h2 id="6-que-tipo-de-cli-puede-usar-windows-busca-informacion-al-respecto">6. ¿Qué tipo de CLI puede usar Windows? Busca información al respecto.</h2>
-<h2 id="7-que-es-un-live-cd-o-un-disco-booteable-que-es-la-secuencia-de-arranque-y-como-se-accede-a-ella-busca-informacion-al-respecto-de-la-relacion-entre-dd-y-un-live-cd-asi-como-precauciones-del-comando-dd">7. ¿Qué es un Live CD o un disco booteable? ¿Qué es la secuencia de arranque y cómo se accede a ella? Busca información al respecto de la relación entre dd y un Live CD, así como precauciones del comando dd.</h2>
+<hr />
+<h2 id="6-que-tipo-de-cli-puede-usar-windows-busca-informacion-al-respecto">6. ¿Qué tipo de CLI puede usar Windows? Busca información al respecto.<a class="headerlink" href="#6-que-tipo-de-cli-puede-usar-windows-busca-informacion-al-respecto" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="7-que-es-un-live-cd-o-un-disco-booteable-que-es-la-secuencia-de-arranque-y-como-se-accede-a-ella-busca-informacion-al-respecto-de-la-relacion-entre-dd-y-un-live-cd-asi-como-precauciones-del-comando-dd">7. ¿Qué es un Live CD o un disco booteable? ¿Qué es la secuencia de arranque y cómo se accede a ella? Busca información al respecto de la relación entre dd y un Live CD, así como precauciones del comando dd.<a class="headerlink" href="#7-que-es-un-live-cd-o-un-disco-booteable-que-es-la-secuencia-de-arranque-y-como-se-accede-a-ella-busca-informacion-al-respecto-de-la-relacion-entre-dd-y-un-live-cd-asi-como-precauciones-del-comando-dd" title="Permanent link">&para;</a></h2>
 
 
 
@@ -1305,6 +1338,8 @@ Entrega un Mardown via PDF explicando cada paso.</p>
     
     
       <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
