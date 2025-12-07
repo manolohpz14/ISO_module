@@ -23,7 +23,7 @@
     
     
       
-        <title>2ª Practica - Módulo ISO</title>
+        <title>2ª Practica (Instalación Particionada de Linux) - Módulo ISO</title>
       
     
     
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2ª Practica
+              2ª Practica (Instalación Particionada de Linux)
             
           </span>
         </div>
@@ -410,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA1/Practicas/1ªPractica.md" class="md-nav__link">
+      <a href="../../../TEMA1/Practicas/1%C2%AA%20Practica/" class="md-nav__link">
         
   
   
@@ -734,7 +734,7 @@
   <span class="md-ellipsis">
     
   
-    2ª Practica
+    2ª Practica (Instalación Particionada de Linux)
   
 
     
@@ -752,7 +752,7 @@
   <span class="md-ellipsis">
     
   
-    2ª Practica
+    2ª Practica (Instalación Particionada de Linux)
   
 
     
@@ -833,7 +833,7 @@
   <span class="md-ellipsis">
     
   
-    3ª Practica
+    3ª Practica (Instalación Dual de Windows con grub)
   
 
     
@@ -861,7 +861,7 @@
   <span class="md-ellipsis">
     
   
-    4ª Practica
+    4ª Practica (Copias de discos con redimensionados y comando dd)
   
 
     
@@ -936,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/1%C2%AAPractica.%20Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan/" class="md-nav__link">
         
   
   
@@ -964,7 +964,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/2%C2%AA%20Practica%20Permisos%20AOT/" class="md-nav__link">
         
   
   
@@ -992,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/3%C2%AA%20Practica%20SUDOERS%20Y%20UMASK%20Y%20SKELL/" class="md-nav__link">
         
   
   
@@ -1020,7 +1020,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/4ª Practica APT.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/3%C2%AA%20Practica%20SOL%20SUDOERS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada soluciones apartado 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/4%C2%AA%20Practica%20APT/" class="md-nav__link">
         
   
   
@@ -1124,16 +1152,16 @@
 
 
 
-<h1 id="2-practica-instalacion-de-ubuntu-sin-luks-sin-lvm-en-uefigpt-el-disco-virtual-debe-estar-en-un-pool-en-el-escritorio">2 Práctica: Instalación de Ubuntu (sin LUKS, sin LVM) en UEFI/GPT. El disco virtual debe estar en un pool en el escritorio</h1>
+<h1 id="2-practica-instalacion-de-ubuntu-sin-luks-sin-lvm-en-uefigpt-el-disco-virtual-debe-estar-en-un-pool-en-el-escritorio">2 Práctica: Instalación de Ubuntu (sin LUKS, sin LVM) en UEFI/GPT. El disco virtual debe estar en un pool en el escritorio<a class="headerlink" href="#2-practica-instalacion-de-ubuntu-sin-luks-sin-lvm-en-uefigpt-el-disco-virtual-debe-estar-en-un-pool-en-el-escritorio" title="Permanent link">&para;</a></h1>
 <p>video a seguir: https://drive.google.com/file/d/1iVko8_qio1GJt7jcBRAxUaZ0sEWoJO1r/view?usp=sharing</p>
-<h2 id="21-objetivos">2.1 Objetivos</h2>
+<h2 id="21-objetivos">2.1 Objetivos<a class="headerlink" href="#21-objetivos" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Instalar Ubuntu en un disco en modo <strong>UEFI/GPT</strong>.</li>
 <li>Comprender la estructura mínima de particiones en este esquema.</li>
 <li>Tener un sistema sencillo, claro y sin capas adicionales de cifrado o LVM.</li>
 </ul>
 <hr />
-<h2 id="22-escenario">2.2 Escenario</h2>
+<h2 id="22-escenario">2.2 Escenario<a class="headerlink" href="#22-escenario" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Disco duro: <strong>120 GB</strong>.</li>
 <li>Sistema: <strong>Ubuntu Desktop 24.04 LTS</strong>.</li>
@@ -1142,28 +1170,30 @@
 <li>Deberás crear tu disco virtual (qcow2 en un pool dentro de tu escritorio. Esto es lo único que no aparece en el vídeo en donde resuelvo la práctica. Para saber como hacer esto, ve al punto de teoría anterior donde están todos los tutoriales, deberás ser independiente y buscarlo tú.)</li>
 </ul>
 <hr />
-<h2 id="23-esquema-de-particiones">2.3 Esquema de particiones</h2>
-<ol>
-<li><strong>EFI System Partition (ESP)</strong></li>
-<li>Tamaño: 512 MB</li>
-<li>Sistema de archivos: <code>FAT32</code></li>
-<li>Punto de montaje: <code>/boot/efi</code></li>
-<li>Contiene los cargadores (Olvidaos de esto por ahora)</li>
-<li><strong>/boot</strong></li>
-<li>Tamaño: 1 GB</li>
-<li>Sistema de archivos: <code>ext4</code></li>
-<li>Contiene kernel, initramfs y módulos de GRUB.</li>
-<li><strong>/ (raíz)</strong></li>
-<li>Tamaño: 30 GB</li>
-<li>Sistema de archivos: <code>ext4</code></li>
-<li>Contiene el sistema operativo y programas.</li>
-<li><strong>/home</strong></li>
-<li>Tamaño: 80 GB</li>
-<li>Sistema de archivos: <code>ext4</code></li>
-<li>Contiene los datos de usuario.</li>
-<li><strong>swap</strong></li>
-<li>Tamaño: 8 GB (ajustar según la RAM, mirar teoría para saber cuanta)Tipo: área de intercambio.</li>
-</ol>
+<h2 id="23-esquema-de-particiones">2.3 Esquema de particiones<a class="headerlink" href="#23-esquema-de-particiones" title="Permanent link">&para;</a></h2>
+<p><strong>EFI System Partition (ESP)</strong></p>
+<p>-Tamaño: 512 MB</p>
+<p>-Sistema de archivos: <code>FAT32</code></p>
+<p>-Punto de montaje: <code>/boot/efi</code></p>
+<p>-Contiene los cargadores (Olvidaos de esto por ahora)</p>
+<hr />
+<p><strong>/boot</strong></p>
+<p>-Tamaño: 1 GB</p>
+<p>-Sistema de archivos: <code>ext4</code></p>
+<p>-Contiene kernel, initramfs y módulos de GRUB.</p>
+<hr />
+<p><strong>/ (raíz)</strong></p>
+<p>-Tamaño: 30 GB</p>
+<p>-Sistema de archivos: <code>ext4</code></p>
+<p>-Contiene el sistema operativo y programas.</p>
+<hr />
+<p><strong>/home</strong></p>
+<p>-Tamaño: 80 GB</p>
+<p>-Sistema de archivos: <code>ext4</code></p>
+<p>-Contiene los datos de usuario.</p>
+<hr />
+<p><strong>swap</strong></p>
+<p>-Tamaño: 8 GB (ajustar según la RAM, mirar teoría para saber cuanta)Tipo: área de intercambio.</p>
 <p><strong>¡La práctica se basa en hacer capturas <u>a pantalla completa</u> del proceso de instalación que hago yo en el video!. En el vídeo que os dejo se ve qué tenéis que hacer, paso a paso. No os olvidéis de documentar como creais el pool.</strong></p>
 
 

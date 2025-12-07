@@ -412,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1ªPractica.md" class="md-nav__link">
+      <a href="../1%C2%AA%20Practica/" class="md-nav__link">
         
   
   
@@ -816,7 +816,7 @@
   <span class="md-ellipsis">
     
   
-    2ª Practica
+    2ª Practica (Instalación Particionada de Linux)
   
 
     
@@ -844,7 +844,7 @@
   <span class="md-ellipsis">
     
   
-    3ª Practica
+    3ª Practica (Instalación Dual de Windows con grub)
   
 
     
@@ -872,7 +872,7 @@
   <span class="md-ellipsis">
     
   
-    4ª Practica
+    4ª Practica (Copias de discos con redimensionados y comando dd)
   
 
     
@@ -947,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/1%C2%AAPractica.%20Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan/" class="md-nav__link">
         
   
   
@@ -975,7 +975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/2%C2%AA%20Practica%20Permisos%20AOT/" class="md-nav__link">
         
   
   
@@ -1003,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/3%C2%AA%20Practica%20SUDOERS%20Y%20UMASK%20Y%20SKELL/" class="md-nav__link">
         
   
   
@@ -1031,7 +1031,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/4ª Practica APT.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/3%C2%AA%20Practica%20SOL%20SUDOERS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada soluciones apartado 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/4%C2%AA%20Practica%20APT/" class="md-nav__link">
         
   
   
@@ -1146,27 +1174,32 @@
 
 
 
-<h1 id="42-practica-comparacion-gui-vs-cli-en-ubuntu-e-instalacion-de-kde">4.2. Práctica — Comparación GUI vs CLI en Ubuntu e instalación de KDE</h1>
+<h1 id="42-practica-comparacion-gui-vs-cli-en-ubuntu-e-instalacion-de-kde">4.2. Práctica — Comparación GUI vs CLI en Ubuntu e instalación de KDE<a class="headerlink" href="#42-practica-comparacion-gui-vs-cli-en-ubuntu-e-instalacion-de-kde" title="Permanent link">&para;</a></h1>
 <p>Abre tu máquina virtual de Ubuntu. Los objetivos de estas práctica son: Comprender las diferencias entre trabajar con GUI y CLI en Ubuntu, realizar tareas equivalentes en ambos entornos e instalar y probar un nuevo desktop environment (KDE Plasma) mediante CLI. Haz capturas del proceso y entrega un archivo pdf.</p>
-<h2 id="1-ejecuta-el-siguiente-codigo-en-bash">1- Ejecuta el siguiente código en bash</h2>
+<hr />
+<h2 id="1-ejecuta-el-siguiente-codigo-en-bash">1- Ejecuta el siguiente código en bash<a class="headerlink" href="#1-ejecuta-el-siguiente-codigo-en-bash" title="Permanent link">&para;</a></h2>
 <p><div class="highlight"><pre><span></span><code>uname<span class="w"> </span>-a
 lsb_release<span class="w"> </span>-a
 </code></pre></div>
-- A partir de este comando, saca la versión del kernel y la versión del S.O.</p>
+A partir de este comando, saca la versión del kernel y la versión del S.O.</p>
+<hr />
 <p>Ahora, en vez de usar el comando, vas a intentar buscar esta información en el equipo. Para ello, busca en información del sistema  la información proporcionada por el comando. Es decir, algo así:</p>
-<p><img alt="Texto alternativo" src="/home/manolo/Imágenes/captura_practica.png" /></p>
-<h2 id="2-ejecuta-el-siguiente-codigo-en-bash">2- Ejecuta el siguiente código en bash</h2>
+<p><img alt="" src="../../../img/captura_practica.png" /></p>
+<hr />
+<h2 id="2-ejecuta-el-siguiente-codigo-en-bash">2- Ejecuta el siguiente código en bash<a class="headerlink" href="#2-ejecuta-el-siguiente-codigo-en-bash" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>ps<span class="w"> </span>-eo<span class="w"> </span>comm,%cpu,%mem<span class="w"> </span>--sort<span class="o">=</span>-%mem<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-15
 </code></pre></div>
 <p>La salida del comando debe ser algo parecido a lo siguiente:</p>
-<p><img alt="" src="/home/manolo/Imágenes/captura_practica2.png" /></p>
+<p><img alt="" src="../../../img/captura_practica2.png" /></p>
 <p>Busca en monitorización del sistema la información proporcionada por el comando y comprueba, ordenando por memoria, que las salidas coinciden.</p>
 <p>¿Por qué Firefox tiene distintos procesos corriendo al mismo tiempo? Qué ventajas tiene dividir Firefox en múltiples procesos e hilos en lugar de un único proceso?</p>
-<h2 id="3-instala-la-gui-de-kde-y-pruebala-al-cerrar-sesion">3-Instala la GUI de KDE y pruébala al cerrar sesión</h2>
+<hr />
+<h2 id="3-instala-la-gui-de-kde-y-pruebala-al-cerrar-sesion">3-Instala la GUI de KDE y pruébala al cerrar sesión<a class="headerlink" href="#3-instala-la-gui-de-kde-y-pruebala-al-cerrar-sesion" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>kde-plasma-desktop<span class="w"> </span>-y
 </code></pre></div>
 <p>Cierra sesión, dale a la ruedita de configuración y comprueba que puedes cambiar la interfaz de usuario.</p>
-<h2 id="4-responde-coherentemente-a-las-siguientes-preguntas-a-partir-del-archivo-de-teoria-del-punto-4-o-informacion-que-encuentres-en-internet">4-Responde coherentemente a las siguientes preguntas a partir del archivo de Teoría del punto 4 o información que encuentres en Internet</h2>
+<hr />
+<h2 id="4-responde-coherentemente-a-las-siguientes-preguntas-a-partir-del-archivo-de-teoria-del-punto-4-o-informacion-que-encuentres-en-internet">4-Responde coherentemente a las siguientes preguntas a partir del archivo de Teoría del punto 4 o información que encuentres en Internet<a class="headerlink" href="#4-responde-coherentemente-a-las-siguientes-preguntas-a-partir-del-archivo-de-teoria-del-punto-4-o-informacion-que-encuentres-en-internet" title="Permanent link">&para;</a></h2>
 <p>1-¿Qué diferencia hay entre un programa y un proceso?</p>
 <p>2-¿Qué recursos asigna el sistema operativo a un proceso cuando lo crea?</p>
 <p>3-¿Qué es un hilo y qué partes del contexto tiene propias y cuáles comparte con su proceso padre?</p>

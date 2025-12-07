@@ -406,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TEMA1/Practicas/1ªPractica.md" class="md-nav__link">
+      <a href="../../TEMA1/Practicas/1%C2%AA%20Practica/" class="md-nav__link">
         
   
   
@@ -719,7 +719,7 @@
   <span class="md-ellipsis">
     
   
-    2ª Practica
+    2ª Practica (Instalación Particionada de Linux)
   
 
     
@@ -747,7 +747,7 @@
   <span class="md-ellipsis">
     
   
-    3ª Practica
+    3ª Practica (Instalación Dual de Windows con grub)
   
 
     
@@ -775,7 +775,7 @@
   <span class="md-ellipsis">
     
   
-    4ª Practica
+    4ª Practica (Copias de discos con redimensionados y comando dd)
   
 
     
@@ -850,7 +850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+      <a href="../../TEMA3/Practicas/1%C2%AAPractica.%20Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan/" class="md-nav__link">
         
   
   
@@ -878,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TEMA3/Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+      <a href="../../TEMA3/Practicas/2%C2%AA%20Practica%20Permisos%20AOT/" class="md-nav__link">
         
   
   
@@ -906,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+      <a href="../../TEMA3/Practicas/3%C2%AA%20Practica%20SUDOERS%20Y%20UMASK%20Y%20SKELL/" class="md-nav__link">
         
   
   
@@ -934,7 +934,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../TEMA3/Practicas/4ª Practica APT.md" class="md-nav__link">
+      <a href="../../TEMA3/Practicas/3%C2%AA%20Practica%20SOL%20SUDOERS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada soluciones apartado 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TEMA3/Practicas/4%C2%AA%20Practica%20APT/" class="md-nav__link">
         
   
   
@@ -1232,10 +1260,10 @@
 
 
 
-<h1 id="examen-tema-3-iso-administracion-de-usuarios-grupos-y-permisos-de-forma-local-en-linux">EXAMEN TEMA 3 ISO. ADMINISTRACIÓN DE USUARIOS GRUPOS Y PERMISOS DE FORMA LOCAL EN LINUX</h1>
-<h2 id="ejercicio-1-35pts">Ejercicio 1 (3,5pts)</h2>
+<h1 id="examen-tema-3-iso-administracion-de-usuarios-grupos-y-permisos-de-forma-local-en-linux">EXAMEN TEMA 3 ISO. ADMINISTRACIÓN DE USUARIOS GRUPOS Y PERMISOS DE FORMA LOCAL EN LINUX<a class="headerlink" href="#examen-tema-3-iso-administracion-de-usuarios-grupos-y-permisos-de-forma-local-en-linux" title="Permanent link">&para;</a></h1>
+<h2 id="ejercicio-1-35pts">Ejercicio 1 (3,5pts)<a class="headerlink" href="#ejercicio-1-35pts" title="Permanent link">&para;</a></h2>
 <p>Todo este ejercicio se deberá hacer con un umask 002.</p>
-<h4 id="apartado-a-04pts">Apartado a) (0,4pts)</h4>
+<h4 id="apartado-a-04pts">Apartado a) (0,4pts)<a class="headerlink" href="#apartado-a-04pts" title="Permanent link">&para;</a></h4>
 <p>1-Se pide que crees los siguiente grupos:</p>
 <div class="highlight"><pre><span></span><code>analitica, cumplimiento, calidad
 </code></pre></div>
@@ -1243,7 +1271,7 @@
 sudo<span class="w"> </span>groupadd<span class="w"> </span>cumplimiento
 sudo<span class="w"> </span>groupadd<span class="w"> </span>calidad
 </code></pre></div>
-<h4 id="apartado-b-06pts">Apartado b) (0,6pts)</h4>
+<h4 id="apartado-b-06pts">Apartado b) (0,6pts)<a class="headerlink" href="#apartado-b-06pts" title="Permanent link">&para;</a></h4>
 <p>1-Acto seguido, crea los siguientes usuarios: </p>
 <p><code>manolo</code>, <code>isai</code>, <code>bea</code>, <code>celia</code>, <code>alvaro</code>, <code>enric</code>, de forma que, todos tendrán la terminal /bin/bash excepto isai, que no tendrá acceso a terminal. Los grupos principales de cada usuario serán:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>manolo
@@ -1274,7 +1302,7 @@ sudo<span class="w"> </span>passwd<span class="w"> </span>alvaro
 <p>3-Importante, añade también al usuario manolo al grupo sudo. Esto le permitirá ejecutar comandos con sudo.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>sudo<span class="w"> </span>manolo
 </code></pre></div>
-<h4 id="apartado-c-03pts">Apartado c) (0,3pts)</h4>
+<h4 id="apartado-c-03pts">Apartado c) (0,3pts)<a class="headerlink" href="#apartado-c-03pts" title="Permanent link">&para;</a></h4>
 <p>1-Usando getent, muestra que los grupos creados tienen a dichos usuarios dentro de cada grupo. </p>
 <div class="highlight"><pre><span></span><code>getent<span class="w"> </span>gshadow<span class="w"> </span>analitica
 getent<span class="w"> </span>gshadow<span class="w"> </span>cumplimiento
@@ -1283,7 +1311,7 @@ getent<span class="w"> </span>gshadow<span class="w"> </span>calidad
 <p>2-Usa también getent para comprobar que isai no tiene acceso a terminal.</p>
 <div class="highlight"><pre><span></span><code>getent<span class="w"> </span>passwd<span class="w"> </span>isai
 </code></pre></div>
-<h4 id="apartado-d-06pts">Apartado d) (0,6pts)</h4>
+<h4 id="apartado-d-06pts">Apartado d) (0,6pts)<a class="headerlink" href="#apartado-d-06pts" title="Permanent link">&para;</a></h4>
 <p>1-Ejecutad un comando para ver la política de expiración de contraseñas de manolo</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chage<span class="w"> </span>-l<span class="w"> </span>manolo
 </code></pre></div>
@@ -1295,7 +1323,7 @@ getent<span class="w"> </span>gshadow<span class="w"> </span>calidad
 sudo<span class="w"> </span>chage<span class="w"> </span>-d<span class="w"> </span>manolo<span class="w"> </span><span class="m">2025</span>-11-11
 sudo<span class="w"> </span>chage<span class="w"> </span>-l<span class="w"> </span>manolo
 </code></pre></div>
-<h4 id="apartado-e-06pts"><strong>Apartado e)</strong> (0,6pts)</h4>
+<h4 id="apartado-e-06pts"><strong>Apartado e)</strong> (0,6pts)<a class="headerlink" href="#apartado-e-06pts" title="Permanent link">&para;</a></h4>
 <p>-1.Cambia al usuario <code>bea</code> yendo a su home directamente</p>
 <div class="highlight"><pre><span></span><code>su<span class="w"> </span>-<span class="w"> </span>bea
 </code></pre></div>
@@ -1309,7 +1337,7 @@ ls<span class="w"> </span>-ld<span class="w"> </span>cumplimiento
 su<span class="w"> </span>manolo
 sudo<span class="w"> </span>chmod<span class="w"> </span>o+x<span class="w"> </span>/home/bea
 </code></pre></div>
-<h4 id="apartado-f-1-pts"><strong>Apartado f)</strong> (1 pts)</h4>
+<h4 id="apartado-f-1-pts"><strong>Apartado f)</strong> (1 pts)<a class="headerlink" href="#apartado-f-1-pts" title="Permanent link">&para;</a></h4>
 <p>-1.Viendo que la carpeta de <code>/home/bea/cumpliento</code> no funcionó como bea quería, <code>manolo</code> creará en <code>/srv</code> la carpeta <code>/srv/santander/cumplimiento</code>, ¿podrá manolo crear esa carpeta o necesitará de <code>sudo</code>? Justifica tu respuesta y crea esa carpeta con un solo comando <code>mkdir</code>y no con dos.</p>
 <div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-ld<span class="w"> </span>/<span class="w"> </span><span class="c1">#debe usar sudo</span>
 sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/santander/cumplimiento
@@ -1345,8 +1373,8 @@ ls<span class="w"> </span>/srv/santander/cumplimiento
 <span class="c1">#el comando de manolo</span>
 chmod<span class="w"> </span><span class="m">777</span><span class="w"> </span>/srv/santander
 </code></pre></div>
-<h2 id="ejercicio-2-4pts">Ejercicio 2 (4pts)</h2>
-<h4 id="apartado-a-05pts">Apartado a) (0,5pts)</h4>
+<h2 id="ejercicio-2-4pts">Ejercicio 2 (4pts)<a class="headerlink" href="#ejercicio-2-4pts" title="Permanent link">&para;</a></h2>
+<h4 id="apartado-a-05pts">Apartado a) (0,5pts)<a class="headerlink" href="#apartado-a-05pts" title="Permanent link">&para;</a></h4>
 <p>Cambia al usuario <code>alvaro</code> y crea dentro de <code>/srv/santander</code> los siguientes archivos:</p>
 <ul>
 <li>
@@ -1368,7 +1396,7 @@ Tareas<span class="w"> </span>de<span class="w"> </span>octubre
 alvaro@manolo:/srv/santander$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tareas de noviembre&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>bau_nov.txt
 alvaro@manolo:/srv/santander$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Tareas de diciembre&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>work_dic.txt
 </code></pre></div>
-<h4 id="apartado-b-035pts">Apartado b)  (0,35pts)</h4>
+<h4 id="apartado-b-035pts">Apartado b)  (0,35pts)<a class="headerlink" href="#apartado-b-035pts" title="Permanent link">&para;</a></h4>
 <p>1- Mediante el usuario root y con chown, cambia el grupo propietario de los siguientes archivos a <code>cumplimiento</code> (deja el propietario igual)</p>
 <ul>
 <li>bau_sep</li>
@@ -1380,7 +1408,7 @@ chown<span class="w"> </span>:cumplimiento<span class="w"> </span>bau_sep.txt<sp
 <p>2- ¿Álvaro podría cambiar el grupo propietario a <code>cumplimiento</code> sin necesidad de cambiar a root?</p>
 <div class="highlight"><pre><span></span><code>No,<span class="w"> </span>ya<span class="w"> </span>que<span class="w"> </span>no<span class="w"> </span>pertenece<span class="w"> </span>ni<span class="w"> </span>al<span class="w"> </span>grupo<span class="w"> </span>cumplimiento<span class="w"> </span>ni<span class="w"> </span>es<span class="w"> </span>usuario<span class="w"> </span>con<span class="w"> </span>sudo
 </code></pre></div>
-<h4 id="apartado-c-1pts">Apartado c) (1pts)</h4>
+<h4 id="apartado-c-1pts">Apartado c) (1pts)<a class="headerlink" href="#apartado-c-1pts" title="Permanent link">&para;</a></h4>
 <p>1-Da los siguientes permisos a cada uno de los archivos sin sudo, siempre usando la forma octal de los permisos:</p>
 <ul>
 <li>bau_sep.txt: u=rwx g=rw o=rw</li>
@@ -1407,7 +1435,7 @@ cat<span class="w"> </span>work_dic.txt<span class="w"> </span><span class="c1">
 <p>4-Cambia al usuario <code>alvaro</code>, ¿puede alvaro leer <code>work_dic.txt</code>?</p>
 <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>work_dic.txt<span class="w"> </span><span class="c1">#No puede, el propietario no tiene permisos</span>
 </code></pre></div>
-<h4 id="apartado-d-04pts">Apartado d) (0,4pts)</h4>
+<h4 id="apartado-d-04pts">Apartado d) (0,4pts)<a class="headerlink" href="#apartado-d-04pts" title="Permanent link">&para;</a></h4>
 <p>1-Con el usuario <code>alvaro</code>, da el comando que liste todos los achivos de <code>/srv/santander</code> que empiecen por b y terminen en txt.</p>
 <div class="highlight"><pre><span></span><code>alvaro@manolo:/srv/santander$<span class="w"> </span>ls<span class="w"> </span>b*.txt
 bau_nov.txt<span class="w">  </span>bau_oct.txt<span class="w">  </span>bau_sep.txt
@@ -1416,7 +1444,7 @@ bau_nov.txt<span class="w">  </span>bau_oct.txt<span class="w">  </span>bau_sep.
 <div class="highlight"><pre><span></span><code>alvaro@manolo:/srv/santander$<span class="w"> </span>ls<span class="w"> </span><span class="o">[</span>wb<span class="o">]</span>??????.txt
 bau_nov.txt<span class="w">  </span>bau_oct.txt<span class="w">  </span>bau_sep.txt
 </code></pre></div>
-<h4 id="apartado-e-175pts">Apartado e) (1,75pts)</h4>
+<h4 id="apartado-e-175pts">Apartado e) (1,75pts)<a class="headerlink" href="#apartado-e-175pts" title="Permanent link">&para;</a></h4>
 <p>1-Cambia al usuario manolo.</p>
 <ul>
 <li>Comprueba su grupo principal usando id y las opciones necesarios</li>
@@ -1474,9 +1502,9 @@ cat<span class="w"> </span>cumplimiento/analitica/examen.txt
 
 <span class="c1">#sigue sin poder</span>
 </code></pre></div>
-<h2 id="ejercicio-3-25pts">Ejercicio 3 (2,5pts)</h2>
+<h2 id="ejercicio-3-25pts">Ejercicio 3 (2,5pts)<a class="headerlink" href="#ejercicio-3-25pts" title="Permanent link">&para;</a></h2>
 <p>En primer lugar, revisa que en <code>/etc/skel</code> no tiene nada más que los archivos ocultos por defecto y no hay nada residual de las prácticas en clase.</p>
-<h4 id="apartado-a-05pts_1">Apartado a) (0,5pts)</h4>
+<h4 id="apartado-a-05pts_1">Apartado a) (0,5pts)<a class="headerlink" href="#apartado-a-05pts_1" title="Permanent link">&para;</a></h4>
 <p>1-Con root y de forma relativa, crea una carpeta en <code>/etc/skel</code> llamada <code>Otros</code>.</p>
 <div class="highlight"><pre><span></span><code>root@manolo:/srv/santander#<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/etc/skel
 root@manolo:/etc/skel#<span class="w"> </span>mkdir<span class="w"> </span>Otros
@@ -1492,7 +1520,7 @@ drwxr-xr-x<span class="w"> </span><span class="m">35</span><span class="w"> </sp
 drwxr-xr-x<span class="w">  </span><span class="m">2</span><span class="w"> </span>raul_roberto<span class="w"> </span>raul_roberto<span class="w"> </span><span class="m">4096</span><span class="w"> </span>nov<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">10</span>:22<span class="w"> </span>Otros
 -rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>raul_roberto<span class="w"> </span>raul_roberto<span class="w">  </span><span class="m">807</span><span class="w"> </span>mar<span class="w"> </span><span class="m">31</span><span class="w">  </span><span class="m">2024</span><span class="w"> </span>.profile
 </code></pre></div>
-<h4 id="apartado-b-05pts">Apartado b) (0,5pts)</h4>
+<h4 id="apartado-b-05pts">Apartado b) (0,5pts)<a class="headerlink" href="#apartado-b-05pts" title="Permanent link">&para;</a></h4>
 <p>1- Con el usuario <code>manolo</code>, en <code>/manolo/home/.bashrc</code> añade <code>umask 025</code>.</p>
 <div class="highlight"><pre><span></span><code>su<span class="w"> </span>manolo
 nano<span class="w"> </span>/home/manolo/.bashrc
@@ -1516,7 +1544,7 @@ manolo@manolo:~$<span class="w"> </span>ls<span class="w"> </span>-ld<span class
 <p>Especifica los permisos por defecto anteriores ¿Cuadran con el <code>umask</code> definido?</p>
 <div class="highlight"><pre><span></span><code>En archivos no cuadran
 </code></pre></div>
-<h4 id="apartado-c-05pts">Apartado c) (0,5pts)</h4>
+<h4 id="apartado-c-05pts">Apartado c) (0,5pts)<a class="headerlink" href="#apartado-c-05pts" title="Permanent link">&para;</a></h4>
 <p>1-En <code>/home/manolo/.bashrc</code> y usando <code>nano</code>, define un alias que haga lo siguiente: </p>
 <p>Un alias llamado sudoadd: Este alias debe añadir correctamente a un usuario al grupo sudo.</p>
 <div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/home/manolo/.bashrc
@@ -1536,7 +1564,7 @@ celia@manolo:/home/manolo$<span class="w"> </span>sudo<span class="w"> </span>pa
 <span class="o">[</span>sudo<span class="o">]</span><span class="w"> </span>contraseña<span class="w"> </span>para<span class="w"> </span>celia:<span class="w"> </span>
 Nueva<span class="w"> </span>contraseña:<span class="w"> </span>
 </code></pre></div>
-<h4 id="apartado-d-05pts">Apartado d) (0,5pts)</h4>
+<h4 id="apartado-d-05pts">Apartado d) (0,5pts)<a class="headerlink" href="#apartado-d-05pts" title="Permanent link">&para;</a></h4>
 <p>¿Qué debes hacer para que todo usuario nuevo a partir de ahora posea este alias? Especifícalo y ejecuta los comandos necesarios comprobando que el nuevo usuario puede ejecutar el comando sudoadd</p>
 <div class="highlight"><pre><span></span><code><span class="c1">#meter el a usuario en etc/skell</span>
 sudo<span class="w"> </span>nano<span class="w"> </span>/etc/skel/.bashrc
@@ -1547,7 +1575,7 @@ manolo@manolo:~$<span class="w"> </span>sudoadd<span class="w"> </span>paco25
 manolo@manolo:~$<span class="w"> </span>su<span class="w"> </span>paco25
 manolo@manolo:~$<span class="w"> </span>sudoadd<span class="w"> </span>enric
 </code></pre></div>
-<h4 id="apartado-e-05pts">Apartado e) (0,5pts)</h4>
+<h4 id="apartado-e-05pts">Apartado e) (0,5pts)<a class="headerlink" href="#apartado-e-05pts" title="Permanent link">&para;</a></h4>
 <p>En este apartado crearás el comando <code>adios</code> que deberá ser disponible para todos los usuarios del sistema. Cada vez que alguien escriba <code>adios</code> deberá aparecer el siguiente mensaje por pantalla:</p>
 <p><code>Hasta luego!</code> </p>
 <p>Describe los pasos necesarios para que esto funcione.</p>

@@ -1,0 +1,2659 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1%C2%AAPractica.%20Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan/">
+      
+      
+        <link rel="next" href="../3%C2%AA%20Practica%20SUDOERS%20Y%20UMASK%20Y%20SKELL/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>2ª Practica Guiada (Administración de permisos en binarios) - Módulo ISO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practica-2-administracion-de-permisos-aot-temas-imprescindibles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Módulo ISO" class="md-header__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Módulo ISO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2ª Practica Guiada (Administración de permisos en binarios)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Módulo ISO" class="md-nav__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Módulo ISO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/1.%20Teoria%20de%20Markdown%20SIMPLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (Markdown)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/2.%20Teor%C3%ADa%20de%20Sistemas%20Num%C3%A9ricos%20en%20Inform%C3%A1tica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Sistemas Numéricos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/3.%20Teoria%20de%20Almacenamiento%20de%20datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3er Archivo Teoría (Almacenamiento de datos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/4.%20Teoria%20%E2%80%94%20Hardware%20y%20Software%20b%C3%A1sico%20de%20un%20ordenador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4to Archivo Teoría (Hardware y Software)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/5.%20Teor%C3%ADa%20Sistemas%20Operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5to Archivo Teoría (Sistemas Operativos y Virtualización)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/1%C2%AA%20Practica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/2.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Rellena%20la%20siguiente%20tabla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/3.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Probamos%20la%20CLI%20de%20Ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/4.%20Pr%C3%A1ctica%20%E2%80%94%20Curiosidades%20y%20importancia%20de%20los%20sistemas%20de%20enumeraci%C3%B3n%20binario%20y%20hexadecimal%20en%20la%20informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/4.2.%20Pr%C3%A1ctica%20%E2%80%94%20Comparaci%C3%B3n%20GUI%20vs%20CLI%20en%20Ubuntu%20e%20instalaci%C3%B3n%20de%20KDE%20%28copy%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (versión 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/5.%20Pr%C3%A1cticaTrabajoCooperativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/1%C2%AA%20Teoria%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (QEMU-KVM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/2%20Teor%C3%ADa%20de%20las%20instalaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Instalaciones y Particiones)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/1%C2%AA%20Pr%C3%A1ctica%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica (Opcional. Virtualizacion Anidada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/2%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20de%20Ubuntu%20sin%20LUKS%20%28sin%20LVM%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica (Instalación Particionada de Linux)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/3%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20Dual%20de%20ubuntu%20%2B%20Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica (Instalación Dual de Windows con grub)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/4%C2%AA%20Pr%C3%A1ctica%20Migraci%C3%B3n%20de%20un%20disco%20de%20120%20GB%20%28M%C3%A1s%20grande%29%20a%20otro%20de%20100%20GB%20%28M%C3%A1s%20chico%29%20usando%20GParted%20y%20el%20comando%20dd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (Copias de discos con redimensionados y comando dd)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%C2%AAPractica.%20Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica Guiada (Administración de permisos en directorios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica Guiada (Administración de permisos en binarios)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica Guiada (Administración de permisos en binarios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-i-practica-1-el-comando-chown-quien-puede-usarlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO I. PRÁCTICA 1: El comando chown. ¿Quién puede usarlo?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-ii-practica-1-el-comando-chmod-quien-puede-usarlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO II. PRÁCTICA 1: El comando chmod. ¿Quién puede usarlo?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-iii-practica-1-el-comando-ls-y-sus-opciones-busqueda-de-patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO III. PRÁCTICA 1: El comando ls y sus opciones. Búsqueda de patrones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ANEXO III. PRÁCTICA 1: El comando ls y sus opciones. Búsqueda de patrones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ls-l-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -l /etc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -a
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-ld-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -ld /home
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-lt-varlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -lt /var/log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-lr-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -lr /etc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-ls-varlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -lS /var/log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-r-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -R /home
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-de-patrones-en-ls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Búsqueda de patrones en ls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Búsqueda de patrones en ls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ls-a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls a*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-homemanolopruebaa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls /home/manolo/prueba/A*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-lt-homemanolopruebaa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -lt /home/manolo/prueba/a???
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-atxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls a*.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-atxt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls a???.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls *log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-abc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls [abc]*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-d-abc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -d [abc]*/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-abdtxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls [abd]????.txt`
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-0-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls [0-9]*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-0-9ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls [0-9]??[ab]*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls [!ab]*
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-iv-practica-1-el-comando-nano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO IV. PRÁCTICA 1: El comando nano
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-v-practica-1-el-comando-cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO V. PRÁCTICA 1: El comando cat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ANEXO V. PRÁCTICA 1: El comando cat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ver-el-contenido-de-un-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ver el contenido de un archivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-un-archivo-nuevo-con-cat-borrando-lo-que-ya-hubiese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear un archivo nuevo con cat borrando lo que ya hubiese
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-contenido-al-final-de-un-archivo-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Añadir contenido al final de un archivo existente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crea-o-sobrescribe-el-archivo-si-ya-existe-borra-lo-que-tenia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crea o sobrescribe el archivo. Si ya existe, borra lo que tenía.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unir-varios-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unir varios archivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-lineas-numeradas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mostrar líneas numeradas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-vi-contrasenas-de-grupo-y-algunos-comandos-newgrep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO VI. Contraseñas de grupo y algunos comandos "newgrep"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ANEXO VI. Contraseñas de grupo y algunos comandos &#34;newgrep&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newgrep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        newgrep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcgshadow-y-gpasswd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /etc/gshadow y gpasswd
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ejercicios-de-continuacion-practica-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Ejercicios de continuación Práctica 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Ejercicios de continuación Práctica 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Práctica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-contrasenas-de-grupo-y-algunos-comando-newgrep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Contraseñas de grupo y algunos comando newgrep
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Contraseñas de grupo y algunos comando newgrep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practica_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Práctica.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%C2%AA%20Practica%20SUDOERS%20Y%20UMASK%20Y%20SKELL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%C2%AA%20Practica%20SOL%20SUDOERS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada soluciones apartado 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%C2%AA%20Practica%20APT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica Guiada (Uso de APT avanzado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#indice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Índice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-i-practica-1-el-comando-chown-quien-puede-usarlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO I. PRÁCTICA 1: El comando chown. ¿Quién puede usarlo?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-ii-practica-1-el-comando-chmod-quien-puede-usarlo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO II. PRÁCTICA 1: El comando chmod. ¿Quién puede usarlo?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-iii-practica-1-el-comando-ls-y-sus-opciones-busqueda-de-patrones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO III. PRÁCTICA 1: El comando ls y sus opciones. Búsqueda de patrones
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ANEXO III. PRÁCTICA 1: El comando ls y sus opciones. Búsqueda de patrones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ls-l-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -l /etc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -a
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-ld-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -ld /home
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-lt-varlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -lt /var/log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-lr-etc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -lr /etc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-ls-varlog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -lS /var/log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-r-home" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -R /home
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#busqueda-de-patrones-en-ls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Búsqueda de patrones en ls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Búsqueda de patrones en ls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ls-a_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls a*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-homemanolopruebaa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls /home/manolo/prueba/A*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-lt-homemanolopruebaa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -lt /home/manolo/prueba/a???
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-atxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls a*.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-atxt_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls a???.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls *log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-abc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls [abc]*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-d-abc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls -d [abc]*/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-abdtxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls [abd]????.txt`
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-0-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls [0-9]*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-0-9ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls [0-9]??[ab]*
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-ab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls [!ab]*
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-iv-practica-1-el-comando-nano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO IV. PRÁCTICA 1: El comando nano
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-v-practica-1-el-comando-cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO V. PRÁCTICA 1: El comando cat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ANEXO V. PRÁCTICA 1: El comando cat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ver-el-contenido-de-un-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ver el contenido de un archivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-un-archivo-nuevo-con-cat-borrando-lo-que-ya-hubiese" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crear un archivo nuevo con cat borrando lo que ya hubiese
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anadir-contenido-al-final-de-un-archivo-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Añadir contenido al final de un archivo existente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crea-o-sobrescribe-el-archivo-si-ya-existe-borra-lo-que-tenia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crea o sobrescribe el archivo. Si ya existe, borra lo que tenía.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unir-varios-archivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unir varios archivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mostrar-lineas-numeradas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mostrar líneas numeradas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anexo-vi-contrasenas-de-grupo-y-algunos-comandos-newgrep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ANEXO VI. Contraseñas de grupo y algunos comandos "newgrep"
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ANEXO VI. Contraseñas de grupo y algunos comandos &#34;newgrep&#34;">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#newgrep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        newgrep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcgshadow-y-gpasswd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /etc/gshadow y gpasswd
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ejercicios-de-continuacion-practica-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Ejercicios de continuación Práctica 1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Ejercicios de continuación Práctica 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Práctica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-contrasenas-de-grupo-y-algunos-comando-newgrep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Contraseñas de grupo y algunos comando newgrep
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Contraseñas de grupo y algunos comando newgrep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#practica_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Práctica.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="practica-2-administracion-de-permisos-aot-temas-imprescindibles">Práctica 2 — Administración de permisos (AOT) — Temas imprescindibles<a class="headerlink" href="#practica-2-administracion-de-permisos-aot-temas-imprescindibles" title="Permanent link">&para;</a></h1>
+<p><strong>Duración aprox:</strong> 3 clases (semana 03/11/2025)</p>
+<p>Entregable: Un documento de google o pdf con los comandos insertados de los puntos: <strong><u>7.Parte Práctica </u></strong> y <strong><u>8. Parte Práctica</u></strong>.de esta práctica. No hace falta ejecutar los ejemplos de los puntos 1 al 6.</p>
+<h2 id="indice">Índice<a class="headerlink" href="#indice" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Anexo I. El comando <code>chwon</code> <strong>(no hay que hacer nada solo teoría)</strong></li>
+<li>Anexo II. El comando <code>chmod</code> <strong>(no hay que hacer nada solo teoría)</strong></li>
+<li>Anexo III. El comando <code>ls</code> <strong>(no hay que hacer nada solo teoría)</strong></li>
+<li>Anexo IIII. El comando <code>nano</code><strong>(no hay que hacer nada solo teoría)</strong></li>
+<li>Anexo V. El comando <code>cat</code> <strong>(no hay que hacer nada solo teoría)</strong></li>
+<li>
+<p>Anexo VI. Contraseñas de grupo y algunos comandos <code>newgrep</code> <strong>(no hay que hacer nada solo teoría)</strong></p>
+</li>
+<li>
+<p>Primer Apartado Práctico. Ejercicio de continuación Práctica 1.  (<strong>Entregar ejercicio</strong>)</p>
+</li>
+<li>
+<p>Segundo Apartado Práctico. Contraseñas de grupo y algunos comando <code>newgrep</code> ** (<strong>Entregar ejercicio</strong>)**</p>
+</li>
+</ol>
+<p><u><strong>-&gt;Práctica siguiente (SUDOERS Y UMASK)</strong></u></p>
+<h2 id="anexo-i-practica-1-el-comando-chown-quien-puede-usarlo">ANEXO I. PRÁCTICA 1: El comando <code>chown</code>. ¿Quién puede usarlo?<a class="headerlink" href="#anexo-i-practica-1-el-comando-chown-quien-puede-usarlo" title="Permanent link">&para;</a></h2>
+<p>Solo root (o un proceso con privilegios de superusuario) puede cambiar el propietario de un archivo.
+ El motivo es simple: si cualquiera pudiera cambiar la propiedad de archivos, podría adueñarse de archivos ajenos y romper la seguridad del sistema.  Excepción parcial. El propietario sí puede cambiar el grupo de su archivo, si pertenece al grupo destino.</p>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Eren pertenece también al grupo &#39;paradis&#39;</span>
+chown<span class="w"> </span>:paradis<span class="w"> </span>/home/eren/notas.txt<span class="w"> </span><span class="c1">#cambiamos el grupo propietario de este ar</span>
+</code></pre></div>
+<h2 id="anexo-ii-practica-1-el-comando-chmod-quien-puede-usarlo">ANEXO II. PRÁCTICA 1: El comando <code>chmod</code>. ¿Quién puede usarlo?<a class="headerlink" href="#anexo-ii-practica-1-el-comando-chmod-quien-puede-usarlo" title="Permanent link">&para;</a></h2>
+<p>El propietario del archivo puede cambiar sus propios permisos. El root puede cambiar los permisos de cualquier archivo. Los demás usuarios no pueden modificar los permisos de archivos ajenos.</p>
+<h2 id="anexo-iii-practica-1-el-comando-ls-y-sus-opciones-busqueda-de-patrones">ANEXO III. PRÁCTICA 1: El comando ls y sus opciones. Búsqueda de patrones<a class="headerlink" href="#anexo-iii-practica-1-el-comando-ls-y-sus-opciones-busqueda-de-patrones" title="Permanent link">&para;</a></h2>
+<p>En primer lugar vemos las opciones que tiene el comando ls viendo ejemplos:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-l</code></td>
+<td>Muestra lista detallada (tipo, permisos, dueño, grupo, tamaño, fecha).</td>
+<td><code>ls -l /etc</code></td>
+</tr>
+<tr>
+<td><code>-a</code></td>
+<td>Incluye archivos ocultos (<code>.bashrc</code>, <code>.git</code>, etc.).</td>
+<td><code>ls -a</code></td>
+</tr>
+<tr>
+<td><code>-d</code></td>
+<td>Muestra info del directorio en sí, no su contenido.</td>
+<td><code>ls -ld /home</code></td>
+</tr>
+<tr>
+<td><code>-t</code></td>
+<td>Ordena por fecha de modificación (más reciente primero).</td>
+<td><code>ls -lt</code></td>
+</tr>
+<tr>
+<td><code>-r</code></td>
+<td>Invierte el orden (por nombre, fecha, etc.).</td>
+<td><code>ls -lr</code></td>
+</tr>
+<tr>
+<td><code>-S</code></td>
+<td>Ordena por tamaño.</td>
+<td><code>ls -lS</code></td>
+</tr>
+<tr>
+<td><code>-R</code></td>
+<td>Muestra contenido recursivo (subcarpetas incluidas).</td>
+<td><code>ls -R</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h5 id="ls-l-etc">ls -l /etc<a class="headerlink" href="#ls-l-etc" title="Permanent link">&para;</a></h5>
+<p>Lista con información detallada de cada archivo dentro de /etc:</p>
+<div class="highlight"><pre><span></span><code>-rw-r--r-- 1 root root  297 oct 27 10:12 hosts
+drwxr-xr-x 2 root root 4096 oct 28 09:50 network
+</code></pre></div>
+<hr />
+<h5 id="ls-a">ls -a<a class="headerlink" href="#ls-a" title="Permanent link">&para;</a></h5>
+<p>Incluye los archivos ocultos (los que empiezan por <code>.</code>) dentro del directorio actual:</p>
+<div class="highlight"><pre><span></span><code>.  ..  .bashrc  .profile  Documentos  Imágenes
+</code></pre></div>
+<hr />
+<h5 id="ls-ld-home">ls -ld /home<a class="headerlink" href="#ls-ld-home" title="Permanent link">&para;</a></h5>
+<p>Muestra solo la información del directorio <code>/home</code>, no su contenido:</p>
+<div class="highlight"><pre><span></span><code>drwxr-xr-x 4 root root 4096 oct 28 10:15 /home
+</code></pre></div>
+<hr />
+<h5 id="ls-lt-varlog">ls -lt /var/log<a class="headerlink" href="#ls-lt-varlog" title="Permanent link">&para;</a></h5>
+<p>Ordena los archivos por fecha (más recientes primero) dentro de /var/log:</p>
+<div class="highlight"><pre><span></span><code>-rw-r--r-- 1 root root  25K oct 28 10:10 syslog
+-rw-r--r-- 1 root root  18K oct 27 23:40 auth.log
+</code></pre></div>
+<hr />
+<h5 id="ls-lr-etc">ls -lr /etc<a class="headerlink" href="#ls-lr-etc" title="Permanent link">&para;</a></h5>
+<p>Muestra el listado en orden inverso (por nombre) dentro de /etc:</p>
+<div class="highlight"><pre><span></span><code>zsh_command_not_found
+xdg
+xattr.conf
+...
+</code></pre></div>
+<hr />
+<h5 id="ls-ls-varlog">ls -lS /var/log<a class="headerlink" href="#ls-ls-varlog" title="Permanent link">&para;</a></h5>
+<p>Ordena por tamaño (los archivos grandes primero) dentro de /var/log:</p>
+<div class="highlight"><pre><span></span><code>-rw-r--r-- 1 root root 10M oct 28 10:10 kern.log
+-rw-r--r-- 1 root root  25K oct 28 10:10 syslog
+</code></pre></div>
+<hr />
+<h5 id="ls-r-home">ls -R /home<a class="headerlink" href="#ls-r-home" title="Permanent link">&para;</a></h5>
+<p>Muestra todo el contenido recursivamente (subcarpetas incluidas):</p>
+<hr />
+<h3 id="busqueda-de-patrones-en-ls">Búsqueda de patrones en ls<a class="headerlink" href="#busqueda-de-patrones-en-ls" title="Permanent link">&para;</a></h3>
+<p>Ahora vemos como buscar archivos con ciertos patrones en ls:Ejemplos de uso de ls con patrones</p>
+<hr />
+<h5 id="ls-a_1">ls a*<a class="headerlink" href="#ls-a_1" title="Permanent link">&para;</a></h5>
+<p>Muestra todo lo que empieza por “a” en el directorio actual 
+Contenido: <code>archivo.txt</code>, <code>app.log</code>, <code>audio.mp3</code>, <code>nota.txt</code><br />
+Resultado:</p>
+<div class="highlight"><pre><span></span><code>archivo.txt  app.log  audio.mp3
+</code></pre></div>
+<hr />
+<h5 id="ls-homemanolopruebaa">ls /home/manolo/prueba/A*<a class="headerlink" href="#ls-homemanolopruebaa" title="Permanent link">&para;</a></h5>
+<p>Archivos que empiezan por mayúscula “A” en /home/manolo<br />
+Contenido: <code>Archivo.txt</code>, <code>App</code>, <code>Agenda.pdf</code>, <code>auto.mp3</code><br />
+Resultado:</p>
+<div class="highlight"><pre><span></span><code>Archivo.txt  App  Agenda.pdf
+</code></pre></div>
+<hr />
+<h5 id="ls-lt-homemanolopruebaa">ls -lt /home/manolo/prueba/a???<a class="headerlink" href="#ls-lt-homemanolopruebaa" title="Permanent link">&para;</a></h5>
+<p>Nombres que empiezan por “a” y tienen exactamente 4 caracteres además de mostrar información detallada y ordenar por modificacion
+Contenido: <code>auto</code>, <code>azul</code>, <code>a123</code>, <code>amor.txt</code>, <code>a</code><br />
+Resultado:</p>
+<div class="highlight"><pre><span></span><code>auto  azul  a123
+</code></pre></div>
+<hr />
+<h5 id="ls-atxt">ls a*.txt<a class="headerlink" href="#ls-atxt" title="Permanent link">&para;</a></h5>
+<p>Archivos que empiezan por “a” y terminan en <code>.txt</code><br />
+Contenido: <code>archivo.txt</code>, <code>apuntes.txt</code>, <code>a.txt</code>, <code>audio.mp3</code><br />
+Resultado:</p>
+<div class="highlight"><pre><span></span><code>archivo.txt  apuntes.txt  a.txt
+</code></pre></div>
+<hr />
+<h5 id="ls-atxt_1">ls a???.txt<a class="headerlink" href="#ls-atxt_1" title="Permanent link">&para;</a></h5>
+<p>Nombres que empiezan por “a” y tienen exactamente 4 caracteres y terminan en txt 
+Contenido: <code>auto</code>, <code>azul</code>, <code>a123</code>, <code>amor.txt</code>, <code>a</code><br />
+Resultado:</p>
+<div class="highlight"><pre><span></span><code>amor.txt
+</code></pre></div>
+<hr />
+<h5 id="ls-log">ls *log<a class="headerlink" href="#ls-log" title="Permanent link">&para;</a></h5>
+<p>Todo lo que termina en “log”<br />
+Contenido: <code>system.log</code>, <code>auth.log</code>, <code>catalog</code>, <code>logs</code><br />
+Resultado:</p>
+<div class="highlight"><pre><span></span><code>system.log  auth.log
+</code></pre></div>
+<hr />
+<h5 id="ls-abc">ls [abc]*<a class="headerlink" href="#ls-abc" title="Permanent link">&para;</a></h5>
+<p>Archivos que empiezan por a, b o c<br />
+Contenido: <code>auto</code>, <code>barco</code>, <code>coche</code>, <code>dado</code>, <code>pez</code><br />
+Resultado:</p>
+<div class="highlight"><pre><span></span><code>auto  barco  coche
+</code></pre></div>
+<hr />
+<h5 id="ls-d-abc">ls -d [abc]*/<a class="headerlink" href="#ls-d-abc" title="Permanent link">&para;</a></h5>
+<p>Mostrar solo los directorios que empiezan por una letra (a, b o c por ej.)</p>
+<p>Contenido: <code>auto</code>, <code>barco</code>, <code>coche/</code>, <code>dado</code>, <code>pez</code><br />
+Resultado:</p>
+<div class="highlight"><pre><span></span><code><span class="err">coche/</span>
+</code></pre></div>
+<hr />
+<h5 id="ls-abdtxt">ls [abd]????.txt`<a class="headerlink" href="#ls-abdtxt" title="Permanent link">&para;</a></h5>
+<p>Archivos que empiezan por a, b o c les siguen 3 letras y terminan en txt
+Contenido: <code>autos.txt</code>, <code>barcos.txt</code>, <code>dados</code>, <code>dados.txt</code>, <code>auto</code><br />
+Resultado:</p>
+<div class="highlight"><pre><span></span><code>autos.txt dados.txt
+</code></pre></div>
+<hr />
+<h5 id="ls-0-9">ls [0-9]*<a class="headerlink" href="#ls-0-9" title="Permanent link">&para;</a></h5>
+<p>Archivos o carpetas que empiezan por número<br />
+Ejemplo:<br />
+Contenido: <code>1-notas.txt</code>, <code>2023</code>, <code>7zip.tar</code>, <code>archivo.txt</code><br />
+Resultado:</p>
+<div class="highlight"><pre><span></span><code>1-notas.txt  2023  7zip.tar
+</code></pre></div>
+<hr />
+<h5 id="ls-0-9ab">ls [0-9]??[ab]*<a class="headerlink" href="#ls-0-9ab" title="Permanent link">&para;</a></h5>
+<p>Archivos o carpetas que empiezan por un número seguido de dos letras cualquiera y después las letras a y b.
+Contenido: <code>1-notas.txt</code>, <code>2023</code>, <code>7zip.tar</code>, <code>2-tamizo.txt</code>, <code>123bazoca</code><br />
+Resultado:</p>
+<div class="highlight"><pre><span></span><code>123bazoca 2-tamizo.txt
+</code></pre></div>
+<hr />
+<h5 id="ls-ab">ls [!ab]*<a class="headerlink" href="#ls-ab" title="Permanent link">&para;</a></h5>
+<p>Todo lo que NO empieza por “ab”<br />
+Contenido: <code>archivo.txt</code>, <code>barco</code>, <code>coche</code>, <code>.oculto</code>, <code>zorro</code><br />
+Resultado:</p>
+<hr />
+<h2 id="anexo-iv-practica-1-el-comando-nano">ANEXO IV. PRÁCTICA 1: El comando <code>nano</code><a class="headerlink" href="#anexo-iv-practica-1-el-comando-nano" title="Permanent link">&para;</a></h2>
+<p>Con nano puedes crear un archivo con cualquier nombre y extensión, incluso cosas como <code>.zip</code>, <code>.pdf</code> o <code>.jpg</code>. Nano no tiene problema en guardar lo que escribas con el nombre que tú le pongas.</p>
+<p>nano solo trabaja con texto plano, no con datos binarios. Así que aunque tú guardes un archivo llamado <code>archivo.zip</code>, lo único que estás haciendo es guardar texto normal con extensión <code>.zip</code>, no un archivo comprimido real. Entonces, ¿tiene sentido usar nano para algo que no acaba en <code>.txt</code>?
+Tiene sentido cuando:</p>
+<ul>
+<li>Editas archivos de configuración o scripts (<code>.sh</code>, <code>.conf</code>, <code>.json</code>, <code>.yml</code>, <code>.css</code>, etc.).</li>
+<li>Editas archivos sin extensión o que comienzan con punto (<code>README</code>, <code>.bashrc</code>, <code>.gitignore</code>).</li>
+</ul>
+<p>En resumen, archivos de texto plano cuya extensión no es necesariamente txt</p>
+<hr />
+<p><strong>Crea un achivo con nano</strong></p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>mi_archivo.txt
+</code></pre></div>
+<p>Si el archivo no existe, <code>nano</code> lo creará automáticamente.  También puedes poner una ruta absoluta</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/home/manolo/mi_archivo.txt
+</code></pre></div>
+<p>Escribe algo sobre el editor, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code>Hola<span class="w"> </span>mundo<span class="w"> </span>desde<span class="w"> </span>nano.
+</code></pre></div>
+<p>Guarda con <code>Ctrl + O</code>, pulsa Enter, y sal con <code>Ctrl + X</code>.</p>
+<hr />
+<p><strong>Editar un archivo existente</strong></p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>/etc/hosts
+</code></pre></div>
+<p>Abre el archivo directamente en el editor para modificarlo.  nCuando termines, guarda (<code>Ctrl + O</code>) y sal (<code>Ctrl + X</code>).</p>
+<hr />
+<p><strong>Buscar texto</strong></p>
+<p>Mientras estás en <code>nano</code>, pulsa:</p>
+<div class="highlight"><pre><span></span><code>Ctrl + W
+</code></pre></div>
+<p>Escribe la palabra o frase que deseas buscar y presiona Enter.</p>
+<hr />
+<p><strong>Reemplazar texto</strong></p>
+<p>Mientras estás en <code>nano</code>, pulsa:</p>
+<div class="highlight"><pre><span></span><code>Ctrl + Altgr + \
+</code></pre></div>
+<p>Escribe el texto a buscar :Enter, luego el nuevo texto :Enter.</p>
+<p>Si quiero reemplazar todo, pulso la T a la hora de efectuar el cambio.</p>
+<hr />
+<p><strong>Cortar y pegar texto</strong></p>
+<ol>
+<li>Sitúa el cursor en una línea y pulsa <code>Ctrl + K</code> → se corta la línea.  </li>
+<li>Mueve el cursor donde quieras pegar y pulsa <code>Ctrl + U</code>.</li>
+</ol>
+<hr />
+<p><strong>Salir de nano</strong></p>
+<p>Mientras estás en <code>nano</code>, pulsa:</p>
+<div class="highlight"><pre><span></span><code>Ctrl + X
+</code></pre></div>
+<p>Si has hecho cambios, nano preguntará:</p>
+<div class="highlight"><pre><span></span><code>Guardar el archivo modificado (Y/N)?
+</code></pre></div>
+<ul>
+<li>Pulsa <code>S</code> para guardar.</li>
+<li>Pulsa <code>N</code> para salir sin guardar.</li>
+<li>Pulsa <code>Ctrl + C</code> para cancelar.</li>
+</ul>
+<h2 id="anexo-v-practica-1-el-comando-cat">ANEXO V. PRÁCTICA 1: El comando <code>cat</code><a class="headerlink" href="#anexo-v-practica-1-el-comando-cat" title="Permanent link">&para;</a></h2>
+<h5 id="ver-el-contenido-de-un-archivo">Ver el contenido de un archivo<a class="headerlink" href="#ver-el-contenido-de-un-archivo" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>prueba123.txt
+</code></pre></div>
+<hr />
+<h5 id="crear-un-archivo-nuevo-con-cat-borrando-lo-que-ya-hubiese">Crear un archivo nuevo con cat borrando lo que ya hubiese<a class="headerlink" href="#crear-un-archivo-nuevo-con-cat-borrando-lo-que-ya-hubiese" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>prueba123.txt
+</code></pre></div>
+<p>Escribe el contenido pulsa enter y finaliza con:</p>
+<div class="highlight"><pre><span></span><code>Ctrl + D
+</code></pre></div>
+<hr />
+<h5 id="anadir-contenido-al-final-de-un-archivo-existente">Añadir contenido al final de un archivo existente<a class="headerlink" href="#anadir-contenido-al-final-de-un-archivo-existente" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;&gt;<span class="w"> </span>prueba123.txt
+</code></pre></div>
+<p>Escribe texto y pulsa <code>Ctrl + D</code> para guardar.</p>
+<p><code>&gt;&gt;</code> también se puede usar con otros comandos, por ejemplo:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hola mundo&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>prueba123.txt<span class="w"> </span><span class="c1">#Esto añade un salto de linea por defecto</span>
+<span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;Hola&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>prueba123.txt<span class="w">   </span><span class="c1"># No añade salto</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-l<span class="w"> </span>&gt;&gt;<span class="w"> </span>prueba123.txt
+</code></pre></div>
+<hr />
+<h5 id="crea-o-sobrescribe-el-archivo-si-ya-existe-borra-lo-que-tenia"><strong>Crea o sobrescribe</strong> el archivo. Si ya existe, borra lo que tenía.<a class="headerlink" href="#crea-o-sobrescribe-el-archivo-si-ya-existe-borra-lo-que-tenia" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hola&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>prueba123.txt<span class="w"> </span><span class="c1">#borra todo lo que tenia</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Mundo&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>prueba123.txt
+</code></pre></div>
+<hr />
+<h5 id="unir-varios-archivos">Unir varios archivos<a class="headerlink" href="#unir-varios-archivos" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>prueba212.txt<span class="w"> </span>dados<span class="w"> </span>&gt;<span class="w"> </span>prueba123.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>prueba212.txt<span class="w"> </span>dados<span class="w"> </span>&gt;&gt;<span class="w"> </span>prueba123.txt
+</code></pre></div>
+<hr />
+<h5 id="mostrar-lineas-numeradas">Mostrar líneas numeradas<a class="headerlink" href="#mostrar-lineas-numeradas" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>-n<span class="w"> </span>archivo.txt
+</code></pre></div>
+<hr />
+<h2 id="anexo-vi-contrasenas-de-grupo-y-algunos-comandos-newgrep">ANEXO VI. Contraseñas de grupo y algunos comandos "<code>newgrep</code>"<a class="headerlink" href="#anexo-vi-contrasenas-de-grupo-y-algunos-comandos-newgrep" title="Permanent link">&para;</a></h2>
+<h3 id="newgrep"><code>newgrep</code><a class="headerlink" href="#newgrep" title="Permanent link">&para;</a></h3>
+<p><u>El comando <code>newgrp</code> en sistemas Unix/Linux se usa para cambiar el grupo primario de tu sesión actual de shell sin tener que cerrar y volver a iniciar sesión</u>, es decir, el comando <code>newgrp</code> solo cambia el grupo primario de manera temporal, es decir, solo durante la sesión actual del shell. Cuando un usuario pertenece a varios grupos, <code>newgrp</code> permite “entrar” a uno de esos grupos secundarios para que cuando el usuario cree por ejemplo un archivo o directorio, el grupo propietario del archivo o del directorio creado sea el grupo al cual cambió mediante <code>newgrp</code>. Pongamos que el usuario <code>zeke</code> pertenece a los grupos <code>marley</code> (primario) y <code>paradis</code>(grupos extra). Si el usuario <code>zeke</code> ejecutase:</p>
+<div class="highlight"><pre><span></span><code>newgrp<span class="w"> </span>paradis
+</code></pre></div>
+<p>Ahora, su grupo efectivo pasa a ser <code>proyecto</code> y tendría efecto sobre los archivos o directorios creados durante la sesión.</p>
+<hr />
+<h3 id="etcgshadow-y-gpasswd"><code>/etc/gshadow</code> y <code>gpasswd</code><a class="headerlink" href="#etcgshadow-y-gpasswd" title="Permanent link">&para;</a></h3>
+<p>Ya vimos en la práctica anterior que <code>/etc/group</code> lista los grupos, pero si un grupo tiene contraseña la entrada de <code>/etc/group</code> lleva una <code>x</code> en el campo de contraseña y la contraseña cifrada se guarda en <code>/etc/gshadow</code> (solo legible por root).</p>
+<hr />
+<p><strong>Estructura <code>/etc/gshadow</code>:</strong></p>
+<div class="highlight"><pre><span></span><code>&lt;groupname&gt;:&lt;passwd&gt;:&lt;administrators&gt;:&lt;members&gt;
+</code></pre></div>
+<hr />
+<p>-<code>passwd</code> es el hash de la contraseña de grupo o <code>!</code>/<code>*</code> si no tiene.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>gpasswd<span class="w"> </span>paradis
+</code></pre></div>
+<p>comando para añadir contraseña a grupo</p>
+<hr />
+<p>-<code>administrators</code> son los administradores del grupo (pueden cambiar la contraseña de grupo). Se añaden de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>groupadd<span class="w"> </span>paradis
+sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>paradis<span class="w"> </span>eren
+sudo<span class="w"> </span>usermod<span class="w"> </span>-s<span class="w"> </span>/bin/bash<span class="w"> </span>eren<span class="w"> </span><span class="c1">#recuerda darle a eren bash, ya que tenía bin/false en otras prácticas</span>
+sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>paradis<span class="w"> </span>armin
+sudo<span class="w"> </span>groups<span class="w"> </span>eren
+sudo<span class="w"> </span>groups<span class="w"> </span>armin
+sudo<span class="w"> </span>gpasswd<span class="w"> </span>-A<span class="w"> </span>eren,armin<span class="w"> </span>paradis<span class="w"> </span><span class="c1">#el comando para añadirlos como administradores de paradis</span>
+</code></pre></div>
+<p>y puedes verlo así que ya son administradores
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>getent<span class="w"> </span>gshadow<span class="w"> </span>paradis<span class="w"> </span><span class="c1">#cambia a tu usuario con sudo para esto</span>
+</code></pre></div></p>
+<p>De hecho, como son admins, puedes cambiar a eren (por ejemplo) y después, sin usar sudo, cambiar la contraseña o incluso añadir gente al grupo</p>
+<div class="highlight"><pre><span></span><code>su<span class="w"> </span>eren
+gpasswd<span class="w"> </span>paradis<span class="w"> </span><span class="c1">#cambia la contraseña sin sudo</span>
+gpasswd<span class="w"> </span>-a<span class="w"> </span>hange<span class="w"> </span>paradis<span class="w"> </span><span class="c1">#añade a hange a paradis</span>
+</code></pre></div>
+<hr />
+<p>-<code>members</code> lista de usuarios secundarios (que no son admins)</p>
+<p>Normalmente solo puedes usar <code>newgrp &lt;grupo&gt;</code> si ya eres miembro de ese grupo sin ningún tipo de requisito adicional. Pero si el grupo tiene una contraseña establecida en <code>/etc/gshadow</code>, entonces cualquier usuario del sistema puede "entrar" temporalmente en el grupo sólo con saber la contraseña, es decir, podemos hacernos la siguiente pregunta:</p>
+<hr />
+<p><strong>¿Cuándo se usan las contraseñas de grupo?</strong></p>
+<p>A modo resumen: normalmente, solo puedes usar <code>newgrp &lt;grupo&gt;</code> si ya eres miembro de ese grupo. Pero si el grupo tiene una contraseña establecida en <code>/etc/gshadow</code>, entonces cualquier usuario del sistema puede "entrar" temporalmente en el grupo con:</p>
+<div class="highlight"><pre><span></span><code>newgrp<span class="w"> </span>&lt;nombre_del_grupo&gt;
+</code></pre></div>
+<hr />
+<h2 id="7-ejercicios-de-continuacion-practica-1">7. Ejercicios de continuación Práctica 1<a class="headerlink" href="#7-ejercicios-de-continuacion-practica-1" title="Permanent link">&para;</a></h2>
+<p>La Práctica 1 ya realizada cubre la creación y gestión básica de usuarios y grupos, edición de caducidad de contraseñas (<code>/etc/shadow</code>, <code>chage</code>), creación de directorios y gestión con <code>chown</code>/<code>chmod</code>. Esta práctica profundiza en temas que suelen generar confusión: contraseñas de grupo, <code>sudoers</code>, <code>umask</code>, herencia de permisos, editores y bits especiales. Esta práctica es larga y complementará a la práctica anterior. Para entender esta parte de la práctica tenemos que entender cómo se crean los permisos por defecto de un directorio o carpeta. En la práctica anterior vimos el comando <code>mkdir</code> para crear carpetas y vimos <code>chown</code> para cambiar el usuario owner y grupo owner de esta carpeta. Ahora bien, cuando un usuario normal (como <code>zeke</code> ) hace:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/home/zeke/paradysmola
+</code></pre></div>
+<p>¿Con qué usuario y grupo propietarios se crea esa carpeta por defecto?</p>
+<p><strong>-Usuario propietario (owner):</strong> <code>zeke</code></p>
+<p><strong>-Grupo propietario (group):</strong> el <strong>grupo primario</strong> de <code>zeke</code> (normalmente también llamado <code>zeke</code>, a menos que el administrador lo haya cambiado). Si antes de crear la carpeta se hubiera cambiado el grupo principal de <code>zeke</code> a <code>paradys</code> de la siguiente forma:</p>
+<div class="highlight"><pre><span></span><code>usermod<span class="w"> </span>-g<span class="w"> </span>paradys<span class="w"> </span>zeke<span class="w"> </span><span class="c1">#ojo el grupo paradys debe haber sido creado</span>
+</code></pre></div>
+<p>Entonces el propietario sería zeke y el grupo propietario sería paradyss. Si la anterior sentencia se hubiera ejecutado con sudo:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>usermod<span class="w"> </span>-g<span class="w"> </span>paradys<span class="w"> </span>zeke<span class="w"> </span><span class="c1">#ojo el grupo paradys debe haber sido creado</span>
+</code></pre></div>
+<p>Tanto grupo propietario como usuario propietario sería root. En la práctica anterior vimos que:</p>
+<table>
+<thead>
+<tr>
+<th>Permiso</th>
+<th>Letra</th>
+<th>Valor numérico</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lectura</td>
+<td><code>r</code></td>
+<td>4</td>
+<td>Permite ver el contenido (o listar archivos en un directorio <code>ls</code>).</td>
+</tr>
+<tr>
+<td>Ejecución</td>
+<td><code>x</code></td>
+<td>1</td>
+<td>Permite acceder al interior (si es directorio).</td>
+</tr>
+<tr>
+<td>Escritura</td>
+<td><code>w</code></td>
+<td>2</td>
+<td>Permite modificar o borrar información del archivo o Permite <em>crear, borrar o renombrar archivos dentro del directorio</em>. Necesito previamente permisos de ejecución en el directorio <code>x</code></td>
+</tr>
+</tbody>
+</table>
+<p>Un punto importante que no vimos en la práctica anterior es los permisos para archivos (como archivos txt) 
+Lo difícil es que para poder leer, editar o ejecutar un archivo en Linux, no basta con tener permisos sobre el archivo: también necesitas tener permisos adecuados sobre el directorio que lo contiene. Esto se refleja de la siguiente forma:</p>
+<table>
+<thead>
+<tr>
+<th>Acción que quieres hacer</th>
+<th>Permisos mínimos en el <strong>archivo</strong></th>
+<th>Permisos mínimos en el <strong>directorio</strong> que lo contiene</th>
+<th>Explicación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Leer un archivo</strong></td>
+<td><code>r</code> (lectura)</td>
+<td><code>x</code> (ejecución)</td>
+<td><code>x</code> te deja “entrar” al directorio para acceder al archivo.</td>
+</tr>
+<tr>
+<td><strong>Editar un archivo</strong></td>
+<td><code>w</code> (escritura)</td>
+<td><code>x</code> (ejecución)</td>
+<td><code>x</code> te deja “entrar” al directorio para acceder al archivo y <code>w</code> te deja editarlo</td>
+</tr>
+<tr>
+<td><strong>Ejecutar un archivo</strong></td>
+<td><code>x</code> (ejecución)</td>
+<td><code>x</code> (ejecución)</td>
+<td>Necesitas poder entrar al directorio y ejecutar el archivo.</td>
+</tr>
+<tr>
+<td><strong>Crear un archivo</strong></td>
+<td><em>(no aplica)</em></td>
+<td><code>w</code> + <code>x</code></td>
+<td><code>w</code> permite crear, <code>x</code> permite entrar al directorio.</td>
+</tr>
+<tr>
+<td><strong>Borrar o renombrar un archivo</strong></td>
+<td><em>(no aplica)</em></td>
+<td><code>w</code> + <code>x</code></td>
+<td>Lo controla el directorio, no el archivo.</td>
+</tr>
+<tr>
+<td><strong>Hacer ls sbre un directorio</strong></td>
+<td><em>(no aplica)</em></td>
+<td><code>r</code></td>
+<td>Solo permisos de lectura sobre dicho directorio</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="practica"><u><strong>Práctica</strong></u><a class="headerlink" href="#practica" title="Permanent link">&para;</a></h4>
+<p>Usuarios a crear:</p>
+<ul>
+<li><code>eren</code></li>
+<li><code>mikasa</code></li>
+<li><code>armin</code></li>
+<li><code>zeke</code></li>
+</ul>
+<p>Grupos principales de los usuarios:</p>
+<ul>
+<li><code>eren</code>: <code>eren</code></li>
+<li><code>mikasa</code>: <code>mikasa</code></li>
+<li><code>armin</code>: <code>armin</code></li>
+<li><code>zeke</code>: <code>marley</code></li>
+</ul>
+<p>Grupos secundarios de los usuarios:</p>
+<ul>
+<li><code>eren</code>, <code>mikasa</code>, <code>armin</code> : grupo secundario <code>paradis</code></li>
+<li><code>eren</code>: también grupo sencundario <code>marley</code></li>
+</ul>
+<p><strong>Paso 1: Crear usuarios y grupos</strong></p>
+<ol>
+<li>Como root, crea los grupos principales (<code>eren</code>, <code>mikasa</code>, <code>armin</code>, <code>marley</code>, <code>paradis</code>).</li>
+<li>Luego crea los usuarios con sus respectivos grupos principales y asignaciones secundarias. Puedes crear el usuario y cambiar el grupo principal después (usermod -g)</li>
+</ol>
+<p><strong>Paso 2: Crear la carpeta <code>/aot</code></strong></p>
+<p>El objetivo es crear un directorio llamado <code>/aot</code> en la raíz del sistema.</p>
+<ol>
+<li>Antes de crearla, pregúntate: ¿Quién puede crear una carpeta en el directorio raíz <code>/</code>?</li>
+<li>Compruébalo con el comando adecuado de (<code>ls</code>mirar arriba) para ver sus permisos y propietario.</li>
+<li>A partir de lo que observes, determina qué comando debes usar para crear la carpeta <code>/aot</code> (pista: probablemente necesites usar <code>sudo</code>).</li>
+</ol>
+<p><strong>Paso 3: Cambiar propietario, permisos y comprobar accesos</strong></p>
+<ol>
+<li>
+<p>Con sudo, cambia el propietario y grupo de <code>/aot</code> a <code>zeke:marley</code>.</p>
+</li>
+<li>
+<p>Cambia los permisos a user=todos, group=todos, resto=ejecución y write. Hazlo con la forma octal de los permisos.</p>
+</li>
+<li>
+<p>Comprueba los resultados con con ls directamente sobre el directorio aot:</p>
+</li>
+<li>
+<p>Luego cambia al usuario <code>mikasa</code> con:</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="w">   </span>su<span class="w"> </span>-<span class="w"> </span>mikasa
+</code></pre></div>
+<p>y realiza estas cuestiones, haciendo capturas de lo que obtienes y justificando dichas capturas:</p>
+<ul>
+<li>
+<p>Intenta entrar a <code>/aot</code></p>
+</li>
+<li>
+<p>Intenta listar el contenido de <code>/aot</code></p>
+</li>
+<li>
+<p>Intenta crear una carpeta dentro de <code>/aot</code></p>
+</li>
+<li>
+<p>Con <code>cat</code>y <code>&gt;</code>, crear un archivo llamado <code>"la_prueba.txt"</code> dentro de <code>aot</code>que dentro tenga <code>"esto es una prueba"</code></p>
+</li>
+<li>
+<p>con <code>chown</code> y sin usar sudo, cambia el grupo propietario de <code>"la_prueba.txt"</code> a <code>paradis.</code></p>
+</li>
+<li>
+<p>Con <code>mikasa</code>, intenta borrar la carpeta <code>/aot</code> y observa el mensaje de error ¿Por qué no puedes borrarla?</p>
+</li>
+<li>
+<p>Cambia a <code>armin</code> . Usa <code>&gt;&gt;</code> y <code>echo</code> para añadir <code>"buen trabajo mikasa!"</code> al final de <code>"la_prueba.txt"</code>. Justifica mirando los permisos de <code>la_prueba.txt</code> y del directorio padre <code>aot</code> porque puede o no puede hacer esto.</p>
+<p>para editar un archivo, necesito dos cosas:</p>
+<ul>
+<li>write sobre el archivo "la_prueba.txt"-&gt;Lo tengo</li>
+<li>execute sobre la carpeta del archivo "aot"-&gt; Lo tengo</li>
+</ul>
+</li>
+<li>
+<p>Con <code>armin</code> crea dentro de la carpeta <code>aot</code> el archivo <code>"titantes.txt"</code> con el texto <code>"menudos titanes"</code>. Con <code>sudo</code> y <code>chmod</code> cambia los permisos de este archivo para que otros no puedan nada más que puedan leerlo</p>
+</li>
+</ul>
+<p><strong>Paso 4: Cambiar a eren</strong></p>
+<ol>
+<li>Con su cambia al usuario eren</li>
+<li>Crea la carpeta <code>archivos_of_eren</code> y justifica correctamente por qué eren puede crear esta carpeta dentro de <code>/aot</code></li>
+<li>¿Cuál es el usuario principal y grupo principal de esta carpeta creada por defecto? ¿y los permisos por defecto?</li>
+<li>Dale a esta carpeta los permisos <code>772</code> sin utilizar la forma octal de los permisos (mira la práctica anterior)</li>
+<li>Crea la carpeta <code>archivos_of_eren_v2</code> dentro de <code>aot</code>y dale el grupo <code>paradis</code>.</li>
+<li>Dale a esta carpeta los permisos <code>772</code></li>
+<li>Con eren, en la carpeta <code>aot</code> realiza un comando para listar todos aquellos archivos terminados en <code>.txt</code></li>
+<li>Con eren, en la carpeta <code>aot</code> realiza un comando para listar exclusivamente ficheros que en realidad, sean directorios.</li>
+</ol>
+<p><strong>Paso 5: La love letter de Mikasa</strong> </p>
+<ol>
+<li>
+<p>Cambia con <code>su</code>a Mikasa. </p>
+</li>
+<li>
+<p>Mikasa quiere escribir una carta de amor a <code>eren</code> en esta carpeta. Para ello, intentará crear un archivo en esta carpeta (<code>archivos_of_eren</code>) denominado:<code>love_letter_for_micasa. txt</code>: ¿podrá? justifica tu respuesta. En caso de no poder, cambia los permisos octales de 772 a lo que corresponda (y sin usar la forma octal de los permisos), es decir, no cambies ni el propietario principal ni grupo principal.</p>
+</li>
+<li>
+<p>Una vez conseguido lo anterior, escribe dentro del archivo: <code>siempre estaré enamorada de eren</code>.</p>
+</li>
+<li>
+<p>En caso de que no pueda hacer esto mikasa, ejecuta con sudo para crear la carta de amor. </p>
+</li>
+<li>
+<p>Crea este archivo con  <code>nano</code> y cambia los permisos con <code>sudo chown</code> y <code>sudo chmod</code> para que: el propietario sea <code>eren</code> el grupo principal sea <code>mikasa</code> y los permisos sean <code>770</code>.</p>
+</li>
+<li>
+<p>Con lo anterior, parece que <code>mikasa</code> podría leer su propio archivo. ¿Es así? Justifica tú respuesta.</p>
+</li>
+</ol>
+<p><strong>Paso 6: La lista de la compra</strong></p>
+<ol>
+<li>root crea otro archivo, llamado "lista_de_equipamiento.txt". Este archivo estrá en <code>/aot/archivos_of_eren</code> con usuario principal: <code>root</code> y grupo pincipal: <code>root</code>. Este archivo tendrá los siguientes permisos 777. En el escribirá <code>más gaaaaaaaas</code></li>
+<li>root crea otro archivo, llamado "lista_de_equipamiento.txt". Este archivo estará en <code>/aot/archivos_of_eren_v2</code> con usuario principal: <code>root</code> y grupo pincipal: <code>root</code>. Este archivo tendrá los siguientes permisos 777.  En el escribirá <code>más gaaaaaaaas</code></li>
+</ol>
+<p><strong>Paso 7: Armin el cotilla de las letras de amor y las listas de equipamiento</strong> </p>
+<ol>
+<li>Cambia con <code>su</code> a Armin. </li>
+<li>Intenta leer el archivo con el comando <code>cat</code> :<code>"lista_de_equipamiento.txt"</code> de la ruta; <code>/aot/archivos_of_eren</code>  y el <code>"lista_de_equipamiento.txt"</code> de <code>/aot/archivos_of_eren_v2"</code>.
+   Ahora, con nano, intenta cambiar el contenido de ambos archivos de igual forma.</li>
+<li>¿Puede armin acceder a leer la carta de amor mi mikasa? Compruébalo.</li>
+</ol>
+<hr />
+<h2 id="8-contrasenas-de-grupo-y-algunos-comando-newgrep">8. Contraseñas de grupo y algunos comando <code>newgrep</code><a class="headerlink" href="#8-contrasenas-de-grupo-y-algunos-comando-newgrep" title="Permanent link">&para;</a></h2>
+<p>Vamos a poner en práctica lo visto en el Anexo VI</p>
+<h4 id="practica_1"><strong><u>Práctica</u></strong>.<a class="headerlink" href="#practica_1" title="Permanent link">&para;</a></h4>
+<p>1.Con el comando correspondiente de ls, mira quien tiene permisos para leer sobre <code>/etc/gshadow</code> (mira directamente sobre este archivo), ¿quién tendría permisos para editar el archivo?</p>
+<p>2.Añade el grupo y crea contraseña de grupo (ejemplo <code>escuadrilla_A</code>) con <code>gpasswd</code>:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>gpasswd<span class="w"> </span>escuadrilla_A<span class="w">   </span><span class="c1"># te pedirá establecer la contraseña del grupo</span>
+</code></pre></div>
+<p>3.Prueba <code>newgrp</code> con  el usuario eren. Una vez logueado correctamente, visualiza el grupo principal de eren.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># desde el usuario eren (no miembro aún):</span>
+newgrp<span class="w"> </span>escuadrilla_A
+<span class="c1"># te pedirá la contraseña del grupo si existe</span>
+</code></pre></div>
+<p>4.Después, crea una nueva carpeta en <code>home/eren</code> llamada <code>familia</code> y visualiza con ls el propietario y grupo por defecto de la carpeta. Utilizando la forma octal, dale a la carpeta los permisos: rwx-----x</p>
+<p>5.Con sudo, añade a <code>reiner</code> al grupo escuadrilla_A y mételo como administrador del grupo. Cambia con <code>su</code> a reiner y sin usar <code>sudo</code> cambia la contraseña de <code>escuadrilla_A</code>. Haz que reiner añada al grupo a hange sin usar <code>sudo</code>.</p>
+<p>6.Vuelve a cambiar a eren y visualiza su grupo principal. Si es necesario, vuelve a hacer <code>newgrep</code> para que <code>escuadrilla_A</code> vuelva a ser su grupo pirncipal. Haz que eren cree un archivo de texto en esta nueva carpeta llamado <code>el_sotano_de_papa.txt</code>. Y visualiza con ls el propietario y grupo por defecto de la carpeta.  Utilizando la forma octal, dale a la carpeta los permisos: rwx---r-x ¿Podrá cualquier otro usuario leer este archivo? Compruébalo con un usuario del grupo propietario del archivo y con un usuario que no sea ni owner ni pertenezca al grupo del archivo</p>
+<p>7.Elimina la contraseña del grupo (como root):</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>gpasswd<span class="w"> </span>-r<span class="w"> </span>escuadrilla
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../../Teoria/5.%20Teor%C3%ADa%20Sistemas%20Operativos/">
+      
+      
+        <link rel="next" href="../2.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Rellena%20la%20siguiente%20tabla/">
       
       
         
@@ -19,7 +23,7 @@
     
     
       
-        <title>1. Teoría Primera Práctica — Descargar Ubuntu en una VM Windows, copiar la ISO a un USB y usarla en el host para instalar una nueva VM (No se entrega, echa en clase) - Módulo ISO</title>
+        <title>1ª Practica - Módulo ISO</title>
       
     
     
@@ -96,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1. Teoría Primera Práctica — Descargar Ubuntu en una VM Windows, copiar la ISO a un USB y usarla en el host para instalar una nueva VM (No se entrega, echa en clase)
+              1ª Practica
             
           </span>
         </div>
@@ -216,18 +220,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -248,7 +254,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -403,10 +409,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../1ªPractica.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -422,6 +455,203 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objetivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-descargar-la-iso-en-la-vm-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Descargar la ISO en la VM Windows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-preparar-un-pendrive-en-el-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Preparar un pendrive en el host
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pasar-el-pendrive-a-la-vm-windows-usb-passthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Pasar el pendrive a la VM Windows (USB passthrough)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-copiar-la-iso-al-pendrive-en-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Copiar la ISO al pendrive en Windows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-volver-a-montar-el-pendrive-en-el-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Volver a montar el pendrive en el host
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Crear una nueva VM Ubuntu en el host con virt-manager
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Crear una nueva VM Ubuntu en el host con virt-manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ubuntu
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Crear una nueva VM Ubuntu en el host con virt-manager
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Crear una nueva VM Ubuntu en el host con virt-manager">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-primero-tenemos-que-entender-que-es-el-directorio-mnt-en-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Primero tenemos que entender que es el directorio /mnt en linux.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-uso-en-discos-fisicos-ejemplo-un-pendrive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Uso en Discos físicos (ejemplo: un pendrive)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-ahora-bien-aunque-similar-para-montar-discos-virtual-es-un-poco-distinto-lo-primero-es-instalar-mediante-apt-una-libreria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Ahora bien, aunque similar, para montar discos virtual es un poco distinto. Lo primero es instalar mediante apt una libreria:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-por-ultimo-vemos-como-pasar-la-informacion-de-la-vm-al-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Por ultimo vemos como pasar la informacion de la VM al host
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Crear una nueva VM Ubuntu en el host con virt-manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -719,7 +949,7 @@
   <span class="md-ellipsis">
     
   
-    2ª Practica
+    2ª Practica (Instalación Particionada de Linux)
   
 
     
@@ -747,7 +977,7 @@
   <span class="md-ellipsis">
     
   
-    3ª Practica
+    3ª Practica (Instalación Dual de Windows con grub)
   
 
     
@@ -775,7 +1005,7 @@
   <span class="md-ellipsis">
     
   
-    4ª Practica
+    4ª Practica (Copias de discos con redimensionados y comando dd)
   
 
     
@@ -850,7 +1080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/1ªPractica. Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/1%C2%AAPractica.%20Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan/" class="md-nav__link">
         
   
   
@@ -878,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/2ª Practica Permisos AOT.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/2%C2%AA%20Practica%20Permisos%20AOT/" class="md-nav__link">
         
   
   
@@ -906,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/3ª Practica SUDOERS Y UMASK Y SKELL.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/3%C2%AA%20Practica%20SUDOERS%20Y%20UMASK%20Y%20SKELL/" class="md-nav__link">
         
   
   
@@ -934,7 +1164,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../TEMA3/Practicas/4ª Practica APT.md" class="md-nav__link">
+      <a href="../../../TEMA3/Practicas/3%C2%AA%20Practica%20SOL%20SUDOERS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada soluciones apartado 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA3/Practicas/4%C2%AA%20Practica%20APT/" class="md-nav__link">
         
   
   
@@ -1106,10 +1364,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#primero-tenemos-que-entender-que-es-el-directorio-mnt-en-linux" class="md-nav__link">
+  <a href="#71-primero-tenemos-que-entender-que-es-el-directorio-mnt-en-linux" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Primero tenemos que entender que es el directorio /mnt en linux.
+        7.1 Primero tenemos que entender que es el directorio /mnt en linux.
       
     </span>
   </a>
@@ -1117,10 +1375,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#uso-en-discos-fisicos-ejemplo-un-pendrive" class="md-nav__link">
+  <a href="#72-uso-en-discos-fisicos-ejemplo-un-pendrive" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Uso en Discos físicos (ejemplo: un pendrive)
+        7.2 Uso en Discos físicos (ejemplo: un pendrive)
       
     </span>
   </a>
@@ -1128,10 +1386,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#ahora-bien-aunque-similar-para-montar-discos-virtual-es-un-poco-distinto-lo-primero-es-instalar-mediante-apt-una-libreria" class="md-nav__link">
+  <a href="#73-ahora-bien-aunque-similar-para-montar-discos-virtual-es-un-poco-distinto-lo-primero-es-instalar-mediante-apt-una-libreria" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Ahora bien, aunque similar, para montar discos virtual es un poco distinto. Lo primero es instalar mediante apt una libreria:
+        7.3 Ahora bien, aunque similar, para montar discos virtual es un poco distinto. Lo primero es instalar mediante apt una libreria:
       
     </span>
   </a>
@@ -1139,10 +1397,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#por-ultimo-vemos-como-pasar-la-informacion-de-la-vm-al-host" class="md-nav__link">
+  <a href="#73-por-ultimo-vemos-como-pasar-la-informacion-de-la-vm-al-host" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Por ultimo vemos como pasar la informacion de la VM al host
+        7.3 Por ultimo vemos como pasar la informacion de la VM al host
       
     </span>
   </a>
@@ -1182,14 +1440,16 @@
 
 
 
-<h1 id="1-teoria-primera-practica-descargar-ubuntu-en-una-vm-windows-copiar-la-iso-a-un-usb-y-usarla-en-el-host-para-instalar-una-nueva-vm-no-se-entrega-echa-en-clase">1. Teoría Primera Práctica — Descargar Ubuntu en una VM Windows, copiar la ISO a un USB y usarla en el host para instalar una nueva VM (No se entrega, echa en clase)</h1>
-<h2 id="objetivo">Objetivo</h2>
+<h1 id="1-teoria-primera-practica-descargar-ubuntu-en-una-vm-windows-copiar-la-iso-a-un-usb-y-usarla-en-el-host-para-instalar-una-nueva-vm-no-se-entrega-echa-en-clase">1. Teoría Primera Práctica — Descargar Ubuntu en una VM Windows, copiar la ISO a un USB y usarla en el host para instalar una nueva VM (No se entrega, echa en clase)<a class="headerlink" href="#1-teoria-primera-practica-descargar-ubuntu-en-una-vm-windows-copiar-la-iso-a-un-usb-y-usarla-en-el-host-para-instalar-una-nueva-vm-no-se-entrega-echa-en-clase" title="Permanent link">&para;</a></h1>
+<hr />
+<h2 id="objetivo">Objetivo<a class="headerlink" href="#objetivo" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Descargar en la <strong>VM Windows</strong> la ISO de la última versión de Ubuntu Desktop.  </li>
 <li>Pasar la ISO al <strong>host Linux</strong> mediante un <strong>pendrive USB</strong>/ mediante descagar via ftp/ mediante el montado del disco virtual en el que arrancará la máquina cliente en windows/ mediante descarga directa del recurso con wget.  </li>
 <li>Crear una nueva máquina virtual en el host con esa ISO usando <strong>virt-manager</strong>.  </li>
 </ul>
-<h2 id="1-descargar-la-iso-en-la-vm-windows">1. Descargar la ISO en la VM Windows</h2>
+<hr />
+<h2 id="1-descargar-la-iso-en-la-vm-windows">1. Descargar la ISO en la VM Windows<a class="headerlink" href="#1-descargar-la-iso-en-la-vm-windows" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Inicia la <strong>VM Windows</strong> en virt-manager.  </li>
 <li>Dentro de Windows, abre un navegador (Edge/Chrome).  </li>
@@ -1197,42 +1457,42 @@
 <li>Descarga la ISO (ejemplo: <code>ubuntu-25.04-desktop-amd64.iso</code>).  </li>
 <li>Guarda la ISO en <code>C:\Users\&lt;TuUsuario&gt;\Downloads</code>.</li>
 </ol>
-<h2 id="2-preparar-un-pendrive-en-el-host">2. Preparar un pendrive en el host</h2>
-<ol>
-<li>Inserta el pendrive en el <strong>host físico</strong>.  </li>
-<li>
-<p>En el host, identifica el dispositivo:<br />
-   <div class="highlight"><pre><span></span><code>lsblk
-</code></pre></div></p>
-<div class="highlight"><pre><span></span><code>sda    100G
-├─sda1  96G /
-└─sda2   4G swap
-sdb    16G   ← este es tu pendrive
-└─sdb1 16G
+<hr />
+<h2 id="2-preparar-un-pendrive-en-el-host">2. Preparar un pendrive en el host<a class="headerlink" href="#2-preparar-un-pendrive-en-el-host" title="Permanent link">&para;</a></h2>
+<p>1.Inserta el pendrive en el <strong>host físico</strong>.  </p>
+<p>2.En el host, identifica el dispositivo:  </p>
+<div class="highlight"><pre><span></span><code>lsblk
 </code></pre></div>
-</li>
-</ol>
+<div class="highlight"><pre><span></span><code> sda    100G
+ ├─sda1  96G /
+ └─sda2   4G swap
+ sdb    16G   ← este es tu pendrive
+ └─sdb1 16G
+</code></pre></div>
 <p>Con el administrados de discos de gnome, prueba a darle formato FAT (el soportado por Windows y distribuciones linux)
 Mediante consola de comandos, sería de la siguiente forma, pero NO LO HAREMOS ya que necesitamos verlo previamente...</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>exfatprogs<span class="w">   </span><span class="c1"># si no está instalado</span>
 sudo<span class="w"> </span>umount<span class="w"> </span>/dev/sdb<span class="w">   </span><span class="c1"># el dispositivo no puede estar montado en el sistema de archivos</span>
 sudo<span class="w"> </span>mkfs.exfat<span class="w"> </span>/dev/sdb
 </code></pre></div>
-<h2 id="3-pasar-el-pendrive-a-la-vm-windows-usb-passthrough">3. Pasar el pendrive a la VM Windows (USB passthrough)</h2>
+<hr />
+<h2 id="3-pasar-el-pendrive-a-la-vm-windows-usb-passthrough">3. Pasar el pendrive a la VM Windows (USB passthrough)<a class="headerlink" href="#3-pasar-el-pendrive-a-la-vm-windows-usb-passthrough" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Abre virt-manager, selecciona tu VM Windows y entra en Detalles de hardware.</li>
 <li>Con la VM encendida, en el panel izquierdo pulsa Add Hardware → USB Host Device.</li>
 <li>Elige tu pendrive de la lista y pulsa Finish.</li>
 <li>Dentro de Windows debería aparecer el pendrive como una nueva unidad (E:\, por ejemplo).</li>
 </ol>
-<h2 id="4-copiar-la-iso-al-pendrive-en-windows">4. Copiar la ISO al pendrive en Windows</h2>
+<hr />
+<h2 id="4-copiar-la-iso-al-pendrive-en-windows">4. Copiar la ISO al pendrive en Windows<a class="headerlink" href="#4-copiar-la-iso-al-pendrive-en-windows" title="Permanent link">&para;</a></h2>
 <ol>
 <li>En Windows, abre el Explorador de Archivos.</li>
 <li>Copia la ISO (ubuntu-25.04-desktop-amd64.iso) desde Downloads al pendrive (E:).</li>
 <li>Espera a que termine la copia.</li>
 <li>Usa Quitar hardware con seguridad en Windows para desmontar el USB.</li>
 </ol>
-<h2 id="5-volver-a-montar-el-pendrive-en-el-host">5. Volver a montar el pendrive en el host</h2>
+<hr />
+<h2 id="5-volver-a-montar-el-pendrive-en-el-host">5. Volver a montar el pendrive en el host<a class="headerlink" href="#5-volver-a-montar-el-pendrive-en-el-host" title="Permanent link">&para;</a></h2>
 <ol>
 <li>En virt-manager, quita el USB de la VM (o apaga la VM).</li>
 <li>El host detectará de nuevo el pendrive.</li>
@@ -1246,11 +1506,13 @@ sudo<span class="w"> </span>mount<span class="w"> </span>/dev/sdb1<span class="w
 <span class="w">  </span>sudo<span class="w"> </span>umount<span class="w"> </span>/mnt
 </code></pre></div></li>
 </ol>
-<h2 id="6-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager">6. Crear una nueva VM Ubuntu en el host con virt-manager</h2>
+<hr />
+<h2 id="6-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager">6. Crear una nueva VM Ubuntu en el host con virt-manager<a class="headerlink" href="#6-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager" title="Permanent link">&para;</a></h2>
 <p>En caso de que el dispositivo USB no funcione, la ISO está compartida tanto por FTP como SMB y así no tienes que hacer caso a los 5 primeros puntos anteriores.
 FTP es un protocolo de red para transferir archivos entre un cliente y un servidor. Funciona sobre TCP, típicamente en los puertos 21 (control) y 20 (datos).
 Por otro lado, SMB es un protocolo de red para compartir archivos, impresoras y recursos entre computadoras, principalmente en entornos Windows.</p>
-<h3 id="windows">Windows</h3>
+<hr />
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>\\&lt;IP-del-servidor&gt;\Publica (smb poner usuario Manolo contraseña 123456)</code></p>
@@ -1259,7 +1521,8 @@ Por otro lado, SMB es un protocolo de red para compartir archivos, impresoras y 
 <p><code>ftp://alumnosiso:Iso15092025@IP-servidor</code></p>
 </li>
 </ul>
-<h3 id="ubuntu">Ubuntu</h3>
+<hr />
+<h3 id="ubuntu">Ubuntu<a class="headerlink" href="#ubuntu" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>ftp://alumnosiso:Iso15092025@IP-servidor</code></p>
@@ -1268,11 +1531,11 @@ Por otro lado, SMB es un protocolo de red para compartir archivos, impresoras y 
 <p><code>smb://&lt;IP-servidor&gt;/Publica</code></p>
 </li>
 </ul>
-<h2 id="7-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager">7. Crear una nueva VM Ubuntu en el host con virt-manager</h2>
-<p>Si todo lo anterior no funciona lo más limpio es decargar la distribución mediante el comando wget, que permitirá la descarga desde terminal. Otra opción comentada al principio es la de
-montar directamente el disco windows donde se ha descargado la iso de ubuntu desktop en tu host. Esto puede ser también un tanto catastrófico ya que requiere de que tengáis permisos de administrador, aunque
-el proceso en sí, es simple. Para ello, primero, hay que entender que ubuntu no funciona igual. P</p>
-<h3 id="primero-tenemos-que-entender-que-es-el-directorio-mnt-en-linux">Primero tenemos que entender que es el directorio /mnt en linux.</h3>
+<hr />
+<h2 id="7-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager">7. Crear una nueva VM Ubuntu en el host con virt-manager<a class="headerlink" href="#7-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager" title="Permanent link">&para;</a></h2>
+<p>Si todo lo anterior no funciona lo más limpio es decargar la distribución mediante el comando wget, que permitirá la descarga desde terminal. Otra opción comentada al principio es la de montar directamente el disco windows donde se ha descargado la iso de ubuntu desktop en tu host. Esto puede ser también un tanto catastrófico ya que requiere de que tengáis permisos de administrador, aunque el proceso en sí, es simple. Para ello, primero, hay que entender que ubuntu no funciona igual.</p>
+<hr />
+<h4 id="71-primero-tenemos-que-entender-que-es-el-directorio-mnt-en-linux">7.1 Primero tenemos que entender que es el directorio /mnt en linux.<a class="headerlink" href="#71-primero-tenemos-que-entender-que-es-el-directorio-mnt-en-linux" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>/mnt es una carpeta del sistema reservada como punto de montaje.</p>
@@ -1281,49 +1544,38 @@ el proceso en sí, es simple. Para ello, primero, hay que entender que ubuntu no
 <p>Montar = decirle al sistema operativo:</p>
 </li>
 <li>
-<p>“Muestra el contenido de este disco/dispositivo dentro de esta carpeta”.</p>
+<p>Muestra el contenido de este disco/dispositivo dentro de esta carpeta.</p>
 </li>
 <li>
 <p>Si no hay nada montado, /mnt es una carpeta vacía normal en el host.</p>
 </li>
 </ul>
-<h3 id="uso-en-discos-fisicos-ejemplo-un-pendrive">Uso en Discos físicos (ejemplo: un pendrive)</h3>
+<hr />
+<h4 id="72-uso-en-discos-fisicos-ejemplo-un-pendrive">7.2 Uso en Discos físicos (ejemplo: un pendrive)<a class="headerlink" href="#72-uso-en-discos-fisicos-ejemplo-un-pendrive" title="Permanent link">&para;</a></h4>
 <p>Un pendrive aparece como dispositivo, por ejemplo /dev/sdb1. Para montarlo manualmente:</p>
-<p>```bash
-sudo mount /dev/sdb1 /mnt</p>
-<p>```
-Ahora en /mnt ves los archivos del pendrive.</p>
-<p>Si creas algo dentro de /mnt, se escribe en el pendrive.</p>
-<p>Cuando desmontas (sudo umount /mnt), el contenido del host en /mnt reaparece (si había algo).</p>
-<h3 id="ahora-bien-aunque-similar-para-montar-discos-virtual-es-un-poco-distinto-lo-primero-es-instalar-mediante-apt-una-libreria">Ahora bien, aunque similar, para montar discos virtual es un poco distinto. Lo primero es instalar mediante apt una libreria:</h3>
+<p><code>bash
+sudo mount /dev/sdb1 /mnt</code>
+Ahora en /mnt ves los archivos del pendrive. Si creas algo dentro de /mnt, se escribe en el pendrive. Cuando desmontas (sudo umount /mnt), el contenido del host en /mnt reaparece (si había algo).</p>
+<hr />
+<h4 id="73-ahora-bien-aunque-similar-para-montar-discos-virtual-es-un-poco-distinto-lo-primero-es-instalar-mediante-apt-una-libreria">7.3 Ahora bien, aunque similar, para montar discos virtual es un poco distinto. Lo primero es instalar mediante apt una libreria:<a class="headerlink" href="#73-ahora-bien-aunque-similar-para-montar-discos-virtual-es-un-poco-distinto-lo-primero-es-instalar-mediante-apt-una-libreria" title="Permanent link">&para;</a></h4>
 <p><code>bash
 sudo guestmount -a /var/lib/libvirt/images/mi_vm.qcow2 -i --ro /mnt</code>
-    -a → ruta al disco virtual.</p>
-<div class="highlight"><pre><span></span><code>-i → auto-detección de particiones y sistemas de archivos.
-
---ro → modo solo lectura (muy recomendado si no quieres estropear la VM).
-
-/mnt → punto de montaje en tu host.
-</code></pre></div>
-<h3 id="por-ultimo-vemos-como-pasar-la-informacion-de-la-vm-al-host">Por ultimo vemos como pasar la informacion de la VM al host</h3>
-<ul>
-<li>
-<p>Navega hasta: 
+-a → ruta al disco virtual.</p>
+<p>-i → auto-detección de particiones y sistemas de archivos.</p>
+<p>--ro → modo solo lectura (muy recomendado si no quieres estropear la VM).</p>
+<p>/mnt → punto de montaje en tu host.</p>
+<hr />
+<h4 id="73-por-ultimo-vemos-como-pasar-la-informacion-de-la-vm-al-host">7.3 Por ultimo vemos como pasar la informacion de la VM al host<a class="headerlink" href="#73-por-ultimo-vemos-como-pasar-la-informacion-de-la-vm-al-host" title="Permanent link">&para;</a></h4>
+<p>Navega hasta: </p>
 <div class="highlight"><pre><span></span><code>/mnt/Users/manolo/Downloads/
-</code></pre></div></p>
-</li>
-<li>
+</code></pre></div>
 <p>Copiar el archivo windows.iso de esa carpeta al Downloads del usuario manolo del host Ubuntu:</p>
-</li>
-</ul>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span><span class="s2">&quot;/mnt/Users/manolo/Downloads/windows.iso&quot;</span><span class="w"> </span><span class="s2">&quot;/home/manolo/Downloads/&quot;</span>
 </code></pre></div>
-<ul>
-<li>Desmontar el disco virtual (es igual que el umount visto en el punto 5.4 de este punto teórico:</li>
-</ul>
+<p>Desmontar el disco virtual (es igual que el umount visto en el punto 5.4 de este punto teórico:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>guestunmount<span class="w"> </span>/mnt
 </code></pre></div>
-<h2 id="8-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager">8. Crear una nueva VM Ubuntu en el host con virt-manager</h2>
+<h2 id="8-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager">8. Crear una nueva VM Ubuntu en el host con virt-manager<a class="headerlink" href="#8-crear-una-nueva-vm-ubuntu-en-el-host-con-virt-manager" title="Permanent link">&para;</a></h2>
 <p>Una vez tienes el ISO mediante alguno de los procedimientos anteriores (pen, ftp, montando disco virtual, wget) , se pide que:</p>
 <ol>
 <li>
