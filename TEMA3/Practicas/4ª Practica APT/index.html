@@ -2619,7 +2619,7 @@ https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-co
 <p>-Comprueba los nombres de los paquetes instalados usando algún comando de apt o dpkg:</p>
 <p>-Elimina cada uno de los paquetes anteriores con la opcion -r en vez de -i de dpkg. ¿Que diferencia hay con los nombres de los archivos al poner -r en vez de -i? </p>
 <ul>
-<li>Con dpkg, comprueba el estado del paquete después de eliminarlo.</li>
+<li>Con dpkg, comprueba el estado del paquete antes de eliminarlo.</li>
 <li>Si hubo problemas, intenta eliminarlos con apt remove</li>
 <li>Si haz necesitado del paso anterior, con dpkg, comprueba el estado del paquete después de eliminarlo.</li>
 <li>
@@ -2644,7 +2644,9 @@ https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-co
 <p>En este ejemplo, yo escribí hola y me respondió lo mismo, como era de esperar. Ahora bien, cuando en el examen anterior creábamos archivos con cat lo que hacíamos realmente era redirigir la salida de nuestro cat a un archivo de texto. Es decir,  al hacer "cat hola" hemos visto que nos devolvía hola por pantalla. Al juntar cat con "&gt;&gt;" ya nos devuelve lo mismo que escribimos por pantalla sino que eso que escribimos se redirije al archivo ejemplo.txt, tal y como pasa en el siguiente ejemplo.</p>
 <p><img alt="image-20251202005116526" src="../../../img/image-20251202005116526.png" /></p>
 <p>En lo anterior, no hay nada nuevo que no sepas. Lo nuevo viene ahora. Un "here document" es una construcción de la consola que permite suministrar un bloque de texto completo como entrada estándar a un comando. Por ejemplo, al escribir cat en la consola hemos visto que se queda esperando a que le pasemos texto, por tanto, esa es la "entrada estándar" del cat. Siguiendo con la explicación de un here document, podemos suministar un bloque de texto a cat sin necesidad de escribir ese texto manualmente o de guardarlo en un archivo temporal. Esto se hace con la sintásis;</p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span><span class="s">&lt;&lt;EOF Usuario: $USER Fecha: $(date) EOF</span>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
+<span class="s">Usuario: $USER Fecha: $(date)</span>
+<span class="s">EOF</span>
 </code></pre></div>
 <p>En la práctica el comando anterior funciona como si estuvieras escribiendo a mano ese texto. ya que, si haces <code>cat &lt;&lt;EOF</code>, la shell entiende que todo lo que escribas hasta volver a ver la palabra <code>EOF</code> debe enviarlo a cat. </p>
 <hr />
