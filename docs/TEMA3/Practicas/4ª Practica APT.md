@@ -783,7 +783,7 @@ https://download.docker.com/linux/ubuntu/dists/noble/pool/stable/amd64/docker-co
 
 -Elimina cada uno de los paquetes anteriores con la opcion -r en vez de -i de dpkg. ¿Que diferencia hay con los nombres de los archivos al poner -r en vez de -i? 
 
-- Con dpkg, comprueba el estado del paquete después de eliminarlo.
+- Con dpkg, comprueba el estado del paquete antes de eliminarlo.
 - Si hubo problemas, intenta eliminarlos con apt remove
 - Si haz necesitado del paso anterior, con dpkg, comprueba el estado del paquete después de eliminarlo.
 - ¿Qué comando debes usar para eliminar archivos de config residuales? ¿Los hay en este caso?
@@ -820,7 +820,9 @@ En este ejemplo, yo escribí hola y me respondió lo mismo, como era de esperar.
 En lo anterior, no hay nada nuevo que no sepas. Lo nuevo viene ahora. Un "here document" es una construcción de la consola que permite suministrar un bloque de texto completo como entrada estándar a un comando. Por ejemplo, al escribir cat en la consola hemos visto que se queda esperando a que le pasemos texto, por tanto, esa es la "entrada estándar" del cat. Siguiendo con la explicación de un here document, podemos suministar un bloque de texto a cat sin necesidad de escribir ese texto manualmente o de guardarlo en un archivo temporal. Esto se hace con la sintásis;
 
 ```bash
-cat <<EOF Usuario: $USER Fecha: $(date) EOF
+cat <<EOF
+Usuario: $USER Fecha: $(date)
+EOF
 ```
 
 En la práctica el comando anterior funciona como si estuvieras escribiendo a mano ese texto. ya que, si haces `cat <<EOF`, la shell entiende que todo lo que escribas hasta volver a ver la palabra `EOF` debe enviarlo a cat. 
