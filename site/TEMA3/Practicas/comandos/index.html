@@ -1,0 +1,3340 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Comandos esenciales de Linux con ejemplos - Módulo ISO</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#comandos-esenciales-de-linux-con-ejemplos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Módulo ISO" class="md-header__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Módulo ISO
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Comandos esenciales de Linux con ejemplos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Módulo ISO" class="md-nav__button md-logo" aria-label="Módulo ISO" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Módulo ISO
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 1. Introducción a los Sistemas Operativos y Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/1.%20Teoria%20de%20Markdown%20SIMPLE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (Markdown)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/2.%20Teor%C3%ADa%20de%20Sistemas%20Num%C3%A9ricos%20en%20Inform%C3%A1tica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Sistemas Numéricos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/3.%20Teoria%20de%20Almacenamiento%20de%20datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3er Archivo Teoría (Almacenamiento de datos)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/4.%20Teoria%20%E2%80%94%20Hardware%20y%20Software%20b%C3%A1sico%20de%20un%20ordenador/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4to Archivo Teoría (Hardware y Software)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Teoria/5.%20Teor%C3%ADa%20Sistemas%20Operativos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5to Archivo Teoría (Sistemas Operativos y Virtualización)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/1%C2%AA%20Practica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/2.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Rellena%20la%20siguiente%20tabla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/3.%20Pr%C3%A1ctica%20%E2%80%94%20Observar%20la%20diferencia%20en%20notaci%C3%B3n%20decimal%20vs%20binaria.%20Probamos%20la%20CLI%20de%20Ubuntu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/4.%20Pr%C3%A1ctica%20%E2%80%94%20Curiosidades%20y%20importancia%20de%20los%20sistemas%20de%20enumeraci%C3%B3n%20binario%20y%20hexadecimal%20en%20la%20informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/4.2.%20Pr%C3%A1ctica%20%E2%80%94%20Comparaci%C3%B3n%20GUI%20vs%20CLI%20en%20Ubuntu%20e%20instalaci%C3%B3n%20de%20KDE%20%28copy%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (versión 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA1/Practicas/5.%20Pr%C3%A1cticaTrabajoCooperativo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5ª Practica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 2. Virtualización e instalaciones de sistemas operativos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/1%C2%AA%20Teoria%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1er Archivo Teoría (QEMU-KVM)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Teoria/2%20Teor%C3%ADa%20de%20las%20instalaciones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2do Archivo Teoría (Instalaciones y Particiones)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/1%C2%AA%20Pr%C3%A1ctica%20virtualizacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica (Opcional. Virtualizacion Anidada)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/2%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20de%20Ubuntu%20sin%20LUKS%20%28sin%20LVM%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica (Instalación Particionada de Linux)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/3%20Pr%C3%A1ctica%20Instalaci%C3%B3n%20Dual%20de%20ubuntu%20%2B%20Windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica (Instalación Dual de Windows con grub)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../TEMA2/Practicas/4%C2%AA%20Pr%C3%A1ctica%20Migraci%C3%B3n%20de%20un%20disco%20de%20120%20GB%20%28M%C3%A1s%20grande%29%20a%20otro%20de%20100%20GB%20%28M%C3%A1s%20chico%29%20usando%20GParted%20y%20el%20comando%20dd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica (Copias de discos con redimensionados y comando dd)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 3. Sistema operativo Linux-Debian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%C2%AAPractica.%20Administracion_de_usuarios_y_permisos_ambientada_en_attack_on_titan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1ª Practica Guiada (Administración de permisos en directorios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%C2%AA%20Practica%20Permisos%20AOT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2ª Practica Guiada (Administración de permisos en binarios)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%C2%AA%20Practica%20SUDOERS%20Y%20UMASK%20Y%20SKELL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada (/etc/skell, .bashrc, umask y SUDOERS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%C2%AA%20Practica%20SOL%20SUDOERS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3ª Practica Guiada soluciones apartado 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%C2%AA%20Practica%20APT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4ª Practica Guiada (Uso de APT avanzado)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apendice-1o-patrones-globs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apéndice 1º. Patrones globs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apéndice 1º. Patrones globs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-globs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos globs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos globs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-con" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos con *
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-con_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos con ?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-con_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos con []
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#negacion-dentro-de-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Negación dentro de [ ] → [!x]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apendice-2o-patrones-regexp-simples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apéndice 2º. Patrones regexp simples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apéndice 2º. Patrones regexp simples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-punto-cualquier-caracter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El punto . “cualquier carácter”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-asterisco-una-o-mas-repeticiones-del-caracter-anterior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El asterisco * : “una o más repeticiones del carácter anterior”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#el-asterisco-cero-o-mas-repeticiones-del-caracter-anterior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El asterisco * : “cero o más repeticiones del carácter anterior”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anclas-y" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Anclas: ^ y $
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clases-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clases de caracteres [ ]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. grep
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. grep">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintaxis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salida:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-find" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. find
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. find">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintaxis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salida_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-awk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. awk
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. awk">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintaxis_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintaxis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salida_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salida
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4wc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.wc
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.wc">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contar-lineas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contar líneas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salida_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salida:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contar-palabras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contar palabras
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contar-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contar caracteres
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contar-todo-a-la-vez" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contar todo a la vez
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#salida-tipica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Salida típica:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-stdin-stdout-y-stderr-relacion-con-los-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. stdin, stdout y stderr. Relación con los comandos.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. stdin, stdout y stderr. Relación con los comandos.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redirigiendo-la-salida-estandar-stdout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirigiendo la salida estándar (stdout)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirigiendo-errores-stderr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirigiendo errores (stderr)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirigir-stdout-y-stderr-juntos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirigir stdout y stderr juntos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redirigir-stdout-y-stderr-por-separado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirigir stdout y stderr por separado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-que-aceptan-stdin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandos que aceptan stdin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comandos-que-no-aceptan-stdin-como-se-usan-con-pipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comandos que NO aceptan stdin ¿Cómo se usan con pipes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-cp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. cp
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. cp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-sobre-el-archivo-origen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A) Sobre el archivo origen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-sobre-la-carpeta-de-destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B) Sobre la carpeta de destino
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copiar-un-archivo-dentro-de-una-misma-carpeta-cambiando-el-nombre-de-destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiar un archivo dentro de una misma carpeta cambiando el nombre de destino
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-un-archivo-a-otra-carpeta-cambiando-el-nombre-de-destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiar un archivo a otra carpeta cambiando el nombre de destino
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-un-directorio-dentro-de-una-mismo-lugar-cambiando-el-nombre-de-destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiar un directorio dentro de una mismo lugar cambiando el nombre de destino
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-un-directorio-a-otro-lugar-cambiando-el-nombre-de-destino" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiar un directorio a otro lugar cambiando el nombre de destino
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-un-archivo-a-una-carpeta-sin-renombrar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiar un archivo a una carpeta sin renombrar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-sobrescribir-en-caso-de-que-se-pueda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No sobrescribir en caso de que se pueda
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-todos-los-archivos-de-una-carpeta-a-otra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiar todos los archivos de una carpeta a otra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-con-expresiones-globs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiar con expresiones globs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copiar-todos-los-archivos-subcarpetas-de-una-carpeta-a-otra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Copiar todos los archivos + subcarpetas de una carpeta a otra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-para-aceptar-stdin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos para aceptar stdin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-mv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. mv
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. mv">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mover-y-renombrar-el-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mover y renombrar el archivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mover-archivo-a-otra-carpeta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mover archivo a otra carpeta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mover-varios-archivos-todos-los-archivos-acabados-en-log-a-otra-carpeta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mover varios archivos todos los archivos acabados en .log a otra carpeta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-para-aceptar-stdin_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos para aceptar stdin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-rm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. rm
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. rm">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-archivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eliminar archivo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-todos-los-archivos-terminados-en-tmp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eliminar todos los archivos terminados en tmp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eliminar-directorio-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eliminar directorio completo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-para-aceptar-stdin_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos para aceptar stdin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-rmdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. rmdir
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. rmdir">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-comprimir-y-descomprimir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Comprimir y descomprimir
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Comprimir y descomprimir">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-tar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A) tar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="A) tar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprimir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprimir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descomprimir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descomprimir
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-zip-unzip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B) zip / unzip
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="B) zip / unzip">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprimir_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprimir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descomprimir_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descomprimir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-para-aceptar-stdin_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos para aceptar stdin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-gzip-gunzip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C) gzip / gunzip
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C) gzip / gunzip">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#casos-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Casos de uso
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comprimir_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprimir:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descomprimir_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Descomprimir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-para-aceptar-stdin_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos para aceptar stdin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9df-disk-free" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.df (disk free)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.df (disk free)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintasis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintasis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-interpretar-la-salida-de-df" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cómo interpretar la salida de df
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10du-disk-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.du (disk usage)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10.du (disk usage)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintasis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintasis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aclarando-max-depth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aclarando max-depth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recordatorio-ls-vs-du" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recordatorio ls vs du
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-para-aceptar-stdin_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos para aceptar stdin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.sort
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11.sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sintasis_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sintasis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplos-para-aceptar-stdin_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplos para aceptar stdin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="comandos-esenciales-de-linux-con-ejemplos">Comandos esenciales de Linux con ejemplos<a class="headerlink" href="#comandos-esenciales-de-linux-con-ejemplos" title="Permanent link">&para;</a></h1>
+<p>Este documento resume el funcionamiento de algunos de los comandos más importantes del entorno GNU/Linux, con explicaciones claras y ejemplos prácticos.</p>
+<hr />
+<h2 id="apendice-1o-patrones-globs">Apéndice 1º. Patrones globs<a class="headerlink" href="#apendice-1o-patrones-globs" title="Permanent link">&para;</a></h2>
+<p>Los <strong>globs</strong> son patrones de coincidencia de nombres usados por <strong>Bash</strong> y por los comandos más comunes (los veremos todos a lo largo de la práctica) como:</p>
+<ul>
+<li><code>ls</code></li>
+<li><code>cp</code></li>
+<li><code>mv</code></li>
+<li><code>rm</code></li>
+<li><code>find</code> (concretamente en su ipción name)</li>
+</ul>
+<p>Estos tipos de patrones no te deben sonar como algo nuevo, ya que en la práctica guiada dos los trabjastes con muchos ejemplos del comando <code>ls</code>. Los globs usan principalmente 4 símbolos:</p>
+<table>
+<thead>
+<tr>
+<th>Símbolo</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*</code></td>
+<td>0 o más caracteres</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>1 carácter</td>
+</tr>
+<tr>
+<td><code>[ ]</code></td>
+<td>conjunto o rango</td>
+</tr>
+<tr>
+<td><code>!</code> dentro de <code>[]</code></td>
+<td>negación</td>
+</tr>
+</tbody>
+</table>
+<p>Y estos símbolos se entienden mejor con ejemplos:</p>
+<hr />
+<h3 id="ejemplos-globs">Ejemplos globs<a class="headerlink" href="#ejemplos-globs" title="Permanent link">&para;</a></h3>
+<p>Os recomiendo que os miréis los ejemplos de la práctica guiada dos que hicimos con el comando ls, sin embargo, vamos a añadir más ejemplos incluso con comandos que todavía desconocéis los cuales se verán más detalladamente a lo largo de esta práctica.</p>
+<hr />
+<h4 id="ejemplos-con">Ejemplos con <code>*</code><a class="headerlink" href="#ejemplos-con" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>ls *.txt
+</code></pre></div>
+<p>Lista todos los archivos acabados en txt</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>a*
+</code></pre></div>
+<p>Archivos que empiezan por a:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>*a*
+</code></pre></div>
+<p>rchivos que contengan la letra <code>a</code> en cualquier parte.</p>
+<hr />
+<h4 id="ejemplos-con_1">Ejemplos con <code>?</code><a class="headerlink" href="#ejemplos-con_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>ls ?.txt
+</code></pre></div>
+<p>Significa exactamente <strong>un carácter</strong> antes de .txt, el que sea</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>file??.png
+</code></pre></div>
+<p>Significa exactamente <strong>dos carácteres</strong> antes de .png y después de file, el que sea.</p>
+<hr />
+<h4 id="ejemplos-con_2">Ejemplos con <code>[]</code><a class="headerlink" href="#ejemplos-con_2" title="Permanent link">&para;</a></h4>
+<p>Sirven para exigir que <strong>un solo carácter</strong> sea uno de los indicados.</p>
+<div class="highlight"><pre><span></span><code>ls file[123].txt
+</code></pre></div>
+<p>Significa exactamente <strong>un carácter</strong> antes de .png y después de file, que debe ser 1 2 o 3. tambié se pueden poner rangos, como en el siguiente ejemplo:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span><span class="o">[</span>a-f<span class="o">]</span>*.?txt
+</code></pre></div>
+<p>Significa exactamente el primer carácter va de la <code>a</code> a la <code>f</code> (minúsculas) y a partir de ahí, lo que sea hasta terminar en .txt, pero justo después del <code>.</code> va un carácter, el que sea.</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span><span class="o">[</span>aeiouAEIOU<span class="o">]</span>*
+</code></pre></div>
+<p>Significa que los archivos comienzan por cualquier letra dentro del bloque anterior</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>*<span class="o">[</span>._-<span class="o">]</span>*
+</code></pre></div>
+<p>Significa que en su nombre o extensión, los archivos deben contener un punto, guion o subrayado en medio</p>
+<hr />
+<h4 id="negacion-dentro-de-x">Negación dentro de <code>[ ]</code> → <code>[!x]</code><a class="headerlink" href="#negacion-dentro-de-x" title="Permanent link">&para;</a></h4>
+<p>Los bloques [] se pueden negar.</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span><span class="o">[</span>!a-f<span class="o">]</span>*.txt
+</code></pre></div>
+<p>Significa exactamente el primer carácter no puede ser de la <code>a</code> a la <code>f</code> (minúsculas) y a partir de ahí, lo que sea hasta terminar en .txt</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span><span class="o">[</span>!0-9<span class="o">]</span>*.???
+</code></pre></div>
+<p>Significa exactamente el primer carácter no puede ser de la <code>0</code> al  <code>9</code> y a partir de ahí, lo que sea hasta terminar una extensión con tres caracteres cualesquiera, como pdf o txt...</p>
+<h2 id="apendice-2o-patrones-regexp-simples">Apéndice 2º. Patrones regexp simples<a class="headerlink" href="#apendice-2o-patrones-regexp-simples" title="Permanent link">&para;</a></h2>
+<p>Estos funcionan en comandos como <code>grep</code> normal o incluso <code>awk</code> pero no con los comandos que mencionamos antes.</p>
+<hr />
+<h3 id="el-punto-cualquier-caracter">El punto <code>.</code> “cualquier carácter”<a class="headerlink" href="#el-punto-cualquier-caracter" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;c.sa&quot;</span><span class="w"> </span>archivo
+</code></pre></div>
+<p>En cada línea del archivo, busca las cadenas donde el segundo carácter puede ser cualquier valor, es decir, el <code>.</code> es equivalente a <code>?</code> en los patrones globs. Por dar más claridad el ejemplo anterior, si tengo un txt con este contenido:</p>
+<div class="highlight"><pre><span></span><code><span class="err">Hola</span><span class="w"> </span><span class="err">que</span><span class="w"> </span><span class="err">tal</span>
+<span class="err">mi</span><span class="w"> </span><span class="err">casa</span><span class="w"> </span><span class="err">es</span><span class="w"> </span><span class="err">bonita</span>
+<span class="err">mi</span><span class="w"> </span><span class="err">cosa</span><span class="w"> </span><span class="err">favorita</span><span class="w"> </span><span class="err">es</span><span class="w"> </span><span class="err">el</span><span class="w"> </span><span class="err">youtube</span>
+<span class="err">mi</span><span class="w"> </span><span class="err">cama</span><span class="w"> </span><span class="err">es</span><span class="w"> </span><span class="err">grande</span>
+<span class="err">mi</span><span class="w"> </span><span class="err">casa</span><span class="w"> </span><span class="err">es</span><span class="w"> </span><span class="err">fea</span><span class="w"> </span><span class="err">ahora</span>
+</code></pre></div>
+<p>Al ejecutar el comando anterior nos devolverá las líneas que contienen coincidencias, que son:</p>
+<div class="highlight"><pre><span></span><code><span class="err">mi</span><span class="w"> </span><span class="err">casa</span><span class="w"> </span><span class="err">es</span><span class="w"> </span><span class="err">bonita</span>
+<span class="err">mi</span><span class="w"> </span><span class="err">cosa</span><span class="w"> </span><span class="err">favorita</span><span class="w"> </span><span class="err">es</span><span class="w"> </span><span class="err">el</span><span class="w"> </span><span class="err">youtube</span>
+<span class="err">mi</span><span class="w"> </span><span class="err">casa</span><span class="w"> </span><span class="err">es</span><span class="w"> </span><span class="err">fea</span><span class="w"> </span><span class="err">ahora</span>
+</code></pre></div>
+<p>ya que la única letra que puede ser cualquier cosa es el <code>.</code> Si no enteindes el comando grep bien, ve al punto siguiente.</p>
+<hr />
+<h3 id="el-asterisco-una-o-mas-repeticiones-del-caracter-anterior">El asterisco <code>*</code> : “una o más repeticiones del carácter anterior”<a class="headerlink" href="#el-asterisco-una-o-mas-repeticiones-del-caracter-anterior" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;ab+c&quot;</span><span class="w"> </span>archivo
+</code></pre></div>
+<p>En cada línea del archivo, busca las cadenas donde el segundo carácter <code>b</code> en este caso puede repetirse tantas veces como se quiera (no 0). Si el archivo tuviera dentro:</p>
+<div class="highlight"><pre><span></span><code><span class="err">ac</span>
+<span class="err">adbc</span>
+<span class="err">abbbc</span>
+<span class="err">adc</span>
+<span class="err">acd</span>
+<span class="err">acccb</span>
+<span class="err">abbbbbcxyz</span>
+</code></pre></div>
+<p>nos devolvería las líneas</p>
+<div class="highlight"><pre><span></span><code><span class="err">abbbc</span>
+<span class="err">abbbbbcxyz</span>
+</code></pre></div>
+<p>Ojo, en ningún momento estamos pidiendo que la línea del archivo acabe en c, por eso el ejemplo <code>abbbbbcxyz</code> sigue también el patrón. Si queremos que la línea acabe en <code>c</code> tenemos que estudiar el uso de anclas (en dos puntos dentro de este apartado)</p>
+<hr />
+<h3 id="el-asterisco-cero-o-mas-repeticiones-del-caracter-anterior">El asterisco <code>*</code> : “cero o más repeticiones del carácter anterior”<a class="headerlink" href="#el-asterisco-cero-o-mas-repeticiones-del-caracter-anterior" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;ab*c&quot;</span><span class="w"> </span>archivo
+</code></pre></div>
+<p>En cada línea del archivo, busca las cadenas donde el segundo carácter <code>b</code> en este caso puede repetirse tantas veces como se quiera (incluso 0). Si el archivo tuviera dentro:</p>
+<div class="highlight"><pre><span></span><code><span class="err">ac</span>
+<span class="err">adbc</span>
+<span class="err">abbbc</span>
+<span class="err">adc</span>
+<span class="err">acd</span>
+<span class="err">acccb</span>
+<span class="err">abbbbbcxyz</span>
+</code></pre></div>
+<p>nos devolvería las líneas</p>
+<div class="highlight"><pre><span></span><code><span class="err">ac</span>
+<span class="err">abbbc</span>
+<span class="err">abbbbbcxyz</span>
+</code></pre></div>
+<p>Ojo, en ningún momento estamos pidiendo que la línea del archivo acabe en c, por eso el ejemplo <code>abbbbbcxyz</code> sigue también el patrón. Si queremos que la línea acabe en <code>c</code>, veremos el uso de anclas en el siguiente punto que nos explicará como hacerlo.</p>
+<hr />
+<h3 id="anclas-y">Anclas: <code>^</code> y <code>$</code><a class="headerlink" href="#anclas-y" title="Permanent link">&para;</a></h3>
+<p><code>^</code> marca el Inicio de línea y <code>$</code> el final de línea</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;txt</span>$<span class="s2">&quot;</span><span class="w"> </span>archivo
+</code></pre></div>
+<p>las íneas pueden empezar en lo que sea, pero deben acabar sí o sí en txt</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;^txt&quot;</span>
+</code></pre></div>
+<p>las íneas deben empezar en txt, pero peuden acabar en lo que sea</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;^txt</span>$<span class="s2">&quot;</span>
+</code></pre></div>
+<p>La línea del archivo debe ser exactamente txt</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;^</span>$<span class="s2">&quot;</span><span class="w"> </span>archivo
+</code></pre></div>
+<p>Busca líneas vacías</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;^ab*c</span>$<span class="s2">&quot;</span><span class="w"> </span>archivo
+</code></pre></div>
+<p>La línea debe empezar en <code>a</code>, terminar en <code>c</code> y la b se puede repetir tantas veces como se quiera (incluso 0)</p>
+<hr />
+<h3 id="clases-de-caracteres">Clases de caracteres <code>[ ]</code><a class="headerlink" href="#clases-de-caracteres" title="Permanent link">&para;</a></h3>
+<p>Sirven para aceptar <strong>uno entre varios caracteres</strong> y se suelen mezclar con <code>*</code> y <code>+</code>.</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;c[ae]sa&quot;</span><span class="w"> </span>archivo
+</code></pre></div>
+<p>las íneas pueden empezar en lo que sea, pero dentro de ellas se buscan secuencias donde primero va la c, después una a o una e y después sa. Por ejemplo, en este archivo:</p>
+<div class="highlight"><pre><span></span><code><span class="err">hola</span><span class="w"> </span><span class="err">casa</span><span class="w"> </span><span class="err">mia</span>
+<span class="err">hola</span>
+<span class="err">cesta</span>
+<span class="err">-----cesa</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">preguntar---</span>
+<span class="err">-----ceesa</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">preguntar---</span>
+<span class="err">casa</span><span class="w"> </span><span class="err">casa</span><span class="w"> </span><span class="err">casa</span><span class="w"> </span><span class="err">casa</span>
+<span class="err">cesa</span><span class="w"> </span><span class="err">casa</span>
+</code></pre></div>
+<p>el resultado sería:</p>
+<div class="highlight"><pre><span></span><code><span class="err">hola</span><span class="w"> </span><span class="err">casa</span><span class="w"> </span><span class="err">mia</span>
+<span class="err">hola</span>
+<span class="err">cesta</span>
+<span class="err">-----cesa</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">preguntar---</span>
+<span class="err">-----ceesa</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">preguntar---</span>
+<span class="err">casa</span><span class="w"> </span><span class="err">casa</span><span class="w"> </span><span class="err">casa</span><span class="w"> </span><span class="err">casa</span>
+<span class="err">cesa</span><span class="w"> </span><span class="err">casa</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;[0-9]&quot;</span><span class="w"> </span>archivo
+grep<span class="w"> </span><span class="s2">&quot;[A-Z]&quot;</span><span class="w"> </span>archivo
+grep<span class="w"> </span><span class="s2">&quot;^[!a-z0-9]&quot;</span><span class="w"> </span>archivo
+grep<span class="w"> </span><span class="s2">&quot;^[0-9]+.*[ba]</span>$<span class="s2">&quot;</span><span class="w"> </span>archivo
+</code></pre></div>
+<p><strong>El primer dice:</strong> cualquier línea que contenta un número</p>
+<p><strong>El segundo dice:</strong> cualquie ínea que contenga una letra mayúscula al final de la misma</p>
+<p><strong>El tercero dice</strong>: cualquier línea que NO comience por una letra minúscula o un número</p>
+<p><strong>El cuarto dice:</strong> cualquier línea que comience por al menos número (uno o muchos). Después puede ir cualquier carácter ya que hay un <code>.</code> y ese carácter puede repetirse tantas veces como se quiera (incluso vacío), ya que le sigue un <code>*</code>. Por último hay un <code>[ba]</code> lo que significa que la línea debe terminar en b o en a.</p>
+<hr />
+<h2 id="1-grep">1. <code>grep</code><a class="headerlink" href="#1-grep" title="Permanent link">&para;</a></h2>
+<p>Busca texto dentro de archivos o dentro de la salida de otros comandos. </p>
+<h3 id="sintaxis">Sintaxis<a class="headerlink" href="#sintaxis" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>grep [opciones] &#39;patrón regexp&#39; archivo
+</code></pre></div>
+<h3 id="salida">Salida:<a class="headerlink" href="#salida" title="Permanent link">&para;</a></h3>
+<p><code>grep</code> devuelve (muestra por pantalla) las líneas completas del archivo que contienen el patrón buscado.</p>
+<h3 id="ejemplos">Ejemplos<a class="headerlink" href="#ejemplos" title="Permanent link">&para;</a></h3>
+<p><strong>Buscar una palabra en un archivo (busca error)</strong></p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"> </span>/var/log/syslog
+</code></pre></div>
+<p><strong>Ignorar mayúsculas/minúsculas</strong> de la palabra o regexp puesta</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">&quot;^[0-9]+.*[ba]</span>$<span class="s2">&quot;</span><span class="w"> </span>fichero.txt
+</code></pre></div>
+<p><strong>Mostrar número de línea</strong> (aparte de la linea)</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;^.root&quot;</span><span class="w"> </span>/etc/passwd
+</code></pre></div>
+<p><strong>Buscar recursivamente</strong>. Cuando usas <code>grep -R</code>, la salida incluye el nombre del archivo, seguido de la línea que contiene la coincidencia, separadas por dos puntos.</p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;^database[.]+&quot;</span><span class="w"> </span>/home/manolo/proyecto/
+grep<span class="w"> </span>-R<span class="w"> </span><span class="s2">&quot;^database\.+&quot;</span><span class="w"> </span>/home/manolo/proyecto/<span class="w"> </span><span class="c1">#esta línea es equivalente a la anterior, busca porqué</span>
+</code></pre></div>
+<p>¿Qué pasa si solo quieres que devuelva el nombre del archivo? Para ello usa el filtro <code>-l</code></p>
+<p>Con <code>-l</code>:</p>
+<ul>
+<li>No muestra el contenido.</li>
+<li>Muestra únicamente los nombres de los archivos que contienen coincidencias.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-Rl<span class="w"> </span><span class="s2">&quot;database&quot;</span><span class="w"> </span>/home/manolo/proyecto/
+</code></pre></div>
+<p><strong>Filtrar las lieneas de la salida de otro comando usando un <code>|</code> </strong>: Lo que hace esto es que en vez de pasar un txt al comando, filtramos la salida de otro comando, como un ls.</p>
+<div class="highlight"><pre><span></span><code>ls -l | grep nginx
+</code></pre></div>
+<p><strong>Contar cuántas coincidencias hay se hace con <code>-c</code></strong></p>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;error&quot;</span><span class="w"> </span>archivo.txt
+</code></pre></div>
+<hr />
+<h2 id="2-find">2. <code>find</code><a class="headerlink" href="#2-find" title="Permanent link">&para;</a></h2>
+<p>Busca archivos y directorios según criterios. El comando <strong><code>find</code> devuelve (muestra en pantalla)</strong> una <strong>lista de rutas completas</strong> (lína por archivo) de todos los archivos o directorios que cumplen los criterios especificados.</p>
+<h3 id="sintaxis_1">Sintaxis<a class="headerlink" href="#sintaxis_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>ruta<span class="w"> </span>-name<span class="w"> </span>patron<span class="w"> </span>globs<span class="w"> </span><span class="o">[</span>criterios<span class="o">]</span><span class="w"> </span><span class="o">[</span>acciones<span class="o">]</span>
+</code></pre></div>
+<p>No veremos la parte de acciones porque para eso combinaremos con pipes.</p>
+<h3 id="salida_1">Salida<a class="headerlink" href="#salida_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="err">/home/manolo/documentos/notas.txt</span>
+</code></pre></div>
+<h3 id="ejemplos_1">Ejemplos<a class="headerlink" href="#ejemplos_1" title="Permanent link">&para;</a></h3>
+<p><code>find -name</code> puede usar exactamente los mismos patrones (globs) que usamos en <code>ls</code> y que también podrán usar otros comandos como: <code>ls</code>, <code>cp</code>, <code>mv</code>, <code>rm</code>...</p>
+<p><strong>Buscar por nombre</strong></p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>/home<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;documento_?.txt&quot;</span>
+</code></pre></div>
+<hr />
+<p><strong>Buscar ignorando mayúsculas</strong></p>
+<p>En este caso da igual las mayúsculas y lo que haya por delante y por detrás de baclup</p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-iname<span class="w"> </span><span class="s2">&quot;*backup*&quot;</span>
+</code></pre></div>
+<hr />
+<p><strong>Buscar por tamaño</strong></p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>/var<span class="w"> </span>-size<span class="w"> </span>+100M
+</code></pre></div>
+<hr />
+<p><strong>Filtar por tipo</strong></p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>ruta<span class="w"> </span>-type<span class="w"> </span>X
+</code></pre></div>
+<p>La opción <strong><code>-type</code> sirve para filtrar por tipo de archivo</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>f</code></td>
+<td>archivo normal (file)</td>
+</tr>
+<tr>
+<td><code>d</code></td>
+<td>directorio</td>
+</tr>
+<tr>
+<td><code>l</code></td>
+<td>enlace simbólico (link)</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>socket</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>bloque (dispositivos tipo <code>/dev/sda</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Buscar archivos modificados en carpeta actual hace menos de 2 días</strong></p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-mtime<span class="w"> </span>-2
+</code></pre></div>
+<hr />
+<p><strong>Eliminar archivos encontrados (la acción por defecto es print)</strong></p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.log&quot;</span><span class="w"> </span>-delete
+</code></pre></div>
+<hr />
+<p><strong>Ejecutar un comando específico por cada archivo:<code>-exec comando {} \</code></strong></p>
+<p>Ejecuta un comando <strong>por cada archivo</strong> encontrado.</p>
+<p>Ejemplo:</p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.txt&quot;</span><span class="w"> </span>-exec<span class="w"> </span>wc<span class="w"> </span>-l<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-exec<span class="w"> </span>chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+</code></pre></div>
+<hr />
+<h2 id="3-awk">3. awk<a class="headerlink" href="#3-awk" title="Permanent link">&para;</a></h2>
+<p><code>awk</code> es un <strong>lenguaje de procesamiento de texto orientado a columnas</strong>, ideal para:</p>
+<ul>
+<li>Filtrar líneas por patrones (regex)</li>
+<li>Extraer columnas</li>
+<li>Realizar cálculos</li>
+</ul>
+<p>Es una versión extendida del comando grep, ya que peude hacer lo que él hace pero mucho más potente.</p>
+<hr />
+<h3 id="sintaxis_2">Sintaxis<a class="headerlink" href="#sintaxis_2" title="Permanent link">&para;</a></h3>
+<p>Su sintaxis general:</p>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;/patron regexp/ + {accion} &#39;</span><span class="w"> </span>archivo
+</code></pre></div>
+<hr />
+<h3 id="salida_2">Salida<a class="headerlink" href="#salida_2" title="Permanent link">&para;</a></h3>
+<p><code>awk</code> devuelve (muestra por pantalla) las líneas completas del archivo que contienen el patrón buscado</p>
+<hr />
+<h3 id="ejemplos_2">Ejemplos<a class="headerlink" href="#ejemplos_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s1">&#39;^[0-9]&#39;</span><span class="w"> </span>fichero.txt
+</code></pre></div>
+<p>con grep esto serían las líneas que comienzan por un número. Con awk será IGUAL, excepto que debe ir la expresión regular entre "/"</p>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;/^[0-9]/&#39;</span><span class="w"> </span>fichero.txt
+</code></pre></div>
+<hr />
+<p>Una acción importantísima de awk es que puede dividir las líneas por columnas, es decir, si en un fichero tengo:</p>
+<div class="highlight"><pre><span></span><code><span class="err">Juan</span><span class="w">    </span><span class="err">20</span><span class="w">  </span><span class="err">Sevilla</span>
+<span class="err">Ana</span><span class="w">     </span><span class="err">19</span><span class="w">  </span><span class="err">Madrid</span>
+<span class="err">Luis</span><span class="w">    </span><span class="err">22</span><span class="w">  </span><span class="err">Valencia</span>
+</code></pre></div>
+<p>Puedo mostrar la primer columna así:</p>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span>alumnos.txt
+</code></pre></div>
+<p>que nos devuelve:</p>
+<div class="highlight"><pre><span></span><code><span class="err">Juan</span>
+<span class="err">Ana</span>
+<span class="err">Luis</span>
+</code></pre></div>
+<hr />
+<p>O mostrar nombre + ciudad</p>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{print $1, $3}&#39;</span><span class="w"> </span>alumnos.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">Juan</span><span class="w"> </span><span class="err">Sevilla</span>
+<span class="err">Ana</span><span class="w"> </span><span class="err">Madrid</span>
+<span class="err">Luis</span><span class="w"> </span><span class="err">Valencia</span>
+</code></pre></div>
+<hr />
+<p>O mostrar la última columna</p>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{print $NF}&#39;</span><span class="w"> </span>alumnos.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">Sevilla</span>
+<span class="err">Madrid</span>
+<span class="err">valencia</span>
+</code></pre></div>
+<hr />
+<p>Con la opción <code>-F</code> podemos elegir otro separador, en vez de espacio, puede ser <code>:</code> , así que el archivo:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">Juan</span><span class="o">:</span>20:<span class="n">Sevilla</span>
+<span class="nf">Ana</span><span class="o">:</span>19:<span class="n">Madrid</span>
+<span class="nf">Luis</span><span class="o">:</span>22:<span class="n">Valencia</span>
+</code></pre></div>
+<p>Podría usarse así:</p>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-F:<span class="w"> </span><span class="s1">&#39;{print $1, $NF}&#39;</span><span class="w"> </span>alumnos.txt
+</code></pre></div>
+<p>que nos devuelve</p>
+<div class="highlight"><pre><span></span><code><span class="err">Juan</span><span class="w"> </span><span class="err">Sevilla</span>
+<span class="err">Ana</span><span class="w"> </span><span class="err">Madrid</span>
+<span class="err">Luis</span><span class="w"> </span><span class="err">Valencia</span>
+</code></pre></div>
+<hr />
+<p>Podemos cobinarlo con grep para filtar unicamente ciertas ciudades, como las que terminan en <code>a</code></p>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="w"> </span>fichero.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;a</span>$<span class="s2">&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="err">Sevilla</span>
+<span class="err">Valencia</span>
+</code></pre></div>
+<hr />
+<p>Podemos filtar una columna, si tenemos el archivo notas.txt</p>
+<div class="highlight"><pre><span></span><code>Juan;10
+Ana;5
+Luis;2
+</code></pre></div>
+<p>podemos filtar por aquellas notas mayores que 2</p>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-F<span class="s2">&quot;;&quot;</span><span class="w"> </span><span class="s1">&#39;$0 &gt; 4&#39;</span><span class="w"> </span>notas.txt
+</code></pre></div>
+<p>que nos devolveria todas las lineas que aprueban</p>
+<div class="highlight"><pre><span></span><code>Juan<span class="p">;</span><span class="m">10</span>
+Ana<span class="p">;</span><span class="m">5</span>
+</code></pre></div>
+<p>Podemos mezclarlo con grep así:</p>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-F<span class="s2">&quot;;&quot;</span><span class="w"> </span><span class="s1">&#39;$0 &gt; 4&#39;</span><span class="w"> </span>notas.txt<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;^A&quot;</span>
+</code></pre></div>
+<p>Para aquellos que aprueben y empiecen por A.</p>
+<hr />
+<p>Podemos concatenar columnas así del txt anterio así:</p>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-F<span class="s2">&quot;;&quot;</span><span class="w"> </span><span class="s1">&#39;{print &quot;Alumno &quot; $1 &quot; Nota del alumno &quot; $2}&#39;</span><span class="w"> </span>notas.txt
+</code></pre></div>
+<p>que devuele:</p>
+<div class="highlight"><pre><span></span><code><span class="err">Alumno</span><span class="w"> </span><span class="err">Juan</span><span class="w"> </span><span class="err">Nota</span><span class="w"> </span><span class="err">del</span><span class="w"> </span><span class="err">alumno</span><span class="w"> </span><span class="err">10</span>
+<span class="err">Alumno</span><span class="w"> </span><span class="err">Ana</span><span class="w"> </span><span class="err">Nota</span><span class="w"> </span><span class="err">del</span><span class="w"> </span><span class="err">alumno</span><span class="w"> </span><span class="err">5</span>
+<span class="err">Alumno</span><span class="w"> </span><span class="err">Luis</span><span class="w"> </span><span class="err">Nota</span><span class="w"> </span><span class="err">del</span><span class="w"> </span><span class="err">alumno</span><span class="w"> </span><span class="err">2</span>
+</code></pre></div>
+<hr />
+<p>Por último, se podrían sumar columnas. Si tenemos el txt notas:</p>
+<div class="highlight"><pre><span></span><code><span class="err">Juan;1;5;</span>
+<span class="err">Laura;7;3;</span>
+<span class="err">Roberto;4;9;</span>
+</code></pre></div>
+<p>Podemos calcular la nota media así:</p>
+<div class="highlight"><pre><span></span><code>awk<span class="w"> </span>-F<span class="s2">&quot;;&quot;</span><span class="w"> </span><span class="s1">&#39;{print $1 &quot;: media = &quot; ($2 + $3) / 2}&#39;</span><span class="w"> </span>notas.txt
+</code></pre></div>
+<hr />
+<h2 id="4wc">4.<code>wc</code><a class="headerlink" href="#4wc" title="Permanent link">&para;</a></h2>
+<p>Sirve para contar <strong>líneas</strong>, <strong>palabras</strong>, <strong>caracteres</strong> y <strong>bytes</strong> de uno o varios archivos, o de la entrada estándar. No tiene mucho sentido usar expresiones regulares para este comando.</p>
+<h3 id="ejemplos_3">Ejemplos<a class="headerlink" href="#ejemplos_3" title="Permanent link">&para;</a></h3>
+<h4 id="contar-lineas">Contar líneas<a class="headerlink" href="#contar-lineas" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>wc -l archivo.txt
+</code></pre></div>
+<hr />
+<h4 id="salida_3">Salida:<a class="headerlink" href="#salida_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>42 archivo.txt
+</code></pre></div>
+<hr />
+<h4 id="contar-palabras">Contar palabras<a class="headerlink" href="#contar-palabras" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>wc -w archivo.txt
+</code></pre></div>
+<hr />
+<h4 id="contar-caracteres">Contar caracteres<a class="headerlink" href="#contar-caracteres" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>wc -m archivo.txt
+</code></pre></div>
+<hr />
+<h4 id="contar-todo-a-la-vez">Contar todo a la vez<a class="headerlink" href="#contar-todo-a-la-vez" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>wc archivo.txt
+</code></pre></div>
+<hr />
+<h4 id="salida-tipica">Salida típica:<a class="headerlink" href="#salida-tipica" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>42  350  2100 archivo.txt 
+</code></pre></div>
+<hr />
+<h2 id="5-stdin-stdout-y-stderr-relacion-con-los-comandos">5. stdin, stdout y stderr. Relación con los comandos.<a class="headerlink" href="#5-stdin-stdout-y-stderr-relacion-con-los-comandos" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Flujo</th>
+<th>Número</th>
+<th>Nombre</th>
+<th>Para qué sirve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>STDIN</strong></td>
+<td><strong>0</strong></td>
+<td><em>standard input</em></td>
+<td>Entrada del comando o programa (teclado, pipe, fichero)</td>
+</tr>
+<tr>
+<td><strong>STDOUT</strong></td>
+<td><strong>1</strong></td>
+<td><em>standard output</em></td>
+<td>Salida normal del programa (texto correcto)</td>
+</tr>
+<tr>
+<td><strong>STDERR</strong></td>
+<td><strong>2</strong></td>
+<td><em>standard error</em></td>
+<td>Salida de errores (avisos, permisos, problemas)</td>
+</tr>
+</tbody>
+</table>
+<p>Estos <strong>no son archivos reales</strong>, pero Linux los maneja <strong>como si lo fueran</strong>, por eso se pueden redirigir. Por ejemplo, cuando ahces:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>archivo.txt
+</code></pre></div>
+<p><code>STDOUT</code> muestra el contenido en pantalla.</p>
+<p>Pero si el archivo no existe, recibirás: </p>
+<div class="highlight"><pre><span></span><code>cat:<span class="w"> </span>noexiste.txt:<span class="w"> </span>No<span class="w"> </span>such<span class="w"> </span>file<span class="w"> </span>or<span class="w"> </span>directory
+</code></pre></div>
+<p>Ese mensaje viene por <code>STDERR</code>, no por <code>STDOUT</code>.</p>
+<hr />
+<h4 id="redirigiendo-la-salida-estandar-stdout">Redirigiendo la salida estándar (stdout)<a class="headerlink" href="#redirigiendo-la-salida-estandar-stdout" title="Permanent link">&para;</a></h4>
+<p>Cuando hacemos:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>&gt;<span class="w"> </span>lista.txt
+</code></pre></div>
+<p>Estamos enviando la salida estandar a un archivo.</p>
+<hr />
+<h4 id="redirigiendo-errores-stderr">Redirigiendo errores (stderr)<a class="headerlink" href="#redirigiendo-errores-stderr" title="Permanent link">&para;</a></h4>
+<p>Cuando hacemos:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>errores.txt
+</code></pre></div>
+<p>redirigimos sólo los errores que nos pueda dar .txt. otro ejemplo:</p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>/<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.qcow2&quot;</span><span class="w"> </span><span class="m">2</span>&gt;/dev/null
+</code></pre></div>
+<hr />
+<h4 id="redirigir-stdout-y-stderr-juntos">Redirigir stdout y stderr juntos<a class="headerlink" href="#redirigir-stdout-y-stderr-juntos" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>comando<span class="w"> </span>&gt;<span class="w"> </span>todo.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+</code></pre></div>
+<p><code>2&gt;&amp;1</code> dice: "redirige también stderr a donde esté stdout"</p>
+<hr />
+<h4 id="redirigir-stdout-y-stderr-por-separado">Redirigir stdout y stderr por separado<a class="headerlink" href="#redirigir-stdout-y-stderr-por-separado" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>comando<span class="w"> </span>&gt;<span class="w"> </span>salidas.txt<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>errores.txt
+</code></pre></div>
+<hr />
+<h4 id="comandos-que-aceptan-stdin">Comandos que aceptan stdin<a class="headerlink" href="#comandos-que-aceptan-stdin" title="Permanent link">&para;</a></h4>
+<p>Un comando <strong>acepta stdin</strong> cuando puede recibir datos <strong>por la entrada estándar</strong>, es decir:</p>
+<ul>
+<li>desde el teclado</li>
+<li>desde un pipe</li>
+<li>desde una redirección (<code>&lt; archivo</code>)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>¿Acepta STDIN?</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>grep</strong></td>
+<td>✓</td>
+<td>`echo hola</td>
+</tr>
+<tr>
+<td><strong>awk</strong></td>
+<td>✓</td>
+<td>`echo "a b c"</td>
+</tr>
+<tr>
+<td><strong>sed</strong></td>
+<td>✓</td>
+<td>`echo hola</td>
+</tr>
+<tr>
+<td><strong>wc</strong></td>
+<td>✓</td>
+<td>`echo hola</td>
+</tr>
+<tr>
+<td><strong>sort</strong></td>
+<td>✓</td>
+<td>`printf "3\n1\n2\n"</td>
+</tr>
+<tr>
+<td><strong>cat</strong></td>
+<td>✓</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Veamos ejemplos de uso:</p>
+<hr />
+<h4 id="comandos-que-no-aceptan-stdin-como-se-usan-con-pipes">Comandos que NO aceptan stdin ¿Cómo se usan con pipes?<a class="headerlink" href="#comandos-que-no-aceptan-stdin-como-se-usan-con-pipes" title="Permanent link">&para;</a></h4>
+<p>Los siguientes comandos requieren <strong>argumentos</strong>, NO leen desde stdin.</p>
+<ul>
+<li><code>ls</code></li>
+<li><code>cp</code></li>
+<li><code>mv</code></li>
+<li><code>rm</code></li>
+<li><code>mkdir</code></li>
+<li><code>rmdir</code></li>
+</ul>
+<p>Por ejemplo, no puedo hacer esto:</p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>/home/manolo<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.txt&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>ls<span class="w"> </span>-l
+</code></pre></div>
+<p>Para solucionarlo, se usa: <code>xargs</code></p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>/home/manolo<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.txt&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>ls<span class="w"> </span>-l
+</code></pre></div>
+<p>Con <code>rm</code> se haría así:</p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.txt&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="c1">#no vale</span>
+</code></pre></div>
+<p>Para solucionarlo, se usa: <code>xargs</code></p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.txt&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span><span class="c1">#no vale</span>
+</code></pre></div>
+<p>Con <code>cp</code> se haría así:</p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.txt&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cp<span class="w"> </span>/home/manolo/docs/
+</code></pre></div>
+<p>que no tiene ningún sentido. Para solucionarlo, se usa: <code>xargs</code></p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.txt&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>cp<span class="w"> </span><span class="o">{}</span><span class="w"> </span>/home/manolo/docs/
+</code></pre></div>
+<p><code>-I {}</code> le dice a xargs: “Cada entrada que reciba por stdin sustitúyela donde aparezca <code>{}</code> en el comando final. Luego convierte cada línea en: </p>
+<div class="highlight"><pre><span></span><code><span class="err">cp</span><span class="w"> </span><span class="err">linea</span><span class="w"> </span><span class="err">/home/manolo/docs</span>
+</code></pre></div>
+<p>si la linea vale <code>ejemplo.txt</code>, entonces:</p>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>ejemplo.txt<span class="w"> </span>/home/manolo/docs
+</code></pre></div>
+<hr />
+<h2 id="5-cp">5. <code>cp</code><a class="headerlink" href="#5-cp" title="Permanent link">&para;</a></h2>
+<p>Copia archivos y directorios desde un lugar a otro. Para copiar un archivo <strong>origen</strong> hacia un <strong>destino</strong>, el usuario debe cumplir <strong>dos requisitos mínimos</strong>:</p>
+<hr />
+<h5 id="a-sobre-el-archivo-origen">A) Sobre el archivo <em>origen</em><a class="headerlink" href="#a-sobre-el-archivo-origen" title="Permanent link">&para;</a></h5>
+<p>Necesitas:</p>
+<ul>
+<li>permiso de lectura (r) sobre el archivo
+   Para poder leer su contenido y copiarlo.</li>
+<li>permiso de ejecución (x) sobre la carpeta donde se encuentra
+   Para poder acceder al archivo dentro del directorio.</li>
+</ul>
+<hr />
+<h5 id="b-sobre-la-carpeta-de-destino">B) Sobre la carpeta de <em>destino</em><a class="headerlink" href="#b-sobre-la-carpeta-de-destino" title="Permanent link">&para;</a></h5>
+<p>Necesitas:</p>
+<ul>
+<li>permiso de escritura (w) en la carpeta destino
+   Para poder crear el nuevo archivo copiado.</li>
+<li>permiso de ejecución (x) en la carpeta destino
+   Para poder entrar al directorio y modificar su contenido.</li>
+</ul>
+<hr />
+<p>Además, permite el uso de <strong>patrones de expansión de Bash</strong>, al igual que vimos con ls.</p>
+<h3 id="ejemplos_4">Ejemplos<a class="headerlink" href="#ejemplos_4" title="Permanent link">&para;</a></h3>
+<p>Veamos ejemplos de todo tipo, como siempre :)</p>
+<hr />
+<h4 id="copiar-un-archivo-dentro-de-una-misma-carpeta-cambiando-el-nombre-de-destino"><strong>Copiar un archivo dentro de una misma carpeta cambiando el nombre de destino</strong><a class="headerlink" href="#copiar-un-archivo-dentro-de-una-misma-carpeta-cambiando-el-nombre-de-destino" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>cp notas.txt copia_notas.txt
+</code></pre></div>
+<hr />
+<h4 id="copiar-un-archivo-a-otra-carpeta-cambiando-el-nombre-de-destino"><strong>Copiar un archivo a otra carpeta cambiando el nombre de destino</strong><a class="headerlink" href="#copiar-un-archivo-a-otra-carpeta-cambiando-el-nombre-de-destino" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>cp notas.txt /home/manolo/Escritorio/copia_notas.txt
+</code></pre></div>
+<hr />
+<h4 id="copiar-un-directorio-dentro-de-una-mismo-lugar-cambiando-el-nombre-de-destino"><strong>Copiar un directorio dentro de una mismo lugar cambiando el nombre de destino</strong><a class="headerlink" href="#copiar-un-directorio-dentro-de-una-mismo-lugar-cambiando-el-nombre-de-destino" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">--/home/manolo</span>
+<span class="w">    </span><span class="err">--proyecto</span><span class="w"> </span><span class="err">(el</span><span class="w"> </span><span class="err">original)</span>
+<span class="w">    </span><span class="err">--proyecto_copia</span><span class="w"> </span><span class="err">(la</span><span class="w"> </span><span class="err">copia)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>proyecto<span class="w"> </span>proyecto_backup
+</code></pre></div>
+<hr />
+<h4 id="copiar-un-directorio-a-otro-lugar-cambiando-el-nombre-de-destino"><strong>Copiar un directorio a otro lugar cambiando el nombre de destino</strong><a class="headerlink" href="#copiar-un-directorio-a-otro-lugar-cambiando-el-nombre-de-destino" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="err">--/home/manolo/proyecto</span><span class="w"> </span><span class="err">(carpeta</span><span class="w"> </span><span class="err">original)</span>
+<span class="err">--home/manolo/Descargas/proyecto_backup</span><span class="w"> </span><span class="err">(carpeta</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">copia)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>/home/manolo/proyecto<span class="w"> </span>/home/manolo/Descargas/proyecto_backup
+</code></pre></div>
+<hr />
+<h4 id="copiar-un-archivo-a-una-carpeta-sin-renombrar"><strong>Copiar un archivo a una carpeta sin renombrar</strong><a class="headerlink" href="#copiar-un-archivo-a-una-carpeta-sin-renombrar" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>cp -v archivo1 /home/manolo/Descargas/
+</code></pre></div>
+<hr />
+<h4 id="no-sobrescribir-en-caso-de-que-se-pueda"><strong>No sobrescribir en caso de que se pueda</strong><a class="headerlink" href="#no-sobrescribir-en-caso-de-que-se-pueda" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>cp -n archivo.txt /destino/
+</code></pre></div>
+<hr />
+<h4 id="copiar-todos-los-archivos-de-una-carpeta-a-otra"><strong>Copiar todos los archivos de una carpeta a otra</strong><a class="headerlink" href="#copiar-todos-los-archivos-de-una-carpeta-a-otra" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>/ruta/origen/*<span class="w"> </span>/ruta/destino/<span class="w"> </span><span class="c1">#todos los archivox</span>
+cp<span class="w"> </span>/ruta/origen/*.txt<span class="w"> </span>/ruta/destino/<span class="w"> </span><span class="c1">#solo los txt</span>
+</code></pre></div>
+<hr />
+<h4 id="copiar-con-expresiones-globs"><strong>Copiar con expresiones globs</strong><a class="headerlink" href="#copiar-con-expresiones-globs" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span><span class="o">[</span>a-f<span class="o">]</span>*<span class="w"> </span>/home/manolo/rango/<span class="w"> </span><span class="c1">#todos los que empiece por a-f y lo de después da igual</span>
+
+cp<span class="w"> </span>!<span class="o">(</span>*.txt<span class="o">)</span><span class="w"> </span>/home/manolo/destino/<span class="w"> </span><span class="c1">#todos menos los txt</span>
+
+cp<span class="w"> </span>archivo??.md<span class="w"> </span>/home/manolo/docs/<span class="w"> </span><span class="c1">#todos los que son archivo--.md,  </span>
+archivo1_.md,<span class="w"> </span>archivo1-.md...
+
+cp<span class="w"> </span>archivo<span class="o">[</span>_<span class="o">][</span><span class="m">1</span>-9<span class="o">]</span>.md<span class="w"> </span>/home/manolo/docs/<span class="w"> </span><span class="c1">#otro formato mas especifico piénsalo</span>
+
+cp<span class="w"> </span>*<span class="o">([</span><span class="m">0</span>-9<span class="o">])</span>.txt<span class="w"> </span>/home/manolo/docs/<span class="w"> </span><span class="c1">#0 o mas numeros despues de </span>
+
+cp<span class="w"> </span>*<span class="o">[</span><span class="m">02468</span><span class="o">]</span>.txt<span class="w"> </span>/home/manolo/destino/<span class="w"> </span><span class="c1">#todos los txt terminen en un número par</span>
+
+cp<span class="w"> </span><span class="o">[</span>a-zA-Z<span class="o">]</span>*<span class="o">[</span><span class="m">0</span>-9<span class="o">]</span><span class="w"> </span>/home/manolo/docs/<span class="w"> </span><span class="c1">#todos los que empiecen por una letra y terminene en un número</span>
+
+cp<span class="w"> </span><span class="o">[</span><span class="m">0</span>-9w<span class="o">]</span>?a<span class="o">[</span>A-B<span class="o">]</span>*<span class="o">([</span><span class="m">0</span>-9<span class="o">])</span>.txt<span class="w"> </span>/home/manolo/config/
+</code></pre></div>
+<p>El último es un poco más complejo.<code>[^.]</code> significa: Cualquier carácter EXCEPTO el punto. Lo último es:</p>
+<ul>
+<li>
+<p><strong>Primera letra:</strong> un número 0–9 o la letra w</p>
+</li>
+<li>
+<p><strong>Segunda letra:</strong> cualquier cosa</p>
+</li>
+<li>
+<p><strong>Tercera letra:</strong> a</p>
+</li>
+<li>
+<p><strong>Cuarta letra:</strong> A o B</p>
+</li>
+<li>
+<p><strong>Después:</strong> tantos letras como quieras</p>
+</li>
+<li>
+<p><strong>Termina en:</strong> <code>txt</code></p>
+</li>
+</ul>
+<hr />
+<h4 id="copiar-todos-los-archivos-subcarpetas-de-una-carpeta-a-otra"><strong>Copiar todos los archivos + subcarpetas de una carpeta a otra</strong><a class="headerlink" href="#copiar-todos-los-archivos-subcarpetas-de-una-carpeta-a-otra" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>cp<span class="w"> </span>-r<span class="w"> </span>/home/manolo/origen/*<span class="w"> </span>/home/manolo/destino/
+</code></pre></div>
+<p>Se usa la opción -r</p>
+<hr />
+<h4 id="ejemplos-para-aceptar-stdin">Ejemplos para aceptar stdin<a class="headerlink" href="#ejemplos-para-aceptar-stdin" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.txt&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>cp<span class="w"> </span><span class="o">{}</span><span class="w"> </span>/home/manolo/docs/
+</code></pre></div>
+<hr />
+<h2 id="6-mv">6. <code>mv</code><a class="headerlink" href="#6-mv" title="Permanent link">&para;</a></h2>
+<p>Sirve para mover o renombrar archivos y directorios. Respecto a los permisos, igual que cp.</p>
+<p>Además, permite el uso de <strong>patrones de expansión de Bash</strong>, al igual que vimos con ls y cp.</p>
+<hr />
+<h3 id="ejemplos_5">Ejemplos<a class="headerlink" href="#ejemplos_5" title="Permanent link">&para;</a></h3>
+<h4 id="mover-y-renombrar-el-archivo"><strong>Mover y renombrar el archivo</strong><a class="headerlink" href="#mover-y-renombrar-el-archivo" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>mv<span class="w"> </span>informe.txt<span class="w"> </span>informe_final.txt
+</code></pre></div>
+<hr />
+<h4 id="mover-archivo-a-otra-carpeta"><strong>Mover archivo a otra carpeta</strong><a class="headerlink" href="#mover-archivo-a-otra-carpeta" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>mv<span class="w"> </span>foto.png<span class="w"> </span>/home/manolo/imagenes/
+</code></pre></div>
+<hr />
+<h4 id="mover-varios-archivos-todos-los-archivos-acabados-en-log-a-otra-carpeta"><strong>Mover varios archivos todos los archivos acabados en .log a otra carpeta</strong><a class="headerlink" href="#mover-varios-archivos-todos-los-archivos-acabados-en-log-a-otra-carpeta" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>mv<span class="w"> </span>*.log<span class="w"> </span>/var/log/old/
+</code></pre></div>
+<hr />
+<h4 id="ejemplos-para-aceptar-stdin_1">Ejemplos para aceptar stdin<a class="headerlink" href="#ejemplos-para-aceptar-stdin_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.log&quot;</span><span class="w"> </span><span class="se">\ </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>mv<span class="w"> </span><span class="s2">&quot;{}&quot;</span><span class="w"> </span>/var/log/old/
+</code></pre></div>
+<hr />
+<h2 id="7-rm">7. <code>rm</code><a class="headerlink" href="#7-rm" title="Permanent link">&para;</a></h2>
+<p>Elimina archivos y directorios.</p>
+<p>Además, permite el uso de <strong>patrones de expansión de Bash</strong>, al igual que vimos con ls, cp, mv y rm</p>
+<hr />
+<h3 id="ejemplos_6">Ejemplos<a class="headerlink" href="#ejemplos_6" title="Permanent link">&para;</a></h3>
+<h4 id="eliminar-archivo"><strong>Eliminar archivo</strong><a class="headerlink" href="#eliminar-archivo" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>documento.txt
+</code></pre></div>
+<hr />
+<h4 id="eliminar-todos-los-archivos-terminados-en-tmp"><strong>Eliminar todos los archivos terminados en tmp</strong><a class="headerlink" href="#eliminar-todos-los-archivos-terminados-en-tmp" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>*.tmp
+</code></pre></div>
+<hr />
+<h4 id="eliminar-directorio-completo"><strong>Eliminar directorio completo</strong><a class="headerlink" href="#eliminar-directorio-completo" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>rm<span class="w"> </span>-rf<span class="w"> </span>carpeta/
+</code></pre></div>
+<hr />
+<h4 id="ejemplos-para-aceptar-stdin_2">Ejemplos para aceptar stdin<a class="headerlink" href="#ejemplos-para-aceptar-stdin_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.log&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>rm<span class="w"> </span><span class="s2">&quot;{}&quot;</span>
+</code></pre></div>
+<hr />
+<h2 id="8-rmdir">8. <code>rmdir</code><a class="headerlink" href="#8-rmdir" title="Permanent link">&para;</a></h2>
+<p>Elimina únicamente directorios vacíos.</p>
+<h3 id="ejemplos_7">Ejemplos<a class="headerlink" href="#ejemplos_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>rmdir<span class="w"> </span>carpeta_vacia
+rmdir<span class="w"> </span>dir1<span class="w"> </span>dir2<span class="w"> </span>dir3
+rmdir<span class="w"> </span>-p<span class="w"> </span>ruta/una/dos/tres<span class="w"> </span>
+</code></pre></div>
+<p>-Elimina <code>ruta/una/dos/tres</code></p>
+<p>-Luego intenta eliminar <code>ruta/una/dos</code></p>
+<p>-Luego <code>ruta/una</code></p>
+<p>-Y por último <code>ruta</code></p>
+<p><strong>¡Siempre y cuando estén vacíos!</strong></p>
+<hr />
+<h2 id="9-comprimir-y-descomprimir">9. Comprimir y descomprimir<a class="headerlink" href="#9-comprimir-y-descomprimir" title="Permanent link">&para;</a></h2>
+<h3 id="a-tar">A) <code>tar</code><a class="headerlink" href="#a-tar" title="Permanent link">&para;</a></h3>
+<p><strong>No comprime</strong> por sí mismo.</p>
+<p><strong>Empaqueta</strong> en un archivo único (<code>.tar</code>) manteniendo:</p>
+<ul>
+<li>permisos UNIX completos</li>
+<li>propietarios</li>
+<li>estructura de directorios</li>
+<li>symlinks</li>
+</ul>
+<p>Para comprimir se combina con:</p>
+<ul>
+<li>gzip → <code>.tar.gz</code></li>
+<li>xz → <code>.tar.xz</code></li>
+<li>bzip2 → <code>.tar.bz2</code> (no lo veremos)</li>
+</ul>
+<hr />
+<h4 id="comprimir"><strong>Comprimir</strong><a class="headerlink" href="#comprimir" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>tar -czvf backup.tar.gz carpeta/
+tar -cJvf backup.tar.xz carpeta/
+tar -cvf - carpeta/ | gzip -9 &gt; backup.tar.gz
+</code></pre></div>
+<p>En el último comando, el guion <code>-</code> en lugar del nombre de archivo significa: "Saca la salida de TAR por <em>stdout</em> (pantalla) en lugar de crear un archivo .tar". <code>tar</code> empaqueta la carpeta pero NO crea un archivo <code>backup.tar</code> sino que envía el contenido del tar por la tubería (stdout)</p>
+<hr />
+<h4 id="descomprimir"><strong>Descomprimir</strong><a class="headerlink" href="#descomprimir" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>tar<span class="w"> </span>-xzvf<span class="w"> </span>backup.tar.gz
+tar<span class="w"> </span>-xJvf<span class="w"> </span>backup.tar.xz
+</code></pre></div>
+<hr />
+<p>Vamos a comprender un poco más las opciones usadas en los comandos anteriores:</p>
+<table>
+<thead>
+<tr>
+<th>Opción</th>
+<th>Nombre</th>
+<th>¿Qué hace?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>c</code></td>
+<td>create</td>
+<td>Crear un nuevo archivo tar</td>
+</tr>
+<tr>
+<td><code>z</code></td>
+<td>gzip</td>
+<td>Comprimir usando gzip o Indica que está en gzip</td>
+</tr>
+<tr>
+<td><code>v</code></td>
+<td>verbose</td>
+<td>Mostrar progreso en pantalla</td>
+</tr>
+<tr>
+<td><code>f</code></td>
+<td>file</td>
+<td>Permitir especificar el nombre del archivo resultante</td>
+</tr>
+<tr>
+<td>x</td>
+<td>extract</td>
+<td>Extrae (descomprime + desempaqueta) el contenido del archivo.</td>
+</tr>
+<tr>
+<td><code>j</code></td>
+<td>xz</td>
+<td>Comprime usando <strong>XZ</strong> (mucho más eficiente que gzip)</td>
+</tr>
+</tbody>
+</table>
+<p>Si no pones <code>-z</code> <code>`J</code>, NO funciona con un <code>.tar.gz</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Formato</th>
+<th>Velocidad</th>
+<th>Compresión</th>
+<th>Uso típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gzip (<code>-z</code>)</td>
+<td>Más rápido</td>
+<td>Menor</td>
+<td>Logs, backups rápidos</td>
+</tr>
+<tr>
+<td>xz (<code>-J</code>)</td>
+<td>Más lento</td>
+<td>Mucha mayor compresión</td>
+<td>Paquetes de distros, almacenamiento eficiente</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="b-zip-unzip">B) <code>zip</code> / <code>unzip</code><a class="headerlink" href="#b-zip-unzip" title="Permanent link">&para;</a></h3>
+<p>Empaqueta y comprime a la vez. Cada archivo dentro del ZIP se comprime por separado. Conserva algunos permisos, pero no todos los permisos UNIX avanzados (propietarios, permisos especiales, ACLs…).</p>
+<p><code>zip</code> NO usa gzip, ni xz, ni bzip2.
+ <code>zip</code> utiliza su propio método de compresión, el más común es: Deflate</p>
+<hr />
+<h4 id="comprimir_1"><strong>Comprimir</strong><a class="headerlink" href="#comprimir_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>zip<span class="w"> </span>-r<span class="w"> </span>proyecto.zip<span class="w"> </span>proyecto/
+zip<span class="w"> </span>-9<span class="w"> </span>proyecto.zip<span class="w"> </span>carpeta/<span class="w"> </span><span class="c1">#lenta</span>
+zip<span class="w"> </span>-9<span class="w"> </span>proyecto.zip<span class="w"> </span>carpeta/<span class="w"> </span><span class="c1">#rapida</span>
+</code></pre></div>
+<p><code>-r</code>: Incluye todos los archivos y subcarpetas que haya dentro de la carpeta.</p>
+<hr />
+<h4 id="descomprimir_1"><strong>Descomprimir</strong><a class="headerlink" href="#descomprimir_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>unzip<span class="w"> </span>proyecto.zip
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Características</th>
+<th>ZIP</th>
+<th>TAR + gzip</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Algoritmo</td>
+<td>Deflate</td>
+<td>Gzip usa Deflate pero con formato diferente</td>
+</tr>
+<tr>
+<td>Permisos UNIX</td>
+<td>Parciales</td>
+<td>Completo</td>
+</tr>
+<tr>
+<td>Compatibilidad</td>
+<td>Muy alta (Windows/macOS)</td>
+<td>Menos universal</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="ejemplos-para-aceptar-stdin_3">Ejemplos para aceptar stdin<a class="headerlink" href="#ejemplos-para-aceptar-stdin_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>/<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.zip&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-I<span class="w"> </span><span class="o">{}</span><span class="w"> </span>unzip<span class="w"> </span><span class="s2">&quot;{}&quot;</span><span class="w"> </span>-d<span class="w"> </span>/home/manolo/descomprimidos/
+</code></pre></div>
+<p><code>-d</code> significa:</p>
+<blockquote>
+<p>Extrae el contenido del .zip dentro de este directorio.</p>
+</blockquote>
+<hr />
+<h3 id="c-gzip-gunzip">C) <code>gzip</code> / <code>gunzip</code><a class="headerlink" href="#c-gzip-gunzip" title="Permanent link">&para;</a></h3>
+<h4 id="casos-de-uso"><strong>Casos de uso</strong><a class="headerlink" href="#casos-de-uso" title="Permanent link">&para;</a></h4>
+<p>Comprimir archivos sueltos.   Por defecto, <code>gzip</code> borra el archivo original después de comprimirlo. Para evitar que lo borre, usa:  Usa <code>-c</code> (stdout) y redirección:</p>
+<div class="highlight"><pre><span></span><code>gzip<span class="w"> </span>-c<span class="w"> </span>archivo.log<span class="w"> </span>&gt;<span class="w"> </span>archivo.log.gz
+gzip<span class="w"> </span>-1<span class="w"> </span>archivo.log<span class="w">        </span><span class="c1"># compresión rápida</span>
+gzip<span class="w"> </span>-9<span class="w"> </span>archivo.log<span class="w">        </span><span class="c1"># máxima compresión</span>
+</code></pre></div>
+<hr />
+<h4 id="comprimir_2"><strong>Comprimir:</strong><a class="headerlink" href="#comprimir_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>gzip<span class="w"> </span>archivo.log
+</code></pre></div>
+<p>Lo transforma en:  gzip archivo.log.gz</p>
+<hr />
+<h4 id="descomprimir_2"><strong>Descomprimir</strong><a class="headerlink" href="#descomprimir_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>gunzip archivo.log.gz
+</code></pre></div>
+<p>o devolviendo la salida a otroa para renombar incluso:</p>
+<div class="highlight"><pre><span></span><code>gunzip<span class="w"> </span>-c<span class="w"> </span>archivo.log.gz<span class="w"> </span>&gt;<span class="w"> </span>archivo.log
+</code></pre></div>
+<hr />
+<h4 id="ejemplos-para-aceptar-stdin_4">Ejemplos para aceptar stdin<a class="headerlink" href="#ejemplos-para-aceptar-stdin_4" title="Permanent link">&para;</a></h4>
+<p>Acepta entrada estandar, por ejemplo, acepta lo que le devuelva un cat:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>archivo.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>archivo.log.gz
+</code></pre></div>
+<hr />
+<h2 id="9df-disk-free">9.df (disk free)<a class="headerlink" href="#9df-disk-free" title="Permanent link">&para;</a></h2>
+<h3 id="sintasis"><strong>Sintasis</strong><a class="headerlink" href="#sintasis" title="Permanent link">&para;</a></h3>
+<p><code>df</code> significa <strong>disk free</strong>. Sirve para <strong>ver el espacio disponible y ocupado</strong> en cada sistema de archivos montado en Linux.<code>df</code> <strong>no mide archivos o carpetas</strong>. Mide <strong>sistemas de archivos completos</strong> (ext4, xfs, tmpfs, etc.) que están montados en puntos como <code>/</code>, <code>/home</code>, <code>/boot</code>, etc. Es decir: <code>df</code> te dice <strong>cuánto espacio queda en la partición</strong>, no cuánto ocupa una carpeta concreta.</p>
+<div class="highlight"><pre><span></span><code>df<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span>
+df<span class="w"> </span>-h
+</code></pre></div>
+<hr />
+<h3 id="ejemplos_8">Ejemplos<a class="headerlink" href="#ejemplos_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h
+</code></pre></div>
+<p><code>-h</code> = <em>human readable</em>, muestra valores en KB, MB, GB en lugar de bloques. Salida:</p>
+<p><code>-H</code>= Usa múltiplos <strong>SI</strong> en lugar de <strong>IEC</strong>:</p>
+<p>​   a)<code>-h</code>: 1G = 1024 MB</p>
+<p>​        b)<code>-H</code>: 1G = 1000 MB</p>
+<p><code>T</code>= Muestra el tipo de sistema de archivos (ext4, xfs, tmpfs, squashfs…).</p>
+<div class="highlight"><pre><span></span><code><span class="err">df</span><span class="w"> </span><span class="err">-h</span>
+<span class="err">Filesystem</span><span class="w">      </span><span class="err">Size</span><span class="w">  </span><span class="err">Used</span><span class="w"> </span><span class="err">Avail</span><span class="w"> </span><span class="err">Use%</span><span class="w"> </span><span class="err">Mounted</span><span class="w"> </span><span class="err">on</span>
+<span class="err">/dev/sda2</span><span class="w">        </span><span class="err">98G</span><span class="w">   </span><span class="err">65G</span><span class="w">   </span><span class="err">29G</span><span class="w">  </span><span class="err">70%</span><span class="w"> </span><span class="err">/</span>
+<span class="err">tmpfs</span><span class="w">           </span><span class="err">1.6G</span><span class="w">  </span><span class="err">2.0M</span><span class="w">  </span><span class="err">1.6G</span><span class="w">   </span><span class="err">1%</span><span class="w"> </span><span class="err">/run</span>
+<span class="err">/dev/sda1</span><span class="w">       </span><span class="err">512M</span><span class="w">  </span><span class="err">120M</span><span class="w">  </span><span class="err">392M</span><span class="w">  </span><span class="err">24%</span><span class="w"> </span><span class="err">/boot</span>
+</code></pre></div>
+<hr />
+<h3 id="como-interpretar-la-salida-de-df">Cómo interpretar la salida de df<a class="headerlink" href="#como-interpretar-la-salida-de-df" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Filesystem</strong> → dispositivo o sistema de archivos</li>
+<li><strong>Size</strong> → tamaño total del sistema de archivos</li>
+<li><strong>Used</strong> → espacio usado</li>
+<li><strong>Avail</strong> → espacio libre</li>
+<li><strong>Use%</strong> → porcentaje usado</li>
+<li><strong>Mounted on</strong> → carpeta donde está montado dicha partición</li>
+</ul>
+<hr />
+<h2 id="10du-disk-usage">10.du (disk usage)<a class="headerlink" href="#10du-disk-usage" title="Permanent link">&para;</a></h2>
+<h3 id="sintasis_1"><strong>Sintasis</strong><a class="headerlink" href="#sintasis_1" title="Permanent link">&para;</a></h3>
+<p><code>du</code> significa <strong>disk usage</strong>. A diferencia de <code>df</code>, <code>du</code> <strong>sí mide cuántos bytes ocupa una <u>carpeta</u> o archivo específico</strong>. <code>du</code> recorre el sistema de archivos <strong>archivo por archivo</strong>, sumando tamaños.</p>
+<div class="highlight"><pre><span></span><code>du<span class="w"> </span><span class="o">[</span>opciones<span class="o">]</span><span class="w"> </span>ruta
+</code></pre></div>
+<hr />
+<h3 id="ejemplos_9">Ejemplos<a class="headerlink" href="#ejemplos_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>du<span class="w"> </span>-sh<span class="w"> </span>home/manolo
+</code></pre></div>
+<p><code>-s</code> → <em>summary</em> (solo total y no de cada una de las subcarpetas de /home/manolo</p>
+<p><code>-h</code> → <em>human readable</em>, transforma el tamaño en números legibles</p>
+<p>Si no queremos que mire cada subcarpeta, se le puede poner un: --max-depth. Por ejemplo, si estamos en:</p>
+<p><code>home/manolo</code> y me interesa que sólo mire las carpetas hijas como:</p>
+<ul>
+<li>
+<p><code>/home/manolo/Descargas</code></p>
+</li>
+<li>
+<p><code>/home/manolo/Videos</code></p>
+</li>
+<li>
+<p><code>/home/manolo/Imagenes</code></p>
+</li>
+</ul>
+<p>Tenemos que poner: --max-depth=1.</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>sudo<span class="w"> </span>du<span class="w"> </span>-h<span class="w"> </span>--max-depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>/var<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-h
+</code></pre></div>
+<p>En el siguiente punto veremos el comando sort.</p>
+<hr />
+<h3 id="aclarando-max-depth">Aclarando max-depth<a class="headerlink" href="#aclarando-max-depth" title="Permanent link">&para;</a></h3>
+<p>--max-depth=N. indica hasta qué nivel de subdirectorios quieres que du examine y muestre. Es decir:</p>
+<div class="highlight"><pre><span></span><code>Nivel 0 → solo el directorio indicado
+
+Nivel 1 → el directorio + sus hijos directos
+
+Nivel 2 → el directorio + sus hijos + los hijos de sus hijos
+
+Nivel 3 → y así sucesivamente
+</code></pre></div>
+<hr />
+<h3 id="recordatorio-ls-vs-du">Recordatorio ls vs du<a class="headerlink" href="#recordatorio-ls-vs-du" title="Permanent link">&para;</a></h3>
+<p>Puedes pensar que lo anterior con max-depth=1 también se puede hacer con un ls, es decir:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lSh<span class="w"> </span>carpeta
+</code></pre></div>
+<p>donde este ls ordena todos los archivos de una carpeta por tamaño de mayor a menor (la h es para que el tamaño sea leible y no en bytes). Sin embargo, ls tiene un gran problema y es que no muestra el tamaño de las carpetas bien, solo muestra el tamaño de los binarios como (txt's, ISO's, qcow's...). Esto se ve bien así:</p>
+<p>Con ls, si queremos mirar el tamaño de la carpeta (home/manolo) me saldría algo así:</p>
+<p><img alt="image-20251208141905611" src="/home/manolo/.config/Typora/typora-user-images/image-20251208141905611.png" /></p>
+<p>Sin embargo, con du me saldría bien:</p>
+<p><img alt="image-20251208142015685" src="/home/manolo/.config/Typora/typora-user-images/image-20251208142015685.png" /></p>
+<p>Por tanto, recomiendo usar ls para mirar el tamaño de los ficheros!=carpetas de un directorio, tal que asÍ:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lShp<span class="w"> </span>carpeta<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;&quot;</span>
+</code></pre></div>
+<p>en donde, con p, hemos hecho que ls añada "/" al final de un directorio:</p>
+<div class="highlight"><pre><span></span><code><span class="err">Documentos/</span>
+<span class="err">foto.jpg</span>
+<span class="err">scripts/</span>
+<span class="err">notas.txt</span>
+</code></pre></div>
+<h3 id="ejemplos-para-aceptar-stdin_5">Ejemplos para aceptar stdin<a class="headerlink" href="#ejemplos-para-aceptar-stdin_5" title="Permanent link">&para;</a></h3>
+<p>No acepta entrada estandar, sólo argumentos. Un ejemplo con find</p>
+<div class="highlight"><pre><span></span><code>find<span class="w"> </span>.<span class="w"> </span>-maxdepth<span class="w"> </span><span class="m">1</span><span class="w"> </span>-type<span class="w"> </span>d<span class="se">\</span>
+<span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>du<span class="w"> </span>-sh<span class="w"> </span><span class="se">\</span>
+</code></pre></div>
+<hr />
+<h2 id="11sort">11.sort<a class="headerlink" href="#11sort" title="Permanent link">&para;</a></h2>
+<h3 id="sintasis_2"><strong>Sintasis</strong><a class="headerlink" href="#sintasis_2" title="Permanent link">&para;</a></h3>
+<p>Como es evidente, sirve para ordenar líneas. <strong>Sort interpreta la primera *cadena numérica* que encuentra en cada línea</strong> y la usa como clave para ordenar. En su opción más común,<code>sort -h</code> ordena líneas de conteniendo con tamaños <em>human-readable</em> como:</p>
+<ul>
+<li>4.0K</li>
+<li>200M</li>
+<li>1.3G</li>
+</ul>
+<hr />
+<h3 id="ejemplos_10">Ejemplos<a class="headerlink" href="#ejemplos_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="err">150M</span><span class="w"> </span><span class="err">/var/cache</span>
+<span class="err">4.0K</span><span class="w"> </span><span class="err">/var/tmp</span>
+<span class="err">900M</span><span class="w"> </span><span class="err">/var/log</span>
+<span class="err">200M</span><span class="w"> </span><span class="err">/var/cache/apt</span>
+<span class="err">1.3G</span><span class="w"> </span><span class="err">/var</span>
+</code></pre></div>
+<p>Salida:</p>
+<div class="highlight"><pre><span></span><code><span class="err">4.0K</span><span class="w"> </span><span class="err">/var/tmp</span>
+<span class="err">150M</span><span class="w"> </span><span class="err">/var/cache</span>
+<span class="err">200M</span><span class="w"> </span><span class="err">/var/cache/apt</span>
+<span class="err">900M</span><span class="w"> </span><span class="err">/var/log</span>
+<span class="err">1.3G</span><span class="w"> </span><span class="err">/var</span>
+</code></pre></div>
+<p>Vamos a ver como ordenar también por tamaño con sort. </p>
+<div class="highlight"><pre><span></span><code>sort<span class="w"> </span>-n<span class="w"> </span>lista.txt
+<span class="c1">#ordena de menor a mayor numéricamente las lineas con números</span>
+</code></pre></div>
+<p>con <code>-r</code> tenemos el orden inverso:</p>
+<div class="highlight"><pre><span></span><code>sort<span class="w"> </span>-nr<span class="w"> </span>lista.txt
+</code></pre></div>
+<p>con <code>-k</code> ordenamos por una columna específica:</p>
+<div class="highlight"><pre><span></span><code>sort<span class="w"> </span>-k2<span class="w"> </span>lista.txt
+</code></pre></div>
+<p>con <code>-u</code> quitamos duplicados después de ordenar</p>
+<div class="highlight"><pre><span></span><code>sort<span class="w"> </span>-u<span class="w"> </span>archivo.txt
+</code></pre></div>
+<hr />
+<h3 id="ejemplos-para-aceptar-stdin_6">Ejemplos para aceptar stdin<a class="headerlink" href="#ejemplos-para-aceptar-stdin_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>du<span class="w"> </span>-h<span class="w"> </span>--max-depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>/home/manolo<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-hru
+</code></pre></div>
+<h1 id="ejercicio-1-encontrar-carpetas-de-homemanolo-cuyo-tamano-supere-200-mb"><strong>EJERCICIO 1 — Encontrar carpetas de /home/manolo cuyo tamaño supere 200 MB</strong><a class="headerlink" href="#ejercicio-1-encontrar-carpetas-de-homemanolo-cuyo-tamano-supere-200-mb" title="Permanent link">&para;</a></h1>
+<p><em>Objetivo:</em> combinar <code>du</code>, <code>sort</code>, <code>find</code>, filtros y pipes.</p>
+<h3 id="enunciado"><strong>Enunciado</strong><a class="headerlink" href="#enunciado" title="Permanent link">&para;</a></h3>
+<p>Usando <strong>únicamente comandos de la práctica</strong>, localiza todas las carpetas dentro de <code>/home/manolo</code> cuyo tamaño sea <strong>superior a 200 MB</strong>.
+ Debes mostrar solo el <strong>nombre de la carpeta y su tamaño</strong> ordenados de mayor a menor.</p>
+<h3 id="solucion-esperada-una-posible"><strong>Solución esperada (una posible)</strong><a class="headerlink" href="#solucion-esperada-una-posible" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>du<span class="w"> </span>-h<span class="w"> </span>--max-depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>/home/manolo<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;[0-9]+M|[0-9]+G&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-hr<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;$1+0 &gt; 200 {print}&#39;</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
